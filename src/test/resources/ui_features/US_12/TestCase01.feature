@@ -13,7 +13,7 @@
       Then Stop Time dan bitis saatini sec
       Then Submit butonuna tikla
       Then Secilen ders Lesson Program Assignment da oldugunu dogrula
-      Then Lesson Program Assignment bolumunde Chose Lesson u sec
       Then Lesson Program Assignment bolumunde Chose Teacher ı sec
+      Then Lesson Program Assignment bolumunde Chose Lesson u sec
       Then Assignment Submit butonuna tikla
       Then Lesson added to teacher yazısı gorulmeli

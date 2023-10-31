@@ -327,8 +327,6 @@ public class HomePage {
 
 
 
-
-
     //Cihan-330
     @FindBy(xpath = "//*[@id=\"controlled-tab-example-tab-lessonProgram\"]") public WebElement lessonprogramButton;
     @FindBy(xpath = "//*[@class=' css-1jqq78o-placeholder']") public WebElement lessonddm;
@@ -345,10 +343,8 @@ public class HomePage {
 
     @FindBy(xpath = "//*[@id=\"controlled-tab-example-tabpane-lessonProgram\"]/div[3]/div/div/div[2]/div[2]/button")
     public WebElement assignmmentSubmit;
-    @FindBy(xpath = "//*[@id=\"teacherId\"]") public WebElement chooselessonbox;
-
-
-
+    @FindBy(xpath = "//*[@id=\"lessonProgramId\"]") public List<WebElement> chooselessonbox;
+    @FindBy(xpath = "//*[@id=\"8\"]/div[1]/div[2]") public List<WebElement> lessonaddyazisi;
 
 
 
