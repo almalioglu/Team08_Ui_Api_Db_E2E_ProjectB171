@@ -623,30 +623,37 @@ public WebElement messageColumn;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Elif-630
   @FindBy(xpath = "(//*[@type='button'])[3]") public WebElement registerbutonEB;
   @FindBy(xpath ="//*[text()='Guest User registered.']" ) public WebElement guestUserRegisteredEB;//"//div[@role='alert']"
-
  @FindBy(xpath = "//*[@id='phoneNumber']") public  WebElement phoneNumberEB;
+    @FindBy(xpath = "//a[contains(.,'Register')]") public WebElement registerButonEB;
+    @FindBy(xpath = "//*[@class='header_link me-2']") public WebElement registerButonEBB;
+    @FindBy(xpath = "//*[@id='name']") public WebElement nameButonEB;
+    @FindBy(xpath = "//*[@id='surname']") public WebElement surnameButonEB;
+    @FindBy(xpath = "//*[@id='birthPlace']") public WebElement birthButonEB;
+    @FindBy(xpath = "//*[@id='phoneNumber']") public WebElement phoneButonEB;
+    @FindBy(xpath = "(//input[@type='radio'])[1]") public WebElement femaleButonEB;
+    @FindBy(xpath = "//input[@type='date']") public WebElement dateofBirthdayButonEB;
+    @FindBy(xpath = "//*[@id='ssn']") public WebElement ssNButonEB;
+    @FindBy(xpath = "//*[@id='username']") public WebElement userNameButonEB;
+    @FindBy(xpath = "//input[@id='password']") public WebElement passwordButonEB;
+    @FindBy(xpath = "(//*[@type='button'])[3]") public WebElement registerAltButonEB;
+    @FindBy(xpath = "//*[text()='Date Of Birth']") public WebElement dateofbirtEB;
+    @FindBy(xpath = "//input[@name='gender' and @value='MALE']")
+    public WebElement maleGenderEB;
+    @FindBy(xpath = "(//*[text()='Required'])[1]") public WebElement getRequiredNameEB;
+    @FindBy(xpath = "(//*[text()='Required'])[2]") public WebElement getRequiredSurameEB;
+    @FindBy(xpath = "(//*[text()='Required'])[3]") public WebElement getRequiredBirthPlaceEB;
+    @FindBy(xpath = "(//*[text()='Required'])[4]") public WebElement getRequiredPhoneEB;
+    @FindBy(xpath = "(//*[text()='Required'])[5]") public WebElement getRequiredDateOfBirthEB;
+    @FindBy(xpath = "(//*[text()='Required'])[6]") public WebElement getRequiredSsnEB;
+    @FindBy(xpath = "(//*[text()='Required'])[7]") public WebElement getRequiredUserNameEB;
+    @FindBy(xpath = "//*[text()='Enter your password']") public WebElement enterYourPasswordEB;
+    @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']") public WebElement minimum11characterEB;
+    @FindBy(xpath = "//*[text()='One lowercase character']") public WebElement lowercaseCharacterYazisiEB;
+    @FindBy(xpath = "//*[text()='One number']")public WebElement OneNumberYazisiEB;
+    @FindBy(xpath = "//*[text()='At least 8 characters']")public WebElement passwordSekizcharactersUyarisiEB;
 
 
 
