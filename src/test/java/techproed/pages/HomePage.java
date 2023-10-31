@@ -127,8 +127,6 @@ public class HomePage {
 
 
 
-
-
     //İsmailAlmalıoglu-130
     @FindBy(xpath = "//h3[@class='fw-bold p-3 card-header']") public WebElement studentInfoManagment_is;
     @FindBy(xpath = "//select[@id='lessonId']") public WebElement chooseLessonBox_is;
