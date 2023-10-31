@@ -45,7 +45,6 @@ public class US10_ViceDeandersprogramıoluşturabilmelidir {
     @Then("Chose Lessons da ders sec")
     public void choseLessonsDaDersSec() {
         page.lessonddm2.click();
-        ReusableMethods.bekle(2);
         page.lessonddm2.sendKeys(Keys.ARROW_DOWN,Keys.ENTER);
         ReusableMethods.bekle(2);
 
@@ -57,14 +56,14 @@ public class US10_ViceDeandersprogramıoluşturabilmelidir {
         page.chooseEducationddm.click();
         page.chooseEducationddm.sendKeys(Keys.ARROW_DOWN,Keys.ENTER);
 
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(1);
     }
 
     @Then("Choose Day den gun sec")
     public void chooseDayDenGunSec() {
         page.chooseDayddm.click();
         page.chooseDayddm.sendKeys(Keys.ARROW_DOWN,Keys.ENTER);
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(1);
     }
 
     @Then("Start Time dan baslangıc saatini sec")
@@ -77,7 +76,7 @@ public class US10_ViceDeandersprogramıoluşturabilmelidir {
     @Then("Stop Time dan bitis saatini sec")
     public void stopTimeDanBitisSaatiniSec() {
         page.stopTimeddm.sendKeys("2359");
-        ReusableMethods.bekle(3);
+        ReusableMethods.bekle(1);
     }
 
     @Then("Submit butonuna tikla")
