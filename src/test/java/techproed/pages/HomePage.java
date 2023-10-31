@@ -127,8 +127,6 @@ public class HomePage {
 
 
 
-
-
     //İsmailAlmalıoglu-130
     @FindBy(xpath = "//h3[@class='fw-bold p-3 card-header']") public WebElement studentInfoManagment_is;
     @FindBy(xpath = "//select[@id='lessonId']") public WebElement chooseLessonBox_is;
@@ -429,14 +427,17 @@ public class HomePage {
 
 
 
-   //Saadet-430
-   @FindBy(xpath = "//*[@class='header_link me-2']") public WebElement registerButtonSG;
+    //Saadet-430
+    @FindBy(xpath = "//*[@class='header_link me-2']") public WebElement registerButtonSG;
     @FindBy(xpath = "//*[@id='username']") public WebElement loginUserNameSG;
     @FindBy(xpath = "//*[@id='password']") public WebElement loginPasswordSG;
     @FindBy(xpath = "(//*[text()='Login'])[2]") public WebElement loginEkraniLoginButtonSG;
     @FindBy(xpath = "(//*[@id='name']") public WebElement registerNameTextSG;
     @FindBy(xpath = "//*[@id='surname']") public WebElement registerSurnameTextSG;
     @FindBy (xpath = "//*[@class='fa fa-lock']") public WebElement girisloginButtonSG;
+
+
+
     @FindBy(xpath = "(//*[@type='button'])[1]") public WebElement menuButtonSG;
     @FindBy (xpath = "(//*[text ()='Student Management'])") public WebElement studentManagementSG;
     @FindBy (xpath = "//*[@id='advisorTeacherId']") public WebElement contactTeacherSG;
@@ -474,13 +475,10 @@ public class HomePage {
     @FindBy (xpath = "//*[text()='Subject']") public   WebElement getAllSubjectSG;
     @FindBy (xpath = "//*[text()='Message']") public   WebElement getAllMessageSG;
     @FindBy(xpath = "//*[@class='Toastify__toast-body']") public WebElement verifyMessageSG;
-
-
-
-
-
-
-
+    @FindBy (xpath = "//*[text()='You have entered an invalid value. Valid values are: MALE, FEMALE']") public WebElement genderAlertSG;
+    // @FindBy (xpath = "//*/div[contains(text(),'Teacher')]") public WebElement teacherAlertSG;
+    @FindBy (xpath = "//div[@class='Toastify__toast-icon Toastify--animate-icon Toastify__zoom-enter']") public WebElement teacherAlert2SG;
+    @FindBy (xpath = "(//*[@class='invalid-feedback'])[7]") public WebElement ssnminkarakterAlertSG;
 
 
 

@@ -14,7 +14,7 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
-public class Us15_VicedeanStudentOlusturur {
+public class Us15_vicedeanStudentOlusturabilmeli {
 
 
     HomePage homePage = new HomePage();
@@ -34,7 +34,6 @@ public class Us15_VicedeanStudentOlusturur {
         homePage.girisloginButtonSG.click();
 
     }
-
 
 
     @And("Vice dean hesabıyla login ol")
@@ -145,6 +144,12 @@ public class Us15_VicedeanStudentOlusturur {
 
     }
 
+    @And("submit butonuna tıkla")
+    public void submitButonunaTıkla() {
+        ReusableMethods.bekle(4);
+        js.executeScript("arguments[0].scrollIntoView(true);", homePage.SubmitbuttonSG);
+        homePage.SubmitbuttonSG.click();
+    }
 
 
     @And("Student saved successfully mesajını doğrula")
@@ -217,7 +222,8 @@ public class Us15_VicedeanStudentOlusturur {
     public void passwordAlanınıSil() {
 
     }
-    
+
+
 
     @Then("Enter your password yazısını doğrula")
     public void yazısınıDoğrula() {
@@ -231,14 +237,61 @@ public class Us15_VicedeanStudentOlusturur {
 
     @And("you have entered an invalid value Valid values are MALE,FEMALE mesajı görülür")
     public void youHaveEnteredAnInvalidValueValidValuesAreMALEFEMALEMesajıGörülür() {
+        ReusableMethods.visibleWait(homePage.genderAlertSG,4);
+        assert homePage.genderAlertSG.isDisplayed();
+
+
+    }
+    @And("Çıkan seçeneklerden teacher seçme")
+    public void çıkanSeçeneklerdenTeacherSeçme() {
+        Select select = new Select(homePage.contactTeacherSG);
+        select.selectByIndex(0);
+        homePage.namePlaceHolderSG.click();
+    }
+    @Then("öğrencinin kaydedilemediğini doğrula")
+    public void öğrencininKaydedilemediğiniDoğrula() {
+        ReusableMethods.visibleWait(homePage.teacherAlert2SG,3);
+        assert homePage.teacherAlert2SG.isDisplayed();
+        //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(3));
+        // wait.until(ExpectedConditions.alertIsPresent());
+        //assert  Driver.getDriver().switchTo().alert().getText().contains("Please select advisor teacher");
+    }
+
+    @And("SSN girilir fakat {int}. ve {int}. rakamdan sonra {string} konıulmaz")
+    public void ssnGirilirFakatVeRakamdanSonraKonıulmaz(int arg0, int arg1, String arg2) {
+        {
+            Actions action = new Actions(Driver.getDriver());
+            action.scrollToElement(homePage.ssnPlaceHolderSG).perform();
+            ReusableMethods.bekle(3);
+            js.executeScript("arguments[0].click()", homePage.ssnPlaceHolderSG);
+            homePage.ssnPlaceHolderSG.click();
+            homePage.ssnPlaceHolderSG.sendKeys(("123 45 234"));
+            ReusableMethods.visibleWait(homePage.ssnminkarakterAlertSG,3);
+            assert homePage.ssnminkarakterAlertSG.isDisplayed();
+        }
+
+    }
+
+ /*@And("SSN alanı temizlenir")
+ public void ssnAlanıTemizlenir() {
+  (homePage.ssnPlaceHolderSG);
+ }
+
+  */
+
+
+
+    @And("SSN alanına {int} tane rakam gir")
+    public void ssnAlanınaTaneRakamGir(int arg0) {
+        homePage.ssnPlaceHolderSG.sendKeys(faker.numerify("#########)"));
+    }
+    @Then("SSN kutusunun altında {string} yazısının çıktığı görülür ve doğrulanır")
+    public void ssnKutusununAltındaYazısınınÇıktığıGörülürVeDoğrulanır(String arg0) {
+        ReusableMethods.visibleWait(homePage.ssnminkarakterAlertSG,3);
+        assert homePage.ssnminkarakterAlertSG.isDisplayed();
 
     }
 
 
-    @And("Vice dean submit Butonuna tıklar")
-    public void viceDeanSubmitButonunaTıklar() {
-        ReusableMethods.bekle(4);
-        js.executeScript("arguments[0].scrollIntoView(true);", homePage.SubmitbuttonSG);
-        homePage.SubmitbuttonSG.click();
-    }
+
 }
