@@ -35,6 +35,10 @@ public class HomePage {
     @FindBy(xpath = "//*[@type='checkbox']") public List<WebElement> dersSecmeCheckboxME;
     @FindBy(xpath = "//*[text()='Submit']") public WebElement dersSecmeSubmitME;
     @FindBy(xpath = "(//tbody)[1]") public List<WebElement> tumDerslerListesiME;
+    @FindBy(xpath = "(//tbody)[2]") public List<WebElement> secilenDerslerListesiME;
+    @FindBy(xpath = "//*[@id='name']") public WebElement adminNameTextBoxME;
+    @FindBy(xpath = "//*[@role='alert']") public WebElement adminSavedVerifyME;
+    @FindBy(xpath = "//*[text()='Required']") public WebElement adminDontSavedVerifyME;
 
 
 
