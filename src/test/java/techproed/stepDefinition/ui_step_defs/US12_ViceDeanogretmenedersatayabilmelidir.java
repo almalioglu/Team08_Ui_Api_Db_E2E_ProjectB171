@@ -1,42 +1,38 @@
 package techproed.stepDefinition.ui_step_defs;
 
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import techproed.pages.HomePage;
 import techproed.utilities.ReusableMethods;
 
 
 public class US12_ViceDeanogretmenedersatayabilmelidir {
     HomePage page = new HomePage();
+
     @Then("Secilen ders Lesson Program Assignment da oldugunu dogrula")
     public void secilenDersLessonProgramAssignmentDaOldugunuDogrula() {
+    }
+
+    @Then("Lesson Program Assignment bolumunde Chose Teacher ı sec")
+    public void lessonProgramAssignmentBolumundeChoseTeacherISec() {
+        ReusableMethods.click(page.chooseTeacher);
+        ReusableMethods.ddmIndex(page.chooseTeacher, 7);
 
     }
 
     @Then("Lesson Program Assignment bolumunde Chose Lesson u sec")
     public void lessonProgramAssignmentBolumundeChoseLessonUSec() {
-        //page.chooselessonbox.click();
-        //ReusableMethods.bekle(3);
-
-       ReusableMethods.click(page.chooseStudentsBox);
-
-
-        }
-
-
-    @Then("Lesson Program Assignment bolumunde Chose Teacher ı sec")
-    public void lessonProgramAssignmentBolumundeChoseTeacherISec() {
-        //page.chooseTeacher.click();
-        //page.chooseTeacher.sendKeys(Keys.ARROW_DOWN,Keys.ENTER);
-        //ReusableMethods.bekle(2);
+        page.chooselessonbox.get(page.chooselessonbox.size() - 1).click();
     }
 
     @Then("Assignment Submit butonuna tikla")
     public void assignmentSubmitButonunaTikla() {
+        page.assignmmentSubmit.click();
     }
 
     @Then("Lesson added to teacher yazısı gorulmeli")
     public void lessonAddedToTeacherYazısıGorulmeli() {
+         //Assert.assertEquals("Lesson added to Teacher",page.lessonaddyazisi.toString());
+
     }
-
-
 }
