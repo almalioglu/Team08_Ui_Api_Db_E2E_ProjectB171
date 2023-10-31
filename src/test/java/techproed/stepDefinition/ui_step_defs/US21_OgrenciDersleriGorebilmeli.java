@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class US21_MyStepdefs {
+public class US21_OgrenciDersleriGorebilmeli {
     HomePage page =new HomePage();
     Random random=new Random();
     List<WebElement> TumDerslerList=new ArrayList<>();
@@ -70,8 +70,25 @@ public class US21_MyStepdefs {
 //        System.out.println(page.dersSecmeCheckboxME.get(ilkSecim).getText());
 //        System.out.println(page.dersSecmeCheckboxME.get(ikinciSecim).getText());
 //        System.out.println(page.tumDerslerListesiME.getText());
-        TumDerslerList.forEach(t-> System.out.println(t.getText()));
+        //page.tumDerslerListesiME.forEach(t-> System.out.println(t.getText()));
         System.out.println("**********************************");
+        List<Object> dersList=new ArrayList<>();
+
+        TumDerslerList.addAll(page.tumDerslerListesiME);
+
+        TumDerslerList.forEach(t-> System.out.println(t.getText()));
+
+//        for (List<WebElement> w: TumDerslerList) {
+//
+//            dersList.add(w.getText());
+//            System.out.println("foreach"+ w.getText());
+//
+//        }
+        for (int i = 0; i < TumDerslerList.size()-1; i++) {
+            dersList.add(TumDerslerList.get(i).getText());
+            System.out.println("Deneme"+TumDerslerList.get(i).getText());
+        }
+        System.out.println("derslist"+dersList);
 
     }
 }
