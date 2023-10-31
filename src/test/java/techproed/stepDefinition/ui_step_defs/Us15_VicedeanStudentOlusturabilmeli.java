@@ -14,7 +14,7 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
-public class Us15_vicedeanStudentOlusturabilmeli {
+public class Us15_VicedeanStudentOlusturabilmeli {
 
 
     HomePage homePage = new HomePage();
@@ -257,8 +257,8 @@ public class Us15_vicedeanStudentOlusturabilmeli {
         //assert  Driver.getDriver().switchTo().alert().getText().contains("Please select advisor teacher");
     }
 
-    @And("SSN girilir fakat {int}. ve {int}. rakamdan sonra {string} konıulmaz")
-    public void ssnGirilirFakatVeRakamdanSonraKonıulmaz(int arg0, int arg1, String arg2) {
+    @And("SSN girilir fakat 3 ve 5 inci rakamlardan sonra bosluk birak konıulmaz")
+    public void ssnGirilirFakatVeRakamdanSonraKonıulmaz() {
         {
             Actions action = new Actions(Driver.getDriver());
             action.scrollToElement(homePage.ssnPlaceHolderSG).perform();
@@ -272,26 +272,83 @@ public class Us15_vicedeanStudentOlusturabilmeli {
 
     }
 
- /*@And("SSN alanı temizlenir")
- public void ssnAlanıTemizlenir() {
-  (homePage.ssnPlaceHolderSG);
- }
-
-  */
-
-
-
-    @And("SSN alanına {int} tane rakam gir")
-    public void ssnAlanınaTaneRakamGir(int arg0) {
-        homePage.ssnPlaceHolderSG.sendKeys(faker.numerify("#########)"));
+    @And("SSN alanı temizlenir")
+    public void ssnAlanıTemizlenir() {
+        js.executeScript("arguments[0].value = ''", homePage.ssnPlaceHolderSG);
     }
-    @Then("SSN kutusunun altında {string} yazısının çıktığı görülür ve doğrulanır")
-    public void ssnKutusununAltındaYazısınınÇıktığıGörülürVeDoğrulanır(String arg0) {
+
+
+    @And("SSN kutusunun altında Minimum {int} character \\(XXX XX XXXX) yazısının çıktığı görülür ve doğrulanır")
+    public void ssnKutusununAltındaMinimumCharacterXXXXXXXXXYazısınınÇıktığıGörülürVeDoğrulanır(int arg0) {
         ReusableMethods.visibleWait(homePage.ssnminkarakterAlertSG,3);
         assert homePage.ssnminkarakterAlertSG.isDisplayed();
 
     }
 
+    @And("SSN alanına dokuz tane rakam gir")
+    public void ssnAlanınaDokuzTaneRakamGir() { {
+        homePage.ssnPlaceHolderSG.sendKeys(faker.numerify("#########"));
+        ReusableMethods.visibleWait(homePage.ssnminkarakterAlertSG,3);
+        assert homePage.ssnminkarakterAlertSG.isDisplayed();
+    }
+    }
+    @And("password alanına sekiz karakterden az password gir")
+    public void passwordAlanınaKarakterdenAzPasswordGir() {
+        actions.scrollToElement(homePage.passwordPlaceHolderSG).perform();
+        js.executeScript("arguments[0].click()", homePage.passwordPlaceHolderSG);
+        homePage.passwordPlaceHolderSG.click();
+        homePage.passwordPlaceHolderSG.sendKeys(ReusableMethods.randomPassword(1,1,3));
+    }
+    @Then("Password kutusunun altında At least 8 characters yazısının çıktığını doğrula")
+    public void passwordKutusununAltındaYazısınınÇıktığınıDoğrula() {
 
+        ReusableMethods.visibleWait(homePage.passwordatleastAlertSG,3);
+        assert homePage.passwordatleastAlertSG.isDisplayed();
 
+    }
+
+    @And("Password alanına sekiz karakterli büyük harf içermeyen password gir")
+    public void passwordAlanınaKarakterliBüyükHarfIçermeyenPasswordGir() {
+        actions.scrollToElement(homePage.SubmitbuttonSG).perform();
+        js.executeScript("arguments[0].click()", homePage.passwordPlaceHolderSG);
+        homePage.passwordPlaceHolderSG.click();
+        homePage.passwordPlaceHolderSG.sendKeys(ReusableMethods.randomPassword(0,1,7));
+    }
+
+    @Then("one uppercase mesajının göründüğünü doğrula")
+    public void oneUppercaseMesajınınGöründüğünüDoğrula() {
+        ReusableMethods.visibleWait(homePage.passwordoneUpperAlertSG,3);
+        assert homePage.passwordoneUpperAlertSG.isDisplayed();
+
+    }
+
+    @And("Password alanına {int} karakterli küçük harf içermeyen password gir")
+    public void passwordAlanınaKarakterliKüçükHarfIçermeyenPasswordGir(int arg0) {
+        actions.scrollToElement(homePage.SubmitbuttonSG).perform();
+        js.executeScript("arguments[0].click()", homePage.passwordPlaceHolderSG);
+        homePage.passwordPlaceHolderSG.click();
+        homePage.passwordPlaceHolderSG.sendKeys(ReusableMethods.randomPassword(1,0,7));
+
+    }
+
+    @Then("One lowercase character mesajının göründüğünü doğrula")
+    public void oneLowercaseCharacterMesajınınGöründüğünüDoğrula() {
+        ReusableMethods.visibleWait(homePage.passwordoneLowerAlertSG,3);
+        assert homePage.passwordoneLowerAlertSG.isDisplayed();
+    }
+
+    @And("Password alanına {int} karakterli rakam içermeyen bir password gir")
+    public void passwordAlanınaKarakterliRakamIçermeyenBirPasswordGir(int arg0) {
+        actions.scrollToElement(homePage.SubmitbuttonSG).perform();
+        js.executeScript("arguments[0].click()", homePage.passwordPlaceHolderSG);
+        homePage.passwordPlaceHolderSG.click();
+        homePage.passwordPlaceHolderSG.sendKeys(ReusableMethods.randomPassword(4,4,0));
+
+    }
+
+    @And("One number mesajının göründüğünü doğrula")
+    public void oneNumberMesajınınGöründüğünüDoğrula() {
+        ReusableMethods.visibleWait(homePage.passwordonenumberAlertSG,3);
+        assert homePage.passwordonenumberAlertSG.isDisplayed();
+    }
 }
