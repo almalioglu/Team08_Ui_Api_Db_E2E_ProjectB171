@@ -37,8 +37,5 @@ public class Us17_StepDefinition {
     public void sayfaKapatilir_is() {
     }
 
-    @And("Dean kullanici bilgileri ile sisteme giris yapar")
-    public void deanKullaniciBilgileriIleSistemeGirisYapar() {
-    }
 }
 //Assert.assertTrue(allovercommercePage.emailOtomatik.isDisplayed());
