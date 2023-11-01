@@ -339,12 +339,17 @@ public class HomePage {
     @FindBy(xpath = "//*[@id='stopTime']") public WebElement stopTimeddm;
     @FindBy(xpath = "(//button[@type='button'])[30]") public WebElement submitbutton;
     @FindBy(xpath = "//*[@id=\"teacherId\"]") public WebElement chooseTeacher;
-    @FindBy(xpath = "//*[@id=\"teacherId\"]") public WebElement chooseTeacher2;
-
+    @FindBy(xpath = "//*[@id=\"controlled-tab-example-tabpane-lessonProgram\"]/div[3]/div/div/div[1]/table/tbody/tr[247]")
+    public WebElement dersdogrulama;
     @FindBy(xpath = "//*[@id=\"controlled-tab-example-tabpane-lessonProgram\"]/div[3]/div/div/div[2]/div[2]/button")
     public WebElement assignmmentSubmit;
+    @FindBy(xpath = "//*[@id=\"controlled-tab-example-tabpane-lessonProgram\"]/div[2]/div[2]/div/div/table/thead")
+    public WebElement dersgorunurluk;
+    @FindBy(xpath = "//*[@id=\"11\"]/div[1]/div[2]/text()")
+    public WebElement nullyazisi;
+
     @FindBy(xpath = "//*[@id=\"lessonProgramId\"]") public List<WebElement> chooselessonbox;
-    @FindBy(xpath = "//*[@id=\"8\"]/div[1]/div[2]") public List<WebElement> lessonaddyazisi;
+    @FindBy(xpath = "//*[@id=\"6\"]/div[1]/div[2]") public WebElement lessonaddyazisi;
 
 
 
@@ -539,6 +544,7 @@ public WebElement birthPlaceKutusu;
 public WebElement menuButton;
 @FindBy(xpath = "(//*[@role='button'])[11]")
 public WebElement  contactGetAllButton;
+@FindBy(xpath = "//*[@class='fw-bold p-3 card-header']")public WebElement contactMassageButton;
 @FindBy(xpath = "//tbody//tr[1]/td[1]/span[1]")
 public WebElement nameColumn;
 @FindBy(xpath = "//tbody/tr[1]/td[2]/span[1]")
@@ -549,12 +555,6 @@ public WebElement dateColumn;
 public WebElement subjectColumn;
 @FindBy(xpath = "//tbody/tr[1]/td[5]/span[1]")
 public WebElement messageColumn;
-
-
-
-
-
-
 
 
 
@@ -658,13 +658,13 @@ public WebElement messageColumn;
     @FindBy(xpath = "//*[text()='One lowercase character']") public WebElement lowercaseCharacterYazisiEB;
     @FindBy(xpath = "//*[text()='One number']")public WebElement OneNumberYazisiEB;
     @FindBy(xpath = "//*[text()='At least 8 characters']")public WebElement passwordSekizcharactersUyarisiEB;
-
-
-
-
-
-
-
+    @FindBy(xpath = "//*[text()='Guest User']") public WebElement GuestUserEB;
+    @FindBy(xpath = "//*[text()='Name']")public WebElement nameColumnEB;
+    @FindBy(xpath = "//*[text()='Phone Number']")public WebElement PhoneNumberColumnEB;
+    @FindBy(xpath = "//*[text()='Ssn']")public WebElement SsnColumnEB;
+    @FindBy(xpath = "//*[text()='User Name']")public WebElement UserNameColumnEB;
+    @FindBy(xpath = "(//*[@class='btn btn-danger'])[1]")public WebElement guestUserDeleteButonuEB;
+    @FindBy(xpath = "(//*[@type='button'])[6]")public WebElement copButonuEB;
 
 
 

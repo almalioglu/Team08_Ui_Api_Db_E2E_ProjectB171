@@ -1,6 +1,7 @@
 @08 @US17
 Feature: Not bilgisi ekleme senaryosu
 
+
   Background: Teacher, Student Info Management sayfasina gider
   Scenario: tc02
    Given Kullanici "pageUrl" sayfasina git
@@ -24,4 +25,5 @@ Feature: Not bilgisi ekleme senaryosu
 #  Scenario: TC11_14 "Midterml Exam" ve "Final Exam" notu, "0 dan az "  bir deger girildiğinde eklenememelidir
 #  Scenario: TC12_15 "Midterml Exam" ve "Final Exam" notu, "100 den fazla "  bir deger girildiğinde eklenememelidir
 #  Scenario: TC16 Teacher, "Info Note" kısmına harf,rakam ve özel karakter içeren bir not girebilmeli
+
 
