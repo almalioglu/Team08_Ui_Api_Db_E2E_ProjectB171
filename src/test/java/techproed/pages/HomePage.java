@@ -623,6 +623,10 @@ public WebElement messageColumn;
 
 
 
+
+
+
+
 //Elif-630
   @FindBy(xpath = "(//*[@type='button'])[3]") public WebElement registerbutonEB;
   @FindBy(xpath ="//*[text()='Guest User registered.']" ) public WebElement guestUserRegisteredEB;//"//div[@role='alert']"
@@ -654,7 +658,13 @@ public WebElement messageColumn;
     @FindBy(xpath = "//*[text()='One lowercase character']") public WebElement lowercaseCharacterYazisiEB;
     @FindBy(xpath = "//*[text()='One number']")public WebElement OneNumberYazisiEB;
     @FindBy(xpath = "//*[text()='At least 8 characters']")public WebElement passwordSekizcharactersUyarisiEB;
-
+    @FindBy(xpath = "//*[text()='Guest User']") public WebElement GuestUserEB;
+    @FindBy(xpath = "//*[text()='Name']")public WebElement nameColumnEB;
+    @FindBy(xpath = "//*[text()='Phone Number']")public WebElement PhoneNumberColumnEB;
+    @FindBy(xpath = "//*[text()='Ssn']")public WebElement SsnColumnEB;
+    @FindBy(xpath = "//*[text()='User Name']")public WebElement UserNameColumnEB;
+    @FindBy(xpath = "(//*[@class='btn btn-danger'])[1]")public WebElement guestUserDeleteButonuEB;
+    @FindBy(xpath = "(//*[@type='button'])[6]")public WebElement copButonuEB;
 
 
 
