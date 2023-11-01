@@ -15,7 +15,6 @@ public class US10_ViceDeandersprogramıoluşturabilmelidir {
     Faker fake= new Faker();
     @Given("Kullanici {string} sayfasina git")
     public void kullaniciSayfasinaGit(String pageUrl) {
-
         Driver.getDriver().get(ConfigReader.getProperty(pageUrl));
     }
 

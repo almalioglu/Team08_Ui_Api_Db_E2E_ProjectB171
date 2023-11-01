@@ -910,24 +910,57 @@ public WebElement messageColumn;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //Taha-930
+    @FindBy(xpath = "//*[@id='root']/div/header/div[1]/div/div/div[2]/a[2]")
+    public WebElement LoginTE;
+
+    @FindBy(xpath = "//*[@id='username']")
+    public WebElement UserNameTE;
+
+    @FindBy(xpath = "//*[@id='password']")
+    public WebElement PasswordTE;
+
+    @FindBy(xpath = "//*[@id='root']/div/main/div/div[1]/div/form/div[3]/button")
+    public WebElement LoginButtonTE;
+
+    @FindBy(xpath = "(//*[@type='button'])[1]")
+    public WebElement MenuTE;
+
+    @FindBy(xpath = "/html/body/div[3]/div[2]/div/a[1]")
+    public WebElement LessonManagementTE;
+
+    @FindBy(xpath = "//*[@id='controlled-tab-example-tab-lessonsList']")
+    public WebElement LessonsTE;
+
+    @FindBy(xpath = "//*[@id='lessonName']")
+    public WebElement LessonNameTE;
+
+    @FindBy(xpath = "//*[@id='compulsory']")
+    public WebElement CompulsoryTE;
+
+    @FindBy(xpath = "//*[@id='creditScore']")
+    public WebElement CreditScoreTE;
+
+    @FindBy(xpath = "  (//*[@class='fw-semibold btn btn-primary btn-lg'])[2]")
+    public WebElement SubmitButtonTE;////*[@id='6']
+
+    @FindBy(xpath = "//*[@id='6']")
+    public WebElement LessonCreatedyazisi;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
