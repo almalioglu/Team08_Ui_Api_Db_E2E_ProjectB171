@@ -22,5 +22,9 @@ public class Us17_StepDefinition {
     public void chooseLessonMenusundenDersSec() {
         //page.chooseLessonBox_is.c
     }
+
+    @And("Dean kullanici bilgileri ile sisteme giris yapar")
+    public void deanKullaniciBilgileriIleSistemeGirisYapar() {
+    }
 }
 //Assert.assertTrue(allovercommercePage.emailOtomatik.isDisplayed());
