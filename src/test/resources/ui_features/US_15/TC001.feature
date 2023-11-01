@@ -23,7 +23,7 @@ Feature: ViceDean ogrenci olusturabilmeli
     And father name alanına geçerli bir veri gir
     And mother name alanına geçerli bir veri gir
     And geçerli bir password gir
-    * submit butonuna tıkla
+    And Vice dean submit Butonuna tıklar
     And Student saved successfully mesajını doğrula
     And Student Listte son sayfaya git
     Then Oluşturulan Studentin Student Number'inin otomatik geldiğini doğrula
@@ -61,7 +61,7 @@ Feature: ViceDean ogrenci olusturabilmeli
     And father name alanına geçerli bir veri gir
     And mother name alanına geçerli bir veri gir
     And geçerli bir password gir
-    And submit butonuna tıkla
+    And Vice dean submit Butonuna tıklar
     And you have entered an invalid value Valid values are MALE,FEMALE mesajı görülür
 
   @08 @SGNTC3
@@ -80,7 +80,7 @@ Feature: ViceDean ogrenci olusturabilmeli
     And father name alanına geçerli bir veri gir
     And mother name alanına geçerli bir veri gir
     And geçerli bir password gir
-    And submit butonuna tıkla
+    And Vice dean submit Butonuna tıklar
     Then öğrencinin kaydedilemediğini doğrula
 
   @08 @SGNTC4

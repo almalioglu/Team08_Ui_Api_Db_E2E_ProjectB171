@@ -15,7 +15,6 @@ public class US10_ViceDeandersprogramıoluşturabilmelidir {
     Faker fake= new Faker();
     @Given("Kullanici {string} sayfasina git")
     public void kullaniciSayfasinaGit(String pageUrl) {
-
         Driver.getDriver().get(ConfigReader.getProperty(pageUrl));
     }
 
@@ -82,10 +81,30 @@ public class US10_ViceDeandersprogramıoluşturabilmelidir {
     @Then("Submit butonuna tikla")
     public void submitButonunaTikla() {
         page.submitbutton.click();
+        ReusableMethods.bekle(2);
     }
 
     @Then("Created Lesson Program yazisini gor")
     public void createdLessonProgramYazisiniGor() {
     }
 
+    @Then("Chose Lessons da dersi bos birak")
+    public void choseLessonsDaDersiBosBirak() {
+
+    }
+
+    @Then("Choose Education Term i bos birak")
+    public void chooseEducationTermIBosBirak() {
+
+    }
+
+    @Then("Choose Day i bos birak")
+    public void chooseDayIBosBirak() {
+        
+    }
+
+    @Then("Full authentication is required to access this resource yazısını gör")
+    public void fullAuthenticationIsRequiredToAccessThisResourceYazısınıGör() {
+
+    }
 }

@@ -144,12 +144,7 @@ public class Us15_VicedeanStudentOlusturabilmeli {
 
     }
 
-    @And("submit butonuna tıkla")
-    public void submitButonunaTıkla() {
-        ReusableMethods.bekle(4);
-        js.executeScript("arguments[0].scrollIntoView(true);", homePage.SubmitbuttonSG);
-        homePage.SubmitbuttonSG.click();
-    }
+
 
 
     @And("Student saved successfully mesajını doğrula")
@@ -359,5 +354,12 @@ public class Us15_VicedeanStudentOlusturabilmeli {
     public void oneNumberMesajınınGöründüğünüDoğrula() {
         ReusableMethods.visibleWait(homePage.passwordonenumberAlertSG,3);
         assert homePage.passwordonenumberAlertSG.isDisplayed();
+    }
+
+    @And("Vice dean submit Butonuna tıklar")
+    public void viceDeanSubmitButonunaTıklar() {
+        ReusableMethods.bekle(4);
+        js.executeScript("arguments[0].scrollIntoView(true);", homePage.SubmitbuttonSG);
+       homePage.SubmitbuttonSG.click();
     }
 }
