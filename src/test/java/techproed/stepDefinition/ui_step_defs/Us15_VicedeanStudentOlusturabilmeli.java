@@ -212,6 +212,15 @@ public class Us15_VicedeanStudentOlusturabilmeli {
     public void requiredYazısınıDoğrulaUsername() {
         Assert.assertEquals("Required",homePage.usernameRequiredSG.getText());
     }
+    @And("Required yazısını doğrula\\(Fathername)")
+    public void requiredYazısınıDoğrulaFathername() {
+        Assert.assertEquals("Required",homePage.fathernameRequiredSG.getText());
+    }
+
+    @And("Required yazısını doğrula\\(Motherrname)")
+    public void requiredYazısınıDoğrulaMotherrname() {
+        Assert.assertEquals("Required",homePage.motnameRequiredSG.getText());
+    }
 
     @And("Password alanını sil")
     public void passwordAlanınıSil() {
