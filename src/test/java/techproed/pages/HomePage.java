@@ -228,27 +228,27 @@ public class HomePage {
 
 
   //Büşra-230
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  @FindBy(xpath = "//a[@class='header_link ms-2']") public WebElement loginButtonBI;
+  @FindBy(xpath = "//input[@id='username']") public WebElement loginUsernameButtonBI;
+  @FindBy(xpath = "//button[text()='Login']") public WebElement loginSubmitButtonBI;
+  @FindBy(xpath = "//button[text()='Menu']") public WebElement menuButtonBI;
+  @FindBy(xpath = "//a[text()='Teacher Management']") public WebElement teacherManagementButtonBI;
+  @FindBy(xpath = "//h5[text()='Add Teacher']") public WebElement addTeacherTitleBI;
+  @FindBy(xpath = "//div[@class=' css-hlgwow']") public WebElement addSelectLessonDdmBI;
+  @FindBy(xpath = "//input[@id='name']") public WebElement addNameBoxBI;
+  @FindBy(xpath = "//input[@id='surname']") public WebElement addSurnameBoxBI;
+  @FindBy(xpath = "//input[@id='birthPlace']") public WebElement addBirthPlaceBoxBI;
+  @FindBy(xpath = "//input[@id='email']") public WebElement addEmailBoxBI;
+  @FindBy(xpath = "//input[@id='phoneNumber']") public WebElement addPhoneBoxBI;
+  @FindBy(xpath = "//input[@id='isAdvisorTeacher']") public WebElement addAdvisorTeacherCheckBoxBI;
+  @FindBy(xpath = "//input[@value='FEMALE']") public WebElement addGenderFemaleRadioButtonBI;
+  @FindBy(xpath = "//input[@value='MALE']") public WebElement addGenderMaleRadioButtonBI;
+  @FindBy(xpath = "//input[@id='birthDay']") public WebElement addDateOfBirthBoxBI;
+  @FindBy(xpath = "//input[@id='ssn']") public WebElement addSsnBoxBI;
+  @FindBy(xpath = "//input[@id='username']") public WebElement addUsernameBoxBI;
+  @FindBy(xpath = "//input[@id='password']") public WebElement addPasswordBoxBI;
+  @FindBy(xpath = "//button[text()='Submit']") public WebElement addSubmitBoxBI;
+  @FindBy(xpath = "//div[text()='Teacher saved successfully']") public WebElement addTeacherSuccessfulTextBI;
 
 
 
@@ -350,11 +350,6 @@ public class HomePage {
 
     @FindBy(xpath = "//*[@id=\"lessonProgramId\"]") public List<WebElement> chooselessonbox;
     @FindBy(xpath = "//*[@id=\"6\"]/div[1]/div[2]") public WebElement lessonaddyazisi;
-
-
-
-
-
 
 
 
