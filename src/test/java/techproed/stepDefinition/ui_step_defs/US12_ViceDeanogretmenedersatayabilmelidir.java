@@ -11,6 +11,8 @@ public class US12_ViceDeanogretmenedersatayabilmelidir {
 
     @Then("Secilen ders Lesson Program Assignment da oldugunu dogrula")
     public void secilenDersLessonProgramAssignmentDaOldugunuDogrula() {
+        page.dersdogrulama.isDisplayed();
+
     }
 
     @Then("Lesson Program Assignment bolumunde Chose Teacher ı sec")
@@ -33,6 +35,17 @@ public class US12_ViceDeanogretmenedersatayabilmelidir {
     @Then("Lesson added to teacher yazısı gorulmeli")
     public void lessonAddedToTeacherYazısıGorulmeli() {
          //Assert.assertEquals("Lesson added to Teacher",page.lessonaddyazisi.toString());
+       // page.lessonaddyazisi.isDisplayed();
+
+    }
+
+    @Then("Lesson Program Assignment bolumunde Chose Teacher i boş birak")
+    public void lessonProgramAssignmentBolumundeChoseTeacherIBoşBirak() {
+    }
+
+    @Then("The given id must not be null yazısı gorulmeli")
+    public void theGivenIdMustNotBeNullYazısıGorulmeli() {
+        Assert.assertTrue(page.nullyazisi.getText().contains("The given id must not be null"));
 
     }
 }

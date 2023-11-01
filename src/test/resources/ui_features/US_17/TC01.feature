@@ -1,6 +1,7 @@
 @08 @US17
 Feature: Not bilgisi ekleme senaryosu
 
+  @08
   Scenario: Öğrenciye not bilgisi ekleme
   Given Kullanici "pageUrl" sayfasina git
   Then Teacher adina login yap
