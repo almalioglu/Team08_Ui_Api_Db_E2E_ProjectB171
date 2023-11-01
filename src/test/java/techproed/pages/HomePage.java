@@ -539,6 +539,7 @@ public WebElement birthPlaceKutusu;
 public WebElement menuButton;
 @FindBy(xpath = "(//*[@role='button'])[11]")
 public WebElement  contactGetAllButton;
+@FindBy(xpath = "//*[@class='fw-bold p-3 card-header']")public WebElement contactMassageButton;
 @FindBy(xpath = "//tbody//tr[1]/td[1]/span[1]")
 public WebElement nameColumn;
 @FindBy(xpath = "//tbody/tr[1]/td[2]/span[1]")
