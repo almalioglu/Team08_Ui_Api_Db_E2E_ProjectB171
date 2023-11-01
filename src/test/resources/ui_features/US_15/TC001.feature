@@ -23,7 +23,7 @@ Feature: ViceDean ogrenci olusturabilmeli
     And father name alanına geçerli bir veri gir
     And mother name alanına geçerli bir veri gir
     And geçerli bir password gir
-    And submit butonuna tıkla
+    * submit butonuna tıkla
     And Student saved successfully mesajını doğrula
     And Student Listte son sayfaya git
     Then Oluşturulan Studentin Student Number'inin otomatik geldiğini doğrula
