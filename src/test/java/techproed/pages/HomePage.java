@@ -339,12 +339,17 @@ public class HomePage {
     @FindBy(xpath = "//*[@id='stopTime']") public WebElement stopTimeddm;
     @FindBy(xpath = "(//button[@type='button'])[30]") public WebElement submitbutton;
     @FindBy(xpath = "//*[@id=\"teacherId\"]") public WebElement chooseTeacher;
-    @FindBy(xpath = "//*[@id=\"teacherId\"]") public WebElement chooseTeacher2;
-
+    @FindBy(xpath = "//*[@id=\"controlled-tab-example-tabpane-lessonProgram\"]/div[3]/div/div/div[1]/table/tbody/tr[247]")
+    public WebElement dersdogrulama;
     @FindBy(xpath = "//*[@id=\"controlled-tab-example-tabpane-lessonProgram\"]/div[3]/div/div/div[2]/div[2]/button")
     public WebElement assignmmentSubmit;
+    @FindBy(xpath = "//*[@id=\"controlled-tab-example-tabpane-lessonProgram\"]/div[2]/div[2]/div/div/table/thead")
+    public WebElement dersgorunurluk;
+    @FindBy(xpath = "//*[@id=\"11\"]/div[1]/div[2]/text()")
+    public WebElement nullyazisi;
+
     @FindBy(xpath = "//*[@id=\"lessonProgramId\"]") public List<WebElement> chooselessonbox;
-    @FindBy(xpath = "//*[@id=\"8\"]/div[1]/div[2]") public List<WebElement> lessonaddyazisi;
+    @FindBy(xpath = "//*[@id=\"6\"]/div[1]/div[2]") public WebElement lessonaddyazisi;
 
 
 
