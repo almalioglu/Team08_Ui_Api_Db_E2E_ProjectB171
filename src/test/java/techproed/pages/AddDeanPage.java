@@ -126,6 +126,10 @@ public class AddDeanPage {
     public WebElement surNameEnAzIkiKarakterIcermeliPopUp;
     @FindBy(xpath = "//div[@class='Toastify__toast-body']/div[.='Your birth place should be at least 2 characters']")
     public WebElement birthPlaceEnAzIkiKarakterIcermeliPopUp;
+    @FindBy(xpath = "(//label[@class='form-label'])[1]")
+    public WebElement addDeanGender;
 
+    @FindBy(xpath ="//a[text()='Logout']")
+    public WebElement logout;
 
 }

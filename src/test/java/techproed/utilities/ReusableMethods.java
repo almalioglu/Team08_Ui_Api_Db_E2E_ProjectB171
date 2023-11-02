@@ -167,7 +167,7 @@ public class ReusableMethods {
             e.printStackTrace();
         }
     }
-    public static void cleanByJs(WebElement element) {                      //zeliha
+    public static void cleanByJs(WebElement element) {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].value = '';", element);
     }
@@ -261,6 +261,7 @@ public class ReusableMethods {
 
 
 
+
     //İsmail
     public static void selectRandomlyFromDDM(WebElement ddmLocate){
 
@@ -308,5 +309,12 @@ public class ReusableMethods {
     }
     //Yukarıdaki method ; student info eklerken aynı bilgiler girildiyse hata veriyor kayıt yapmıyordu
     // burada o kontrol ediliyor eğer kayıt yapmamışsa öğrenci bilgilerini değiştiriyor tekrar kayıt yapmayı deniyor
+
+
+    public static String getValueByJSStringME(String id, String attributeName) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
+        return attribute_Value;
+    }
 
 }

@@ -41,6 +41,7 @@ public class US12_ViceDeanogretmenedersatayabilmelidir {
 
     @Then("Lesson Program Assignment bolumunde Chose Teacher i boş birak")
     public void lessonProgramAssignmentBolumundeChoseTeacherIBoşBirak() {
+
     }
 
     @Then("The given id must not be null yazısı gorulmeli")
