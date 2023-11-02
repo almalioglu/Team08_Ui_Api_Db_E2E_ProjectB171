@@ -230,6 +230,7 @@ public class HomePage {
   //Büşra-230
   @FindBy(xpath = "//a[@class='header_link ms-2']") public WebElement loginButtonBI;
   @FindBy(xpath = "//input[@id='username']") public WebElement loginUsernameButtonBI;
+  @FindBy(xpath = "//input[@id='password']") public WebElement loginPasswordButtonBI;
   @FindBy(xpath = "//button[text()='Login']") public WebElement loginSubmitButtonBI;
   @FindBy(xpath = "//button[text()='Menu']") public WebElement menuButtonBI;
   @FindBy(xpath = "//a[text()='Teacher Management']") public WebElement teacherManagementButtonBI;
@@ -286,7 +287,6 @@ public class HomePage {
  @FindBy(xpath = "(//button[text()='Submit'])[2]") public WebElement editListSubmitBI;
  @FindBy(xpath = "//div[text()='Teacher updated Successful']") public WebElement editTeacherSuccessfulTextBI;
  @FindBy(xpath = "(//button[@aria-label='Close'])[3]") public WebElement editTeacherCloseBI;
-
 
 
 
