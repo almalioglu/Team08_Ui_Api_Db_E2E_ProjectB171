@@ -7,7 +7,7 @@ Feature:  US07 | Dean Mesajlari Goruntuler
     And Dean kullanici bilgileri ile sisteme giris yapar
 
 
-
+  @ayseebrar
   Scenario:Dean, kullanıcıların gönderdiği mesajları görebilmelidir.
     Given  Kullanici menu butonuna tiklar
     Then Contact get all secenegine tiklar
