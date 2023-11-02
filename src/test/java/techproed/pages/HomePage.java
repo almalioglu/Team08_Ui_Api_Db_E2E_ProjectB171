@@ -249,43 +249,43 @@ public class HomePage {
   @FindBy(xpath = "//input[@id='password']") public WebElement addPasswordBoxBI;
   @FindBy(xpath = "//button[text()='Submit']") public WebElement addSubmitBoxBI;
   @FindBy(xpath = "//div[text()='Teacher saved successfully']") public WebElement addTeacherSuccessfulTextBI;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  @FindBy(xpath = "//div[@role='alert']") public WebElement noChoiceLessonAlertTextBI;
+  @FindBy(xpath = "(//div[text()='Required'])[1]") public WebElement requiredNameAlertTextBI;
+  @FindBy(xpath = "(//div[text()='Required'])[2]") public WebElement requiredSurnameAlertTextBI;
+  @FindBy(xpath = "(//div[text()='Required'])[3]") public WebElement requiredBirthPlaceAlertTextBI;
+  @FindBy(xpath = "(//div[text()='Required'])[4]") public WebElement requiredEmailAlertTextBI;
+  @FindBy(xpath = "(//div[text()='Required'])[5]") public WebElement requiredPhoneAlertTextBI;
+  @FindBy(xpath = "//div[text()='You have entered an invalid value. Valid values are: MALE, FEMALE']") public WebElement requiredGenderAlertTextBI;
+ @FindBy(xpath = "(//div[text()='Required'])[6]") public WebElement requiredDateOfBirthAlertTextBI;
+ @FindBy(xpath = "(//div[text()='Required'])[7]") public WebElement requiredSsnAlertTextBI;
+ @FindBy(xpath = "//div[text()='Minimum 11 character (XXX-XX-XXXX)']") public WebElement requiredSsnMinimumCharacterAlertTextBI;
+ @FindBy(xpath = "(//div[text()='Required'])[8]") public WebElement requiredUsernameAlertTextBI;
+ @FindBy(xpath = "//div[text()='Enter your password']") public WebElement requiredPasswordAlertTextBI;
+ @FindBy(xpath = "//div[text()='At least 8 characters']") public WebElement requiredPasswordMinimumCharacterAlertTextBI;
+ @FindBy(xpath = "//div[text()='One lowercase character']") public WebElement requiredPasswordLowerCharacterAlertTextBI;
+ @FindBy(xpath = "//div[text()='One uppercase character']") public WebElement requiredPasswordUpperCharacterAlertTextBI;
+ @FindBy(xpath = "//h5[text()='Teacher List']") public WebElement teacherListTitleBI;
+ @FindBy(xpath = "//th[text()='Name']") public WebElement nameTeacherListTitleBI;
+ @FindBy(xpath = "//th[text()='Phone Number']") public WebElement phoneNumberTeacherListTitleBI;
+ @FindBy(xpath = "(//th[text()='Ssn'])[1]") public WebElement ssnTeacherListTitleBI;
+ @FindBy(xpath = "//th[text()='User Name']") public WebElement usernameTeacherListTitleBI;
+ @FindBy(xpath = "(//a[@class='page-link'])[4]") public WebElement pageNextEndButtonBI;
+ @FindBy(xpath = "(//i[@class='fa-solid fa-pencil'])[20]") public WebElement editButtonListEndBI;
+ @FindBy(xpath = "//div[text()='Select lesson']") public WebElement editListChooseLessonsBI;
+ @FindBy(xpath = "(//input[@id='name'])[2]") public WebElement editListNameBI;
+ @FindBy(xpath = "(//input[@id='surname'])[2]") public WebElement editListSurnameBI;
+ @FindBy(xpath = "(//input[@id='birthPlace'])[2]") public WebElement editListBirthPlaceBI;
+ @FindBy(xpath = "(//input[@id='email'])[2]") public WebElement editListEmailBI;
+ @FindBy(xpath = "(//input[@id='phoneNumber'])[2]") public WebElement editListPhoneBI;
+ @FindBy(xpath = "(//input[@id='ssn'])[2]") public WebElement editListSsnBI;
+ @FindBy(xpath = "(//input[@type='radio'])[3]") public WebElement editListFemaleRadioBI;
+ @FindBy(xpath = "(//input[@type='radio'])[4]") public WebElement editListMaleRadioBI;
+ @FindBy(xpath = "(//input[@id='birthDay'])[2]") public WebElement editListDateOfBirthBI;
+ @FindBy(xpath = "(//input[@id='username'])[2]") public WebElement editListUsernameBI;
+ @FindBy(xpath = "(//input[@id='password'])[2]") public WebElement editListPasswordBI;
+ @FindBy(xpath = "(//button[text()='Submit'])[2]") public WebElement editListSubmitBI;
+ @FindBy(xpath = "//div[text()='Teacher updated Successful']") public WebElement editTeacherSuccessfulTextBI;
+ @FindBy(xpath = "(//button[@aria-label='Close'])[3]") public WebElement editTeacherCloseBI;
 
 
 
