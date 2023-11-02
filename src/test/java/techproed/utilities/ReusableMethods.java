@@ -164,7 +164,7 @@ public class ReusableMethods {
             e.printStackTrace();
         }
     }
-    public static void cleanByJs(WebElement element) {                      //zeliha
+    public static void cleanByJs(WebElement element) {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].value = '';", element);
     }
@@ -255,4 +255,10 @@ public class ReusableMethods {
         return password.toString();
     }
 
+
+    public static String getValueByJSStringME(String id, String attributeName) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
+        return attribute_Value;
+    }
 }
