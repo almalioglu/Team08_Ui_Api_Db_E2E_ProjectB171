@@ -43,8 +43,10 @@ public class HomePage {
     @FindBy(xpath = "//*[text()='At least 8 characters']") public WebElement adminDontSavedVerifyPwdSekizKarakterME;
     @FindBy(xpath = "//*[text()='Please enter valid phone number']") public WebElement adminDontSavedVerifyHataliTelefonME;
     @FindBy(xpath = "(//tbody)[1]//tr//td[position() >1]") public List<WebElement> tumDerslerListesiPositionME;
-
-
+    @FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']") public WebElement studentMenuButtonME;
+    @FindBy(xpath = "//*[text()='Grades and Announcements']") public WebElement gradesButtonME;
+    @FindBy(xpath = "(//tbody)[1]//tr") public List<WebElement> studentInfoListME;
+    @FindBy(xpath = "(//tbody)[2]//tr") public List<WebElement> studentMeetListME;
 
 
 
@@ -543,7 +545,7 @@ public class HomePage {
 @FindBy(xpath = "//*[text()='Minimum 12 character (XXX-XXX-XXXX)']")public WebElement Phone12KarakterEksikUyarisi;
 @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")  public WebElement ssn11KarakterEksikUyarisi;
 @FindBy(xpath = "(//*[@class='invalid-feedback'])[8]")    public WebElement passwordGirUyarisi;
-@FindBy(xpath = "")
+
 //US07
 @FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
 public WebElement menuButton;
