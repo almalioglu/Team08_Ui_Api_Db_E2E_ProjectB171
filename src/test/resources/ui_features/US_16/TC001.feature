@@ -1,4 +1,4 @@
-@08 @saadet1
+@08 @SGTC16
 Feature:Vice Dean, kullanıcıların gönderdiği mesajları görebilmelidir.
 
   Scenario:Vice Dean kullanıcıların gönderdiği mesajları görebilmelidir
