@@ -107,4 +107,25 @@ public class US10_ViceDeandersprogramıoluşturabilmelidir {
     public void fullAuthenticationIsRequiredToAccessThisResourceYazısınıGör() {
 
     }
+
+
+
+
+    @Then("Dean Logout butonuna tikla")
+    public void deanLogoutButonunaTikla() {
+        ReusableMethods.bekle(3);
+        page.logoutbutton2.click();
+        ReusableMethods.visibleWait(page.MenuTE,3);
+        page.yesbutton.click();
+    }
+
+    @Then("ViceDean Logout butonuna tiklar")
+    public void vicedeanLogoutButonunaTiklar() {
+        ReusableMethods.bekle(3);
+        page.logouttbutton3.click();
+        ReusableMethods.visibleWait(page.MenuTE,3);
+        page.yesbutton.click();
+
+
+    }
 }

@@ -22,7 +22,7 @@ public class US21_OgrenciDersleriGorebilmeli {
     int ikinciSecim;
     @And("Ogrenci name ve password girilir")
     public void ogrenciNameVePasswordGirilir() {
-        page.loginUserName.sendKeys(ConfigReader.getProperty("ogrenciUsername"), Keys.TAB, ConfigReader.getProperty("ogrenciPassword"),Keys.TAB,Keys.ENTER);
+        page.loginUserName.sendKeys(ConfigReader.getProperty("Student"), Keys.TAB, ConfigReader.getProperty("Password"),Keys.TAB,Keys.ENTER);
     }
 
 
