@@ -427,11 +427,6 @@ public class HomePage {
 
 
 
-
-
-
-
-
     //Saadet-430
     @FindBy(xpath = "//*[@class='header_link me-2']") public WebElement registerButtonSG;
     @FindBy(xpath = "//*[@id='username']") public WebElement loginUserNameSG;
@@ -527,18 +522,36 @@ public class HomePage {
 
 
 
-
-
-
-
-
-    //Ayşe-530
-@FindBy(xpath = "//*[@id='name']")
-public WebElement nameKutusu;
-@FindBy(xpath = "//*[@id='surname']")
-public WebElement surnameKutusu;
-@FindBy(xpath = "//*[@id='birthPlace']")
-public WebElement birthPlaceKutusu;
+    //ayseebrar_530
+    @FindBy(xpath = "//*[@id='name']")public WebElement nameKutusu_aeo;
+    @FindBy(xpath = "//*[@id='surname']")public WebElement surnameKutusu_aeo;
+@FindBy(xpath = "//*[@type='button']")public WebElement menuButton_aeo;
+@FindBy(xpath = "//h3")public WebElement adminManagementDogrulama_aeo;
+@FindBy(xpath = "(//*[@role='button'])[11]")public WebElement deanManagementMenuButton_aeo;
+@FindBy(xpath = "//*[text()='Add Dean']")public WebElement deanListYazisi_aeo;
+@FindBy(xpath = "//tbody/tr[1]/td[6]/span[1]/button[1]")public WebElement deanteam08Edit_aeo;
+@FindBy(xpath = "//*[@id='name']")public WebElement viceDeanName_aeo;
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[1]")public WebElement viceDeanrequiredName_aeo;
+@FindBy(xpath = "//*[@id='surname']")public WebElement viceDeanSurname_aeo;
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[2]")public WebElement viceDeanRequiredSurname_aeo;
+@FindBy(xpath = "//*[@placeholder='Birth Place']")public WebElement viceDeanBirthPlace_aeo;
+@FindBy(xpath = "(//*[@class='invalid-feedback'])[3]")public WebElement viceDeanRequiredBirthPlace_aeo;
+@FindBy(xpath ="//*[@value='FEMALE']" )  public WebElement femaleRadioButton_aeo;
+@FindBy(xpath = "//*[@value='MALE']")  public WebElement maleRadioButton_aeo;
+@FindBy(xpath = "//*[@type='date']")public WebElement dateOfBirth_aeo;
+@FindBy(xpath = "(//*[@class='invalid-feedback'])[4]")public WebElement requiredDateOfBirth_aeo;
+@FindBy(xpath = "//*[@id='phoneNumber']")public WebElement viceDeanPhoneNumber_aeo;
+@FindBy(xpath = "(//*[@class='invalid-feedback'])[5]")public WebElement requiredPhoneNumber_aeo;
+@FindBy(xpath = "//*[@id='ssn']")public WebElement viceDeanSsnNo_aeo;
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[6]")public WebElement requiredSsn_aeo;
+    @FindBy(xpath = "//*[@id='username']")public WebElement viceDeanUsername_aeo;
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[7]")public WebElement requiredUsername_aeo;
+@FindBy(xpath = "//*[@id='password']")public WebElement viceDeanPassword_aeo;
+@FindBy(xpath = "//*[text()='Submit']")public WebElement viceDeanSubmitButton_aeo;
+@FindBy(xpath = "//*[text()='Minimum 12 character (XXX-XXX-XXXX)']")public WebElement Phone12KarakterEksikUyarisi;
+@FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")  public WebElement ssn11KarakterEksikUyarisi;
+@FindBy(xpath = "(//*[@class='invalid-feedback'])[8]")    public WebElement passwordGirUyarisi;
+@FindBy(xpath = "")
 //US07
 @FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
 public WebElement menuButton;
@@ -555,24 +568,6 @@ public WebElement dateColumn;
 public WebElement subjectColumn;
 @FindBy(xpath = "//tbody/tr[1]/td[5]/span[1]")
 public WebElement messageColumn;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
