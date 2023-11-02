@@ -651,8 +651,13 @@ public WebElement messageColumn;
     @FindBy(xpath = "//*[text()='Ssn']")public WebElement SsnColumnEB;
     @FindBy(xpath = "//*[text()='User Name']")public WebElement UserNameColumnEB;
     @FindBy(xpath = "(//*[@class='btn btn-danger'])[1]")public WebElement guestUserDeleteButonuEB;
-    @FindBy(xpath = "(//*[@type='button'])[6]")public WebElement copButonuEB;
-
+    @FindBy(xpath = "(//*[@type='button'])[9]")public WebElement copButonuEB;
+    @FindBy(xpath = "//*[text()='Contact']")public WebElement contactButonEB;
+    @FindBy(xpath = "//*[@placeholder='Name']")public WebElement contactNameButonEB;
+    @FindBy(xpath = "//*[@placeholder='Email']")public WebElement contactEmailButonEB;
+    @FindBy(xpath = "//*[@placeholder='Subject']")public WebElement contactSubjectButonEB;
+    @FindBy(xpath = "//*[@placeholder='Message']")public WebElement contactMessageButonEB;
+    @FindBy(xpath = "//*[text()='Send Message']")public WebElement SendMessageButonEB;
 
 
 
