@@ -34,15 +34,15 @@ public class HomePage {
     @FindBy(xpath = "(//body)[1]//tr//td[6]") public List<WebElement> stopTimeListesiME;
     @FindBy(xpath = "//*[@type='checkbox']") public List<WebElement> dersSecmeCheckboxME;
     @FindBy(xpath = "//*[text()='Submit']") public WebElement dersSecmeSubmitME;
-    @FindBy(xpath = "(//tbody)[1]") public List<WebElement> tumDerslerListesiME;
-    @FindBy(xpath = "(//tbody)[2]") public List<WebElement> secilenDerslerListesiME;
+    @FindBy(xpath = "(//tbody)[1]//tr") public List<WebElement> tumDerslerListesiME;
+    @FindBy(xpath = "(//tbody)[2]//tr") public List<WebElement> secilenDerslerListesiME;
     @FindBy(xpath = "//*[@id='name']") public WebElement adminNameTextBoxME;
     @FindBy(xpath = "//*[@role='alert']") public WebElement adminSavedVerifyME;
     @FindBy(xpath = "//*[text()='Required']") public WebElement adminDontSavedVerifyME;
-
-
-
-
+    @FindBy(xpath = "//*[text()='Enter your password']") public WebElement adminDontSavedVerifyPwdME;
+    @FindBy(xpath = "//*[text()='At least 8 characters']") public WebElement adminDontSavedVerifyPwdSekizKarakterME;
+    @FindBy(xpath = "//*[text()='Please enter valid phone number']") public WebElement adminDontSavedVerifyHataliTelefonME;
+    @FindBy(xpath = "(//tbody)[1]//tr//td[position() >1]") public List<WebElement> tumDerslerListesiPositionME;
 
 
 
@@ -902,6 +902,23 @@ public WebElement messageColumn;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //Taha-930
     @FindBy(xpath = "//*[@id='root']/div/header/div[1]/div/div/div[2]/a[2]")
     public WebElement LoginTE;
@@ -936,12 +953,20 @@ public WebElement messageColumn;
     @FindBy(xpath = "  (//*[@class='fw-semibold btn btn-primary btn-lg'])[2]")
     public WebElement SubmitButtonTE;////*[@id='6']
 
-    @FindBy(xpath = "//*[@id='6']")
+    @FindBy(xpath = "//*[@class='Toastify__toast-body']")
     public WebElement LessonCreatedyazisi;
 
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[4]")
+    public WebElement RequiredyazisiTE;
 
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[5]")
+    public WebElement RequiredyazisiCreditScoreTE;
 
+    @FindBy(xpath = "//*[@id=\"controlled-tab-example-tabpane-lessonsList\"]/div[2]/div[2]/div/div/div[2]/ul/li[5]/a")
+    public WebElement SonSayfaTE;
 
+    @FindBy(xpath = "//*[@class='btn btn-danger']")
+    public WebElement silmeTE;
 
 
 

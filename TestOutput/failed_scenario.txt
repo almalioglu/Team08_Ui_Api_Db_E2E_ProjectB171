@@ -1,16 +1,3 @@
 
-file:src/test/resources/ui_features/US_17/TC01.feature:6
-file:src/test/resources/ui_features/US_11/TestCase01.feature:3:12:22
-file:src/test/resources/ui_features/US_02/TC_01.feature:7
-file:src/test/resources/ui_features/US_21/TC01.feature:11:20
-file:src/test/resources/ui_features/US_22/TC_01.feature:11:17:23:29:35:40
-file:src/test/resources/ui_features/US_10/TestCase01.feature:4:19:35:51
-file:src/test/resources/ui_features/US_12/TestCase01.feature:3:23
-file:src/test/resources/ui_features/US_03/TC_01.feature:15
-file:src/test/resources/ui_features/US_07/TestCase01.feature:11
-file:src/test/resources/ui_features/US_15/TC001.feature:11:32:49:68:87:95:100:105:109
-file:src/test/resources/ui_features/US_04/TC_01.feature:5:20:34:49:63:78:92:105
-file:src/test/resources/ui_features/US_01/TC01.feature:19:52:61:70
-file:src/test/resources/ui_features/US_16/TC001.feature:4
-file:src/test/resources/ui_features/US_17/TCler.feature:3
+
 
