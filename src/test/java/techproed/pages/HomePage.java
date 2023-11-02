@@ -34,15 +34,15 @@ public class HomePage {
     @FindBy(xpath = "(//body)[1]//tr//td[6]") public List<WebElement> stopTimeListesiME;
     @FindBy(xpath = "//*[@type='checkbox']") public List<WebElement> dersSecmeCheckboxME;
     @FindBy(xpath = "//*[text()='Submit']") public WebElement dersSecmeSubmitME;
-    @FindBy(xpath = "(//tbody)[1]") public List<WebElement> tumDerslerListesiME;
-    @FindBy(xpath = "(//tbody)[2]") public List<WebElement> secilenDerslerListesiME;
+    @FindBy(xpath = "(//tbody)[1]//tr") public List<WebElement> tumDerslerListesiME;
+    @FindBy(xpath = "(//tbody)[2]//tr") public List<WebElement> secilenDerslerListesiME;
     @FindBy(xpath = "//*[@id='name']") public WebElement adminNameTextBoxME;
     @FindBy(xpath = "//*[@role='alert']") public WebElement adminSavedVerifyME;
     @FindBy(xpath = "//*[text()='Required']") public WebElement adminDontSavedVerifyME;
-
-
-
-
+    @FindBy(xpath = "//*[text()='Enter your password']") public WebElement adminDontSavedVerifyPwdME;
+    @FindBy(xpath = "//*[text()='At least 8 characters']") public WebElement adminDontSavedVerifyPwdSekizKarakterME;
+    @FindBy(xpath = "//*[text()='Please enter valid phone number']") public WebElement adminDontSavedVerifyHataliTelefonME;
+    @FindBy(xpath = "(//tbody)[1]//tr//td[position() >1]") public List<WebElement> tumDerslerListesiPositionME;
 
 
 

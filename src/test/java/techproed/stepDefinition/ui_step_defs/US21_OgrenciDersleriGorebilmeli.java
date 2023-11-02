@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import static org.junit.Assert.assertTrue;
+
 public class US21_OgrenciDersleriGorebilmeli {
     HomePage page =new HomePage();
     Random random=new Random();
@@ -28,22 +30,22 @@ public class US21_OgrenciDersleriGorebilmeli {
 
     @Given("Choose Lesson Table'da Teacher sutununda ogretmen bilgilerinin goruldugu dogrulanır")
     public void chooseLessonTableDaTeacherSutunundaOgretmenBilgilerininGorulduguDogrulanır() {
-        Assert.assertTrue(page.ogretmenListesiME.size() > 0);
+        assertTrue(page.ogretmenListesiME.size() > 0);
     }
 
     @And("Lesson Tableda Day sutununda ders gunlerinin goruldugu dogrulanır")
     public void lessonTabledaDaySutunundaDersGunlerininGorulduguDogrulanır() {
-        Assert.assertTrue(page.gunListesiME.size() > 0);
+        assertTrue(page.gunListesiME.size() > 0);
     }
 
     @And("Lesson Tableda Start Time sutununda baslangic saatinin goruldugu dogrulanir")
     public void lessonTabledaStartTimeSutunundaBaslangicSaatininGorulduguDogrulanir() {
-        Assert.assertTrue(page.startTimeListesiME.size() > 0);
+        assertTrue(page.startTimeListesiME.size() > 0);
     }
 
     @And("Lesson Tableda Stop Time sutununda baslangic saatinin goruldugu dogrulanir")
     public void lessonTabledaStopTimeSutunundaBaslangicSaatininGorulduguDogrulanir() {
-        Assert.assertTrue(page.stopTimeListesiME.size() > 0);
+        assertTrue(page.stopTimeListesiME.size() > 0);
     }
 
     @Given("Acilan Chooese Lesson tablosundan random iki ders secilir")
@@ -62,33 +64,31 @@ public class US21_OgrenciDersleriGorebilmeli {
 
     @And("Submit butonuna tıklanir")
     public void submitButonunaTıklanir() {
-    //page.dersSecmeSubmitME.click();
+    ReusableMethods.click(page.dersSecmeSubmitME);
     }
 
     @Then("Derslerin seçildigi dogrulanir")
     public void derslerinSeçildigiDogrulanir() {
-//        System.out.println(page.dersSecmeCheckboxME.get(ilkSecim).getText());
-//        System.out.println(page.dersSecmeCheckboxME.get(ikinciSecim).getText());
-//        System.out.println(page.tumDerslerListesiME.getText());
-        //page.tumDerslerListesiME.forEach(t-> System.out.println(t.getText()));
-        System.out.println("**********************************");
-        List<Object> dersList=new ArrayList<>();
-
+        List<String> dersList=new ArrayList<>();
+        List<String> secilenDersler=new ArrayList<>();
         TumDerslerList.addAll(page.tumDerslerListesiME);
 
-        TumDerslerList.forEach(t-> System.out.println(t.getText()));
 
-//        for (List<WebElement> w: TumDerslerList) {
-//
-//            dersList.add(w.getText());
-//            System.out.println("foreach"+ w.getText());
-//
-//        }
         for (int i = 0; i < TumDerslerList.size()-1; i++) {
             dersList.add(TumDerslerList.get(i).getText());
-            System.out.println("Deneme"+TumDerslerList.get(i).getText());
         }
-        System.out.println("derslist"+dersList);
+        for (int i = 0; i < page.secilenDerslerListesiME.size()-1; i++) {
+            secilenDersler.add(page.secilenDerslerListesiME.get(i).getText());
+            System.out.println(secilenDersler.get(i));
+        }
+
+//        for (String w:secilenDersler) {
+//            if (dersList.get(ilkSecim).contains(w)){
+//                System.out.println("içeriyor"+w);
+//            } else if (dersList.get(ikinciSecim).contains(w)) {
+//                System.out.println("içeriyor2"+w);
+//            }
+//        }
 
     }
 }
