@@ -141,14 +141,14 @@ public class HomePage {
     @FindBy(xpath = "(//button[@class='text-dark btn btn-outline-info'])[1]") public WebElement edit1_is;
     @FindBy(xpath = "(//i[@class='fa-solid fa-trash'])[1]") public WebElement delete1_is;
     @FindBy(xpath = "//div[text()='Student Info saved Successfully']") public  WebElement studentInfoSavedYazisi_is;
-
-   
-  
-
-
-
-
-
+    @FindBy(xpath = "//*[@id='lessonId']") public WebElement chooseLessonDDMenu_is;
+    @FindBy(xpath = "//*[@id='studentId']") public WebElement chooseStudentDDMenu_is;
+    @FindBy(xpath = "//*[@id='educationTermId']") public WebElement chooseEdTermDDMenu_is;
+    @FindBy(xpath = "//*[@id='absentee']") public WebElement absenteeNote_is;
+    @FindBy(xpath = "//*[@class='fw-semibold btn btn-primary btn-lg']") public WebElement studentNoteSubmitButton_is;
+    @FindBy(xpath = "(//*[@class='Toastify__toast-body'])[1]") public WebElement infoAlert_is;
+    @FindBy(xpath = "//table//tr") public List<WebElement> tableRows_is;
+    @FindBy(xpath = "//*[.='Required']") public WebElement requiredInfo_is;
 
 
 

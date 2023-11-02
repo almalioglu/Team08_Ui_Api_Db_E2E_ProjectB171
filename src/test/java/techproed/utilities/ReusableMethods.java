@@ -5,12 +5,15 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import techproed.pages.HomePage;
 
 
 import java.security.SecureRandom;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
 
 public class ReusableMethods {
 
@@ -254,5 +257,56 @@ public class ReusableMethods {
         }
         return password.toString();
     }
+
+
+
+
+    //İsmail
+    public static void selectRandomlyFromDDM(WebElement ddmLocate){
+
+        Select select = new Select(ddmLocate);
+
+        List<String> optionsList = select.getOptions().stream()
+                .map(WebElement::getText)
+                .filter(text -> !text.contains("Choose"))
+                .collect(Collectors.toList());
+
+        ReusableMethods.ddmVisibleText(ddmLocate, optionsList.get(new Random().nextInt(optionsList.size())));
+
+    }
+    //Yukarıdaki metod ; locate’ini yazdığımız ddm’den rastgele bir seçenek seçiyor
+
+    public static String getOptionsVisibleTextFromDDM(WebElement ddmLocate) {
+
+        Select select = new Select(ddmLocate);
+
+        List<String> optionsList = select.getOptions().stream()
+                .map(WebElement::getText)
+                .filter(text -> !text.contains("Choose"))
+                .collect(Collectors.toList());
+
+        return optionsList.get(new Random().nextInt(optionsList.size()));
+    }
+    //Yukarıdaki metdhod ; bir web sayfasındaki bir açılır menüdeki seçeneklerin rastgele birini seçmek için kullanılır.
+    // Kod, bir WebElement öğesini parametre olarak alır ve bu öğenin içindeki açılır menüyü seçer.
+    // Daha sonra, seçeneklerin metinlerini alır, “Choose” kelimesini içerenleri filtreler ve kalanları rastgele bir şekilde seçer.
+    // Son olarak, seçilen metni döndürür.
+
+    public static void addStudentInfoAgain() {
+        HomePage usPage = new HomePage();
+
+        ReusableMethods.bekle(1);
+        ReusableMethods.ddmVisibleText(usPage.chooseLessonDDMenu_is, ReusableMethods.getOptionsVisibleTextFromDDM(usPage.chooseLessonDDMenu_is));
+        ReusableMethods.bekle(1);
+        ReusableMethods.ddmVisibleText(usPage.chooseStudentDDMenu_is, ReusableMethods.getOptionsVisibleTextFromDDM(usPage.chooseStudentDDMenu_is));
+
+        usPage.studentNoteSubmitButton_is.click();
+        ReusableMethods.bekle(2);
+        if (usPage.infoAlert_is.getText().contains("Error: Student Info with")){
+            ReusableMethods.addStudentInfoAgain();
+        }
+    }
+    //Yukarıdaki method ; student info eklerken aynı bilgiler girildiyse hata veriyor kayıt yapmıyordu
+    // burada o kontrol ediliyor eğer kayıt yapmamışsa öğrenci bilgilerini değiştiriyor tekrar kayıt yapmayı deniyor
 
 }
