@@ -422,18 +422,18 @@ public class HomePage {
 
 
 
-   
-  
-  
-  
-  
+
+
+
+
+
   //Saadet-430
     @FindBy(xpath = "//*[@id='username']") public WebElement loginUserNameSG;
     @FindBy(xpath = "//*[@id='password']") public WebElement loginPasswordSG;
     @FindBy(xpath = "(//*[text()='Login'])[2]") public WebElement loginEkraniLoginButtonSG;
-    @FindBy(xpath = "(//*[@id='name']") public WebElement registerNameTextSG;
-    @FindBy(xpath = "//*[@id='surname']") public WebElement registerSurnameTextSG;
+
     @FindBy (xpath = "//*[@class='fa fa-lock']") public WebElement girisloginButtonSG;
+
     @FindBy(xpath = "(//*[@type='button'])[1]") public WebElement menuButtonSG;
     @FindBy (xpath = "(//*[text ()='Student Management'])") public WebElement studentManagementSG;
     @FindBy (xpath = "//*[@id='advisorTeacherId']") public WebElement contactTeacherSG;
@@ -479,6 +479,9 @@ public class HomePage {
     @FindBy (xpath = "//*[text()='One lowercase character']") public WebElement passwordoneLowerAlertSG;
     @FindBy (xpath = "//*[text()='One number']") public WebElement passwordonenumberAlertSG;
     @FindBy (xpath = "//*[@class='d-flex justify-content-start ps-5 col']") public WebElement PagebuttonSG;
+    @FindBy (xpath = "(//*[@type='button'])[5]") public WebElement adminsubmitButtonSG;
+    @FindBy ( xpath = "(//*[@class='nav-link'])[11]") public WebElement adminstudentManagementSG;
+    @FindBy (xpath = "//*[@class='form-select']") public WebElement teacherseçmeButonuSG;
 
 
 
@@ -526,7 +529,6 @@ public class HomePage {
 
 
 
-  
     //ayseebrar_530
     @FindBy(xpath = "(//*[text()='Vice Dean Management'])[2]")public WebElement viceDeanManagementHomePage_aeo;
     @FindBy(xpath = "//*[@id='name']")public WebElement nameKutusu_aeo;
@@ -617,16 +619,16 @@ public WebElement messageColumn;
 
 
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-   
+
+
+
+
+
+
+
+
+
+
    //Elif-630
   @FindBy(xpath = "(//*[@type='button'])[3]") public WebElement registerbutonEB;
   @FindBy(xpath ="//*[text()='Guest User registered.']" ) public WebElement guestUserRegisteredEB;//"//div[@role='alert']"
