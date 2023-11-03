@@ -428,6 +428,7 @@ public class HomePage {
   
   
   //Saadet-430
+    @FindBy(xpath = "//*[@class='header_link me-2']") public WebElement registerButtonSG;
     @FindBy(xpath = "//*[@id='username']") public WebElement loginUserNameSG;
     @FindBy(xpath = "//*[@id='password']") public WebElement loginPasswordSG;
     @FindBy(xpath = "(//*[text()='Login'])[2]") public WebElement loginEkraniLoginButtonSG;
@@ -526,7 +527,6 @@ public class HomePage {
 
 
 
-  
     //ayseebrar_530
     @FindBy(xpath = "(//*[text()='Vice Dean Management'])[2]")public WebElement viceDeanManagementHomePage_aeo;
     @FindBy(xpath = "//*[@id='name']")public WebElement nameKutusu_aeo;
@@ -558,9 +558,7 @@ public class HomePage {
 @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")  public WebElement ssn11KarakterEksikUyarisi;
 @FindBy(xpath = "(//*[@class='invalid-feedback'])[8]")    public WebElement passwordGirUyarisi;
 
-
-
-
+  //07
 @FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
 public WebElement menuButton;
 @FindBy(xpath = "(//*[@role='button'])[11]")
@@ -627,7 +625,9 @@ public WebElement messageColumn;
   
   
    
-   //Elif-630
+  
+  
+  //Elif-630
   @FindBy(xpath = "(//*[@type='button'])[3]") public WebElement registerbutonEB;
   @FindBy(xpath ="//*[text()='Guest User registered.']" ) public WebElement guestUserRegisteredEB;//"//div[@role='alert']"
  @FindBy(xpath = "//*[@id='phoneNumber']") public  WebElement phoneNumberEB;
@@ -727,39 +727,39 @@ public WebElement messageColumn;
 
 
 
- //MeryemAkbayır-730
+    //MeryemAkbayır-730
+    @FindBy(xpath = "//th[text()='Name']")
+    public WebElement nameTittleDL;
 
+    @FindBy(xpath = "//th[text()='Gender']")
+    public WebElement genderTittleDL;
 
+    @FindBy(xpath = "//th[text()='Phone Number']")
+    public WebElement phoneNumberTittleDL;
 
+    @FindBy(xpath = "//th[text()='Ssn']")
+    public WebElement ssnTittleDL;
 
+    @FindBy(xpath = "//th[text()='User Name']")
+    public WebElement userNameTittleDL;
 
+    @FindBy(xpath = "(//button[@class='text-dark btn btn-outline-info'])[1]")
+    public WebElement editButtonDL;
 
+    @FindBy(xpath = "//h5[text()='Dean List']")
+    public WebElement deanListTittleDL;
 
+    @FindBy(xpath = "//div[text()='Dean Saved']")
+    public WebElement deanSavedPopUpMessageDL;
 
+   /* @FindBy(xpath = "")
+    public WebElement ;
 
+    @FindBy(xpath = "")
+    public WebElement ;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "")
+    public WebElement ;*/
 
 
 
