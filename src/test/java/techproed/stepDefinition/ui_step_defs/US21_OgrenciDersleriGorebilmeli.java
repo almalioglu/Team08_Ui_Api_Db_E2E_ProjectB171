@@ -19,12 +19,12 @@ import static org.junit.Assert.assertTrue;
 public class US21_OgrenciDersleriGorebilmeli {
     HomePage page =new HomePage();
     Random random=new Random();
-    List<WebElement> TumDerslerList=new ArrayList<>();
+    int dersEklendiDogrulama;
     int ilkSecim;
     int ikinciSecim;
     @And("Ogrenci name ve password girilir")
     public void ogrenciNameVePasswordGirilir() {
-        page.loginUserName.sendKeys(ConfigReader.getProperty("Student"), Keys.TAB, ConfigReader.getProperty("Password"),Keys.TAB,Keys.ENTER);
+        page.loginUserName.sendKeys(ConfigReader.getProperty("ogrenciUsername"), Keys.TAB, ConfigReader.getProperty("ogrenciPassword"),Keys.TAB,Keys.ENTER);
     }
 
 
@@ -48,19 +48,20 @@ public class US21_OgrenciDersleriGorebilmeli {
         assertTrue(page.stopTimeListesiME.size() > 0);
     }
 
-    @Given("Acilan Chooese Lesson tablosundan random iki ders secilir")
-    public void acilanChooeseLessonTablosundanRandomIkiDersSecilir() {
-
-
-            ilkSecim =random.nextInt(page.dersSecmeCheckboxME.size()-1);
-            ikinciSecim= random.nextInt(page.dersSecmeCheckboxME.size()-1);
-            ReusableMethods.click(page.dersSecmeCheckboxME.get(ilkSecim));
-            ReusableMethods.click(page.dersSecmeCheckboxME.get(ikinciSecim));
-
-
-
-
-    }
+    //Burayı mutlaka geliştirecegim
+//    @Given("Acilan Chooese Lesson tablosundan random iki ders secilir")
+//    public void acilanChooeseLessonTablosundanRandomIkiDersSecilir() {
+//
+//
+//            ilkSecim =random.nextInt(page.dersSecmeCheckboxME.size()-1);
+//            ikinciSecim= random.nextInt(page.dersSecmeCheckboxME.size()-1);
+//            ReusableMethods.click(page.dersSecmeCheckboxME.get(ilkSecim));
+//            ReusableMethods.click(page.dersSecmeCheckboxME.get(ikinciSecim));
+//
+//
+//
+//
+//    }
 
     @And("Submit butonuna tıklanir")
     public void submitButonunaTıklanir() {
@@ -69,26 +70,53 @@ public class US21_OgrenciDersleriGorebilmeli {
 
     @Then("Derslerin seçildigi dogrulanir")
     public void derslerinSeçildigiDogrulanir() {
-        List<String> dersList=new ArrayList<>();
-        List<String> secilenDersler=new ArrayList<>();
-        TumDerslerList.addAll(page.tumDerslerListesiME);
 
+    }
 
-        for (int i = 0; i < TumDerslerList.size()-1; i++) {
-            dersList.add(TumDerslerList.get(i).getText());
-        }
-        for (int i = 0; i < page.secilenDerslerListesiME.size()-1; i++) {
-            secilenDersler.add(page.secilenDerslerListesiME.get(i).getText());
-            System.out.println(secilenDersler.get(i));
-        }
+    @And("Choose Lesson tablosundan random bir ders seçilir")
+    public void chooseLessonTablosundanRandomBirDersSeçilir() {
+        ilkSecim =random.nextInt(page.dersSecmeCheckboxME.size()-1);
+        ReusableMethods.click(page.dersSecmeCheckboxME.get(ilkSecim));
+    }
 
-//        for (String w:secilenDersler) {
-//            if (dersList.get(ilkSecim).contains(w)){
-//                System.out.println("içeriyor"+w);
-//            } else if (dersList.get(ikinciSecim).contains(w)) {
-//                System.out.println("içeriyor2"+w);
-//            }
-//        }
+    @And("Submit butonuna tiklanir ve derslerin seçildigi dogrulanir")
+    public void submitButonunaTiklanirVeDerslerinSeçildigiDogrulanir() {
+        dersEklendiDogrulama=page.secilenDerslerListesiME.size();
+        ReusableMethods.click(page.dersSecmeSubmitME);
+        ReusableMethods.visibleWait(page.adminSavedVerifyME,3);
+        assertTrue(page.adminSavedVerifyME.isDisplayed());
+    }
 
+    @And("Derslerin Lesson Program List e eklendigi dogrulanir")
+    public void derslerinLessonProgramListEEklendigiDogrulanir() {
+        assertTrue(page.secilenDerslerListesiME.size()>dersEklendiDogrulama);
+
+    }
+
+    @And("Aynı derslerin tekrardan seçilemedigi dogrulanir")
+    public void aynıDerslerinTekrardanSeçilemedigiDogrulanir() {
+        ReusableMethods.click(page.dersSecmeSubmitME);
+        assertTrue(page.adminSavedVerifyME.isDisplayed());
+    }
+
+    @And("Grades and Announcemenents sayfasina gidilir")
+    public void gradesAndAnnouncemenentsSayfasinaGidilir() {
+    ReusableMethods.click(page.studentMenuButtonME);
+    ReusableMethods.click(page.gradesButtonME);
+    ReusableMethods.scrollHome();
+    }
+
+    @And("Student Info List tablosunda ders notlarinin goruldugu dogrulanir")
+    public void studentInfoListTablosundaDersNotlarininGorulduguDogrulanir() {
+        ReusableMethods.bekle(2);
+    assertTrue(page.studentInfoListME.size()>0);
+        System.out.println("ilk"+page.studentInfoListME.get(0).getText());
+    }
+
+    @And("Meet List tablosunda toplantilarin goruldugu dogrulanir")
+    public void meetListTablosundaToplantilarinGorulduguDogrulanir() {
+        ReusableMethods.bekle(2);
+    assertTrue(page.studentMeetListME.size()>0);
+        System.out.println("deneme"+page.studentMeetListME.get(0).getText());
     }
 }
