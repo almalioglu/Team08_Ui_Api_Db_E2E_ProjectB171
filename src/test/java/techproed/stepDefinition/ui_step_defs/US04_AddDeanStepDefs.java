@@ -21,39 +21,36 @@ public class US04_AddDeanStepDefs {
 
 
         Driver.getDriver().get(ConfigReader.getProperty("pageUrl"));
-        ReusableMethods.bekle(5);
-        page.loginButton.click();
-ReusableMethods.bekle(5);
-        addDeanPage.usernameBox.sendKeys(ConfigReader.getProperty("adminUsername"), Keys.TAB, ConfigReader.getProperty("Password"), Keys.TAB, Keys.ENTER);
-        ReusableMethods.bekle(5);
-
+        addDeanPage.loginLink.click();
+        addDeanPage.usernameBox.sendKeys(ConfigReader.getProperty("adminUsername"), Keys.TAB, ConfigReader.getProperty("Password"), Keys.TAB);
+        ReusableMethods.bekle(2);
+        addDeanPage.loginButton.click();
+        ReusableMethods.bekle(2);
         addDeanPage.menuButton.click();
-        ReusableMethods.bekle(5);
-
+        ReusableMethods.bekle(2);
         addDeanPage.deanManagementButton.click();
-        ReusableMethods.bekle(60);
-
+        ReusableMethods.bekle(2);
 
     }
 
     @Then("Name text boxına valid bir değer girer")
     public void name_text_boxına_valid_bir_değer_girer() {
         addDeanPage.name.sendKeys("Rabia");
-        ReusableMethods.bekle(5);
+        ReusableMethods.bekle(2);
 
     }
 
     @Then("Surname text boxına valid bir değer girer")
     public void surname_text_boxına_valid_bir_değer_girer() {
         addDeanPage.surname.sendKeys("Kaya");
-        ReusableMethods.bekle(5);
+        ReusableMethods.bekle(2);
 
     }
 
     @Then("Birth Place text boxına valid bir değer girer")
     public void birth_place_text_boxına_valid_bir_değer_girer() {
         addDeanPage.birthPlace.sendKeys("Ankara");
-        ReusableMethods.bekle(5);
+        ReusableMethods.bekle(2);
 
     }
 
@@ -61,49 +58,57 @@ ReusableMethods.bekle(5);
     public void gender_alaninin_goruntulendigini_dogrular_female_butonuna_tıklar() {
         addDeanPage.addDeanGender.isDisplayed();
         addDeanPage.genderFemale.click();
-        ReusableMethods.bekle(5);
+        ReusableMethods.bekle(2);
 
     }
 
     @Then("Date Of Birth text boxına valid bir değer girer")
     public void date_of_birth_text_boxına_valid_bir_değer_girer() {
         addDeanPage.birthDay.sendKeys("02031999");
-        ReusableMethods.bekle(5);
+        ReusableMethods.bekle(2);
 
     }
 
     @Then("Phone text boxına valid bir değer girer")
     public void phone_text_boxına_valid_bir_değer_girer() {
         addDeanPage.phoneNumber.sendKeys("555-421-3232");
+        ReusableMethods.bekle(2);
+
     }
 
     @Then("SSN text boxına valid bir değer girer")
     public void ssn_text_boxına_valid_bir_değer_girer() {
         addDeanPage.ssn.sendKeys("111-22-4444");
+        ReusableMethods.bekle(2);
+
     }
 
     @Then("User name text boxına valid bir değer girer")
     public void user_name_text_boxına_valid_bir_değer_girer() {
         addDeanPage.username.sendKeys("Rabiakayaa");
+        ReusableMethods.bekle(2);
+
     }
 
     @Then("Password text boxına valid bir değer girer")
     public void password_text_boxına_valid_bir_değer_girer() {
         addDeanPage.deanPassword.sendKeys("2.Rabiakaya");
-        ReusableMethods.bekle(5);
+        ReusableMethods.bekle(2);
 
     }
 
     @Then("Submit butonuna tıklar")
     public void submit_butonuna_tıklar() {
         addDeanPage.deanSubmit.click();
-        ReusableMethods.bekle(5);
+        ReusableMethods.bekle(2);
 
     }
 
     @When("Dean saved mesajınin görüntülendigini dogrular")
     public void dean_saved_mesajınin_görüntülendigini_dogrular() {
         addDeanPage.deanSavedPopUp.isDisplayed();
+        ReusableMethods.bekle(2);
+
 
     }
 

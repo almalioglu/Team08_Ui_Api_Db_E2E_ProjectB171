@@ -21,7 +21,8 @@ public class Hooks {
 
     @After("@08")
     public void tearDown() {
-        //Driver.closeDriver();
+
+        Driver.closeDriver();
 
     }
 }

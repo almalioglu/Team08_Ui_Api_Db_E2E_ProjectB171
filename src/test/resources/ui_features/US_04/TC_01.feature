@@ -1,12 +1,12 @@
-@08 @US04
+ @US04
 Feature: US_04
 
-  Background: Ortak adımlar
-    Given Admin Dean Management sayfasina gider
 
-  @TC04_01
+
+
+  @TC04_01 @08
   Scenario: Admin Dean ekleyebilmeli
-
+    Given Admin Dean Management sayfasina gider
     Then Name text boxına valid bir değer girer
     Then Surname text boxına valid bir değer girer
     Then Birth Place text boxına valid bir değer girer
@@ -18,11 +18,11 @@ Feature: US_04
     Then Password text boxına valid bir değer girer
     Then Submit butonuna tıklar
     When Dean saved mesajınin görüntülendigini dogrular
-    Then Logout yapar ve sayfayi kapatir
 
-  @TC04_02
+  @TC04_02 @08
   Scenario: Name textbox boş bırakılamaz
 
+    Given Admin Dean Management sayfasina gider
     Then Surname text boxına valid bir değer girer
     Then Birth Place text boxına valid bir değer girer
     Then Gender alaninin goruntulendigini dogrular Female butonuna tıklar
@@ -37,7 +37,7 @@ Feature: US_04
   @TC04_03
   Scenario: Surname textbox boş bırakılamaz
 
-
+    Given Admin Dean Management sayfasina gider
     Then Name text boxına valid bir değer girer
     Then Birth Place text boxına valid bir değer girer
     Then Gender alaninin goruntulendigini dogrular Female butonuna tıklar
@@ -52,7 +52,7 @@ Feature: US_04
 
   @TC04_04
   Scenario: Birth Place textbox boş bırakılamaz
-
+    Given Admin Dean Management sayfasina gider
     Then Name text boxına valid bir değer girer
     Then Surname text boxına valid bir değer girer
     Then Gender alaninin goruntulendigini dogrular Female butonuna tıklar

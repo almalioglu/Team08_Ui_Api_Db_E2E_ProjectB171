@@ -419,6 +419,14 @@ public class HomePage {
 
 
 
+
+
+
+
+
+
+
+
     //Saadet-430
     @FindBy(xpath = "//*[@class='header_link me-2']") public WebElement registerButtonSG;
     @FindBy(xpath = "//*[@id='username']") public WebElement loginUserNameSG;
@@ -514,6 +522,11 @@ public class HomePage {
 
 
 
+
+
+
+
+
     //ayseebrar_530
     @FindBy(xpath = "//*[@id='name']")public WebElement nameKutusu_aeo;
     @FindBy(xpath = "//*[@id='surname']")public WebElement surnameKutusu_aeo;
@@ -543,7 +556,7 @@ public class HomePage {
 @FindBy(xpath = "//*[text()='Minimum 12 character (XXX-XXX-XXXX)']")public WebElement Phone12KarakterEksikUyarisi;
 @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")  public WebElement ssn11KarakterEksikUyarisi;
 @FindBy(xpath = "(//*[@class='invalid-feedback'])[8]")    public WebElement passwordGirUyarisi;
-@FindBy(xpath = "")
+
 //US07
 @FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
 public WebElement menuButton;
@@ -714,44 +727,39 @@ public WebElement messageColumn;
 
 
 
-
-
-
-
-
     //MeryemAkbayır-730
+    @FindBy(xpath = "//th[text()='Name']")
+    public WebElement nameTittleDL;
 
+    @FindBy(xpath = "//th[text()='Gender']")
+    public WebElement genderTittleDL;
 
+    @FindBy(xpath = "//th[text()='Phone Number']")
+    public WebElement phoneNumberTittleDL;
 
+    @FindBy(xpath = "//th[text()='Ssn']")
+    public WebElement ssnTittleDL;
 
+    @FindBy(xpath = "//th[text()='User Name']")
+    public WebElement userNameTittleDL;
 
+    @FindBy(xpath = "(//button[@class='text-dark btn btn-outline-info'])[1]")
+    public WebElement editButtonDL;
 
+    @FindBy(xpath = "//h5[text()='Dean List']")
+    public WebElement deanListTittleDL;
 
+    @FindBy(xpath = "//div[text()='Dean Saved']")
+    public WebElement deanSavedPopUpMessageDL;
 
+   /* @FindBy(xpath = "")
+    public WebElement ;
 
+    @FindBy(xpath = "")
+    public WebElement ;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "")
+    public WebElement ;*/
 
 
 
