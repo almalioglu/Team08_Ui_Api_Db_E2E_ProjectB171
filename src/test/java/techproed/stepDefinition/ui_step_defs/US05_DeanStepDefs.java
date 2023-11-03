@@ -2,43 +2,40 @@ package techproed.stepDefinition.ui_step_defs;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import techproed.pages.HomePage;
 
 public class US05_DeanStepDefs {
-
+HomePage page=new HomePage();
     @When("Dean Listin görüntülendiğini doğrular")
     public void dean_listin_görüntülendiğini_doğrular() {
-
+page.deanListTittleDL.isDisplayed();
     }
 
     @When("Namein görüntülendiğini doğrular")
     public void namein_görüntülendiğini_doğrular() {
-
+page.nameTittleDL.isDisplayed();
     }
 
     @When("Genderın görüntülendiğini doğrular")
     public void genderın_görüntülendiğini_doğrular() {
-
+page.genderTittleDL.isDisplayed();
     }
 
     @When("Phone Numberın görüntülendiğini doğrular")
     public void phone_numberın_görüntülendiğini_doğrular() {
-
+page.phoneNumberTittleDL.isDisplayed();
     }
 
     @When("SSN Numberın görüntülendiğini doğrular")
     public void ssn_numberın_görüntülendiğini_doğrular() {
-
+page.ssnTittleDL.isDisplayed();
     }
 
     @When("User Namein görüntülendiğini doğrular")
     public void user_namein_görüntülendiğini_doğrular() {
-
+page.userNameTittleDL.isDisplayed();
     }
 
-    @When("Admin Dean Listin görüntülendiğini doğrular")
-    public void admin_dean_listin_görüntülendiğini_doğrular() {
-
-    }
 
     @When("Admin Deani Listede bulur ve silme butonunun görüntülendiğini doğrular")
     public void admin_deani_listede_bulur_ve_silme_butonunun_görüntülendiğini_doğrular() {
