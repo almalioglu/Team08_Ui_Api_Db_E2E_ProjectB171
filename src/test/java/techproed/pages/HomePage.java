@@ -419,6 +419,14 @@ public class HomePage {
 
 
 
+
+
+
+
+
+
+
+
     //Saadet-430
     @FindBy(xpath = "//*[@class='header_link me-2']") public WebElement registerButtonSG;
     @FindBy(xpath = "//*[@id='username']") public WebElement loginUserNameSG;
@@ -427,8 +435,6 @@ public class HomePage {
     @FindBy(xpath = "(//*[@id='name']") public WebElement registerNameTextSG;
     @FindBy(xpath = "//*[@id='surname']") public WebElement registerSurnameTextSG;
     @FindBy (xpath = "//*[@class='fa fa-lock']") public WebElement girisloginButtonSG;
-
-
 
     @FindBy(xpath = "(//*[@type='button'])[1]") public WebElement menuButtonSG;
     @FindBy (xpath = "(//*[text ()='Student Management'])") public WebElement studentManagementSG;
@@ -514,7 +520,13 @@ public class HomePage {
 
 
 
+
+
+
+
+
     //ayseebrar_530
+    @FindBy(xpath = "(//*[text()='Vice Dean Management'])[2]")public WebElement viceDeanManagementHomePage_aeo;
     @FindBy(xpath = "//*[@id='name']")public WebElement nameKutusu_aeo;
     @FindBy(xpath = "//*[@id='surname']")public WebElement surnameKutusu_aeo;
 @FindBy(xpath = "//*[@type='button']")public WebElement menuButton_aeo;
@@ -543,8 +555,20 @@ public class HomePage {
 @FindBy(xpath = "//*[text()='Minimum 12 character (XXX-XXX-XXXX)']")public WebElement Phone12KarakterEksikUyarisi;
 @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")  public WebElement ssn11KarakterEksikUyarisi;
 @FindBy(xpath = "(//*[@class='invalid-feedback'])[8]")    public WebElement passwordGirUyarisi;
-@FindBy(xpath = "")
-//US07
+@FindBy(xpath = "//*[text()='At least 8 characters']")public WebElement password8KarakterEksikUyarisi;
+@FindBy(xpath = "//*[text()='One uppercase character']") public WebElement passwordBuyukHarfEksikUyarisi;
+@FindBy(xpath = "//*[text()='One lowercase character']") public WebElement passwordKucukHarfEksikUyarisi;
+@FindBy(xpath = "//*[text()='One number']")    public WebElement passwordRakamEksikUyarisi;
+    @FindBy(xpath = "(//*[text()='Your name should be at least 2 characters'])[1]") public WebElement name2KarakterEksikUyarisi;
+    @FindBy(xpath = "(//*[text()='Your surname should be at least 2 characters'])[1]")public WebElement surname2KarakterEksikUyarisi;
+    @FindBy(xpath = "(//*[text()='Your birth place should be at least 2 characters'])[1]")public WebElement birthPlace2KarakterEksikUyarisi;
+    @FindBy(xpath = "(//*[text()='Your username should be at least 4 characters'])[1]")public WebElement userName4KarakterEksikUyarisi;
+    @FindBy(xpath = "(//*[text()='Phone number should be exact 12 characters'])[1]")    public WebElement PhoneNumber12KarakterFazlaUyarisi;
+    @FindBy(xpath = "(//*[text()='Please enter valid phone number'])[1]")public WebElement PhoneNumberDogruDegilUyarisi;
+    @FindBy(xpath = "(//div[@class='Toastify__toast-body'])[1]")public WebElement ssnDogruDegilUyarisi;
+    @FindBy(xpath = "(//*[text()='Vice dean Saved'])[1]")  public WebElement viceDeanSavedUyarisi;
+    @FindBy(xpath = "(//*[text()='Admin Saved'])[1]") public WebElement adminSavedUyarisi;
+    //US07
 @FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
 public WebElement menuButton;
 @FindBy(xpath = "(//*[@role='button'])[11]")
@@ -560,18 +584,6 @@ public WebElement dateColumn;
 public WebElement subjectColumn;
 @FindBy(xpath = "//tbody/tr[1]/td[5]/span[1]")
 public WebElement messageColumn;
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
