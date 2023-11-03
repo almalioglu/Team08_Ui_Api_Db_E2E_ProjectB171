@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import techproed.pages.HomePage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
@@ -15,6 +16,7 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
 
     HomePage homePage = new HomePage();
     Faker faker = new Faker();
+    Actions actions = new Actions(Driver.getDriver());
 
     @Given("web sitesine gider")
     public void web_sitesine_gider() {
@@ -35,7 +37,7 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
     public void password_kutusuna_kayitli_password_girer() {
        homePage.loginPasswordButtonBI.sendKeys(ConfigReader.getProperty("ViceDeanPasswordBI"));
        homePage.loginSubmitButtonBI.click();
-        ReusableMethods.bekle(4);
+        ReusableMethods.bekle(2);
     }
     @When("menu sekmesine tiklar")
     public void menu_sekmesine_tiklar() {
@@ -55,22 +57,29 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
 
     @When("select Lesson sekmesine tiklar ve bir ders secer")
     public void select_lesson_sekmesine_tiklar_ve_bir_ders_secer() {
-        homePage.addSelectLessonDdmBI.sendKeys("Java", Keys.ENTER,Keys.TAB);
+        homePage.addSelectLessonDdmBI.click();
+        String lesson="Java";
+        homePage.addSelectLessonDdmBI.sendKeys(lesson,Keys.ENTER);
         ReusableMethods.bekle(1);
     }
     @When("name kutusuna veri girer")
     public void name_kutusuna_veri_girer() {
+        actions.scrollByAmount(0,200).perform();
+        ReusableMethods.bekle(4);
+        homePage.addNameBoxBI.click();
         homePage.addNameBoxBI.sendKeys(faker.name().firstName());
         ReusableMethods.bekle(1);
     }
     @When("Surname kutusuna veri girer")
     public void surname_kutusuna_veri_girer() {
+        homePage.addSurnameBoxBI.click();
         homePage.addSurnameBoxBI.sendKeys(faker.name().lastName());
         ReusableMethods.bekle(1);
 
     }
     @When("Birth Place kutusuna veri girer")
     public void birth_place_kutusuna_veri_girer() {
+        homePage.addBirthPlaceBoxBI.click();
         homePage.addBirthPlaceBoxBI.sendKeys(faker.address().city());
         ReusableMethods.bekle(1);
     }
@@ -81,7 +90,7 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
     }
     @When("Phone kutusuna veri girer")
     public void phone_kutusuna_veri_girer() {
-        homePage.addPhoneBoxBI.sendKeys(faker.phoneNumber().phoneNumber());
+        homePage.addPhoneBoxBI.sendKeys(faker.numerify("###-###-####"));
         ReusableMethods.bekle(1);
     }
     @When("Is Advisor Teacher basliginin solundaki checkbox tiklar")
@@ -100,22 +109,26 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
     }
     @When("Date of Birth kutusuna veri girer")
     public void date_of_birth_kutusuna_veri_girer() {
-        homePage.addDateOfBirthBoxBI.sendKeys(faker.date().birthday().toString());
+        String birthday = "01.01.1995";
+        homePage.addDateOfBirthBoxBI.sendKeys(birthday,Keys.ENTER);
         ReusableMethods.bekle(1);
     }
     @When("SSN kutusuna veri girer")
     public void ssn_kutusuna_veri_girer() {
-        homePage.addSsnBoxBI.sendKeys(faker.numerify("***-**-****"));
+        homePage.addSsnBoxBI.click();
+        homePage.addSsnBoxBI.sendKeys(faker.numerify("###-##-####"));
         ReusableMethods.bekle(1);
     }
     @When("User Name kutusuna veri girer")
     public void user_name_kutusuna_veri_girer() {
+        homePage.addUsernameBoxBI.click();
         homePage.addUsernameBoxBI.sendKeys(faker.name().username());
         ReusableMethods.bekle(1);
     }
     @When("Password kutusuna password girer")
     public void password_kutusuna_password_girer() {
-        homePage.addUsernameBoxBI.sendKeys(ReusableMethods.randomPassword(1,1,6));
+        homePage.addPasswordBoxBI.click();
+        homePage.addPasswordBoxBI.sendKeys(ReusableMethods.randomPassword(1,1,6));
         ReusableMethods.bekle(1);
     }
     @When("Submit butonuna tiklanir")
@@ -123,10 +136,10 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
         homePage.addSubmitBoxBI.click();
         ReusableMethods.bekle(1);
     }
-    @When("'Teacher saved successfully.' yazisinin ciktigini dogrula")
+    @When("Teacher saved successfully. yazisinin ciktigini dogrula")
     public void yazisinin_ciktigini_dogrula(String string) {
         String addTeacherAlertText= homePage.addTeacherSuccessfulTextBI.getText();
-        Assert.assertEquals("Teacher saved successfully.", addTeacherAlertText);
+        Assert.assertEquals(addTeacherAlertText,"Teacher saved successfully.");
 
     }
 

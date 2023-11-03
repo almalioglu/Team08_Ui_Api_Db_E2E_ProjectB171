@@ -235,7 +235,8 @@ public class HomePage {
   @FindBy(xpath = "//button[text()='Menu']") public WebElement menuButtonBI;
   @FindBy(xpath = "//a[text()='Teacher Management']") public WebElement teacherManagementButtonBI;
   @FindBy(xpath = "//h5[text()='Add Teacher']") public WebElement addTeacherTitleBI;
-  @FindBy(xpath = "//div[@class=' css-hlgwow']") public WebElement addSelectLessonDdmBI;
+  //@FindBy(xpath = "//div[@class=' css-13cymwt-control']") public WebElement addSelectLessonDdmBI;
+  @FindBy(xpath = "//div[@id='react-select-3-placeholder']") public WebElement addSelectLessonDdmBI;
   @FindBy(xpath = "//input[@id='name']") public WebElement addNameBoxBI;
   @FindBy(xpath = "//input[@id='surname']") public WebElement addSurnameBoxBI;
   @FindBy(xpath = "//input[@id='birthPlace']") public WebElement addBirthPlaceBoxBI;
@@ -244,9 +245,10 @@ public class HomePage {
   @FindBy(xpath = "//input[@id='isAdvisorTeacher']") public WebElement addAdvisorTeacherCheckBoxBI;
   @FindBy(xpath = "//input[@value='FEMALE']") public WebElement addGenderFemaleRadioButtonBI;
   @FindBy(xpath = "//input[@value='MALE']") public WebElement addGenderMaleRadioButtonBI;
-  @FindBy(xpath = "//input[@id='birthDay']") public WebElement addDateOfBirthBoxBI;
+  @FindBy(xpath = "(//input[@class='form-control is-invalid'])[1]") public WebElement addDateOfBirthBoxBI;
   @FindBy(xpath = "//input[@id='ssn']") public WebElement addSsnBoxBI;
   @FindBy(xpath = "//input[@id='username']") public WebElement addUsernameBoxBI;
+  //@FindBy(xpath = "(//input[@class='form-control is-invalid'])[2]") public WebElement addPasswordBoxBI;
   @FindBy(xpath = "//input[@id='password']") public WebElement addPasswordBoxBI;
   @FindBy(xpath = "//button[text()='Submit']") public WebElement addSubmitBoxBI;
   @FindBy(xpath = "//div[text()='Teacher saved successfully']") public WebElement addTeacherSuccessfulTextBI;
@@ -287,8 +289,6 @@ public class HomePage {
  @FindBy(xpath = "(//button[text()='Submit'])[2]") public WebElement editListSubmitBI;
  @FindBy(xpath = "//div[text()='Teacher updated Successful']") public WebElement editTeacherSuccessfulTextBI;
  @FindBy(xpath = "(//button[@aria-label='Close'])[3]") public WebElement editTeacherCloseBI;
-
-
 
 
 
