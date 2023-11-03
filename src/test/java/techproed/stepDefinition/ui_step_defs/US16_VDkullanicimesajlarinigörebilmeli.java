@@ -28,7 +28,7 @@ public class US16_VDkullanicimesajlarinigörebilmeli {
 
     @And("Contact message bölümünde email bilgisinin göründüğünü doğrula")
     public void contactMessageBölümündeEmailBilgisininGöründüğünüDoğrula() {
-        Assert.assertTrue(page.getAllMessageSG.isDisplayed());
+        Assert.assertTrue(page.getAllEmailSG.isDisplayed());
     }
 
     @And("Contact message bölümünde date bilgisinin göründüğünü doğrula")
