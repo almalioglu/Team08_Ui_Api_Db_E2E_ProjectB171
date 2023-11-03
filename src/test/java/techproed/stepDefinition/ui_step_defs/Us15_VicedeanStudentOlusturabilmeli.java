@@ -63,14 +63,14 @@ public class Us15_VicedeanStudentOlusturabilmeli {
 
     @And("Choose Teacher yazısına tıkla")
     public void chooseTeacherYazısınaTıkla() {
-        homePage.contactTeacherSG.click();
-        ReusableMethods.visibleWait(homePage.contactTeacherSG,3);
+        homePage.teacherseçmeButonuSG.click();
+        ReusableMethods.visibleWait(homePage.teacherseçmeButonuSG,3);
 
     }
 
     @And("Çıkan seçeneklerden teacher seç")
     public void çıkanSeçeneklerdenTeacherSeç() {
-        Select select = new Select(homePage.contactTeacherSG);
+        Select select = new Select(homePage.teacherseçmeButonuSG);
         select.selectByIndex(Integer.parseInt(faker.numerify("##")));
         homePage.namePlaceHolderSG.click();
 
@@ -362,6 +362,6 @@ public class Us15_VicedeanStudentOlusturabilmeli {
     public void viceDeanSubmitButonunaTıklar() {
         ReusableMethods.bekle(4);
         js.executeScript("arguments[0].scrollIntoView(true);", homePage.SubmitbuttonSG);
-       homePage.SubmitbuttonSG.click();
+        homePage.SubmitbuttonSG.click();
     }
 }
