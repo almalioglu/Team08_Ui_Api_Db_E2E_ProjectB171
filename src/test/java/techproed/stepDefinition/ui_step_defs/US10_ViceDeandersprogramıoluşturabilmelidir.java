@@ -54,7 +54,6 @@ public class US10_ViceDeandersprogramıoluşturabilmelidir {
     public void chooseEducationTermDeDonemiSec() {
         page.chooseEducationddm.click();
         page.chooseEducationddm.sendKeys(Keys.ARROW_DOWN,Keys.ENTER);
-
         ReusableMethods.bekle(1);
     }
 
@@ -66,7 +65,7 @@ public class US10_ViceDeandersprogramıoluşturabilmelidir {
     }
 
     @Then("Start Time dan baslangıc saatini sec")
-    public void startTimeDanBaslangıcSaatiniSec() {
+    public void startTimeDanBaslangicSaatiniSec() {
         Faker fake= new Faker();
 
         page.startTimeddm.sendKeys(fake.random().hex(10));
@@ -76,12 +75,14 @@ public class US10_ViceDeandersprogramıoluşturabilmelidir {
     public void stopTimeDanBitisSaatiniSec() {
         page.stopTimeddm.sendKeys("2359");
         ReusableMethods.bekle(1);
+
     }
 
     @Then("Submit butonuna tikla")
     public void submitButonunaTikla() {
         page.submitbutton.click();
         ReusableMethods.bekle(2);
+
     }
 
     @Then("Created Lesson Program yazisini gor")
@@ -105,6 +106,27 @@ public class US10_ViceDeandersprogramıoluşturabilmelidir {
 
     @Then("Full authentication is required to access this resource yazısını gör")
     public void fullAuthenticationIsRequiredToAccessThisResourceYazısınıGör() {
+
+    }
+
+
+
+
+    @Then("Dean Logout butonuna tikla")
+    public void deanLogoutButonunaTikla() {
+        ReusableMethods.bekle(3);
+        page.logoutbutton2.click();
+        ReusableMethods.visibleWait(page.MenuTE,3);
+        page.yesbutton.click();
+    }
+
+    @Then("ViceDean Logout butonuna tiklar")
+    public void vicedeanLogoutButonunaTiklar() {
+        ReusableMethods.bekle(3);
+        page.logouttbutton3.click();
+        ReusableMethods.visibleWait(page.MenuTE,3);
+        page.yesbutton.click();
+
 
     }
 }

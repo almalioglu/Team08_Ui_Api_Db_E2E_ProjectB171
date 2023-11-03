@@ -12,10 +12,9 @@ import org.junit.runner.RunWith;
         "rerun:TestOutput/failed_scenario.txt"},
         features = "src/test/resources",
         glue = {"techproed/stepDefinition/ui_step_defs", "techproed/hooks"},
-        tags = "@08 and @US17",
+        tags = " @elif",
         dryRun = false,
         monochrome = true
-
 )
-public class Runner_İsm {
+public class Runner_EB {
 }

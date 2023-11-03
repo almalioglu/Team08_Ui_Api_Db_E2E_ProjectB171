@@ -1,4 +1,4 @@
-@08
+@08 @Cihan
 Feature: Vice Dean ders programı oluşturabilmelidir.(Lesson Program - Add Lesson Program)
 
   Scenario: TC_01 Vice Dean ders programı oluşturabilmelidir.

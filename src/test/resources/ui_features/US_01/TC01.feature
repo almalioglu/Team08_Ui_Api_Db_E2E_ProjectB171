@@ -5,19 +5,20 @@ Feature: US_01 Aday ogrenci sisteme kayit olabilmeli (Register)
     Given Kullanici "pageUrl" sayfasina git
     Then kullanici 3 saniye bekler
     Then kullanici  Register butonuna tiklar
-
-  Scenario Outline: TC01 Basarili Kayit Islemi (Pozitif Senaryo)
+@08 @elifTC01
+  Scenario Outline: TC01 Basarili Kayit Islemi (Pozitif Test)
     Given kullanici  "<name>" "<Surname>" "<Birth_Place>" "<Phone>" "<Gender>" "<Date_Of_Birth>" "<Ssn>" "<User_Name>" "<Password>" bilgilerini girer
     Then kullanici 2 saniye bekler
     Then kullanici register yazisina tıklar
     Then kullanici 2 saniye bekler
     Then kullanici register isleminin basarili oldugunu dogrular
+    And sayfayi kapat
 
     Examples:
       | name | Surname | Birth_Place | Phone        | Gender | Date_Of_Birth | Ssn         | User_Name | Password |
       | Ayla | Derman  | Bursa       | 505-321-6549 | Female | 12-09-2000    | 789-45-6123 | Sermin    | Ab123456 |
-
-  Scenario Outline: TC02 Basarisiz kayit islemi (Negatif Senaryo)
+@08 @elifTC02
+  Scenario Outline: TC02 Basarisiz kayit islemi (Negatif Test)
     And kullanici "<name>" "<Surname>" "<Birth Place>" "<Gender>" "<Date Of Birth>" "<Phone>" "<Ssn>" "<User Name>" "<Password>" bilgilerini doldurur
     Then kullanici name bos birakildiginde Required uyari yazisi geldigini dogrular
     Then kullanici surname bos birakildiginde Required uyari yazisi geldigini dogrular
@@ -32,8 +33,8 @@ Feature: US_01 Aday ogrenci sisteme kayit olabilmeli (Register)
       | name | Surname | Birth Place | Gender | Date Of Birth | Phone | Ssn | User Name | Password |
       |      |         |             |        |               |       |     |           |          |
 
-
-  Scenario Outline: TC03 Basarisiz kayit islemi (Negatif Seneryo)
+@08 @elifTC03
+  Scenario Outline: TC03 Basarisiz kayit islemi (Negatif Test)
     And Kullanici "<name>" "<Surname>" "<Birth Place>" "<Phone>" "<Gender>" "<Date Of Birth>" "<Ssn>" "<User Name>" "<Password>" bilgileri girer
     Then kullanici Ssn hatali girilince Minimum onbir character  uyari yazisi geldigini dogrular
     And sayfayi kapat
@@ -41,8 +42,8 @@ Feature: US_01 Aday ogrenci sisteme kayit olabilmeli (Register)
       | name | Surname | Birth Place | Phone        | Gender | Date Of Birth | Ssn      | User Name | Password |
       | Ayla | Derman  | Bursa       | 505-321-6549 | Female | 12-09-2000    | 78945612 | Sermin    | Ab123456 |
 
-
-  Scenario Outline: TC04 Basarisiz kayit islemi (Negatif Seneryo)
+  @08 @elifTC04
+  Scenario Outline: TC04 Basarisiz kayit islemi (Negatif Test)
     And Kullanici "<name>" "<Surname>" "<Birth Place>" "<Phone>" "<Gender>" "<Date Of Birth>" "<Ssn>" "<User Name>" "<Password>" bilgileri girer
     Then kullanici kucuk harf icermeyen password girince One lowercase character uyari yazisi geldigini dogrular
     And sayfayi kapat
@@ -50,8 +51,8 @@ Feature: US_01 Aday ogrenci sisteme kayit olabilmeli (Register)
       | name | Surname | Birth Place | Phone        | Gender | Date Of Birth | Ssn         | User Name | Password |
       | Ayla | Derman  | Bursa       | 505-321-6549 | Female | 12-09-2000    | 789-45-6123 | Sermin    | AB123456 |
 
-
-  Scenario Outline: TC05 Basarisiz kayit islemi (Negatif Seneryo)
+  @08 @elifTC05
+  Scenario Outline: TC05 Basarisiz kayit islemi (Negatif Test)
     And Kullanici "<name>" "<Surname>" "<Birth Place>" "<Phone>" "<Gender>" "<Date Of Birth>" "<Ssn>" "<User Name>" "<Password>" bilgileri girer
     Then kullanici rakam icermeyen password girince One number uyari yazisi geldigini dogrular
     And sayfayi kapat
@@ -59,8 +60,8 @@ Feature: US_01 Aday ogrenci sisteme kayit olabilmeli (Register)
       | name | Surname | Birth Place | Phone        | Gender | Date Of Birth | Ssn         | User Name | Password |
       | Ayla | Derman  | Bursa       | 505-321-6549 | Female | 12-09-2000    | 789-45-6123 | Sermin    | ABcDEFGH |
 
-
-  Scenario Outline: TC06 Basarisiz kayit islemi (Negatif Seneryo)
+  @08 @elifTC05
+  Scenario Outline: TC06 Basarisiz kayit islemi (Negatif Test)
     And Kullanici "<name>" "<Surname>" "<Birth Place>" "<Phone>" "<Gender>" "<Date Of Birth>" "<Ssn>" "<User Name>" "<Password>" bilgileri girer
     Then kullanici buyuk harf, kucuk harf ve rakam iceren yedi karakterli password girince At least sekiz characters uyari yazisi geldigini dogrular
     And sayfayi kapat

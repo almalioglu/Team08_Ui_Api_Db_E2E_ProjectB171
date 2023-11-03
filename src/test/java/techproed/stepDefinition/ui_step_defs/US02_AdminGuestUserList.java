@@ -16,13 +16,13 @@ public class US02_AdminGuestUserList {
 
     @Given("Admin olarak Username kutusuna  username gir")
     public void adminOlarakUsernameKutusunaUsernameGir() {
-        homePage.loginUserName.sendKeys(ConfigReader.getProperty("Username"));
+        homePage.loginUserName.sendKeys(ConfigReader.getProperty("adminUsername"));
 
     }
 
     @When("Admin olarak Password kutusuna  password gir")
     public void adminOlarakPasswordKutusunaPasswordGir() {
-        homePage.loginPassword.sendKeys(ConfigReader.getProperty("Password1"));
+        homePage.loginPassword.sendKeys(ConfigReader.getProperty("Password"));
 
     }
 
@@ -63,7 +63,9 @@ public class US02_AdminGuestUserList {
 
     @When("kullanici admin list bolumunden kullaniciyi siler")
     public void kullaniciAdminListBolumundenKullaniciyiSiler() {
-        homePage.copButonuEB.click();
+      // ReusableMethods.click(homePage.copButonuEB);
+       // ReusableMethods.clickElementByJS(homePage.copButonuEB);
+        //ReusableMethods.bekle(1);
     }
 
     @Then("kullanici olusturulan kaydin silindigini dogrular")

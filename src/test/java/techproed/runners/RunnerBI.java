@@ -10,12 +10,12 @@ import org.junit.runner.RunWith;
         "json:target/json-reports/cucumber1.json",
         "junit:target/xml-report/cucumber.xml",
         "rerun:TestOutput/failed_scenario.txt"},
-        features = "src/test/resources",
-        glue = {"techproed/stepDefinition/ui_step_defs", "techproed/hooks"},
-        tags = "@08 and @US17",
+        features = "src/test/resources/ui_features",
+        glue = {"techproed/stepDefinition", "techproed/hooks"},
+        tags = "@08 and @busra",
         dryRun = false,
         monochrome = true
 
 )
-public class Runner_İsm {
+public class RunnerBI {
 }

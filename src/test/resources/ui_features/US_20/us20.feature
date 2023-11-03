@@ -1,11 +1,11 @@
-@x
+@UI @08
 Feature: US20 Teacher, toplantıları görebilmeli, güncelleyebilmeli ve silebilmelidir.
   Background:Background: siteye git teacher hesabina gir
     And siteye git
     Given login butonuna tikla
     And username box a username yaz, password box a password yaz,login butonuna tikla
     And menu butonuna tikla
-    And sağ tarafta acılan menu sekmesinde Meet Management seceneğine tıkla
+    And sol tarafta acılan menu sekmesinde Meet Management seceneğine tıkla
     And toplantilari gormek icin sayfayi kaydir
 
     Scenario: TC01 Toplantıların, Date, Start Time, Stop Time ve Description görülmeli

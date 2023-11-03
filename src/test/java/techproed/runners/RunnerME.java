@@ -1,5 +1,6 @@
 package techproed.runners;
 
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -12,10 +13,10 @@ import org.junit.runner.RunWith;
         "rerun:TestOutput/failed_scenario.txt"},
         features = "src/test/resources",
         glue = {"techproed/stepDefinition/ui_step_defs", "techproed/hooks"},
-        tags = "@08 and @US17",
+        tags = "@08 and @mehmetUS22",
         dryRun = false,
         monochrome = true
-
 )
-public class Runner_İsm {
+
+public class RunnerME {
 }
