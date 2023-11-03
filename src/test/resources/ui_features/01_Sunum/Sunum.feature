@@ -18,7 +18,7 @@ Feature: Tum Sitenin Tanitimi
     Then  Menu butonuna tıklaa
     Then ViceDean Logout butonuna tiklar
     #Teacher Girişi
-    When  Teacher olarak login yap
+    When  Teacher olarak login yap_is
     Then  Menu butonuna tıklaa
     Then Dean Logout butonuna tikla
     #Student Girişi

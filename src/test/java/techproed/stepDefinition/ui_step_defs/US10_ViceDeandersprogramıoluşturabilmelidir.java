@@ -75,12 +75,14 @@ public class US10_ViceDeandersprogramıoluşturabilmelidir {
     public void stopTimeDanBitisSaatiniSec() {
         page.stopTimeddm.sendKeys("2359");
         ReusableMethods.bekle(1);
+
     }
 
     @Then("Submit butonuna tikla")
     public void submitButonunaTikla() {
         page.submitbutton.click();
         ReusableMethods.bekle(2);
+
     }
 
     @Then("Created Lesson Program yazisini gor")
