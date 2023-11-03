@@ -1,5 +1,5 @@
 Feature: Vice Dean ders listesini görebilmeli ve güncellemeler yapabilmelidir. (Lessons - Lesson List)
-
+@taha
   Scenario: Oluşturulan; Lesson Name, Compulsory ve Credit Score görebilmelidir.
     Given Kullanici siteye gider
     Then kullanici 1 saniye bekler
@@ -9,13 +9,14 @@ Feature: Vice Dean ders listesini görebilmeli ve güncellemeler yapabilmelidir.
     And kullanici 1 saniye bekler
     Given Lesson Management seçeneğine tıkla
     And Lesson yazısına tıkla
-    And Lesson Name kutusuna bir veri gir
+    And Lesson Name kutusuna veri gir
     And Compulsory kutucuğunu işaretle
     And Credit Score kutusuna bir veri gir
     And Submit butonuna tıkla
     And Sayfanın en altında bulunan sayfa sayısı kısmından son sayfaya gidilir
     And Oluşturulan; Lesson Name,Compulsory ve Credit Score görülmeli
-
+  And sayfayi kapat
+@taha
     Scenario: Ders silebilmelidir
       Given Kullanici siteye gider
       Then kullanici 1 saniye bekler
@@ -31,4 +32,6 @@ Feature: Vice Dean ders listesini görebilmeli ve güncellemeler yapabilmelidir.
       And Submit butonuna tıkla
       And Sayfanın en altında bulunan sayfa sayısı kısmından son sayfaya gidilir
       And Oluşturulan dersin en sağında bulunan kırmızı çöp kutusu simgesine tıklanır
+      And Lesson Deleted yazısı görülmeli
+  And sayfayi kapat
 
