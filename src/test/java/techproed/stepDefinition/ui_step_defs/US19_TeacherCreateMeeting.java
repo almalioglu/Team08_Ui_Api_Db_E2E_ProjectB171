@@ -10,9 +10,13 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
+
+import java.util.List;
+import java.util.Random;
+
 import static org.junit.Assert.assertTrue;
 
-public class US_19StepDefinition {
+public class US19_TeacherCreateMeeting {
     HomePage page = new HomePage();
 
     @And("siteye git")
@@ -39,14 +43,15 @@ public class US_19StepDefinition {
 
         ReusableMethods.click(page.menuButton_mo);
         ReusableMethods.bekle(3);
-    }
-
-    @And("sağ tarafta acılan menu sekmesinde Meet Management seceneğine tıkla")
-    public void sağTaraftaAcılanMenuSekmesindeMeetManagementSeceneğineTıkla() {
-
-        ReusableMethods.click(page.meetManagement_mo);
 
     }
+
+    @And("sol tarafta acılan menu sekmesinde Meet Management seceneğine tıkla")
+    public void solTaraftaAcılanMenuSekmesindeMeetManagementSeceneğineTıkla() {
+        page.meetManagement_mo.click();
+      //  ReusableMethods.click(page.meetManagement_mo);
+    }
+
     //========================TC01==================================
 
     @When("Choose Students select menusunden ogrenci secimini yap")
@@ -68,12 +73,19 @@ public class US_19StepDefinition {
     //=====================================TC02=======================================================
         //TC02 DE BUG VAR
     //=====================================TC03=======================================================
+    @And("Date of Meet box a geçmis tarih olarak {string} tarihini gir")
+    public void dateOfMeetBoxAGeçmisTarihOlarakTarihiniGir(String tarih) {
+        page.dateBox.sendKeys(tarih);
+        ReusableMethods.bekle(2);
+    }
 
- @And("Date Of Meet den tarih olarak {string} sec")
+
+
+ /*@And("Date Of Meet den tarih olarak {string} sec")
  public void dateOfMeetDenTarihOlarakSec(String tarih) {
      page.dateBox.sendKeys(tarih);
      ReusableMethods.bekle(2);
- }
+ }*/
     @And("toplantı baslangıc saati  olarak {string} sec")
     public void toplantıBaslangıcSaatiOlarakSec(String start) {
         page.startTimeBox.sendKeys(start);
@@ -103,6 +115,14 @@ public class US_19StepDefinition {
     }
 
 //==================================tc04=============================
+@And("Date Of Meet den bir tarih sec")
+public void dateOfMeetDenBirTarihSec() {
+    List<String> meetDateList = List.of("11112023", "12112023", "13112023", "14112023", "15112023", "16112023", "17112023", "18112023", "19112023", "20112023", "21112023", "22112023");
+    Random random = new Random();
+    String meetDate = meetDateList.get(random.nextInt(meetDateList.size()));
+    page.dateBox.sendKeys(meetDate);
+    ReusableMethods.bekle(2);
+}
     @Then("Meet Saved Successfully mesajinin cıktığını doğrula")
     public void meetSavedSuccessfullyMesajininCıktığınıDoğrula() {
         assertTrue(page.meetSavedSuccessfullyMesaj.isDisplayed());
@@ -128,6 +148,7 @@ public class US_19StepDefinition {
     public void sayfayiKapat() {
         Driver.closeDriver();
     }
+
 
 
 }
