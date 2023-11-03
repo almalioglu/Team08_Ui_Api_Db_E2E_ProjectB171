@@ -1,4 +1,4 @@
-package techproed.runners.US19_US20Runner;
+package techproed.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -14,19 +14,12 @@ import org.junit.runner.RunWith;
         /*
         rerun plugin i sayesinde fail olan scenariolarimizi yolunu belirttiğimiz .txt dosya içinde tutacaktır
          */
-        features = "src/test/resources/features/US19-US20",//-->features package'ının yolu (content root) belirtilir
-        glue = "stepDefinitions",//-->stepDefinitions package'ı belirtilir
-        tags = "@mahmut",//-->Burda belirttiğimiz tag'i hangi scenario da belirtirsek o scenariolar çalışır
+        features = "src/test/resources",//-->features package'ının yolu (content root) belirtilir
+        glue = {"techproed/stepDefinition", "techproed/hooks"},//-->stepDefinitions package'ı belirtilir
+        tags = "@UI and @08",//-->Burda belirttiğimiz tag'i hangi scenario da belirtirsek o scenariolar çalışır
         dryRun = false,  //true secersek scenariolari kontrol eder.Browser'ı calıştırmaz.
         monochrome = true //--> true kullanırsak konsoldaki cıktıları tem renk(siyah) olarak verir
 )
 
-public class Runner {
+public class RunnerMO {
 }
-/*
-    Runner class'ı testNG deki xml file gibi istediğimiz scenario'lari tek seferde çalıştırmamıza yardımcı olur
-    @CucumberOptions notasyonu ile scenarioların nasıl çalışacağı hangi raporu kullanacağı ile alakalı
-parametreler içeren notasyondur
-dryRun parametresi eğer true secilirse scenariolari calıstırmadan feature file daki steplerin
-stepDefinition calss'ındaki methodlar ile uyusup uyusmadığını kontrol eder ve browser'ı calıstırmaz
- */
