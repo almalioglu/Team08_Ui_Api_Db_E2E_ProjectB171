@@ -54,7 +54,6 @@ public class US10_ViceDeandersprogramıoluşturabilmelidir {
     public void chooseEducationTermDeDonemiSec() {
         page.chooseEducationddm.click();
         page.chooseEducationddm.sendKeys(Keys.ARROW_DOWN,Keys.ENTER);
-
         ReusableMethods.bekle(1);
     }
 
@@ -66,7 +65,7 @@ public class US10_ViceDeandersprogramıoluşturabilmelidir {
     }
 
     @Then("Start Time dan baslangıc saatini sec")
-    public void startTimeDanBaslangıcSaatiniSec() {
+    public void startTimeDanBaslangicSaatiniSec() {
         Faker fake= new Faker();
 
         page.startTimeddm.sendKeys(fake.random().hex(10));
