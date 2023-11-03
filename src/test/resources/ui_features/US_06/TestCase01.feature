@@ -1,3 +1,4 @@
+@08 @06
 
   Feature:Dean olarak Vice Dean ekleyebilmeli
     Background:
@@ -5,8 +6,7 @@
       Then Login e tikla
       And  Kullanici dean bilgileri ile oturum açar
 
-
-    @ayseebrar/@US06/TC01
+    @06 @TC01
     Scenario:TC01 Vice Dean Hesabı Oluşturma Pozitif Testi
       Given Kullanici anasayfaya gider.
       Then Kullanici Dean hesabi ile Sing in yapar.
@@ -35,8 +35,8 @@
 
 
 
-    @US06/TC02
-    Scenario: TC02 Negatif test "SSN"
+    @US06 @TC02
+    Scenario:TC02 Negatif test "SSN"
       Given Kullanici anasayfaya gider.
       Then Kullanici Dean hesabi ile Sing in yapar.
       Then Kullanici "<Name>" alanina gecerli bir ad girer.
@@ -63,7 +63,7 @@
 
 
 
-    @US06/TC03
+    @US06 @TC03
     Scenario: TC03 Negatif TEST "Password en az 8 karakterden oluşmalıdır".
       Given Kullanici anasayfaya gider.
       Then Kullanici Dean hesabi ile Sing in yapar.
@@ -83,8 +83,8 @@
 
 
 
-    @US06/TC04
-    Scenario : TC04 Negatif TEST; Password büyük harf, küçük harf ve bir rakam içermelidir.
+    @US06 @TC04
+    Scenario : TC04 Negatif TEST "Password büyük harf, küçük harf ve bir rakam içermelidir".
       Given Kullanici anasayfaya gider.
       Then Kullanici Dean hesabi ile Sing in yapar.
       Then Kullanici "<Name>" alanina gecerli bir ad girer.

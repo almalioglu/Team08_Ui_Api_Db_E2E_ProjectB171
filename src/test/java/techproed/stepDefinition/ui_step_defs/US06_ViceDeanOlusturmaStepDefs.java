@@ -24,14 +24,13 @@ public class US06_ViceDeanOlusturmaStepDefs {
 
     @And("Kullanici dean bilgileri ile oturum açar")
     public void kullaniciDeanBilgileriIleOturumAçar() {
-        homePage.loginUserName.sendKeys(ConfigReader.getProperty("deanUsername_aeo"), Keys.TAB, ConfigReader.getProperty("A.ebrar1"), Keys.TAB, Keys.ENTER);
+        homePage.loginUserName.sendKeys(ConfigReader.getProperty("deanUsername_aeo"), Keys.TAB, ConfigReader.getProperty("deanPassword_aeo"), Keys.TAB, Keys.ENTER);
     }
 
     @Given("Kullanici anasayfaya gider.")
     public void kullaniciAnasayfayaGider() {
         Driver.getDriver().get(ConfigReader.getProperty("Url"));
-        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        Driver.getDriver().manage().window().maximize();
+
     }
 
     @Then("Kullanici Dean hesabi ile Sing in yapar.")
@@ -41,7 +40,7 @@ public class US06_ViceDeanOlusturmaStepDefs {
         homePage.loginUserName.clear();
         homePage.loginUserName.sendKeys(ConfigReader.getProperty("deanUsername_aeo"));
         homePage.loginPassword.clear();
-        homePage.loginPassword.sendKeys(ConfigReader.getProperty("A.ebrar1"));
+        homePage.loginPassword.sendKeys(ConfigReader.getProperty("deanPassword_aeo"));
         homePage.loginEkraniLoginButton.click();
     }
 
@@ -93,14 +92,16 @@ public class US06_ViceDeanOlusturmaStepDefs {
     public void kullaniciAlaninaGecerliBirDeğerGirer(String birthPlace) {
         homePage.viceDeanBirthPlace_aeo.sendKeys(birthPlace);
     }
+
     @And("Kullanici Birth Place alaninin bos olmadigini test eder.")
     public void kullaniciBirthPlaceAlanininBosOlmadiginiTestEder() {
         assertFalse(homePage.viceDeanRequiredBirthPlace_aeo.isDisplayed());
     }
+
     @Then("Kullanici Gender seçeneginden birini seçer.")
     public void kullaniciGenderSeçenegindenBiriniSeçer() {
-       homePage.femaleRadioButton_aeo.click();
-        }
+        homePage.femaleRadioButton_aeo.click();
+    }
 
 
     @And("Kullanici Gender seçeneginin bos olmasdigini test eder.")
@@ -111,7 +112,7 @@ public class US06_ViceDeanOlusturmaStepDefs {
 
     @Then("Kullanici {string} kutusuna geçerli bir doğum tarihi girer.")
     public void kullaniciKutusunaGeçerliBirDoğumTarihiGirer(String date) {
-       homePage.dateOfBirth_aeo.sendKeys(date);
+        homePage.dateOfBirth_aeo.sendKeys(date);
     }
 
     @And("Kullanici Date Of Birth kutusunun bos olamdigini test eder.")
@@ -130,7 +131,146 @@ public class US06_ViceDeanOlusturmaStepDefs {
 
     @And("Kullanici Phone kutusunun bos olmadigini test eder.")
     public void kullaniciPhoneKutusununBosOlmadiginiTestEder() {
+        assertFalse(homePage.requiredPhoneNumber_aeo.isDisplayed());
 
     }
+
+    @Then("Kullanici {string} kutusuna gecerli bir SSN girer.")
+    public void kullaniciKutusunaGecerliBirSSNGirer(String ssn) {
+        fakeSsn = faker.idNumber().ssnValid();
+        homePage.viceDeanSsnNo_aeo.sendKeys(fakeSsn);
+
+    }
+
+    @And("Kullanici Ssn kutusunun bos olmadigini test eder.")
+    public void kullaniciSsnKutusununBosOlmadiginiTestEder() {
+        assertFalse(homePage.requiredSsn_aeo.isDisplayed());
+    }
+
+    @Then("Kullanici {string} kutusuna gecerli bir User Name girer.")
+    public void kullaniciKutusunaGecerliBirUserNameGirer(String username) {
+        fakeUsername = faker.name().username();
+        homePage.viceDeanUsername_aeo.sendKeys(fakeUsername);
+    }
+
+    @And("Kullanici User Name kutusunun bos olmadigini test eder.")
+    public void kullaniciUserNameKutusununBosOlmadiginiTestEder() {
+        assertFalse(homePage.requiredUsername_aeo.isDisplayed());
+    }
+
+
+    @Then("Kullanici {string} kutusuna büyük harf, kücük harf ve rakam iceren  en az {int}- karakterli bir sifreyi girer.")
+    public void kullaniciKutusunaBüyükHarfKücükHarfVeRakamIcerenEnAzKarakterliBirSifreyiGirer(String password) {
+        homePage.viceDeanPassword_aeo.sendKeys(password);
+    }
+
+    @And("Kullanici Password kutusunun bos olmadigini test eder.")
+    public void kullaniciPasswordKutusununBosOlmadiginiTestEder() {
+        assertFalse(homePage.passwordGirUyarisi.isDisplayed());
+        ReusableMethods.bekle(2);
+    }
+
+    @Then("Kullanici Submit butonunu tiklar.")
+    public void kullaniciSubmitButonunuTiklar() {
+        homePage.viceDeanSubmitButton_aeo.click();
+    }
+
+    @And("Kullanici basarili bir sekilde Vice Dean ekledigini dogrular.")
+    public void kullaniciBasariliBirSekildeViceDeanEklediginiDogrular() {
+        ReusableMethods.bekle(1);
+        assertTrue(homePage.viceDeanSavedUyarisi.isDisplayed());
+    }
+
+
+    @And("Kullanici sayfayi kapatir.")
+    public void kullaniciSayfayiKapatir() {
+        Driver.closeDriver();
+    }
+
+
+    @Then("Kullanici {string} kutusuna - olmadan  bir SSN girer.")
+    public void kullaniciKutusunaOlmadanBirSSNGirer(String ssn) {
+        homePage.viceDeanSsnNo_aeo.sendKeys(ssn);
+    }
+
+    @And("Kullanici Please enter valid SSN number alert uyarisi goruldugunu dogrular.")
+    public void kullaniciPleaseEnterValidSSNNumberAlertUyarisiGoruldugunuDogrular() {
+        ReusableMethods.visibleWait(homePage.ssnDogruDegilUyarisi, 3);
+        assertTrue(homePage.ssnDogruDegilUyarisi.isDisplayed());
+        ReusableMethods.bekle(3);
+    }
+
+    @And("Kullanici Ssn kutusunu siler.")
+    public void kullaniciSsnKutusunuSiler() {
+        //ReusableMethods.jsClear(homePage.viceDeanSsnNo_aeo);
+    }
+
+
+    @Then("Kullanici {string} kutusuna {int}- karakterden fazla  bir SSN girer.")
+    public void kullaniciKutusunaKarakterdenFazlaBirSSNGirer(String ssn1) {
+        homePage.viceDeanSsnNo_aeo.sendKeys(ssn1);
+    }
+
+    @Then("Kullanici {string} kutusuna {int}- karakterden az bir SSN girer.")
+    public void kullaniciKutusunaKarakterdenAzBirSSNGirer(String ssn2) {
+        homePage.viceDeanSsnNo_aeo.sendKeys(ssn2);
+
+    }
+
+    @And("Kullanici eksik karakter girdigini dorular.")
+    public void kullaniciEksikKarakterGirdiginiDorular() {
+        assertTrue(homePage.ssn11KarakterEksikUyarisi.isDisplayed());
+    }
+
+    @Then("Kullanici {string} kutusuna sekiz karakterden kucuk bir sifre girer.")
+    public void kullaniciKutusunaSekizKarakterdenKucukBirSifreGirer(String pass) {
+        homePage.viceDeanPassword_aeo.sendKeys(pass);
+    }
+
+    @And("Kullanici password icin eksik karakter girdigini dogrular.")
+    public void kullaniciPasswordIcinEksikKarakterGirdiginiDogrular() {
+        assertTrue(homePage.password8KarakterEksikUyarisi.isDisplayed());
+    }
+
+    @Then("Kullanici {string} kutusuna Büyük harf kullanmadan sifre girer.")
+    public void kullaniciKutusunaBüyükHarfKullanmadanSifreGirer(String pass) {
+        homePage.viceDeanPassword_aeo.sendKeys(pass);
+    }
+
+    @And("Kullanici One uppercase character yazisini gordugunu dogrular.")
+    public void kullaniciOneUppercaseCharacterYazisiniGordugunuDogrular() {
+        assertTrue(homePage.passwordBuyukHarfEksikUyarisi.isDisplayed());
+
+    }
+
+    @And("Kullanici Password kutusun siler.")
+    public void kullaniciPasswordKutusunSiler() {
+        //ReusableMethods.jsClear(homePage.viceDeanPassword_aeo);
+    }
+
+
+    @Then("Kullanici {string} kutusuna Kücük harf kullanmadan sifre girer.")
+    public void kullaniciKutusunaKücükHarfKullanmadanSifreGirer(String pass1) {
+        homePage.viceDeanPassword_aeo.sendKeys(pass1);
+    }
+
+    @And("Kullanici One lowercase character yazisini gordugunu dogrular.")
+    public void kullaniciOneLowercaseCharacterYazisiniGordugunuDogrular() {
+        assertTrue(homePage.passwordKucukHarfEksikUyarisi.isDisplayed());
+    }
+
+    @Then("Kullanici {string} kutusuna rakam kullanmadan sifre girer.")
+    public void kullaniciKutusunaRakamKullanmadanSifreGirer(String pass2) {
+        homePage.viceDeanPassword_aeo.sendKeys(pass2);
+    }
+
+    @And("Kullanici One number yazisini gordugunu dogrular.")
+    public void kullaniciOneNumberYazisiniGordugunuDogrular() {
+        assertTrue(homePage.passwordRakamEksikUyarisi.isDisplayed());
+    }
 }
+
+
+
+
 
