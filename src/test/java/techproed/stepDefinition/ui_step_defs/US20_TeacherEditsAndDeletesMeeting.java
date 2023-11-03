@@ -10,7 +10,7 @@ import techproed.utilities.ReusableMethods;
 
 import static org.junit.Assert.assertTrue;
 
-public class US_20StepDefinition {
+public class US20_TeacherEditsAndDeletesMeeting {
     Actions actions=new Actions(Driver.getDriver());
     HomePage page = new HomePage();
     @And("toplantilari gormek icin sayfayi kaydir")
