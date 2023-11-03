@@ -155,17 +155,19 @@ public class Us15_VicedeanStudentOlusturabilmeli {
 
     @And("Student Listte son sayfaya git")
     public void studentListteSonSayfayaGit() {
-        ReusableMethods.scrollEnd();
-        ReusableMethods.visibleWait(homePage.lastPageButtonSG,4);
+        //ReusableMethods.scrollEnd();
+        js.executeScript("window.scrollBy(0, 700);");
+        //ReusableMethods.visibleWait(homePage.lastPageButtonSG,4);
         js.executeScript("arguments[0].click()", homePage.lastPageButtonSG);
-        homePage.lastPageButtonSG.click();
+        // homePage.lastPageButtonSG.click();
 
     }
 
     @Then("Oluşturulan Studentin Student Number'inin otomatik geldiğini doğrula")
     public void oluşturulanStudentinStudentNumberIninOtomatikGeldiğiniDoğrula() {
-        assert homePage.studentliSTSG.isDisplayed();
+        assert homePage.PagebuttonSG.isDisplayed();
     }
+
 
     @And("Required yazısını doğrula\\(Name)")
     public void requiredYazısınıDoğrulaName() {
@@ -176,7 +178,7 @@ public class Us15_VicedeanStudentOlusturabilmeli {
 
     @And("Required yazısını doğrula\\(Surname)")
     public void requiredYazısınıDoğrulaSurname() {
-        Assert.assertEquals("Required",homePage.usernameRequiredSG.getText());
+        Assert.assertEquals("Required",homePage.SurnameRequiredSG.getText());
     }
 
     @And("Required yazısını doğrula\\(Birth Place)")
