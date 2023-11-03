@@ -13,8 +13,8 @@ import techproed.utilities.ReusableMethods;
 
 import java.util.List;
 import java.util.Random;
+public class Us17_TeacherOgrenciNotBilgisiEkler {
 
-public class Us17_StepDefinition {
     HomePage page = new HomePage();
     Actions actions = new Actions(Driver.getDriver());
     Random random = new Random();
@@ -350,6 +350,5 @@ public class Us17_StepDefinition {
     @And("Info note bilgisi eklendigi dogrulanir_is")
     public void ınfoNoteBilgisiEklendigiDogrulanir_is() {
         Assert.assertEquals("Student Info saved Successfully", page.infoAlert_is.getText());
-
     }
 }
