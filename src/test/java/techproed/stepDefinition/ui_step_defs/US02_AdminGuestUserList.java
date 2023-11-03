@@ -63,7 +63,9 @@ public class US02_AdminGuestUserList {
 
     @When("kullanici admin list bolumunden kullaniciyi siler")
     public void kullaniciAdminListBolumundenKullaniciyiSiler() {
-       // homePage.copButonuEB.click();
+      // ReusableMethods.click(homePage.copButonuEB);
+       // ReusableMethods.clickElementByJS(homePage.copButonuEB);
+        //ReusableMethods.bekle(1);
     }
 
     @Then("kullanici olusturulan kaydin silindigini dogrular")

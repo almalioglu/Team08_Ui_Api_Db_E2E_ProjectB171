@@ -557,6 +557,8 @@ public class HomePage {
 @FindBy(xpath = "//*[text()='Minimum 12 character (XXX-XXX-XXXX)']")public WebElement Phone12KarakterEksikUyarisi;
 @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")  public WebElement ssn11KarakterEksikUyarisi;
 @FindBy(xpath = "(//*[@class='invalid-feedback'])[8]")    public WebElement passwordGirUyarisi;
+
+
 @FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
 public WebElement menuButton;
 @FindBy(xpath = "(//*[@role='button'])[11]")
@@ -611,7 +613,21 @@ public WebElement messageColumn;
 
 
 
-//Elif-630
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  //Elif-630
   @FindBy(xpath = "(//*[@type='button'])[3]") public WebElement registerbutonEB;
   @FindBy(xpath ="//*[text()='Guest User registered.']" ) public WebElement guestUserRegisteredEB;//"//div[@role='alert']"
  @FindBy(xpath = "//*[@id='phoneNumber']") public  WebElement phoneNumberEB;
@@ -648,13 +664,15 @@ public WebElement messageColumn;
     @FindBy(xpath = "//*[text()='Ssn']")public WebElement SsnColumnEB;
     @FindBy(xpath = "//*[text()='User Name']")public WebElement UserNameColumnEB;
     @FindBy(xpath = "(//*[@class='btn btn-danger'])[1]")public WebElement guestUserDeleteButonuEB;
-    @FindBy(xpath = "(//*[@type='button'])[9]")public WebElement copButonuEB;
+    @FindBy(xpath = "(//*[@class='btn btn-danger'])[5]")public WebElement copButonuEB;
     @FindBy(xpath = "//*[text()='Contact']")public WebElement contactButonEB;
     @FindBy(xpath = "//*[@placeholder='Name']")public WebElement contactNameButonEB;
     @FindBy(xpath = "//*[@placeholder='Email']")public WebElement contactEmailButonEB;
     @FindBy(xpath = "//*[@placeholder='Subject']")public WebElement contactSubjectButonEB;
     @FindBy(xpath = "//*[@placeholder='Message']")public WebElement contactMessageButonEB;
     @FindBy(xpath = "//*[text()='Send Message']")public WebElement SendMessageButonEB;
+    @FindBy(xpath = "//div[text()='Contact Message Created Successfully']") public WebElement alertMessageEB;
+    @FindBy(xpath = "//*[text()='Please enter valid email']") public WebElement pleaseEnterValidEmailMessageEB;
 
 
 
@@ -709,9 +727,7 @@ public WebElement messageColumn;
 
 
 
-
-
-    //MeryemAkbayır-730
+ //MeryemAkbayır-730
 
 
 
