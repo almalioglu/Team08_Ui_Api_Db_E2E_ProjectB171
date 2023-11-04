@@ -32,13 +32,6 @@ public class US24_AdminTeacherOlusturabilmeli {
 
     @When("admin select Lesson sekmesine tiklar ve bir ders secer")
     public void admin_select_lesson_sekmesine_tiklar_ve_bir_ders_secer() {
-        //homePage.addSelectLessonDdmBI.click();
-        //String lesson="Java";
-        //homePage.addSelectLessonDdmBI.sendKeys(lesson,Keys.ENTER);
-        //ReusableMethods.bekle(1);
-        // Locate click
-        // Locate send keys “Java” keys.up keys.enter
-        //homePage.adminChooseLessonDdmBI.click();
         String lesson="Java";
         homePage.adminChooseLessonDdmBI.sendKeys(lesson, Keys.TAB,Keys.TAB);
         ReusableMethods.bekle(2);

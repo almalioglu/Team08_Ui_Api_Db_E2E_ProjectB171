@@ -327,8 +327,6 @@ public class HomePage {
 
 
 
-
-
     //Cihan-330
     @FindBy(xpath = "//*[@id=\"controlled-tab-example-tab-lessonProgram\"]") public WebElement lessonprogramButton;
     @FindBy(xpath = "//*[@class=' css-1jqq78o-placeholder']") public WebElement lessonddm;
