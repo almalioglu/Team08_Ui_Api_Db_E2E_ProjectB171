@@ -275,7 +275,7 @@ public class HomePage {
  @FindBy(xpath = "//th[text()='User Name']") public WebElement usernameTeacherListTitleBI;
  @FindBy(xpath = "(//a[@class='page-link'])[4]") public WebElement pageNextEndButtonBI;
  @FindBy(xpath = "(//i[@class='fa-solid fa-pencil'])[20]") public WebElement editButtonListEndBI;
- @FindBy(xpath = "//div[text()='Select lesson']") public WebElement editListChooseLessonsBI;
+// @FindBy(xpath = "//div[@id='react-select-4-placeholder']") public WebElement editListChooseLessonsBI;
  @FindBy(xpath = "(//input[@id='name'])[2]") public WebElement editListNameBI;
  @FindBy(xpath = "(//input[@id='surname'])[2]") public WebElement editListSurnameBI;
  @FindBy(xpath = "(//input[@id='birthPlace'])[2]") public WebElement editListBirthPlaceBI;
@@ -286,16 +286,16 @@ public class HomePage {
  @FindBy(xpath = "(//input[@type='radio'])[4]") public WebElement editListMaleRadioBI;
  @FindBy(xpath = "(//input[@id='birthDay'])[2]") public WebElement editListDateOfBirthBI;
  @FindBy(xpath = "(//input[@id='username'])[2]") public WebElement editListUsernameBI;
- @FindBy(xpath = "(//input[@id='password'])[2]") public WebElement editListPasswordBI;
+ @FindBy(xpath = "(//input[@placeholder='Password'])[2]") public WebElement editListPasswordBI;
  @FindBy(xpath = "(//button[text()='Submit'])[2]") public WebElement editListSubmitBI;
  @FindBy(xpath = "//div[text()='Teacher updated Successful']") public WebElement editTeacherSuccessfulTextBI;
  @FindBy(xpath = "(//button[@aria-label='Close'])[3]") public WebElement editTeacherCloseBI;
  //@FindBy(xpath = "//div[@id='react-select-2-placeholder']") public WebElement adminChooseLessonDdmBI;
  @FindBy(xpath = "//div[@class=' css-13cymwt-control']") public WebElement adminChooseLessonDdmBI;
-
-
-
-
+ @FindBy(xpath = "(//button[@class='text-dark btn btn-outline-info'])[6]") public WebElement editListButtonPencilBI;
+ @FindBy(xpath = "(//a[@role='button'])[14]") public WebElement editListPageEndButtonBI;
+ @FindBy(xpath = "//h4[text()='Latest News']") public WebElement editScrollHeaderBI;
+ @FindBy(xpath = "//input[@id='react-select-4-input']") public WebElement editChooseLessondDMBI;
 
 
 
