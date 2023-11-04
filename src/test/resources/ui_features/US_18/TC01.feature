@@ -8,7 +8,7 @@ Feature: US18_Teacher, ogrenciye verdigi notları, gorebilmeli ve guncelleyebilm
 
 #  @US18 @TC_01
 #  Scenario: Teacher, öğrenciye verdiği notları, görebilmelidir
-
+#    And Ogrenci notunun gorundugunu dogrula_is
 
   @US18 @TC_02
   Scenario: Teacher, öğrencinin aldığı "dersi" güncelleyebilmelidir
@@ -23,6 +23,7 @@ Feature: US18_Teacher, ogrenciye verdigi notları, gorebilmeli ve guncelleyebilm
     Then Ogrenci bilgilerini guncellemek icin edit butonu tiklanir_is
     And Ders donemi bilgisi guncellenir_is
     Then Ders donemi bilgisinin guncellendigi dogrulanir_is
+    And Edit ekrani kapatilir_is
     And sayfa kapatilir_is
 
   @US18 @TC_04

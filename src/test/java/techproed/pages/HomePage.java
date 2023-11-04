@@ -162,7 +162,7 @@ public class HomePage {
     @FindBy(xpath = "(//table//td[3])[1]") public WebElement tableAbsenteeInfo_is;
     @FindBy(xpath = "(//table//td[7])[1]") public WebElement tableInfoNoteInfo_is;
     @FindBy(xpath = "(//table//td[1])[1]") public WebElement tableStudentName_is;
-    @FindBy(xpath = "(//*[@class='btn-close'])[3]") public WebElement closeEditWindowButton_is;
+    @FindBy(xpath = "(//button[@class='btn-close'])[3]") public WebElement closeEditWindowButton_is;
     @FindBy(xpath = "//*[@class='btn btn-danger']") public WebElement deleteStudentInfoButton_is;
     @FindBy(xpath = "//table//tr") public List<WebElement> tableRowsis;
     @FindBy(xpath = "(//*[@class='fw-semibold btn btn-primary btn-lg'])[2]") public WebElement notEditSubmitButton_is;
