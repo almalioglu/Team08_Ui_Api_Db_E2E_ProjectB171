@@ -558,6 +558,7 @@ public class HomePage {
 @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")  public WebElement ssn11KarakterEksikUyarisi;
 @FindBy(xpath = "(//*[@class='invalid-feedback'])[8]")    public WebElement passwordGirUyarisi;
 
+
   //07
 @FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
 public WebElement menuButton;
@@ -625,8 +626,7 @@ public WebElement messageColumn;
   
   
   
-  
-     
+       
   //Elif-630
   @FindBy(xpath = "(//*[@type='button'])[3]") public WebElement registerbutonEB;
   @FindBy(xpath ="//*[text()='Guest User registered.']" ) public WebElement guestUserRegisteredEB;//"//div[@role='alert']"
@@ -978,12 +978,14 @@ public WebElement messageColumn;
 
 
 
+    @FindBy(xpath = "//*[@id=\"controlled-tab-example-tabpane-lessonsList\"]/div[2]/div[2]/div/table/tbody/tr[1]/td[4]/span/button/i")
+    public WebElement silmeTTE;
+
+//*[@class='Toastify__toast-body']
 
 
-
-
-
-
+    @FindBy(xpath = "//*[@class='Toastify__toast-body']")
+    public WebElement deleteYazisiTE;
 
 
 
