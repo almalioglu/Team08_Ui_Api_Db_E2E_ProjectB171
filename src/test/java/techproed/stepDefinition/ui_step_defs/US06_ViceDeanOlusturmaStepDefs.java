@@ -29,7 +29,7 @@ public class US06_ViceDeanOlusturmaStepDefs {
 
     @Given("Kullanici anasayfaya gider.")
     public void kullaniciAnasayfayaGider() {
-        Driver.getDriver().get(ConfigReader.getProperty("Url"));
+        Driver.getDriver().get(ConfigReader.getProperty("pageUrl"));
 
     }
 
@@ -44,25 +44,7 @@ public class US06_ViceDeanOlusturmaStepDefs {
         homePage.loginEkraniLoginButton.click();
     }
 
-    @And("Kullanici tüm alanlarin bos oldugunu test eder.")
-    public void kullaniciTümAlanlarinBosOldugunuTestEder() {
-        homePage.viceDeanManagementHomePage_aeo.sendKeys(Keys.TAB);
-        ReusableMethods.bekle(1);
 
-        assertTrue(homePage.viceDeanrequiredName_aeo.isDisplayed());
-        assertTrue(homePage.viceDeanRequiredSurname_aeo.isDisplayed());
-        assertTrue(homePage.viceDeanBirthPlace_aeo.isDisplayed());
-
-        assertFalse(homePage.maleRadioButton_aeo.isSelected());
-        assertFalse(homePage.femaleRadioButton_aeo.isSelected());
-
-        assertTrue(homePage.requiredDateOfBirth_aeo.isDisplayed());
-        assertTrue(homePage.requiredPhoneNumber_aeo.isDisplayed());
-        assertTrue(homePage.requiredSsn_aeo.isDisplayed());
-        assertTrue(homePage.requiredUsername_aeo.isDisplayed());
-        assertTrue(homePage.passwordGirUyarisi.isDisplayed());
-
-    }
 
 
     @Then("Kullanici {string} alanina gecerli bir ad girer.")
@@ -158,12 +140,6 @@ public class US06_ViceDeanOlusturmaStepDefs {
         assertFalse(homePage.requiredUsername_aeo.isDisplayed());
     }
 
-
-    @Then("Kullanici {string} kutusuna büyük harf, kücük harf ve rakam iceren  en az {int}- karakterli bir sifreyi girer.")
-    public void kullaniciKutusunaBüyükHarfKücükHarfVeRakamIcerenEnAzKarakterliBirSifreyiGirer(String password) {
-        homePage.viceDeanPassword_aeo.sendKeys(password);
-    }
-
     @And("Kullanici Password kutusunun bos olmadigini test eder.")
     public void kullaniciPasswordKutusununBosOlmadiginiTestEder() {
         assertFalse(homePage.passwordGirUyarisi.isDisplayed());
@@ -188,11 +164,6 @@ public class US06_ViceDeanOlusturmaStepDefs {
     }
 
 
-    @Then("Kullanici {string} kutusuna - olmadan  bir SSN girer.")
-    public void kullaniciKutusunaOlmadanBirSSNGirer(String ssn) {
-        homePage.viceDeanSsnNo_aeo.sendKeys(ssn);
-    }
-
     @And("Kullanici Please enter valid SSN number alert uyarisi goruldugunu dogrular.")
     public void kullaniciPleaseEnterValidSSNNumberAlertUyarisiGoruldugunuDogrular() {
         ReusableMethods.visibleWait(homePage.ssnDogruDegilUyarisi, 3);
@@ -202,7 +173,7 @@ public class US06_ViceDeanOlusturmaStepDefs {
 
     @And("Kullanici Ssn kutusunu siler.")
     public void kullaniciSsnKutusunuSiler() {
-        //ReusableMethods.jsClear(homePage.viceDeanSsnNo_aeo);
+        ReusableMethods.cleanByJs(homePage.viceDeanSsnNo_aeo);
     }
 
 
@@ -245,7 +216,7 @@ public class US06_ViceDeanOlusturmaStepDefs {
 
     @And("Kullanici Password kutusun siler.")
     public void kullaniciPasswordKutusunSiler() {
-        //ReusableMethods.jsClear(homePage.viceDeanPassword_aeo);
+        ReusableMethods.cleanByJs(homePage.viceDeanPassword_aeo);
     }
 
 
@@ -267,6 +238,17 @@ public class US06_ViceDeanOlusturmaStepDefs {
     @And("Kullanici One number yazisini gordugunu dogrular.")
     public void kullaniciOneNumberYazisiniGordugunuDogrular() {
         assertTrue(homePage.passwordRakamEksikUyarisi.isDisplayed());
+    }
+
+    @Then("Kullanici {string} kutusuna büyük harf, kücük harf ve rakam iceren  en az sekiz karakterli bir sifreyi girer.")
+    public void kullaniciKutusunaBüyükHarfKücükHarfVeRakamIcerenEnAzSekizKarakterliBirSifreyiGirer(String password) {
+        homePage.viceDeanPassword_aeo.sendKeys(password);
+
+    }
+
+    @Then("Kullanici {string}girilmelidir.")
+    public void kullaniciGirilmelidir(String SSN) {
+        homePage.viceDeanSsnNo_aeo.sendKeys(SSN);
     }
 }
 

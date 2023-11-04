@@ -578,11 +578,6 @@ public class HomePage {
     @FindBy(xpath = "(//*[text()='Your birth place should be at least 2 characters'])[1]")
     public WebElement birthPlace2KarakterEksikUyarisi;
 
-<<<<<<< Updated upstream
-  //07
-@FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
-=======
-
     @FindBy(xpath = "(//*[text()='Your username should be at least 4 characters'])[1]")
     public WebElement userName4KarakterEksikUyarisi;
 
@@ -604,7 +599,7 @@ public class HomePage {
     public WebElement adminSavedUyarisi;
 
     @FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
->>>>>>> Stashed changes
+
 public WebElement menuButton;
 @FindBy(xpath = "(//*[@role='button'])[11]")
 public WebElement  contactGetAllButton;
@@ -632,52 +627,8 @@ public WebElement messageColumn;
 
 
 
-<<<<<<< Updated upstream
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-     
-  //Elif-630
-=======
 //Elif-630
->>>>>>> Stashed changes
-  @FindBy(xpath = "(//*[@type='button'])[3]") public WebElement registerbutonEB;
+    @FindBy(xpath = "(//*[@type='button'])[3]") public WebElement registerbutonEB;
   @FindBy(xpath ="//*[text()='Guest User registered.']" ) public WebElement guestUserRegisteredEB;//"//div[@role='alert']"
  @FindBy(xpath = "//*[@id='phoneNumber']") public  WebElement phoneNumberEB;
     @FindBy(xpath = "//a[contains(.,'Register')]") public WebElement registerButonEB;
@@ -722,49 +673,6 @@ public WebElement messageColumn;
     @FindBy(xpath = "//*[text()='Send Message']")public WebElement SendMessageButonEB;
     @FindBy(xpath = "//div[text()='Contact Message Created Successfully']") public WebElement alertMessageEB;
     @FindBy(xpath = "//*[text()='Please enter valid email']") public WebElement pleaseEnterValidEmailMessageEB;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -833,50 +741,7 @@ public WebElement messageColumn;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- //MeryemOzgun-830
+    //MeryemOzgun-830
     @FindBy(xpath = "//*[@class='header_link ms-2']") public WebElement loginButton_mo;
     @FindBy(xpath = "//*[@id='username']") public WebElement loginUserName_mo;
     @FindBy(css = "nav>button") public WebElement menuButton_mo;
@@ -901,49 +766,6 @@ public WebElement messageColumn;
     @FindBy(xpath = "(//*[@id='description'])[2]") public WebElement editDescription;
     @FindBy(xpath = "//*[@class='btn btn-danger']") public WebElement deleteButton_mo;
     @FindBy(xpath = "(//div)[69]") public WebElement meetDeleteSuccesfullMesaji;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
