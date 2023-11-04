@@ -290,6 +290,8 @@ public class HomePage {
  @FindBy(xpath = "(//button[text()='Submit'])[2]") public WebElement editListSubmitBI;
  @FindBy(xpath = "//div[text()='Teacher updated Successful']") public WebElement editTeacherSuccessfulTextBI;
  @FindBy(xpath = "(//button[@aria-label='Close'])[3]") public WebElement editTeacherCloseBI;
+ //@FindBy(xpath = "//div[@id='react-select-2-placeholder']") public WebElement adminChooseLessonDdmBI;
+ @FindBy(xpath = "//div[@class=' css-13cymwt-control']") public WebElement adminChooseLessonDdmBI;
 
 
 
