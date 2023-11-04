@@ -54,4 +54,16 @@ public class US12_ViceDeanogretmenedersatayabilmelidir {
     public void lessonProgramAssignmentBolumundeChoseLessonUBoşBırak() {
 
     }
+
+    @Then("Vice Dean Managemente tikla")
+    public void viceDeanManagementeTikla() {
+        page.vicedeanmanagment.click();
+    }
+
+    @Then("ViceDean ogretmen olusturur")
+    public void vicedeanOgretmenOlusturur() {
+
+
+
+    }
 }

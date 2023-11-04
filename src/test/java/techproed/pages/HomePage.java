@@ -354,7 +354,7 @@ public class HomePage {
     @FindBy(xpath = "(//*[@id=\"offcanvasNavbar-expand-lg\"]/div[2]/div/a[3])[2]") public WebElement logoutbutton2;
     @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div/div[2]/div/div[1]/button") public WebElement yesbutton;
     @FindBy(xpath = "(//*[@id=\"offcanvasNavbar-expand-lg\"]/div[2]/div/a[5])[2]") public WebElement logouttbutton3;
-
+    @FindBy(xpath = "(//*[@id=\"offcanvasNavbar-expand-lg\"]/div[2]/div/a[3])[2]") public WebElement vicedeanmanagment;
 
 
 
