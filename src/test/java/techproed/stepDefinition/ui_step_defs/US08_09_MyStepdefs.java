@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.devtools.v85.systeminfo.model.Size;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import techproed.pages.HomePage;
@@ -17,6 +18,7 @@ import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
 import java.util.List;
+import java.util.Set;
 
 public class US08_09_MyStepdefs {
     HomePage page = new HomePage();
@@ -124,15 +126,7 @@ public class US08_09_MyStepdefs {
 
     @And("Sayfanın en altında bulunan sayfa sayısı kısmından son sayfaya gidilir")
     public void sayfanınEnAltındaBulunanSayfaSayısıKısmındanSonSayfayaGidilir() {
-  //      WebElement silinecek = page.silmeTE;
-  //      Select select = new Select(silinecek) ;
-  //      List<WebElement> silinecekListesi = select.getOptions() ;
-  //      for (WebElement ea: silinecekListesi) {
-  //         ea.click();
-  //      }
-        //LessonManagementPage.submitButton.sendkeys(Keys.Page.DOWN, Keys.Page.DOWN);
-        // page.submitbutton.sendKeys(Keys.PAGE_DOWN, Keys.PAGE_DOWN);
-       Actions actions = new Actions(Driver.getDriver());
+        Actions actions = new Actions(Driver.getDriver());
        WebElement body = Driver.getDriver().findElement(By.tagName("body"));
        actions.moveToElement(body).sendKeys(Keys.PAGE_DOWN).build().perform();
        actions.moveToElement(body).sendKeys(Keys.PAGE_DOWN).build().perform();
@@ -142,6 +136,15 @@ public class US08_09_MyStepdefs {
 
     @And("Oluşturulan; Lesson Name,Compulsory ve Credit Score görülmeli")
     public void oluşturulanLessonNameCompulsoryVeCreditScoreGörülmeli() {
+        Actions actions = new Actions(Driver.getDriver());
+        WebElement body = Driver.getDriver().findElement(By.tagName("body"));
+        actions.moveToElement(body).sendKeys(Keys.PAGE_DOWN).build().perform();
+        actions.moveToElement(body).sendKeys(Keys.PAGE_DOWN).build().perform();
+        ReusableMethods.click(page.SonSayfaTE);
+       // page.chooselessonbox.get(page.chooselessonbox.size() - 1).click();
+
+
+
 
     }
 
@@ -149,7 +152,28 @@ public class US08_09_MyStepdefs {
     public void oluşturulanDersinEnSağındaBulunanKırmızıÇöpKutusuSimgesineTıklanır() {
        // List<WebElement> silme = page.silmeTE;
       //  page.chooselessonbox.get(page.chooselessonbox.size() - 1).click();
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
+        js.executeScript("window.scrollTo(50, 50)");
+        ReusableMethods.bekle(5);
+        page.silmeTTE.click();
 
+     //   WebElement sonSilim = page.silmeTE ;
+     //   Select select = new Select(sonSilim) ;
+     //   List<WebElement> silimListesi = select.getOptions();
+     //   silimListesi.get(silimListesi.size()-1).click();
+
+    }
+
+    @And("Lesson Deleted yazısı görülmeli")
+    public void lessonDeletedYazısıGörülmeli() {
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(page.deleteYazisiTE.isDisplayed());
+    }
+
+    @And("Lesson Name kutusuna veri gir")
+    public void lessonNameKutusunaVeriGir() {
+        ReusableMethods.visibleWait(page.LessonNameTE,1) ;
+        page.LessonNameTE.sendKeys("MatematikDersi");
     }
 }
