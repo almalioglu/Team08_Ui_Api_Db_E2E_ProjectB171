@@ -8,9 +8,7 @@
 
     @06 @TC01
     Scenario Outline: TC01 Vice Dean Hesabı Oluşturma Pozitif Testi
-      Given Kullanici anasayfaya gider.
-      Then Kullanici Dean hesabi ile Sing in yapar.
-      Then Kullanici "<Name>" alanina gecerli bir ad girer.
+      Given Kullanici "<Name>" alanina gecerli bir ad girer.
       And  Kullanici Name alaninin bos olmadigini test eder.
       Then Kullanici "<Surname>" alanina gecerli bir surname girer.
       And Kullanici Surname  alaninin bos olmadigini test eder.
@@ -40,9 +38,7 @@
 
     @US06 @TC02
     Scenario Outline: TC02 Negatif test: SSN
-      Given Kullanici anasayfaya gider.
-      Then Kullanici Dean hesabi ile Sing in yapar.
-      Then Kullanici "<Name>" alanina gecerli bir ad girer.
+      Given Kullanici "<Name>" alanina gecerli bir ad girer.
       Then Kullanici "<Surname>" alanina gecerli bir surname girer.
       Then Kullanici "<Birth Place>" alanina gecerli bir değer girer.
       Then Kullanici Gender seçeneginden birini seçer.

@@ -626,22 +626,9 @@ public WebElement messageColumn;
     @FindBy(xpath = "(//*[text()='Admin Saved'])[1]")
     public WebElement adminSavedUyarisi;
 
-    @FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
 
-public WebElement menuButton;
-@FindBy(xpath = "(//*[@role='button'])[11]")
-public WebElement  contactGetAllButton;
-@FindBy(xpath = "//*[@class='fw-bold p-3 card-header']")public WebElement contactMassageButton;
-@FindBy(xpath = "//tbody//tr[1]/td[1]/span[1]")
-public WebElement nameColumn;
-@FindBy(xpath = "//tbody/tr[1]/td[2]/span[1]")
-public WebElement emailColumn;
-@FindBy(xpath = "//tbody/tr[2]/td[3]/span[1]")
-public WebElement dateColumn;
-@FindBy(xpath = "//tbody/tr[1]/td[4]/span[1]")
-public WebElement subjectColumn;
-@FindBy(xpath = "//tbody/tr[1]/td[5]/span[1]")
-public WebElement messageColumn;
+
+
 
 
 
