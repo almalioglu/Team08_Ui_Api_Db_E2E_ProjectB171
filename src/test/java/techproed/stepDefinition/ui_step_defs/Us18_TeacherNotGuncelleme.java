@@ -10,6 +10,7 @@ import techproed.pages.HomePage;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
+import javax.naming.ldap.Control;
 import java.util.List;
 import java.util.Random;
 
@@ -80,13 +81,13 @@ public class Us18_TeacherNotGuncelleme {
 
     @Then("Ders donemi bilgisinin guncellendigi dogrulanir_is")
     public void dersDonemiBilgisininGuncellendigiDogrulanir_is() {
-        Assert.assertEquals("Student Info updated Successfully", page.notEditDonemDogrulama_is.getText());
-
+        Assert.assertEquals("Student Info updated Successfully", page.infoAlert_is.getText());
+        ReusableMethods.bekle(2);
     }
 
     @And("Absentee bilgisi guncellenir_is")
     public void absenteeBilgisiGuncellenir_is() {
-        page.notEditAbsenteeInfo_is.sendKeys(Keys.COMMAND, "A", Keys.DELETE);
+        page.notEditAbsenteeInfo_is.sendKeys(Keys.COMMAND,Keys.CONTROL, "A", Keys.DELETE, Keys.DELETE, Keys.DELETE);
         ReusableMethods.bekle(2);
 
         page.notEditAbsenteeInfo_is.sendKeys(absentee);
@@ -99,11 +100,12 @@ public class Us18_TeacherNotGuncelleme {
     @Then("Absentee bilgisinin guncellendigi dogrulanir_is")
     public void absenteeBilgisininGuncellendigiDogrulanir_is() {
         Assert.assertEquals(absentee, page.tableAbsenteeInfo_is.getText());
+
     }
 
     @And("Midterexam bilgisi guncellenir_is")
     public void midterexamBilgisiGuncellenir_is() {
-        page.notEditMidtermInfo_is.sendKeys(Keys.COMMAND, "A", Keys.DELETE);
+        page.notEditMidtermInfo_is.sendKeys(Keys.COMMAND,Keys.CONTROL,"A", Keys.DELETE);
         ReusableMethods.bekle(2);
 
         page.notEditMidtermInfo_is.sendKeys(midTermNote);
@@ -120,7 +122,7 @@ public class Us18_TeacherNotGuncelleme {
 
     @And("Finalexam bilgisi guncellenir_is")
     public void finalexamBilgisiGuncellenir_is() {
-        page.notEditFinalInfo_is.sendKeys(Keys.COMMAND, "A", Keys.DELETE);
+        page.notEditFinalInfo_is.sendKeys(Keys.COMMAND,Keys.CONTROL, "A", Keys.DELETE);
         ReusableMethods.bekle(2);
 
         page.notEditFinalInfo_is.sendKeys(finalNote);
@@ -137,7 +139,7 @@ public class Us18_TeacherNotGuncelleme {
 
     @And("infonote bilgisi guncellenir_is")
     public void infonoteBilgisiGuncellenir_is() {
-        page.notEditInfoNoteInfo_is.sendKeys(Keys.COMMAND, "A", Keys.DELETE);
+        page.notEditInfoNoteInfo_is.sendKeys(Keys.COMMAND,Keys.CONTROL, "A", Keys.DELETE);
         ReusableMethods.bekle(2);
 
         page.notEditInfoNoteInfo_is.sendKeys(infoNote);
@@ -165,4 +167,5 @@ public class Us18_TeacherNotGuncelleme {
         Assert.assertEquals("Student Info deleted Successfully", page.infoAlert_is.getText());
         page.tableRowsis.forEach(t -> Assert.assertFalse(t.getText().contains(deletedStudentInfo)));
     }
+
 }
