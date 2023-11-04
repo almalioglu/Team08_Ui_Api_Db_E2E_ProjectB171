@@ -58,15 +58,21 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
 
     @When("select Lesson sekmesine tiklar ve bir ders secer")
     public void select_lesson_sekmesine_tiklar_ve_bir_ders_secer() {
+        //homePage.addSelectLessonDdmBI.click();
+        //String lesson="Java";
+        //homePage.addSelectLessonDdmBI.sendKeys(lesson,Keys.ENTER);
+        //ReusableMethods.bekle(1);
+       // Locate click
+       // Locate send keys “Java” keys.up keys.enter
         homePage.addSelectLessonDdmBI.click();
         String lesson="Java";
-        homePage.addSelectLessonDdmBI.sendKeys(lesson,Keys.ENTER);
-        ReusableMethods.bekle(1);
+        homePage.addSelectLessonDdmBI.sendKeys(lesson, Keys.TAB,Keys.TAB);
+        ReusableMethods.bekle(2);
     }
     @And("name kutusuna veri girer")
     public void name_kutusuna_veri_girer() {
-        actions.scrollByAmount(0,200).perform();
-        ReusableMethods.bekle(4);
+        actions.scrollByAmount(0,100).perform();
+        ReusableMethods.bekle(2);
         homePage.addNameBoxBI.click();
         homePage.addNameBoxBI.sendKeys(faker.name().firstName());
         ReusableMethods.bekle(1);
@@ -255,8 +261,20 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
     @Then("Date Of Birth kutusunun boş olduğunu doğrular")
     public void date_of_birth_kutusunun_boş_olduğunu_doğrular() {
         actions.scrollByAmount(0,200).perform();
+        ReusableMethods.bekle(2);
+        homePage.addSelectLessonDdmBI.click();
+        String lesson="Java";
+        homePage.addSelectLessonDdmBI.sendKeys(lesson, Keys.TAB,Keys.TAB);
         ReusableMethods.bekle(1);
-        homePage.addNameBoxBI.sendKeys(faker.name().firstName(),Keys.TAB,faker.name().lastName(),Keys.TAB,faker.address().city(),Keys.TAB,faker.internet().emailAddress(),Keys.TAB,"324-258-6953",Keys.TAB,Keys.TAB,Keys.TAB,Keys.TAB,Keys.TAB,Keys.TAB,"354-25-6987",Keys.TAB,faker.name().username(),Keys.TAB,"Aa1234567",Keys.TAB,Keys.ENTER);
+        homePage.addNameBoxBI.sendKeys(faker.name().firstName());
+        homePage.addSurnameBoxBI.sendKeys(faker.name().lastName());
+        homePage.addBirthPlaceBoxBI.sendKeys(faker.address().city());
+        homePage.addEmailBoxBI.sendKeys(faker.internet().emailAddress());
+        homePage.addPhoneBoxBI.sendKeys(faker.numerify("###-###-####"));
+        homePage.addGenderFemaleRadioButtonBI.click();
+        homePage.addSsnBoxBI.sendKeys(faker.numerify("###-##-####"));
+        homePage.addUsernameBoxBI.sendKeys(faker.name().username());
+        homePage.addPasswordBoxBI.sendKeys(ReusableMethods.randomPassword(1,1,6));
         Assert.assertTrue(homePage.requiredDateOfBirthAlertTextBI.isDisplayed());
     }
     @Then("Date Of Birth kutusunun altında {string} yazısının çıktığını doğrular")
@@ -292,7 +310,7 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
     }
     @Then("SSN kutusunun altında {string} yazısının çıktığını doğrula")
     public void ssn_kutusunun_altında_yazısının_çıktığını_doğrula(String string) {
-        String alertSsnText1 = homePage.requiredSsnAlertTextBI.getText();
+        String alertSsnText1 = homePage.requiredSsnMinimumCharacterAlertTextBI.getText();
         Assert.assertEquals("Minimum 11 character (XXX-XX-XXXX)", alertSsnText1);
     }
 
@@ -322,7 +340,7 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
     public void password_kutusunun_altında_yazısının_çıktığını_doğrular(String string) {
         homePage.addSubmitBoxBI.click();
         ReusableMethods.bekle(1);
-        String alertPassword8CharText = homePage.requiredPasswordAlertTextBI.getText();
+        String alertPassword8CharText = homePage.requiredPasswordMinimumCharacterAlertTextBI.getText();
         Assert.assertEquals("At least 8 characters", alertPassword8CharText);
 
     }
@@ -338,7 +356,7 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
     public void password_kutusunun_altında_yazısının_çıktığını_doğrula(String string) {
         homePage.addSubmitBoxBI.click();
         ReusableMethods.bekle(1);
-        String alertPasswordLowerText = homePage.requiredPasswordAlertTextBI.getText();
+        String alertPasswordLowerText = homePage.requiredPasswordLowerCharacterAlertTextBI.getText();
         Assert.assertEquals("One lowercase character", alertPasswordLowerText);
 
     }
@@ -354,7 +372,7 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
     public void password_kutusunun_altinda_yazisinin_ciktigini_dogrular(String string) {
         homePage.addSubmitBoxBI.click();
         ReusableMethods.bekle(1);
-        String alertPasswordUpperText = homePage.requiredPasswordAlertTextBI.getText();
+        String alertPasswordUpperText = homePage.requiredPasswordUpperCharacterAlertTextBI.getText();
         Assert.assertEquals("One uppercase character", alertPasswordUpperText);
 
 

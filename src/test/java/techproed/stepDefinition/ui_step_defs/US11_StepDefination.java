@@ -14,7 +14,7 @@ public class US11_StepDefination {
 
     @Then("Logout butonuna tikla")
     public void logoutButonunaTikla() {
-        ReusableMethods.bekle(3);
+        ReusableMethods.bekle(5);
         page.logoutbutton.click();
         ReusableMethods.visibleWait(page.MenuTE,3);
         page.yesbutton.click();
