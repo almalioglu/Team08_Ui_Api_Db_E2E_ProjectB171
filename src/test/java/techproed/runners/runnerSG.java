@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         "rerun:TestOutput/failed_scenario.txt"},//fail olan seneryoları belirttiğimiz .txt dosyasında tutar
         features = "src/test/resources",//features package'ının yolu (content root)
         glue = {"techproed/stepDefinition","techproed/hooks"},//stepDefinitions package ismi
-        tags = "@saadet1",//Hangi scenarioları bu tag'ı belirtirsek o scenariolar çalışır
+        tags = "@08 and @saadet",//Hangi scenarioları bu tag'ı belirtirsek o scenariolar çalışır
         dryRun = false, //true secersek scenerio'lari kontrol eder browser'i calistirmaz
         monochrome = true//-->true kullanirsak konsoldaki ciktilari tek renk (siyah) olarak verir
 )

@@ -16,7 +16,7 @@ Feature: US_05
   Scenario:Admin Deanleri silebilmeli
 
     Given Admin Dean Management sayfasina gider
-    When Admin Dean Listin görüntülendiğini doğrular
+    When Dean Listin görüntülendiğini doğrular
     When Admin Deani Listede bulur ve silme butonunun görüntülendiğini doğrular
     Then silme butonuna tıklar ve deani siler
     When Silindigine dair mesajin goruntulendigini dogrular
