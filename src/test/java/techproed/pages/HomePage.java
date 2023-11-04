@@ -557,9 +557,10 @@ public class HomePage {
 @FindBy(xpath = "//*[text()='Minimum 12 character (XXX-XXX-XXXX)']")public WebElement Phone12KarakterEksikUyarisi;
 @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")  public WebElement ssn11KarakterEksikUyarisi;
 @FindBy(xpath = "(//*[@class='invalid-feedback'])[8]")    public WebElement passwordGirUyarisi;
-
-
-  //07
+    @FindBy(xpath = "//*[text()='At least 8 characters']")
+    public WebElement password8KarakterEksikUyarisi;
+    @FindBy(xpath = "//*[text()='One uppercase character']")
+    public WebElement passwordBuyukHarfEksikUyarisi;
 @FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
 public WebElement menuButton;
 @FindBy(xpath = "(//*[@role='button'])[11]")
@@ -590,6 +591,57 @@ public WebElement messageColumn;
 
 
 
+    @FindBy(xpath = "//*[text()='One lowercase character']")
+    public WebElement passwordKucukHarfEksikUyarisi;
+
+    @FindBy(xpath = "//*[text()='One number']")
+    public WebElement passwordRakamEksikUyarisi;
+
+    @FindBy(xpath = "(//*[text()='Your name should be at least 2 characters'])[1]")
+    public WebElement name2KarakterEksikUyarisi;
+
+    @FindBy(xpath = "(//*[text()='Your surname should be at least 2 characters'])[1]")
+    public WebElement surname2KarakterEksikUyarisi;
+
+    @FindBy(xpath = "(//*[text()='Your birth place should be at least 2 characters'])[1]")
+    public WebElement birthPlace2KarakterEksikUyarisi;
+
+    @FindBy(xpath = "(//*[text()='Your username should be at least 4 characters'])[1]")
+    public WebElement userName4KarakterEksikUyarisi;
+
+
+    @FindBy(xpath = "(//*[text()='Phone number should be exact 12 characters'])[1]")
+    public WebElement PhoneNumber12KarakterFazlaUyarisi;
+
+    @FindBy(xpath = "(//*[text()='Please enter valid phone number'])[1]")
+    public WebElement PhoneNumberDogruDegilUyarisi;
+
+
+    @FindBy(xpath = "(//div[@class='Toastify__toast-body'])[1]")
+    public WebElement ssnDogruDegilUyarisi;
+
+    @FindBy(xpath = "(//*[text()='Vice dean Saved'])[1]")
+    public WebElement viceDeanSavedUyarisi;
+
+    @FindBy(xpath = "(//*[text()='Admin Saved'])[1]")
+    public WebElement adminSavedUyarisi;
+
+    @FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
+
+public WebElement menuButton;
+@FindBy(xpath = "(//*[@role='button'])[11]")
+public WebElement  contactGetAllButton;
+@FindBy(xpath = "//*[@class='fw-bold p-3 card-header']")public WebElement contactMassageButton;
+@FindBy(xpath = "//tbody//tr[1]/td[1]/span[1]")
+public WebElement nameColumn;
+@FindBy(xpath = "//tbody/tr[1]/td[2]/span[1]")
+public WebElement emailColumn;
+@FindBy(xpath = "//tbody/tr[2]/td[3]/span[1]")
+public WebElement dateColumn;
+@FindBy(xpath = "//tbody/tr[1]/td[4]/span[1]")
+public WebElement subjectColumn;
+@FindBy(xpath = "//tbody/tr[1]/td[5]/span[1]")
+public WebElement messageColumn;
 
 
 
@@ -604,21 +656,6 @@ public WebElement messageColumn;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
   
   
   
@@ -673,49 +710,6 @@ public WebElement messageColumn;
     @FindBy(xpath = "//*[text()='Send Message']")public WebElement SendMessageButonEB;
     @FindBy(xpath = "//div[text()='Contact Message Created Successfully']") public WebElement alertMessageEB;
     @FindBy(xpath = "//*[text()='Please enter valid email']") public WebElement pleaseEnterValidEmailMessageEB;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -784,50 +778,7 @@ public WebElement messageColumn;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- //MeryemOzgun-830
+    //MeryemOzgun-830
     @FindBy(xpath = "//*[@class='header_link ms-2']") public WebElement loginButton_mo;
     @FindBy(xpath = "//*[@id='username']") public WebElement loginUserName_mo;
     @FindBy(css = "nav>button") public WebElement menuButton_mo;
@@ -852,49 +803,6 @@ public WebElement messageColumn;
     @FindBy(xpath = "(//*[@id='description'])[2]") public WebElement editDescription;
     @FindBy(xpath = "//*[@class='btn btn-danger']") public WebElement deleteButton_mo;
     @FindBy(xpath = "(//div)[69]") public WebElement meetDeleteSuccesfullMesaji;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
