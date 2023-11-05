@@ -1,4 +1,4 @@
-@UI @08
+@08
 Feature: US19 Teacher öğrenciler ile toplantı düzenleyebilmeli
 
   Background: siteye git teacher hesabina gir
@@ -24,7 +24,7 @@ Feature: US19 Teacher öğrenciler ile toplantı düzenleyebilmeli
   And description box'a "mutlaka gel" yaz
   And submit butonuna tıkla
   Then ileri bir tarih olmalı  mesajinin cıktığını doğrula
-   And sayfayi kapat
+    And sayfayi kapat
 
 Scenario: TC04 "Date Of Meet" toplantı zamanı seçilebilmeli. ileri bir tarih seçilerek meet olusturulabilmeli
   When Choose Students select menusunden ogrenci secimini yap
@@ -35,7 +35,7 @@ Scenario: TC04 "Date Of Meet" toplantı zamanı seçilebilmeli. ileri bir tarih 
   And submit butonuna tıkla
   Then Meet Saved Successfully mesajinin cıktığını doğrula
   And sayfayi kapat
-  # BURADA AYNI TARİHE 2 KEZ MEET OLUSTURULMUYOR.HER DEFASINDA FARKLI TARİH GİRİLMELİ.
+
 
 Scenario: TC05 "Start Time ve Stop Time" başlangıç ve bitiş saatleri girilmeden toplantı olusturulamamalı
   And Choose Students select menusunden ogrenci secimini yap

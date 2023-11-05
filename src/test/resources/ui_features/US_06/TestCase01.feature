@@ -1,4 +1,4 @@
-@08
+#@08
   Feature:Dean olarak Vice Dean ekleyebilmeli
     Background:
       Given Kullanici "pageUrl" sayfasina git
