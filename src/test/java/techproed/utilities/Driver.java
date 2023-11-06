@@ -6,6 +6,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.time.Duration;
+
 public class Driver {
     static WebDriver driver;
     public static WebDriver getDriver() {
@@ -23,6 +25,7 @@ public class Driver {
                 default:
                     driver=new InternetExplorerDriver();
             }
+
         }
         return driver;
     }

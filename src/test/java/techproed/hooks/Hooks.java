@@ -11,7 +11,8 @@ import static techproed.base_url.BaseUrl.setup;
 public class Hooks {
     @Before("@API")
     public void before_api(){
-        setup();
+
+      setup();
     }
     @Before("@08")
     public void before_ui(){
