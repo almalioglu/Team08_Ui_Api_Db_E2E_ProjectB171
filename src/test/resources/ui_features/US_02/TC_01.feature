@@ -15,5 +15,6 @@ Feature:US02 Admin Guest User List
     And kullanici admin list bolumunde Phone Number bilgisinin gorundugunu dogrular
     And kullanici admin list bolumunde SSN bilgisinin gorundugunu dogrular
     And kullanici admin list bolumunde User Name bilgisinin gorundugunu dogrular
-   # When kullanici admin list bolumunden kullaniciyi siler
-    #Then kullanici olusturulan kaydin silindigini dogrular
+    Then kullanici Guest User ekelenen veriyi siler
+    Then kullanici 2 saniye bekler
+    Then kullanici olusturulan kaydin silindigini dogrular

@@ -29,6 +29,7 @@ Feature: US03 Kullanıcılar sayfadan mesaj gönderebilmelidir (Contact)
     Examples:
       | name   | email           | subject | message      |
       | serpil | serpilgmail.com | test    | message1234? |
+      | serpil | serpil@gmailcom | test    | message1234? |
 
 
-    #BUG:emailde  nokta karakteri olmadığında da mesaj gönderilebiliyor
+    #BUG:emailde  nokta karakteri olmadığında  mesaj gönderilebiliyor

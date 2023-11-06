@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import techproed.pages.HomePage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.ReusableMethods;
@@ -61,14 +62,20 @@ public class US02_AdminGuestUserList {
 
     }
 
-    @When("kullanici admin list bolumunden kullaniciyi siler")
-    public void kullaniciAdminListBolumundenKullaniciyiSiler() {
-      // ReusableMethods.click(homePage.copButonuEB);
-       // ReusableMethods.clickElementByJS(homePage.copButonuEB);
-        //ReusableMethods.bekle(1);
+    @Then("kullanici Guest User ekelenen veriyi siler")
+    public void kullaniciGuestUserEkelenenVeriyiSiler() {
+        for (int i = 1; i < 19; i++) {
+            ReusableMethods.click(homePage.ondokuzuncuButonuEB);
+        }
+
+        //ReusableMethods.clickElementByJS(homePage.deletButonuEB);
+       // ReusableMethods.bekle(1);
+
     }
 
     @Then("kullanici olusturulan kaydin silindigini dogrular")
     public void kullaniciOlusturulanKaydinSilindiginiDogrular() {
+        Assert.assertTrue(homePage.guestUserDeletedUyariMesaji.isDisplayed());
+        ReusableMethods.bekle(1);
     }
 }
