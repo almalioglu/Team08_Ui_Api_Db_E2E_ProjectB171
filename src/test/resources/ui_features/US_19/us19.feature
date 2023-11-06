@@ -1,4 +1,4 @@
-@08
+@08 @mrym
 Feature: US19 Teacher öğrenciler ile toplantı düzenleyebilmeli
 
   Background: siteye git teacher hesabina gir

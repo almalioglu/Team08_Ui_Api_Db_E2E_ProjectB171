@@ -1,4 +1,4 @@
-@08
+@08 @mrym
 Feature: US20 Teacher, toplantıları görebilmeli, güncelleyebilmeli ve silebilmelidir.
   Background:Background: siteye git teacher hesabina gir
     And siteye git

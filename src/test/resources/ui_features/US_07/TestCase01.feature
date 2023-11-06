@@ -1,4 +1,4 @@
-@08 @TC01
+@08 @07
 Feature:  US07 | Dean Mesajlari Goruntuler
   Background:
     Given Kullanici "pageUrl" sayfasina git
@@ -7,7 +7,7 @@ Feature:  US07 | Dean Mesajlari Goruntuler
     And Dean kullanici bilgileri ile sisteme giris yapar
 
 
-  @ayseebrar
+  @07 @TC01
   Scenario:Dean, kullanıcıların gönderdiği mesajları görebilmelidir.
     Given  Kullanici menu butonuna tiklar
     Then Contact get all secenegine tiklar

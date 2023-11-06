@@ -10,11 +10,28 @@ public class Authentication {
         System.out.println(generateToken());
     }
     public static String generateToken(){
-        String body="{\n" +
+
+      String body="{\n" +
                 "  \"password\": \"Tester58+\",\n" +
                 "  \"username\": \"AdminTester\"\n" +
                 "}";
+
+
         Response response =given().body(body).contentType(ContentType.JSON).when().post("https://managementonschools.com/app/auth/login");
         return response.jsonPath().getString("token");
+
     }
+    /*
+public static String generateToken(String username, String password) {
+    String body = "{\n" +
+            "  \"password\": \"" + password + "\",\n" +
+            "  \"username\": \"" + username + "\"\n" +
+            "}";
+    Response response = given().
+            body(body).
+            contentType(ContentType.JSON).
+            when().
+            post("https://managementonschools.com/app/auth/login");
+    return response.jsonPath().getString("token");
+}*/
 }

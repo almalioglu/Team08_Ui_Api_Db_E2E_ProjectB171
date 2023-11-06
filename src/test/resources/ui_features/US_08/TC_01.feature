@@ -1,3 +1,4 @@
+@taha
 Feature: Vice Dean ders oluşturabilmelidir.  (Lessons - Add Lesson)
 
   Background: ortak adimlar
@@ -8,7 +9,7 @@ Feature: Vice Dean ders oluşturabilmelidir.  (Lessons - Add Lesson)
     And Menu butonuna tıklaa
     And kullanici 1 saniye bekler
 
-@taha
+
   Scenario: Lesson Name ismini girebilmelidir
     Given Lesson Management seçeneğine tıkla
     And Lesson yazısına tıkla
@@ -16,7 +17,7 @@ Feature: Vice Dean ders oluşturabilmelidir.  (Lessons - Add Lesson)
     Then Lesson Name kutusuna veri girilebildigi dogrulanır
     Then sayfayi kapat
 
-@taha
+
   Scenario: Dersin, zorunlu (Compulsory) olup olmadığını işaretleyebilmelidir.
      Given Lesson Management seçeneğine tıkla
      And Lesson yazısına tıkla
@@ -24,7 +25,7 @@ Feature: Vice Dean ders oluşturabilmelidir.  (Lessons - Add Lesson)
      And Compulsory kutucuğunu işaretle
      Then Compulsory kutucuğunun isaretlendigi görülmeli
   Then sayfayi kapat
-@taha
+
   Scenario: Credit Score girebilmelidir
       Given Lesson Management seçeneğine tıkla
       And Lesson yazısına tıkla
@@ -35,7 +36,7 @@ Feature: Vice Dean ders oluşturabilmelidir.  (Lessons - Add Lesson)
      Then Lesson Created yazısı görülmeli
   Then sayfayi kapat
 
-@taha
+
   Scenario: Lesson Name ismi girilmeden ders oluşturulamamalı
       Given Lesson Management seçeneğine tıkla
       And Lesson yazısına tıkla
@@ -45,7 +46,7 @@ Feature: Vice Dean ders oluşturabilmelidir.  (Lessons - Add Lesson)
       And Submit butonuna tıkla
       Then Lesson Name kutusunun kırmızı olduğu ve altında Required yazdığı görülmeli
     Then sayfayi kapat
-@taha
+
   Scenario: Credit Score girilmeden ders oluşturulamamalı
     Given Lesson Management seçeneğine tıkla
     And Lesson yazısına tıkla
