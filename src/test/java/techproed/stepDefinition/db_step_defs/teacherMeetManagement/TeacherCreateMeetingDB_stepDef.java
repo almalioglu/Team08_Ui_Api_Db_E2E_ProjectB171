@@ -1,4 +1,4 @@
-package techproed.stepDefinition.db_step_defs;
+package techproed.stepDefinition.db_step_defs.teacherMeetManagement;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import java.sql.*;
 
 import static org.junit.Assert.assertEquals;
-import static techproed.stepDefinition.api_step_defs.TeacherCreateMeetingAPI_stepDef.object;
+import static techproed.stepDefinition.api_step_defs.teacherMeetManagement.TeacherCreateMeetingAPI_stepDef.object;
 
 public class TeacherCreateMeetingDB_stepDef {
     Connection connection;

@@ -20,17 +20,5 @@ public class Authentication {
         return response.jsonPath().getString("token");
 
     }
-    /*
-public static String generateToken(String username, String password) {
-    String body = "{\n" +
-            "  \"password\": \"" + password + "\",\n" +
-            "  \"username\": \"" + username + "\"\n" +
-            "}";
-    Response response = given().
-            body(body).
-            contentType(ContentType.JSON).
-            when().
-            post("https://managementonschools.com/app/auth/login");
-    return response.jsonPath().getString("token");
-}*/
+
 }

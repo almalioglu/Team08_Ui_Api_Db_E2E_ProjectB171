@@ -16,6 +16,9 @@ public class Objectpojo implements Serializable {
 	private String teacherSsn;
 	private List<Studentspojo> students;
 
+	public Objectpojo() {
+	}
+
 	public Objectpojo(int id, String description, String date, String startTime, String stopTime, int advisorTeacherId, String teacherName, String teacherSsn, List<Studentspojo> students) {
 		this.id = id;
 		this.description = description;
