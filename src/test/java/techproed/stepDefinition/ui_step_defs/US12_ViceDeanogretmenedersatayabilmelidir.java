@@ -116,7 +116,8 @@ public class US12_ViceDeanogretmenedersatayabilmelidir {
     public void selectLessonSekmesineTiklarVeBirDersSecerr() {
         page.selectlessonck.click();
         page.selectlessonck.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ENTER);
-        // ReusableMethods.ddmIndex(page.selectlessonck,5);
+
+
 
 
     }

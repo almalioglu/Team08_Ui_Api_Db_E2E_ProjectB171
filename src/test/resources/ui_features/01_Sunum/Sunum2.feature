@@ -1,4 +1,4 @@
-@08
+@155 @08
 Feature: Tum Sitenin Tanitimi
 
   Scenario: Butun kullanıcilar ile giriş yap
@@ -18,7 +18,8 @@ Feature: Tum Sitenin Tanitimi
     Then  Teacher managemente tikla
 
     #Ogretmen oluşturma
-    When select Lesson sekmesine tiklar ve bir ders secerr
+    #When select Lesson sekmesine tiklar ve bir ders secerr
+    When select Lesson sekmesine tiklar ve bir ders secer
     And name kutusuna veri girer
     And Surname kutusuna veri girer
     And Birth Place kutusuna veri girer

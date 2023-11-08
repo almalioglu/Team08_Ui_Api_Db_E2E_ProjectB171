@@ -10,8 +10,6 @@ import static techproed.base_url.BaseUrl.setup;
 
 public class Hooks {
 
-
-  
     @Before("@08")
     public void before_ui(){
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
@@ -20,7 +18,7 @@ public class Hooks {
 
     @After("@08")
     public void tearDown() {
-        //Driver.closeDriver();
+        Driver.closeDriver();
 
     }
 }
