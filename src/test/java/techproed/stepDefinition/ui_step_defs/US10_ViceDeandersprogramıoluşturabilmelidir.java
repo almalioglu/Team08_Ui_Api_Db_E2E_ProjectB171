@@ -122,10 +122,11 @@ public class US10_ViceDeandersprogramıoluşturabilmelidir {
 
     @Then("ViceDean Logout butonuna tiklar")
     public void vicedeanLogoutButonunaTiklar() {
-        ReusableMethods.bekle(3);
+        ReusableMethods.bekle(2);
         page.logouttbutton3.click();
         ReusableMethods.visibleWait(page.MenuTE,3);
-        page.yesbutton.click();
+       // page.yesbutton.click();
+        ReusableMethods.click(page.yesbutton);
 
 
     }
