@@ -53,11 +53,11 @@
       And Kullanici Submit butonunu tiklar.
       And Kullanici Please enter valid SSN number alert uyarisi goruldugunu dogrular.
       And Kullanici Ssn kutusunu siler.
-      Then Kullanici "<Ssn1>" kutusuna -9- karakterden fazla  bir SSN girer.
+      Then Kullanici "<Ssn1>" kutusuna -dokuz- karakterden fazla  bir SSN girer.
       And Kullanici Submit butonunu tiklar.
       And Kullanici Please enter valid SSN number alert uyarisi goruldugunu dogrular.
       And Kullanici Ssn kutusunu siler.
-      Then Kullanici "<Ssn2>" kutusuna -9- karakterden az bir SSN girer.
+      Then Kullanici "<Ssn2>" kutusuna -dokuz- karakterden az bir SSN girer.
       And Kullanici Submit butonunu tiklar.
       And Kullanici eksik karakter girdigini dorular.
       And Kullanici sayfayi kapatir.
@@ -115,7 +115,7 @@
 
       Examples:
         | Name            | Surname | Birth Place | Date Of Birth | Phone        | Ssn         | User Name       | Password | Password1 | Password2 |
-        |Ayse Ebrar       | Oral    | Istanbul    | 10.09.1999    |  555-444-212 | 545-56-8787 | oytun           | Oytun123 | OYTUN123  | oytun123  |
+        |Ayse Ebrar       | Oral    | Istanbul    | 10.09.1999    |  555-444-212 | 545-56-8787 | oytun           | oytun123 | OYTUN123  | Oytunerbaş  |
 
 
 
