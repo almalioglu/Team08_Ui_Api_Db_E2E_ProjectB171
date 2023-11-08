@@ -153,7 +153,6 @@ public class US06_ViceDeanOlusturmaStepDefs {
 
     @And("Kullanici basarili bir sekilde Vice Dean ekledigini dogrular.")
     public void kullaniciBasariliBirSekildeViceDeanEklediginiDogrular() {
-        ReusableMethods.bekle(1);
         assertTrue(homePage.viceDeanSavedUyarisi.isDisplayed());
     }
 
@@ -174,18 +173,6 @@ public class US06_ViceDeanOlusturmaStepDefs {
     @And("Kullanici Ssn kutusunu siler.")
     public void kullaniciSsnKutusunuSiler() {
         ReusableMethods.cleanByJs(homePage.viceDeanSsnNo_aeo);
-    }
-
-
-    @Then("Kullanici {string} kutusuna {int}- karakterden fazla  bir SSN girer.")
-    public void kullaniciKutusunaKarakterdenFazlaBirSSNGirer(String ssn1) {
-        homePage.viceDeanSsnNo_aeo.sendKeys(ssn1);
-    }
-
-    @Then("Kullanici {string} kutusuna {int}- karakterden az bir SSN girer.")
-    public void kullaniciKutusunaKarakterdenAzBirSSNGirer(String ssn2) {
-        homePage.viceDeanSsnNo_aeo.sendKeys(ssn2);
-
     }
 
     @And("Kullanici eksik karakter girdigini dorular.")
@@ -249,6 +236,17 @@ public class US06_ViceDeanOlusturmaStepDefs {
     @Then("Kullanici {string}girilmelidir.")
     public void kullaniciGirilmelidir(String SSN) {
         homePage.viceDeanSsnNo_aeo.sendKeys(SSN);
+    }
+
+    @Then("Kullanici {string} kutusuna -dokuz- karakterden fazla  bir SSN girer.")
+    public void kullaniciKutusunaDokuzKarakterdenFazlaBirSSNGirer(String ssn1) {
+        homePage.viceDeanSsnNo_aeo.sendKeys(ssn1);
+    }
+
+    @Then("Kullanici {string} kutusuna -dokuz- karakterden az bir SSN girer.")
+    public void kullaniciKutusunaDokuzKarakterdenAzBirSSNGirer(String ssn2) {
+        homePage.viceDeanSsnNo_aeo.sendKeys(ssn2);
+
     }
 }
 
