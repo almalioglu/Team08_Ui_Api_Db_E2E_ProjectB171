@@ -692,7 +692,7 @@ public WebElement messageColumn;
     @FindBy(xpath = "//*[text()='Ssn']")public WebElement SsnColumnEB;
     @FindBy(xpath = "//*[text()='User Name']")public WebElement UserNameColumnEB;
     @FindBy(xpath = "(//*[@class='btn btn-danger'])[1]")public WebElement guestUserDeleteButonuEB;
-    @FindBy(xpath = "(//*[@class='btn btn-danger'])[5]")public WebElement copButonuEB;
+    @FindBy(xpath = "(//span[@aria-hidden='true'])[3]")public WebElement ondokuzuncuButonuEB;
     @FindBy(xpath = "//*[text()='Contact']")public WebElement contactButonEB;
     @FindBy(xpath = "//*[@placeholder='Name']")public WebElement contactNameButonEB;
     @FindBy(xpath = "//*[@placeholder='Email']")public WebElement contactEmailButonEB;
@@ -701,6 +701,10 @@ public WebElement messageColumn;
     @FindBy(xpath = "//*[text()='Send Message']")public WebElement SendMessageButonEB;
     @FindBy(xpath = "//div[text()='Contact Message Created Successfully']") public WebElement alertMessageEB;
     @FindBy(xpath = "//*[text()='Please enter valid email']") public WebElement pleaseEnterValidEmailMessageEB;
+    @FindBy(xpath = "(//*[@class='btn btn-danger'])[3]") public WebElement deletButonuEB;
+
+    @FindBy(xpath = "//div[@class='Toastify']")public WebElement guestUserDeletedUyariMesaji;
+
 
 
 
