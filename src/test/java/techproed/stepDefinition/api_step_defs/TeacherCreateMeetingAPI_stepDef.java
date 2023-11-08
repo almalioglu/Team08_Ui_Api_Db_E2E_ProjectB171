@@ -32,6 +32,7 @@ public class TeacherCreateMeetingAPI_stepDef {
 
     @Given("toplantı olusturmak için url düzenlenir")
     public void toplantıOlusturmakIçinUrlDüzenlenir() {
+
         spec.pathParams("first", "meet", "second", "save");
     }
 
