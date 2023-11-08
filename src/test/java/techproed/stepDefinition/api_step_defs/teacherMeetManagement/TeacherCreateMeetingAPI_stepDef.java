@@ -1,4 +1,4 @@
-package techproed.stepDefinition.api_step_defs;
+package techproed.stepDefinition.api_step_defs.teacherMeetManagement;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -30,8 +30,10 @@ public class TeacherCreateMeetingAPI_stepDef {
     public static Objectpojo object;
     public static Responsepojo expectedData;
 
+
     @Given("toplantı olusturmak için url düzenlenir")
     public void toplantıOlusturmakIçinUrlDüzenlenir() {
+
         spec.pathParams("first", "meet", "second", "save");
     }
 
@@ -43,11 +45,10 @@ public class TeacherCreateMeetingAPI_stepDef {
 
     @When("toplantı olusturmak için request gönderilir response alınır")
     public void toplantıOlusturmakIçinRequestGönderilirResponseAlınır() {
-      //  setup("Teacher08", "Batch171+");
         response = given(spec).body(payload).when().post("{first}/{second}");
         response.prettyPrint();
         actualData = response.as(Responsepojo.class);
-
+        System.out.println("actualData = " + actualData);
 
     }
 
@@ -62,7 +63,7 @@ public class TeacherCreateMeetingAPI_stepDef {
         assertEquals(payload.getDescription(), actualData.getObject().getDescription());
         assertTrue(actualData.getObject().getStartTime().contains(payload.getStartTime()));
         assertTrue(actualData.getObject().getStopTime().contains(payload.getStopTime()));
-        //assertEquals(payload.getStudentIds().get(0),actualData.getObject().getStudents().get(0));
+        assertEquals(payload.getStudentIds().get(0),String.valueOf(actualData.getObject().getStudents().get(0)));
 
     }
 
@@ -71,7 +72,6 @@ public class TeacherCreateMeetingAPI_stepDef {
 
     @Given("Kayitli meet in ID nosu alinir")
     public void kayitliMeetInIDNosuAlinir() {
-       // setup("Teacher08", "Batch171+");
         //https://managementonschools.com/app/meet/getAll
         spec.pathParams("first", "meet", "second", "getAll");
         response = given(spec).when().get("{first}/{second}");
@@ -88,9 +88,7 @@ public class TeacherCreateMeetingAPI_stepDef {
 
     @And("Teacher Meet GetMeetById icin beklenen veriler düzenlenir")
     public void teacherMeetGetMeetByIdIcinBeklenenVerilerDüzenlenir() {
-
         students = new Studentspojo(2123, "mery", "123-32-4321", "mery", "mery", "1991-06-20", "istanbul", "123-321-4321", "FEMALE", "mery", "mery", 1293, "mustapha.kristen@forkshape.com", true);
-
         object = new Objectpojo(meetID, "acil ve onemli", "2028-01-01", "10:00:00", "11:00:00", 1416, "team08", "741-85-8877", (List<Studentspojo>) students);
         expectedData = new Responsepojo(object, "Meet successfully found", "CREATED");
     }
@@ -157,18 +155,45 @@ public class TeacherCreateMeetingAPI_stepDef {
 //////////////////////////           SCENARİO 3 MEETİNG PUT       /////////////////////////////////////////////
 
 
+    @Given("toplanti editlemek icin url duzenlenir")
+    public void toplantiEditlemekIcinUrlDuzenlenir() {
+        //https://managementonschools.com/app/meet/update/1
+        spec.pathParams("first","meet","second","update","third",meetID);
+    }
+
+    @And("toplanti editlemek icin payload duzenlenir")
+    public void toplantiEditlemekIcinPayloadDuzenlenir() {
+        String updateDescription="acil ve önemli";
+        String updateDate="2030-01-01";
+        String updateStratTime="09-00";
+        String updateStopTime="09-30";
+        List<String> updateStudentIds=List.of("2214"); //ali velioglu
+        payload=new MeetPostPojo("2028-01-01",updateDescription,"10:00","11:00",studentIds);
 
 
+    }
 
+    @When("toplanti editlemek icin request gonderilir response alinir")
+    public void toplantiEditlemekIcinRequestGonderilirResponseAlinir() {
+       response= given(spec).body(payload).when().put("{first}/{second}/{third}");
+       response.prettyPrint();
+       actualData=response.as(Responsepojo.class);
+    }
 
+    @And("toplanti editlemek icin gelen body dogrulanir")
+    public void toplantiEditlemekIcinGelenBodyDogrulanir() {
+        assertEquals(payload.getDate(),actualData.getObject().getDate());
+        assertEquals(payload.getDescription(),actualData.getObject().getDescription());
+        assertEquals(payload.getStartTime(),actualData.getObject().getStartTime());
+        assertEquals(payload.getStopTime(),actualData.getObject().getStopTime());
+        assertEquals(payload.getStudentIds().get(0), String.valueOf(actualData.getObject().getStudents().get(0).getId()));
 
-
-
+    }
 
  //////////////////////////           SCENARİO 4 MEETİNG DELETE      /////////////////////////////////////////////
     @Given("meet delete icin url URL duzenlenir")
     public void meetDeleteIcinUrlURLDuzenlenir() {
-       // setup("Teacher08", "Batch171+");
+        setup("Teacher08", "Batch171+");
         //https://managementonschools.com/app/meet/delete/1
         spec.pathParams("first","meet","second","delete","third", meetID);
     }
@@ -176,6 +201,14 @@ public class TeacherCreateMeetingAPI_stepDef {
     @When("meet delete icin request dönderilir ve response alinir")
     public void meetDeleteIcinRequestDönderilirVeResponseAlinir() {
         response=given(spec).when().delete("{first}/{second}/{third}");
+        actualData=response.as(Responsepojo.class);
 
+    }
+
+
+    @And("toplanti delete isleminde gelen body dogrulanir")
+    public void toplantiDeleteIslemindeGelenBodyDogrulanir() {
+        assertEquals("Meet deleted successfully",actualData.getMessage());
+        assertEquals("OK",actualData.getHttpStatus());
     }
 }
