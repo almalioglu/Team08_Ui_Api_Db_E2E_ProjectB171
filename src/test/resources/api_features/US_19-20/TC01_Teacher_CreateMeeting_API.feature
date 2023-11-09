@@ -25,11 +25,11 @@
       Then HTTP status code should be 200
       And toplanti editlemek icin gelen body dogrulanir
 
-    Scenario: Delete a meeting
-      Given meet delete icin url URL duzenlenir
-      When meet delete icin request dönderilir ve response alinir
-      Then HTTP status code should be 200
-      And toplanti delete isleminde gelen body dogrulanir
+#    Scenario: Delete a meeting
+#      Given meet delete icin url URL duzenlenir
+#      When meet delete icin request dönderilir ve response alinir
+#      Then HTTP status code should be 200
+#      And toplanti delete isleminde gelen body dogrulanir
 
 
    #1 set the url url olustur

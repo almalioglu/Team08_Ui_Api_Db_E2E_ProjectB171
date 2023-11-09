@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Objectpojo implements Serializable {
+public class ObjectPojo implements Serializable {
 	private int id;
 	private String description;
 	private String date;
@@ -14,12 +14,12 @@ public class Objectpojo implements Serializable {
 	private int advisorTeacherId;
 	private String teacherName;
 	private String teacherSsn;
-	private List<Studentspojo> students;
+	private List<StudentsPojo> students;
 
-	public Objectpojo() {
+	public ObjectPojo() {
 	}
 
-	public Objectpojo(int id, String description, String date, String startTime, String stopTime, int advisorTeacherId, String teacherName, String teacherSsn, List<Studentspojo> students) {
+	public ObjectPojo(int id, String description, String date, String startTime, String stopTime, int advisorTeacherId, String teacherName, String teacherSsn, List<StudentsPojo> students) {
 		this.id = id;
 		this.description = description;
 		this.date = date;
@@ -95,18 +95,18 @@ public class Objectpojo implements Serializable {
 		return teacherSsn;
 	}
 
-	public void setStudents(List<Studentspojo> students){
+	public void setStudents(List<StudentsPojo> students){
 		this.students = students;
 	}
 
-	public List<Studentspojo> getStudents(){
+	public List<StudentsPojo> getStudents(){
 		return students;
 	}
 
 	@Override
  	public String toString(){
 		return 
-			"Objectpojo{" + 
+			"ObjectPojo{" + 
 			"id = '" + id + '\'' + 
 			",description = '" + description + '\'' + 
 			",date = '" + date + '\'' + 

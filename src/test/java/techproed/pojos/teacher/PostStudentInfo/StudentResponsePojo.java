@@ -1,51 +1,47 @@
-package techproed.pojos.teacher_createMeeting;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+package techproed.pojos.teacher.PostStudentInfo;
 
 import java.io.Serializable;
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Studentspojo implements Serializable {
-	private int id;
+
+public class StudentResponsePojo implements Serializable {
+	private int userId;
 	private String username;
-	private String ssn;
 	private String name;
 	private String surname;
 	private String birthDay;
 	private String birthPlace;
 	private String phoneNumber;
 	private String gender;
+	private int studentNumber;
 	private String motherName;
 	private String fatherName;
-	private int studentNumber;
 	private String email;
 	private boolean active;
 
-	public Studentspojo() {
+	public StudentResponsePojo() {
 	}
 
-	public Studentspojo(int id, String username, String ssn, String name, String surname, String birthDay, String birthPlace, String phoneNumber, String gender, String motherName, String fatherName, int studentNumber, String email, boolean active) {
-		this.id = id;
+	public StudentResponsePojo(int userId, String username, String name, String surname, String birthDay, String birthPlace, String phoneNumber, String gender, int studentNumber, String motherName, String fatherName, String email, boolean active) {
+		this.userId = userId;
 		this.username = username;
-		this.ssn = ssn;
 		this.name = name;
 		this.surname = surname;
 		this.birthDay = birthDay;
 		this.birthPlace = birthPlace;
 		this.phoneNumber = phoneNumber;
 		this.gender = gender;
+		this.studentNumber = studentNumber;
 		this.motherName = motherName;
 		this.fatherName = fatherName;
-		this.studentNumber = studentNumber;
 		this.email = email;
 		this.active = active;
 	}
 
-	public void setId(int id){
-		this.id = id;
+	public void setUserId(int userId){
+		this.userId = userId;
 	}
 
-	public int getId(){
-		return id;
+	public int getUserId(){
+		return userId;
 	}
 
 	public void setUsername(String username){
@@ -54,14 +50,6 @@ public class Studentspojo implements Serializable {
 
 	public String getUsername(){
 		return username;
-	}
-
-	public void setSsn(String ssn){
-		this.ssn = ssn;
-	}
-
-	public String getSsn(){
-		return ssn;
 	}
 
 	public void setName(String name){
@@ -112,6 +100,14 @@ public class Studentspojo implements Serializable {
 		return gender;
 	}
 
+	public void setStudentNumber(int studentNumber){
+		this.studentNumber = studentNumber;
+	}
+
+	public int getStudentNumber(){
+		return studentNumber;
+	}
+
 	public void setMotherName(String motherName){
 		this.motherName = motherName;
 	}
@@ -126,14 +122,6 @@ public class Studentspojo implements Serializable {
 
 	public String getFatherName(){
 		return fatherName;
-	}
-
-	public void setStudentNumber(int studentNumber){
-		this.studentNumber = studentNumber;
-	}
-
-	public int getStudentNumber(){
-		return studentNumber;
 	}
 
 	public void setEmail(String email){
@@ -155,19 +143,18 @@ public class Studentspojo implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"Studentspojo{" + 
-			"id = '" + id + '\'' + 
+			"StudentResponsePojo{" + 
+			"userId = '" + userId + '\'' + 
 			",username = '" + username + '\'' + 
-			",ssn = '" + ssn + '\'' + 
 			",name = '" + name + '\'' + 
 			",surname = '" + surname + '\'' + 
 			",birthDay = '" + birthDay + '\'' + 
 			",birthPlace = '" + birthPlace + '\'' + 
 			",phoneNumber = '" + phoneNumber + '\'' + 
 			",gender = '" + gender + '\'' + 
+			",studentNumber = '" + studentNumber + '\'' + 
 			",motherName = '" + motherName + '\'' + 
 			",fatherName = '" + fatherName + '\'' + 
-			",studentNumber = '" + studentNumber + '\'' + 
 			",email = '" + email + '\'' + 
 			",active = '" + active + '\'' + 
 			"}";
