@@ -1,8 +1,10 @@
 package techproed.pojos.teacher_createMeeting;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 import java.io.Serializable;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class MeetPostPojo implements Serializable {
 	private String date;
 	private String description;

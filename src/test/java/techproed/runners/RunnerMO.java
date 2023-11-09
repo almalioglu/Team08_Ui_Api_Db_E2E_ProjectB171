@@ -16,14 +16,10 @@ import org.junit.runner.RunWith;
          */
         features = "src/test/resources",//-->features package'ının yolu (content root) belirtilir
         glue = {"techproed/stepDefinition", "techproed/hooks"},//-->stepDefinitions package'ı belirtilir
-        tags = "@meryemapı",//-->Burda belirttiğimiz tag'i hangi scenario da belirtirsek o scenariolar çalışır
+        tags = "@meryemdb",//-->Burda belirttiğimiz tag'i hangi scenario da belirtirsek o scenariolar çalışır
         dryRun = false,  //true secersek scenariolari kontrol eder.Browser'ı calıştırmaz.
         monochrome = true //--> true kullanırsak konsoldaki cıktıları tem renk(siyah) olarak verir
 )
 
 public class RunnerMO {
 }
-/*
-"@08 and @mrym" BU TAGS UI TESTLERİ İÇİN
-
- */

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Studentspojo implements Serializable {
+public class StudentsPojo implements Serializable {
 	private int id;
 	private String username;
 	private String ssn;
@@ -20,10 +20,10 @@ public class Studentspojo implements Serializable {
 	private String email;
 	private boolean active;
 
-	public Studentspojo() {
+	public StudentsPojo() {
 	}
 
-	public Studentspojo(int id, String username, String ssn, String name, String surname, String birthDay, String birthPlace, String phoneNumber, String gender, String motherName, String fatherName, int studentNumber, String email, boolean active) {
+	public StudentsPojo(int id, String username, String ssn, String name, String surname, String birthDay, String birthPlace, String phoneNumber, String gender, String motherName, String fatherName, int studentNumber, String email, boolean active) {
 		this.id = id;
 		this.username = username;
 		this.ssn = ssn;
@@ -155,7 +155,7 @@ public class Studentspojo implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"Studentspojo{" + 
+			"StudentsPojo{" + 
 			"id = '" + id + '\'' + 
 			",username = '" + username + '\'' + 
 			",ssn = '" + ssn + '\'' + 
