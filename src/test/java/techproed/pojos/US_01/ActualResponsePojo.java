@@ -1,5 +1,7 @@
 package techproed.pojos.US_01;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 
 public class ActualResponsePojo implements Serializable {
