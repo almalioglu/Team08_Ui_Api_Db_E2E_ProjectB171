@@ -1,6 +1,7 @@
 package techproed.stepDefinition.api_step_defs.teacherMeetManagement;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
@@ -23,6 +24,7 @@ public class US_17_TeacherStudentInfoNotStep {
     PostExpectedDataPojo payload;
     Response response;
     StudentResponsePojo studentResponse;
+    PostResponsePojo postActualData;
     ObjectPojo expectedData;
     ObjectPojo getActualData;
 
@@ -30,15 +32,7 @@ public class US_17_TeacherStudentInfoNotStep {
     static int infoId;
     static int studentId;
 
-    @And("Kayitli tüm ogrencilerin Idsi alinir_is")
-    public void kayitliTümOgrencilerinIdsiAlinir_is() {
-        spec.pathParams("first", "students", "second", "getAll").queryParams("page", 0, "size", 10);
-        response = given(spec).when().get("{first}/{second}");
 
-        JsonPath jsonPath =  response.jsonPath();
-        List<Integer> studentIdList = jsonPath.getList("content.findAll{it.infoNote == 'welldone!!'}.id");
-        studentId = studentIdList.get(0);
-    }
 
     @And("Sdutent info save icin URL duzenlenir_is")
     public void sdutentInfoSaveIcinURLDuzenlenir_is() {
@@ -48,7 +42,8 @@ public class US_17_TeacherStudentInfoNotStep {
 
     @And("Sdutent info save icin payload duzenlenir_is")
     public void sdutentInfoSaveIcinPayloadDuzenlenir_is() {
-         payload= new PostExpectedDataPojo(5,19,90,"Başarılarının devamını dilerim..?",1915,100, studentId);
+         payload= new PostExpectedDataPojo(5,19,90,"Başarılarının devamını dilerim..?",1915,100, 2258);
+
 
         //{
         //  "absentee": 5,
@@ -97,7 +92,7 @@ public class US_17_TeacherStudentInfoNotStep {
             response = given(spec).when().get("{first}/{second}");
 
             JsonPath jsonPath =  response.jsonPath();
-            List<Integer> idList = jsonPath.getList("content.findAll{it.infoNote == 'welldone!!'}.id");
+            List<Integer> idList = jsonPath.getList("content.findAll{it.infoNote == 'Başarılarının devamını dilerim..?'}.id");
             infoId = idList.get(0);
     }
 
@@ -109,12 +104,23 @@ public class US_17_TeacherStudentInfoNotStep {
 
     @And("Sdutent info icin beklenen veriler duzenlenir_is")
     public void sdutentInfoIcinBeklenenVerilerDuzenlenir_is() {
-        studentResponse = new StudentResponsePojo(1855, "TeacherConnor","Adam",
-                "Connor", "1990-12-12", "Canada", "555-312-5312",
-                "MALE", 1026,"Jane", "John", "connor@hotmail.com", true);
-        expectedData = new ObjectPojo(infoId, 79, 83, 2, "welldone!!",
-                "Computer Science", 1865, 8, 16, 81.4,
-                studentResponse, false, "BA");
+        studentResponse = new StudentResponsePojo(2258, "Fiksberra","Berra",
+                "Fiks", "1986-01-19", "Mars", "545-341-9010",
+                "FEMALE", 1407,"Alime", "Alim", "birch.lamarion@forkshape.com", true);
+        expectedData = new ObjectPojo(infoId, 100.0, 90.0, 5, "Başarılarının devamını dilerim..?",
+                "Chemisch ", 1915, 10, 19, 94.0,
+                studentResponse, false, "AA");
+        /*
+        "id": 4328,
+        "midtermExam": 100.0,
+        "finalExam": 90.0,
+        "absentee": 5,
+        "infoNote": "Başarılarının devamını dilerim..?",
+        "lessonName": "Chemisch ",
+        "lessonId": 1915,
+        "creditScore": 10,
+        "educationTermId": 19,
+        "average": 94.0 */
     }
 
     @When("Sdutent info icin GET Request gonderilir ve Response alinir_is")
@@ -161,6 +167,22 @@ public class US_17_TeacherStudentInfoNotStep {
     }
 
 
+    @Given("Student Info Delete icin URL duzenlenir_is")
+    public void studentInfoDeleteIcinURLDuzenlenir_is() {
+        spec.pathParams("first", "studentInfo", "second", "delete", "third", infoId);
+    }
+
+    @When("Student Info icin DELETE Request gonderilir ve Response alinir_is")
+    public void studentInfoIcinDELETERequestGonderilirVeResponseAlinir_is() {
+        response = given(spec).when().delete("{first}/{second}/{third}");
+        postActualData = response.as(PostResponsePojo.class);
+    }
+
+    @And("Student Info Delete icin gelen Response body dogrulanir_is")
+    public void studentInfoDeleteIcinGelenResponseBodyDogrulanir_is() {
+        assertEquals("Student Info deleted Successfully", postActualData.getMessage());
+        assertEquals("OK", postActualData.getHttpStatus());
+    }
 }
 /*
 List<Integer> ogrencilerinId;
