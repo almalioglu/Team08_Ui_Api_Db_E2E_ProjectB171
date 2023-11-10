@@ -7,6 +7,15 @@ public class PostResponsePojo implements Serializable {
 	private String message;
 	private String httpStatus;
 
+	public PostResponsePojo() {
+	}
+
+	public PostResponsePojo(ObjectPojo object, String message, String httpStatus) {
+		this.object = object;
+		this.message = message;
+		this.httpStatus = httpStatus;
+	}
+
 	public void setObject(ObjectPojo object){
 		this.object = object;
 	}
