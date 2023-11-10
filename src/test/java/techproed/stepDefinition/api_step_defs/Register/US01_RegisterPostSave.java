@@ -1,4 +1,4 @@
-package techproed.stepDefinition.api_step_defs;
+package techproed.stepDefinition.api_step_defs.Register;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -29,7 +29,10 @@ public class US01_RegisterPostSave {
     @And("register payload düzenlenir")
     public void registerPayloadDüzenlenir() {
 
-        peyload = new GuestUserPostSavePojo("2000-01-01","istanbul","FEMALE","Nur","karye1878","544-456-7891","789-32-4563","Karye","Nurkarye");
+        peyload = new GuestUserPostSavePojo("2000-01-01",
+                "istanbul","FEMALE","Nur",
+                "Karye1878","544-456-7891",
+                "789-32-4563","Karye","Nurkarye");
 
 
 
