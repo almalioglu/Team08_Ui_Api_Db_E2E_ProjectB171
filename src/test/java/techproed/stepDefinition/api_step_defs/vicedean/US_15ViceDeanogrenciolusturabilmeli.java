@@ -5,13 +5,20 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import static techproed.base_url.BaseUrl.setup;
+import static techproed.base_url.BaseUrl.spec;
+
 public class US_15ViceDeanogrenciolusturabilmeli {
     @Given("Studen eklemek icin post request hazirligi yapilir")
     public void studenEklemekIcinPostRequestHazirligiYapilir() {
+        setup("VicedDeanSaadet","Asrasa97...");
+        spec.pathParams("first","students","second","save");
+        //https://managementonschools.com/app/students/save
     }
 
     @And("Gonderilecek studen bilgileri hazirlanir")
     public void gonderilecekStudenBilgileriHazirlanir() {
+
     }
 
     @When("Student eklemek icin post request gonderilir")
