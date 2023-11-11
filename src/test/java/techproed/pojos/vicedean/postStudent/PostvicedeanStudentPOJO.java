@@ -6,12 +6,14 @@ public class PostvicedeanStudentPOJO implements Serializable {
 	private ObjectPOJO object;
 	private String message;
 
+
 	public PostvicedeanStudentPOJO() {
 	}
 
 	public PostvicedeanStudentPOJO(ObjectPOJO object, String message) {
 		this.object = object;
 		this.message = message;
+
 	}
 
 	public void setObject(ObjectPOJO object){
