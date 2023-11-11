@@ -122,7 +122,7 @@ public class AdminManagement {
                 setup(ConfigReader.getProperty("Teacher"), ConfigReader.getProperty("Password"));
                 break;
             case"student":
-                setup(ConfigReader.getProperty("Student"),ConfigReader.getProperty("Password"));
+                setup(ConfigReader.getProperty("ogrenciUsername"),ConfigReader.getProperty("ogrenciPassword"));
 
         }
     }
