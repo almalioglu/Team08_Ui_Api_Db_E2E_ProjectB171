@@ -1,33 +1,37 @@
-package techproed.pojos.vicedean.postLessonProgram;
+package techproed.pojos.vicedean.getlessonteacher;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ObjectPojo implements Serializable {
-	private int lessonProgramId;
+public class GetlessonsResponsePojo implements Serializable {
+	private List<Integer> lessonProgramId;
 	private String startTime;
 	private String stopTime;
 	private List<LessonNamePojo> lessonName;
+	private List<TeachersPojo> teachers;
+	private List<Object> students;
 	private String day;
 
-	public ObjectPojo() {
+	public GetlessonsResponsePojo() {
 	}
 
-	public ObjectPojo(int lessonProgramId, String startTime, String stopTime, List<LessonNamePojo> lessonName, String day) {
+	public GetlessonsResponsePojo(List<Integer> lessonProgramId, String startTime, String stopTime, List<LessonNamePojo> lessonName, List<TeachersPojo> teachers, List<Object> students, String day) {
 		this.lessonProgramId = lessonProgramId;
 		this.startTime = startTime;
 		this.stopTime = stopTime;
 		this.lessonName = lessonName;
+		this.teachers = teachers;
+		this.students = students;
 		this.day = day;
 	}
 
-	public void setLessonProgramId(int lessonProgramId){
+	public void setLessonProgramId(List<Integer> lessonProgramId){
 		this.lessonProgramId = lessonProgramId;
 	}
 
-	public int getLessonProgramId(){
+	public List<Integer> lessonProgramId(){
 		return lessonProgramId;
 	}
 
@@ -55,6 +59,22 @@ public class ObjectPojo implements Serializable {
 		return lessonName;
 	}
 
+	public void setTeachers(List<TeachersPojo> teachers){
+		this.teachers = teachers;
+	}
+
+	public List<TeachersPojo> getTeachers(){
+		return teachers;
+	}
+
+	public void setStudents(List<Object> students){
+		this.students = students;
+	}
+
+	public List<Object> getStudents(){
+		return students;
+	}
+
 	public void setDay(String day){
 		this.day = day;
 	}
@@ -66,11 +86,13 @@ public class ObjectPojo implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"ObjectPojo{" + 
+			"GetlessonsResponsePojo{" + 
 			"lessonProgramId = '" + lessonProgramId + '\'' + 
 			",startTime = '" + startTime + '\'' + 
 			",stopTime = '" + stopTime + '\'' + 
 			",lessonName = '" + lessonName + '\'' + 
+			",teachers = '" + teachers + '\'' + 
+			",students = '" + students + '\'' + 
 			",day = '" + day + '\'' + 
 			"}";
 		}

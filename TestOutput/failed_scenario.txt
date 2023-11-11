@@ -1,1 +1,4 @@
+<<<<<<< Updated upstream
 file:src/test/resources/api_features/US_21/TC_01StudentChooseLessons.feature:16
+=======
+>>>>>>> Stashed changes

@@ -1,4 +1,4 @@
-@Cihan
+@Cihanapi
   Feature: Vice Dean ders programı oluşturabilmelidir.
     Scenario: Ders programı oluşmalı
       Given "vicedean" yetkisi ile giris yapilir
@@ -7,3 +7,6 @@
       Then ders programi olusturmak icin POST request gonderilir
       #Then status kodun 200 oldugu dogrulanir
       Then olusturulan ders programi bilgileri dogrulanir
+
+    Scenario:Oluşturulan ders silinmeli
+      Given "vicedean" yetkisi ile giris yapilir

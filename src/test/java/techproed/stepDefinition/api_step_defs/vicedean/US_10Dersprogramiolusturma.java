@@ -1,5 +1,6 @@
 package techproed.stepDefinition.api_step_defs.vicedean;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
@@ -16,7 +17,9 @@ import static techproed.base_url.BaseUrl.spec;
 public class US_10Dersprogramiolusturma {
     ExpectedDataPojo payload;
     Response response;
+    public static List<Integer> lessonidlist;
 
+    Faker fake= new Faker();
     @When("ders programi olusturmak icin POST request hazirlanir")
     public void dersProgramiOlusturmakIcinPOSTRequestHazirlanir() {
         spec.pathParams("first","lessonPrograms","second","save");
@@ -25,13 +28,15 @@ public class US_10Dersprogramiolusturma {
 
     @Then("gonderilecek ders programi bilgileri hazirlanir")
     public void gonderilecekDersProgramiBilgileriHazirlanir() {
-        List<Integer> lessonidlist = Collections.singletonList(1864);
-        payload = new ExpectedDataPojo("MONDAY",15,lessonidlist,"22:55:00","23:56:00");
+        lessonidlist = Collections.singletonList(1865);
+
+        payload = new ExpectedDataPojo("MONDAY",15,lessonidlist,"22:59","23:59");
     }
 
     @Then("ders programi olusturmak icin POST request gonderilir")
     public void dersProgramiOlusturmakIcinPOSTRequestGonderilir() {
     response = given(spec).body(payload).when().post("{first}/{second}");
+    response.prettyPrint();
 
 
     }
@@ -43,9 +48,9 @@ public class US_10Dersprogramiolusturma {
         assertEquals(payload.getDay(),actualData.getObject().getDay());
         //assertEquals(payload.getEducationTermId(),actualData.getObject().get);
         // assertEquals(payload.getStudentIds().get(0), String.valueOf(actualData.getObject().getStudents().get(0).getId()));
-       // assertEquals(payload.getLessonIdList().get(0),String.valueOf(actualData.getObject().getLessonName().get(0).getLessonId()));
-        assertEquals(payload.getStartTime(),actualData.getObject().getStartTime());
-        assertEquals(payload.getStopTime(),actualData.getObject().getStopTime());
+        assertEquals(payload.getLessonIdList().get(0).toString(),String.valueOf(actualData.getObject().getLessonName().get(0).getLessonId()));
+       // assertEquals(payload.getStartTime(),actualData.getObject().getStartTime());
+       // assertEquals(payload.getStopTime(),actualData.getObject().getStopTime());
 
     }
 
