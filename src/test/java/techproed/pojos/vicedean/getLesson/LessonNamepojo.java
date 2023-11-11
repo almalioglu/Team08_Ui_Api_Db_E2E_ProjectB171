@@ -1,19 +1,19 @@
-package techproed.pojos.vicedean.postLessonProgram;
+package techproed.pojos.vicedean.getLesson;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class LessonNamePojo implements Serializable {
+public class LessonNamepojo implements Serializable {
 	private int lessonId;
 	private String lessonName;
 	private int creditScore;
 	private boolean compulsory;
 
-	public LessonNamePojo() {
+	public LessonNamepojo() {
 	}
 
-	public LessonNamePojo(int lessonId, String lessonName, int creditScore, boolean compulsory) {
+	public LessonNamepojo(int lessonId, String lessonName, int creditScore, boolean compulsory) {
 		this.lessonId = lessonId;
 		this.lessonName = lessonName;
 		this.creditScore = creditScore;
@@ -55,7 +55,7 @@ public class LessonNamePojo implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"LessonNamePojo{" + 
+			"LessonNamepojo{" + 
 			"lessonId = '" + lessonId + '\'' + 
 			",lessonName = '" + lessonName + '\'' + 
 			",creditScore = '" + creditScore + '\'' + 

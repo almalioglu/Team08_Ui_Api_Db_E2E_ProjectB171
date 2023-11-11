@@ -1,4 +1,4 @@
-package techproed.pojos.vicedean.postLessonProgram;
+package techproed.pojos.vicedean.getlessonteacher;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

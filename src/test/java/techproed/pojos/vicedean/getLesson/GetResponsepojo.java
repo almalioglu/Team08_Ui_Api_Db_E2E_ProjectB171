@@ -1,25 +1,29 @@
-package techproed.pojos.vicedean.postLessonProgram;
+package techproed.pojos.vicedean.getLesson;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ObjectPojo implements Serializable {
+public class GetResponsepojo implements Serializable {
 	private int lessonProgramId;
 	private String startTime;
 	private String stopTime;
-	private List<LessonNamePojo> lessonName;
+	private List<LessonNamepojo> lessonName;
+	private List<Object> teachers;
+	private List<Object> students;
 	private String day;
 
-	public ObjectPojo() {
+	public GetResponsepojo() {
 	}
 
-	public ObjectPojo(int lessonProgramId, String startTime, String stopTime, List<LessonNamePojo> lessonName, String day) {
+	public GetResponsepojo(int lessonProgramId, String startTime, String stopTime, List<LessonNamepojo> lessonName, List<Object> teachers, List<Object> students, String day) {
 		this.lessonProgramId = lessonProgramId;
 		this.startTime = startTime;
 		this.stopTime = stopTime;
 		this.lessonName = lessonName;
+		this.teachers = teachers;
+		this.students = students;
 		this.day = day;
 	}
 
@@ -47,12 +51,28 @@ public class ObjectPojo implements Serializable {
 		return stopTime;
 	}
 
-	public void setLessonName(List<LessonNamePojo> lessonName){
+	public void setLessonName(List<LessonNamepojo> lessonName){
 		this.lessonName = lessonName;
 	}
 
-	public List<LessonNamePojo> getLessonName(){
+	public List<LessonNamepojo> getLessonName(){
 		return lessonName;
+	}
+
+	public void setTeachers(List<Object> teachers){
+		this.teachers = teachers;
+	}
+
+	public List<Object> getTeachers(){
+		return teachers;
+	}
+
+	public void setStudents(List<Object> students){
+		this.students = students;
+	}
+
+	public List<Object> getStudents(){
+		return students;
 	}
 
 	public void setDay(String day){
@@ -66,11 +86,13 @@ public class ObjectPojo implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"ObjectPojo{" + 
+			"GetResponsepojo{" + 
 			"lessonProgramId = '" + lessonProgramId + '\'' + 
 			",startTime = '" + startTime + '\'' + 
 			",stopTime = '" + stopTime + '\'' + 
 			",lessonName = '" + lessonName + '\'' + 
+			",teachers = '" + teachers + '\'' + 
+			",students = '" + students + '\'' + 
 			",day = '" + day + '\'' + 
 			"}";
 		}
