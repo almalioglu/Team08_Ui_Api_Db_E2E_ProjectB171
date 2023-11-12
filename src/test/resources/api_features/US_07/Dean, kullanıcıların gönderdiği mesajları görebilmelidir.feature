@@ -11,11 +11,9 @@ Feature: Dean, kullanıcıların gönderdiği mesajları görebilmelidir.
 
       Scenario: Dean olusturulan mesaji gorebilmeli
         Given Get islemi icin base url duzenlenir
-        Then  Olusturulan mesaj email ile cagırılır
-        When  Get request hazirligi yapilir
-        And   response alinir
+        When  Get request hazirligi gonderilir response alinir
         Then Status code iki yüz oldugu dogrulanir
-        And  Body dogrulanir
+        And  Get ile donen response body dogrulanir
 
 
 
