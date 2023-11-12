@@ -1,18 +1,16 @@
-package techproed.pojos.dean.postViceDean;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+package techproed.pojos.dean.getContactGetAll;
 
 import java.io.Serializable;
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class ResponseViceDeanPojo implements Serializable {
+
+public class ResponseGetExpectedDataPojo implements Serializable {
 	private ObjectPojo object;
 	private String message;
 	private String httpStatus;
 
-	public ResponseViceDeanPojo() {
+	public ResponseGetExpectedDataPojo() {
 	}
 
-	public ResponseViceDeanPojo(ObjectPojo object, String message, String httpStatus) {
+	public ResponseGetExpectedDataPojo(ObjectPojo object, String message, String httpStatus) {
 		this.object = object;
 		this.message = message;
 		this.httpStatus = httpStatus;
@@ -45,7 +43,7 @@ public class ResponseViceDeanPojo implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"ResponseViceDeanPojo{" + 
+			"ResponseGetExpectedDataPojo{" + 
 			"object = '" + object + '\'' + 
 			",message = '" + message + '\'' + 
 			",httpStatus = '" + httpStatus + '\'' + 

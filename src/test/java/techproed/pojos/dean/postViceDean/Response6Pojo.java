@@ -1,7 +1,9 @@
 package techproed.pojos.dean.postViceDean;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.io.Serializable;
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Response6Pojo implements Serializable {
 	private String birthDay;
 	private String birthPlace;

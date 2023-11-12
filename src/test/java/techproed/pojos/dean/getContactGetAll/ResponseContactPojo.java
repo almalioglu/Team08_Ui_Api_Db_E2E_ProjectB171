@@ -2,11 +2,21 @@ package techproed.pojos.dean.getContactGetAll;
 
 import java.io.Serializable;
 
-public class ContactPOJO implements Serializable {
+public class ResponseContactPojo implements Serializable {
 	private String email;
 	private String message;
 	private String name;
 	private String subject;
+
+	public ResponseContactPojo() {
+	}
+
+	public ResponseContactPojo(String email, String message, String name, String subject) {
+		this.email = email;
+		this.message = message;
+		this.name = name;
+		this.subject = subject;
+	}
 
 	public void setEmail(String email){
 		this.email = email;
@@ -32,16 +42,6 @@ public class ContactPOJO implements Serializable {
 		return name;
 	}
 
-	public ContactPOJO() {
-	}
-
-	public ContactPOJO(String email, String message, String name, String subject) {
-		this.email = email;
-		this.message = message;
-		this.name = name;
-		this.subject = subject;
-	}
-
 	public void setSubject(String subject){
 		this.subject = subject;
 	}
@@ -53,7 +53,7 @@ public class ContactPOJO implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"ContactPOJO{" + 
+			"ResponseContactPojo7Pojo{" + 
 			"email = '" + email + '\'' + 
 			",message = '" + message + '\'' + 
 			",name = '" + name + '\'' + 

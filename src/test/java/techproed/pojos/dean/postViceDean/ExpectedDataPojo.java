@@ -1,7 +1,9 @@
 package techproed.pojos.dean.postViceDean;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.io.Serializable;
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ExpectedDataPojo implements Serializable {
 	private ObjectPojo object;
 	private String message;
