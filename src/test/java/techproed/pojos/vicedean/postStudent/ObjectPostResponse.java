@@ -1,11 +1,8 @@
-package techproed.pojos.vicedean.getStudent;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+package techproed.pojos.vicedean.postStudent;
 
 import java.io.Serializable;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class StudentGetResponse implements Serializable {
+public class ObjectPostResponse implements Serializable {
 	private boolean active;
 	private String advisorTeacherEmail;
 	private int advisorTeacherId;
@@ -25,10 +22,7 @@ public class StudentGetResponse implements Serializable {
 	private String surname;
 	private String username;
 
-	public StudentGetResponse() {
-	}
-
-	public StudentGetResponse(boolean active, String advisorTeacherEmail, int advisorTeacherId, String advisorTeacherName, String advisorTeacherSurname, String birthDay, String birthPlace, String email, String fatherName, String gender, int id, String motherName, String name, String phoneNumber, String ssn, int studentNumber, String surname, String username) {
+	public ObjectPostResponse(boolean active, String advisorTeacherEmail, int advisorTeacherId, String advisorTeacherName, String advisorTeacherSurname, String birthDay, String birthPlace, String email, String fatherName, String gender, int id, String motherName, String name, String phoneNumber, String ssn, int studentNumber, String surname, String username) {
 		this.active = active;
 		this.advisorTeacherEmail = advisorTeacherEmail;
 		this.advisorTeacherId = advisorTeacherId;
@@ -47,6 +41,9 @@ public class StudentGetResponse implements Serializable {
 		this.studentNumber = studentNumber;
 		this.surname = surname;
 		this.username = username;
+	}
+
+	public ObjectPostResponse() {
 	}
 
 	public void setActive(boolean active){
@@ -196,7 +193,7 @@ public class StudentGetResponse implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"StudentGetResponse{" + 
+			"ObjectPostResponse{" + 
 			"active = '" + active + '\'' + 
 			",advisorTeacherEmail = '" + advisorTeacherEmail + '\'' + 
 			",advisorTeacherId = '" + advisorTeacherId + '\'' + 
