@@ -11,8 +11,8 @@ import org.junit.runner.RunWith;
         "junit:target/xml-report/cucumber.xml",
         "rerun:TestOutput/failed_scenario.txt"},
         features = "src/test/resources",
-        glue = {"techproed/stepDefinition/api_step_defs/teacherMeetManagement", "techproed/hooks"},
-        tags = "@08 @US_17_18_is",
+        glue = {"techproed/stepDefinition", "techproed/hooks"},
+        tags = "@08 and @US_17_18_is",
         dryRun = false,
         monochrome = true
 
