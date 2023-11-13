@@ -2,11 +2,8 @@ package techproed.stepDefinition.api_step_defs.vicedean;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import techproed.pojos.vicedean.getlessonteacher.GetlessonsResponsePojo;
-
-import java.util.List;
+import techproed.pojos.vicedean.getlessonteacher.GetResponsePojo;
 
 import static io.restassured.RestAssured.given;
 import static junit.framework.TestCase.assertEquals;
@@ -17,28 +14,28 @@ public class US_12Ogretmenedersatama {
     @When("ogretmene ders atamak için URL hazıranır")
     public void ogretmeneDersAtamakIçinURLHazıranır() {
         //https://managementonschools.com/app/lessonPrograms/getAllAssigned
-        spec.pathParams("first","lessonPrograms","second","getAllAssigned");
+        //{{baseUrl}}/teachers/getSavedTeacherById/:id
+        spec.pathParams("first","teachers","second","getSavedTeacherById","third",2987);
     }
 
     @Then("ogretmene ders atamak post reguest goderilir ve response alinir")
     public void ogretmeneDersAtamakPostReguestGoderilirVeResponseAlinir() {
-        response =given(spec).when().get("{first}/{second}");
+        response =given(spec).when().get("{first}/{second}/{third}");
         //response.prettyPrint();
-//
-//        JsonPath json = response.jsonPath();
-//        List<Integer> a = json.getList("findAll{it.lessonProgramId}");
-//        System.out.println(a);
-
-        GetlessonsResponsePojo[] actualData = response.as(GetlessonsResponsePojo[].class);
-        System.out.println(actualData[0].lessonProgramId());
-
     }
 
     @Then("ogretmen ders bilgileri dogrulanır")
     public void ogretmenDersBilgileriDogrulanır() {
-       // GetlessonsResponsePojo[] actualData = response.as(GetlessonsResponsePojo[].class);
-      //  System.out.println(actualData[0].lessonProgramId());
+        GetResponsePojo actualdata = response.as(GetResponsePojo.class);
+        assertEquals(200,response.statusCode());
+        assertEquals("teachercihan",actualdata.getObject().getUsername());
+        assertEquals( "cihankaranfil@hotmail.com",actualdata.getObject().getEmail());
+        assertEquals( "MALATYA",actualdata.getObject().getBirthPlace());
+        assertEquals( "445-555-2121",actualdata.getObject().getPhoneNumber());
+        assertEquals( "445-98-9887",actualdata.getObject().getSsn());
+        assertEquals( 1526,actualdata.getObject().getLessonsProgramList().get(0).getId());
 
-       // assertEquals(2129,actualData.getLessonProgramId());
+
+
     }
 }
