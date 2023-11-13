@@ -1,68 +1,39 @@
-package techproed.pojos.vicedean.getStudent;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+package techproed.pojos.vicedean.postStudent;
 
 import java.io.Serializable;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class StudentGetResponse implements Serializable {
-	private boolean active;
-	private String advisorTeacherEmail;
+public class StudentPost implements Serializable {
 	private int advisorTeacherId;
-	private String advisorTeacherName;
-	private String advisorTeacherSurname;
 	private String birthDay;
 	private String birthPlace;
 	private String email;
 	private String fatherName;
 	private String gender;
-	private int id;
 	private String motherName;
 	private String name;
+	private String password;
 	private String phoneNumber;
 	private String ssn;
-	private int studentNumber;
 	private String surname;
 	private String username;
 
-	public StudentGetResponse() {
-	}
-
-	public StudentGetResponse(boolean active, String advisorTeacherEmail, int advisorTeacherId, String advisorTeacherName, String advisorTeacherSurname, String birthDay, String birthPlace, String email, String fatherName, String gender, int id, String motherName, String name, String phoneNumber, String ssn, int studentNumber, String surname, String username) {
-		this.active = active;
-		this.advisorTeacherEmail = advisorTeacherEmail;
+	public StudentPost(int advisorTeacherId, String birthDay, String birthPlace, String email, String fatherName, String gender, String motherName, String name, String password, String phoneNumber, String ssn, String surname, String username) {
 		this.advisorTeacherId = advisorTeacherId;
-		this.advisorTeacherName = advisorTeacherName;
-		this.advisorTeacherSurname = advisorTeacherSurname;
 		this.birthDay = birthDay;
 		this.birthPlace = birthPlace;
 		this.email = email;
 		this.fatherName = fatherName;
 		this.gender = gender;
-		this.id = id;
 		this.motherName = motherName;
 		this.name = name;
+		this.password = password;
 		this.phoneNumber = phoneNumber;
 		this.ssn = ssn;
-		this.studentNumber = studentNumber;
 		this.surname = surname;
 		this.username = username;
 	}
 
-	public void setActive(boolean active){
-		this.active = active;
-	}
-
-	public boolean isActive(){
-		return active;
-	}
-
-	public void setAdvisorTeacherEmail(String advisorTeacherEmail){
-		this.advisorTeacherEmail = advisorTeacherEmail;
-	}
-
-	public String getAdvisorTeacherEmail(){
-		return advisorTeacherEmail;
+	public StudentPost() {
 	}
 
 	public void setAdvisorTeacherId(int advisorTeacherId){
@@ -71,22 +42,6 @@ public class StudentGetResponse implements Serializable {
 
 	public int getAdvisorTeacherId(){
 		return advisorTeacherId;
-	}
-
-	public void setAdvisorTeacherName(String advisorTeacherName){
-		this.advisorTeacherName = advisorTeacherName;
-	}
-
-	public String getAdvisorTeacherName(){
-		return advisorTeacherName;
-	}
-
-	public void setAdvisorTeacherSurname(String advisorTeacherSurname){
-		this.advisorTeacherSurname = advisorTeacherSurname;
-	}
-
-	public String getAdvisorTeacherSurname(){
-		return advisorTeacherSurname;
 	}
 
 	public void setBirthDay(String birthDay){
@@ -129,14 +84,6 @@ public class StudentGetResponse implements Serializable {
 		return gender;
 	}
 
-	public void setId(int id){
-		this.id = id;
-	}
-
-	public int getId(){
-		return id;
-	}
-
 	public void setMotherName(String motherName){
 		this.motherName = motherName;
 	}
@@ -153,6 +100,14 @@ public class StudentGetResponse implements Serializable {
 		return name;
 	}
 
+	public void setPassword(String password){
+		this.password = password;
+	}
+
+	public String getPassword(){
+		return password;
+	}
+
 	public void setPhoneNumber(String phoneNumber){
 		this.phoneNumber = phoneNumber;
 	}
@@ -167,14 +122,6 @@ public class StudentGetResponse implements Serializable {
 
 	public String getSsn(){
 		return ssn;
-	}
-
-	public void setStudentNumber(int studentNumber){
-		this.studentNumber = studentNumber;
-	}
-
-	public int getStudentNumber(){
-		return studentNumber;
 	}
 
 	public void setSurname(String surname){
@@ -196,23 +143,18 @@ public class StudentGetResponse implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"StudentGetResponse{" + 
-			"active = '" + active + '\'' + 
-			",advisorTeacherEmail = '" + advisorTeacherEmail + '\'' + 
-			",advisorTeacherId = '" + advisorTeacherId + '\'' + 
-			",advisorTeacherName = '" + advisorTeacherName + '\'' + 
-			",advisorTeacherSurname = '" + advisorTeacherSurname + '\'' + 
+			"StudentPost{" + 
+			"advisorTeacherId = '" + advisorTeacherId + '\'' + 
 			",birthDay = '" + birthDay + '\'' + 
 			",birthPlace = '" + birthPlace + '\'' + 
 			",email = '" + email + '\'' + 
 			",fatherName = '" + fatherName + '\'' + 
 			",gender = '" + gender + '\'' + 
-			",id = '" + id + '\'' + 
 			",motherName = '" + motherName + '\'' + 
 			",name = '" + name + '\'' + 
+			",password = '" + password + '\'' + 
 			",phoneNumber = '" + phoneNumber + '\'' + 
 			",ssn = '" + ssn + '\'' + 
-			",studentNumber = '" + studentNumber + '\'' + 
 			",surname = '" + surname + '\'' + 
 			",username = '" + username + '\'' + 
 			"}";

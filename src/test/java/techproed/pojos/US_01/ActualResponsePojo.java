@@ -3,7 +3,7 @@ package techproed.pojos.US_01;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ActualResponsePojo implements Serializable {
 	private ObjectPojo object;
 	private String message;

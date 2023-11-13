@@ -1,8 +1,12 @@
 @API
   Feature:Admin ile  Guest User Controller
-    Scenario: TC01 Guest User bilgileri girilir
+    Scenario: US_01 Guest User bilgileri girilir
       Given register islemi icin url düzenlenir
       And register payload düzenlenir
       And register icin post request gönderilir ve respons alinir
-      Then register post islemi icin status code 200 oldugu dogrulanir
+      Then status kodun 200 oldugu dogrulanir_EB
       And register icin gelen response bady dogrulanilir
+      And "admin" yetkisi ile giris yapilir
+      And eklenen guest user silinir
+
+

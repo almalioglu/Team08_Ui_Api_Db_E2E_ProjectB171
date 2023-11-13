@@ -427,10 +427,6 @@ public class HomePage {
 
 
 
-
-
-
-
   //Saadet-430
     @FindBy(xpath = "//*[@class='header_link me-2']") public WebElement registerButtonSG;
     @FindBy(xpath = "//*[@id='username']") public WebElement loginUserNameSG;
@@ -581,20 +577,6 @@ public WebElement subjectColumn;
 @FindBy(xpath = "//tbody/tr[1]/td[5]/span[1]")
 public WebElement messageColumn;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @FindBy(xpath = "//*[text()='One lowercase character']")
     public WebElement passwordKucukHarfEksikUyarisi;
 
@@ -643,16 +625,6 @@ public WebElement messageColumn;
 
 
 
-
-
-
-
-  
-  
-  
-  
-  
-  
   
        
   //Elif-630
@@ -704,6 +676,45 @@ public WebElement messageColumn;
     @FindBy(xpath = "(//*[@class='btn btn-danger'])[3]") public WebElement deletButonuEB;
 
     @FindBy(xpath = "//div[@class='Toastify']")public WebElement guestUserDeletedUyariMesaji;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -773,6 +784,49 @@ public WebElement messageColumn;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //MeryemOzgun-830
     @FindBy(xpath = "//*[@class='header_link ms-2']") public WebElement loginButton_mo;
     @FindBy(xpath = "//*[@id='username']") public WebElement loginUserName_mo;
@@ -798,6 +852,49 @@ public WebElement messageColumn;
     @FindBy(xpath = "(//*[@id='description'])[2]") public WebElement editDescription;
     @FindBy(xpath = "//*[@class='btn btn-danger']") public WebElement deleteButton_mo;
     @FindBy(xpath = "(//div)[69]") public WebElement meetDeleteSuccesfullMesaji;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
