@@ -11,7 +11,10 @@ import techproed.pojos.student.AddChooseLessonsResponsePojo;
 import techproed.pojos.student.ChooseLessonsPayloadPojo;
 import techproed.pojos.student.LessonsProgramResponsePojo;
 import techproed.pojos.student.ObjectPojo;
+import techproed.pojos.student.meetList.MeetResponsePojo;
+import techproed.pojos.student.meetList.StudentsPojo;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -30,6 +33,9 @@ public class StudentChooseLessons {
     AddChooseLessonsResponsePojo actualData;
     AddChooseLessonsResponsePojo expectedData;
     ObjectPojo object;
+    MeetResponsePojo[] actualDataMeet;
+    MeetResponsePojo expectedDataMeet;
+    StudentsPojo student;
     @Given("student icin URL duzenlenir")
     public void student_icin_url_duzenlenir() {
         spec.pathParams("first","lessonPrograms","second","getAll");
@@ -100,26 +106,49 @@ public class StudentChooseLessons {
     assertEquals(object.isActive(),actualData.getObject().isActive());
     assertEquals(expectedData.getMessage(),actualData.getMessage());
     assertEquals(expectedData.getHttpStatus(),actualData.getHttpStatus());
-        /*
-        {
-    "object": {
-        "userId": 2071,
-        "username": "08Student",
-        "name": "Student08",
-        "surname": "08student",
-        "birthDay": "2008-10-01",
-        "birthPlace": "ankara",
-        "phoneNumber": "548-986-6699",
-        "gender": "FEMALE",
-        "studentNumber": 1241,
-        "motherName": "teamff",
-        "fatherName": "team08f",
-        "email": "vveswtu@hotmail.com",
-        "active": true
-    },
-    "message": "Lesson added to Student",
-    "httpStatus": "CREATED"
-}
-         */
+
+    }
+
+    @Given("student icin meet URL duzenlenir")
+    public void studentIcinMeetURLDuzenlenir() {
+        //https://managementonschools.com/app/meet/getAllMeetByStudent
+        spec.pathParams("first","meet","second","getAllMeetByStudent");
+    }
+
+    @And("meet list gorebilmek icin Get request gonderilir ve response alinir")
+    public void meetListGorebilmekIcinGetRequestGonderilirVeResponseAlinir() {
+        response=given(spec).when().get("{first}/{second}");
+        response.prettyPrint();
+        actualDataMeet= response.as(MeetResponsePojo[].class);
+        student= new StudentsPojo("1996-10-10","deneme","MALE",1170,"deneme",true,"451-67-4613","adana","145-845-6244","erçik","mehmet",2000,"deneme123@gmail.com","mehmet321");
+        List<StudentsPojo> list=new ArrayList<>();
+        list.add(student);
+        expectedDataMeet=new MeetResponsePojo("2023-11-06","123-85-7412",1313,"Kamil","apiTest",list,"03:50:00","04:20:00",1183);
+
+
+    }
+
+    @Then("meet listin goruldugu dogrulanir")
+    public void meetListinGorulduguDogrulanir() {
+        assertEquals(200,response.statusCode());
+        assertEquals(expectedDataMeet.getId(),actualDataMeet[0].getId());
+        assertEquals(expectedDataMeet.getDescription(),actualDataMeet[0].getDescription());
+        assertEquals(expectedDataMeet.getStartTime(),actualDataMeet[0].getStartTime());
+        assertEquals(expectedDataMeet.getStopTime(),actualDataMeet[0].getStopTime());
+        assertEquals(expectedDataMeet.getAdvisorTeacherId(),actualDataMeet[0].getAdvisorTeacherId());
+        assertEquals(expectedDataMeet.getTeacherName(),actualDataMeet[0].getTeacherName());
+        assertEquals(expectedDataMeet.getTeacherSsn(),actualDataMeet[0].getTeacherSsn());
+        assertEquals(student.getId(),actualDataMeet[0].getStudents().get(0).getId());
+        assertEquals(student.getUsername(),actualDataMeet[0].getStudents().get(0).getUsername());
+        assertEquals(student.getSsn(),actualDataMeet[0].getStudents().get(0).getSsn());
+        assertEquals(student.getName(),actualDataMeet[0].getStudents().get(0).getName());
+        assertEquals(student.getSurname(),actualDataMeet[0].getStudents().get(0).getSurname());
+        assertEquals(student.getBirthDay(),actualDataMeet[0].getStudents().get(0).getBirthDay());
+        assertEquals(student.getBirthPlace(),actualDataMeet[0].getStudents().get(0).getBirthPlace());
+        assertEquals(student.getPhoneNumber(),actualDataMeet[0].getStudents().get(0).getPhoneNumber());
+        assertEquals(student.getGender(),actualDataMeet[0].getStudents().get(0).getGender());
+        assertEquals(student.getStudentNumber(),actualDataMeet[0].getStudents().get(0).getStudentNumber());
+        assertEquals(student.getEmail(),actualDataMeet[0].getStudents().get(0).getEmail());
+        assertEquals(student.isActive(),actualDataMeet[0].getStudents().get(0).isActive());
     }
 }

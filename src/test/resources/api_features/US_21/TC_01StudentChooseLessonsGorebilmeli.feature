@@ -7,7 +7,6 @@ Feature: Student Choose Lessons Gorebilmeli
   Scenario:TC01 Student kullanicisi ile choose lessons gorulebilmeli
     And student icin URL duzenlenir
     When choose lessons gorebilmek icin Get request gonderilir ve response alinir
-    #* status kodun 200 oldugu dogrulanir
     And   choose lessonsda start time ve stop time gorulabildigi dogrulanir
     And  choose lessonsda teacher bilgilerinin goruldugu dogrulanir
     And  choose lessonsda day bilgilerinin goruldugu dogrulanir
@@ -21,4 +20,10 @@ Feature: Student Choose Lessons Gorebilmeli
 
     #delete olmadıgı görünüyor o yüzden delete işlemi yapılmadı
 
-  Scenario: TC03 Student
+  Scenario: TC03 Student kullanicisi kendisi için yapılan meet'leri görebilmeli
+    Given student icin meet URL duzenlenir
+    And meet list gorebilmek icin Get request gonderilir ve response alinir
+    Then meet listin goruldugu dogrulanir
+
+
+
