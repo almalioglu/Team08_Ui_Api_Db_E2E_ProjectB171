@@ -3,9 +3,9 @@ package techproed.pojos.US_01;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
-@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class ObjectPojo implements Serializable {
-	private int userId;
+	public static int userId;
 	private String username;
 	private String name;
 	private String surname;
@@ -34,7 +34,7 @@ public class ObjectPojo implements Serializable {
 		this.userId = userId;
 	}
 
-	public int getUserId(){
+	public static int getUserId(){
 		return userId;
 	}
 

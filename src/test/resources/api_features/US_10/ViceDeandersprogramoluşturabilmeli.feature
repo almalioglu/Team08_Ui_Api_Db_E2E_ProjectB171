@@ -1,6 +1,6 @@
 @Cihanapi
   Feature: Vice Dean ders programı oluşturabilmelidir.
-    Scenario: Ders programı oluşmalı
+    Scenario: Ders programı olusmalı
       Given "vicedean" yetkisi ile giris yapilir
       When ders programi olusturmak icin POST request hazirlanir
       Then gonderilecek ders programi bilgileri hazirlanir

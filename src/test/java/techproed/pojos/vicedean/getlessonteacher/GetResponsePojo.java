@@ -1,18 +1,18 @@
-package techproed.pojos.US_01;
+package techproed.pojos.vicedean.getlessonteacher;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ActualResponsePojo implements Serializable {
+public class GetResponsePojo implements Serializable {
 	private ObjectPojo object;
 	private String message;
 	private String httpStatus;
 
-	public ActualResponsePojo() {
+	public GetResponsePojo() {
 	}
 
-	public ActualResponsePojo(ObjectPojo object, String message, String httpStatus) {
+	public GetResponsePojo(ObjectPojo object, String message, String httpStatus) {
 		this.object = object;
 		this.message = message;
 		this.httpStatus = httpStatus;
@@ -45,7 +45,7 @@ public class ActualResponsePojo implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"ActualResponsePojo{" + 
+			"GetResponsePojo{" + 
 			"object = '" + object + '\'' + 
 			",message = '" + message + '\'' + 
 			",httpStatus = '" + httpStatus + '\'' + 
