@@ -2,11 +2,8 @@ package techproed.stepDefinition.api_step_defs.vicedean;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import techproed.pojos.vicedean.getLesson.GetResponsepojo;
-
-import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static junit.framework.TestCase.assertEquals;
