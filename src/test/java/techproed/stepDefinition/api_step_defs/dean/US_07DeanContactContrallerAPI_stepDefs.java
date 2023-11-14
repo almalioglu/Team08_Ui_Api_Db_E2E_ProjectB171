@@ -5,9 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
-import techproed.pojos.dean.getContactGetAll.ObjectPojo;
-import techproed.pojos.dean.getContactGetAll.ResponseContactPojo;
-import techproed.pojos.dean.getContactGetAll.ResponseGetExpectedDataPojo;
+import techproed.pojos.dean.getContactGetAll.*;
 
 import static io.restassured.RestAssured.given;
 import static junit.framework.TestCase.assertEquals;
@@ -19,6 +17,8 @@ public class US_07DeanContactContrallerAPI_stepDefs {
     ResponseGetExpectedDataPojo expectedData;
     ResponseGetExpectedDataPojo actualData;
     Response response;
+    GetContactMessagePojo getActualData;
+    ContentPojo getExpectedData;
     @Given("Base URL duzenlenir")
     public void baseURLDuzenlenir() {
         spec.pathParams("first","contactMessages","second","save");
@@ -28,7 +28,7 @@ public class US_07DeanContactContrallerAPI_stepDefs {
     @And("Payload duzenlenir")
     public void payloadDuzenlenir() {
         payload=new ResponseContactPojo("zyrell.fariz@forkshape.com","HELLO WORLD","MAHPEYKER", "JAVA");
-        objectPojo=new ObjectPojo( "MAHPEYKER","zyrell.fariz@forkshape.com", "JAVA","HELLO WORLD","2023-11-10");
+        objectPojo=new ObjectPojo( "MAHPEYKER","zyrell.fariz@forkshape.com", "JAVA","HELLO WORLD","2023-11-13");
         expectedData=new ResponseGetExpectedDataPojo(objectPojo,"Contact Message Created Successfully","CREATED");
     }
 
@@ -66,12 +66,20 @@ public class US_07DeanContactContrallerAPI_stepDefs {
 
     @When("Get request hazirligi gonderilir response alinir")
     public void getRequestHazirligiGonderilirResponseAlinir() {
-
+     response = given(spec).when().get("{first}/{second}");
+     response.prettyPrint();
+     getActualData = response.as(GetContactMessagePojo.class);
+     getExpectedData = new ContentPojo("MAHPEYKER","zyrell.fariz@forkshape.com","JAVA","HELLO WORLD", "2023-11-13");
 
     }
 
     @And("Get ile donen response body dogrulanir")
     public void getIleDonenResponseBodyDogrulanir() {
+       assertEquals(getExpectedData.getName(),getActualData.getContent().get(0).getName());
+       assertEquals(getExpectedData.getEmail(),getActualData.getContent().get(0).getEmail());
+       assertEquals(getExpectedData.getSubject(),getActualData.getContent().get(0).getSubject());
+       assertEquals(getExpectedData.getMessage(),getActualData.getContent().get(0).getMessage());
+       assertEquals(getExpectedData.getDate(),getActualData.getContent().get(0).getDate());
 
     }
 }

@@ -4,10 +4,11 @@
       Given "Dean" yetkisi ile giris yapilir
 
       Scenario: Vice Dean hesabi olusturabilmeli
-        Given Vice Dean olusturabilmek icin URL duzenlenir
-        And Vice Dean olusturabilmek icin payload kismi duzenlenir
-        When Vice Dean olusturabilmek icin request gonderilir response alinir
-       # Then Status code iki yüz oldugu dogrulanir
-        And Vice Dean olusmasi icin gelen body dogrulanir
-        And Olusturulan vice dean silinir
+        Given Vice Dean save icin URL duzenlenir_aeo
+        And Vice Dean save icin payload duzenlenir_aeo
+        When Vice Dean save icin post request gonderilir response alinir_aeo
+        Then status kodun 200 oldugu dogrulanir_aeo
+        And  Vice Dean save icin gelen body dogrulanir_aeo
+        And olusturulan vice dean silinir
+
 

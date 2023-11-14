@@ -1,4 +1,4 @@
-#<<<<<<< Updated upstream
+
 #
 #@08 @06
 #

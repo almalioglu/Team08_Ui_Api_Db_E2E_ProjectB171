@@ -10,7 +10,6 @@ import techproed.pages.HomePage;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
-import javax.naming.ldap.Control;
 import java.util.List;
 import java.util.Random;
 
