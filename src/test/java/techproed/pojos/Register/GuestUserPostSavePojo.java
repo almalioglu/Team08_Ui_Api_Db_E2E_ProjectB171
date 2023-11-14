@@ -1,4 +1,4 @@
-package techproed.pojos.US_01;
+package techproed.pojos.Register;
 
 import java.io.Serializable;
 

@@ -7,16 +7,14 @@ import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import techproed.pojos.US_01.ActualResponsePojo;
-import techproed.pojos.US_01.GuestUserPostSavePojo;
-import techproed.pojos.US_01.ObjectPojo;
-
-import java.util.List;
+import techproed.pojos.Register.ActualResponsePojo;
+import techproed.pojos.Register.GuestUserPostSavePojo;
+import techproed.pojos.Register.ObjectPojo;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static techproed.base_url.BaseUrl.spec;
-import static techproed.pojos.US_01.ObjectPojo.userId;
+import static techproed.pojos.Register.ObjectPojo.userId;
 
 public class US01_US02_RegisterPostSave_GetAll_Delete {
     String url;
