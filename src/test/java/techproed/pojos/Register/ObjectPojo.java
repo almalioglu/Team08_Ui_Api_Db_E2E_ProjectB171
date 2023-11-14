@@ -1,6 +1,4 @@
-package techproed.pojos.US_01;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+package techproed.pojos.Register;
 
 import java.io.Serializable;
 
