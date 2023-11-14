@@ -1,10 +1,5 @@
 
 
-#
-#@08 @06
-#
-#
-#=======
 #@08 @06
 #
 #  Feature:Dean olarak Vice Dean ekleyebilmeli

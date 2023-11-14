@@ -30,6 +30,7 @@ public class Response6Pojo implements Serializable {
 		this.username = username;
 	}
 
+
 	public void setBirthDay(String birthDay){
 		this.birthDay = birthDay;
 	}

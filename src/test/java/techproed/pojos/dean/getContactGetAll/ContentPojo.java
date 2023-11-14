@@ -4,17 +4,17 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ObjectPojo implements Serializable {
+public class ContentPojo implements Serializable {
 	private String name;
 	private String email;
 	private String subject;
 	private String message;
 	private String date;
 
-	public ObjectPojo() {
+	public ContentPojo() {
 	}
 
-	public ObjectPojo(String name, String email, String subject, String message, String date) {
+	public ContentPojo(String name, String email, String subject, String message, String date) {
 		this.name = name;
 		this.email = email;
 		this.subject = subject;
@@ -65,7 +65,7 @@ public class ObjectPojo implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"ObjectPojo{" + 
+			"ContentPojo{" + 
 			"name = '" + name + '\'' + 
 			",email = '" + email + '\'' + 
 			",subject = '" + subject + '\'' + 

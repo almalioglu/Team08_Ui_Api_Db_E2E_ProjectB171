@@ -3,11 +3,7 @@ package techproed.stepDefinition.ui_step_defs;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import org.openqa.selenium.WebElement;
 import techproed.pages.HomePage;
-
-import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
