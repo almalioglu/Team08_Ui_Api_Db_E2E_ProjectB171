@@ -13,6 +13,9 @@ import techproed.pojos.student.LessonsProgramResponsePojo;
 import techproed.pojos.student.ObjectPojo;
 import techproed.pojos.student.meetList.MeetResponsePojo;
 import techproed.pojos.student.meetList.StudentsPojo;
+import techproed.pojos.student.studentInfoList.ContentPojo;
+import techproed.pojos.student.studentInfoList.StudentInfoListExpectedPojo;
+import techproed.pojos.student.studentInfoList.StudentResponsePojo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,6 +39,8 @@ public class StudentChooseLessons {
     MeetResponsePojo[] actualDataMeet;
     MeetResponsePojo expectedDataMeet;
     StudentsPojo student;
+    StudentInfoListExpectedPojo actualDataInfolist;
+    ContentPojo studentExpected;
     @Given("student icin URL duzenlenir")
     public void student_icin_url_duzenlenir() {
         spec.pathParams("first","lessonPrograms","second","getAll");
@@ -150,5 +155,40 @@ public class StudentChooseLessons {
         assertEquals(student.getStudentNumber(),actualDataMeet[0].getStudents().get(0).getStudentNumber());
         assertEquals(student.getEmail(),actualDataMeet[0].getStudents().get(0).getEmail());
         assertEquals(student.isActive(),actualDataMeet[0].getStudents().get(0).isActive());
+    }
+
+    @Given("student icin ders notlarini gorme URL duzenlenir")
+    public void studentIcinDersNotlariniGormeURLDuzenlenir() {
+        //https://managementonschools.com/app/studentInfo/getAllByStudent?page=0&size=10
+        spec.pathParams("first","studentInfo","second","getAllByStudent")
+                .queryParams("page",0,"size",10);
+
+    }
+
+    @And("ders notlarini gorebilmek icin GET request gonderilir ve response alinir")
+    public void dersNotlariniGorebilmekIcinGETRequestGonderilirVeResponseAlinir() {
+        response=given(spec).when().get("{first}/{second}");
+        response.prettyPrint();
+        actualDataInfolist=response.as(StudentInfoListExpectedPojo.class);
+        StudentResponsePojo studentData=new StudentResponsePojo(2000,"mehmet321","mehmet","erçik","1996-10-10","adana","145-845-6244","MALE",1170,"deneme","deneme","deneme123@gmail.com",true);
+        studentExpected=new ContentPojo(3952,100.0,100.0,3,"Good Work!","xray",1847,11,15,100.0,studentData,true,"AA");
+
+
+    }
+
+
+    @Then("donen response dogrulanir")
+    public void donenResponseDogrulanir() {
+        assertEquals(200,response.statusCode());
+        assertEquals(studentExpected.getMidtermExam(),actualDataInfolist.getContent().get(0).getMidtermExam());
+        assertEquals(studentExpected.getFinalExam(),actualDataInfolist.getContent().get(0).getFinalExam());
+        assertEquals(studentExpected.getAbsentee(),actualDataInfolist.getContent().get(0).getAbsentee());
+        assertEquals(studentExpected.getInfoNote(),actualDataInfolist.getContent().get(0).getInfoNote());
+        assertEquals(studentExpected.getLessonName(),actualDataInfolist.getContent().get(0).getLessonName());
+        assertEquals(studentExpected.getLessonId(),actualDataInfolist.getContent().get(0).getLessonId());
+        assertEquals(studentExpected.getCreditScore(),actualDataInfolist.getContent().get(0).getCreditScore());
+        assertEquals(studentExpected.getEducationTermId(),actualDataInfolist.getContent().get(0).getEducationTermId());
+        assertEquals(studentExpected.getAverage(),actualDataInfolist.getContent().get(0).getAverage());
+
     }
 }

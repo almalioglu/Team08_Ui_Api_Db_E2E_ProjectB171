@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         "rerun:TestOutput/failed_scenario.txt"},
         features = "src/test/resources",
         glue = {"techproed/stepDefinition/ui_step_defs", "techproed/hooks"},
-        tags = "@08 and @mehmetUS22",
+        tags = "@08 and @mehmet",
         dryRun = false,
         monochrome = true
 )

@@ -26,4 +26,10 @@ Feature: Student Choose Lessons Gorebilmeli
     Then meet listin goruldugu dogrulanir
 
 
+    Scenario: TC04 Student kullanicisi verilen ders notlarini gorebilmeli
+      Given  student icin ders notlarini gorme URL duzenlenir
+      And ders notlarini gorebilmek icin GET request gonderilir ve response alinir
+      Then donen response dogrulanir
+
+
 
