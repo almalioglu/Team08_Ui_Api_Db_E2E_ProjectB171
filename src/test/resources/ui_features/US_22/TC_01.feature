@@ -1,4 +1,4 @@
-@08
+@08 @mehmet
 Feature: Students, choose lesson, grades and announcement
 
 

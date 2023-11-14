@@ -32,7 +32,7 @@ public class AdminManagement {
     AdminPostPojo payload;
     Response response;
     AdminPostResponsePojo actualData;
-    static AdminGetExpectedPojo expected;
+    AdminGetExpectedPojo expected;
 
     Faker faker=new Faker();
     static String userName;

@@ -32,6 +32,8 @@ public class MeetResponsePojo implements Serializable {
 		this.id = id;
 	}
 
+
+
 	public void setDate(String date){
 		this.date = date;
 	}
