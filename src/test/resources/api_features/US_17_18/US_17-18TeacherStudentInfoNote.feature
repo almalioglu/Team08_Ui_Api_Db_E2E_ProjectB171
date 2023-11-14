@@ -1,4 +1,4 @@
-@08 @US_17_18_is
+@US_17_18_is
 Feature: Student Info Management
 
   Scenario: Teacher olarak ogrencilere not verme testi
