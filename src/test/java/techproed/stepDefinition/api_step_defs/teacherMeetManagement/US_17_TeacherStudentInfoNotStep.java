@@ -29,7 +29,7 @@ public class US_17_TeacherStudentInfoNotStep {
     ObjectPojo getActualData;
 
 
-    static int infoId;
+    static int id;
     static int studentId;
 
 
@@ -67,7 +67,7 @@ public class US_17_TeacherStudentInfoNotStep {
     @And("Sdutent info save icin gelen Response body dogrulanir_is")
     public void sdutentInfoSaveIcinGelenResponseBodyDogrulanir_is() {
         PostResponsePojo actualData=response.as(PostResponsePojo.class);
-//        assertEquals(200,response.statusCode());
+
         assertEquals(payload.getAbsentee(),actualData.getObject().getAbsentee());
         assertEquals(payload.getEducationTermId(),actualData.getObject().getEducationTermId());
         assertEquals(payload.getFinalExam(),actualData.getObject().getFinalExam());
@@ -93,12 +93,14 @@ public class US_17_TeacherStudentInfoNotStep {
 
             JsonPath jsonPath =  response.jsonPath();
             List<Integer> idList = jsonPath.getList("content.findAll{it.infoNote == 'Başarılarının devamını dilerim..?'}.id");
-            infoId = idList.get(0);
+            id = idList.get(0);
+        System.out.println(id);
+
     }
 
     @And("Sdutent info get icin URL duzenlenir_is")
     public void sdutentInfoGetIcinURLDuzenlenir_is() {
-        spec.pathParams("first", "studentInfo", "second", "get", "third", infoId);
+        spec.pathParams("first", "studentInfo", "second", "get", "third", id);
         }
 
 
@@ -107,7 +109,7 @@ public class US_17_TeacherStudentInfoNotStep {
         studentResponse = new StudentResponsePojo(2326, "Fiksberra","Berra",
                 "Fiks", "1986-01-19", "Mars", "545-341-9010",
                 "FEMALE", 1429,"Alime", "Alim", "birch.lamarion@forkshape.com", true);
-        expectedData = new ObjectPojo(infoId, 100.0, 90.0, 5, "Başarılarının devamını dilerim..?",
+        expectedData = new ObjectPojo(id, 100.0, 90.0, 5, "Başarılarının devamını dilerim..?",
                 "Chemisch ", 1915, 10, 19, 94.0,
                 studentResponse, false, "AA");
         /*
@@ -169,7 +171,7 @@ public class US_17_TeacherStudentInfoNotStep {
 
     @Given("Student Info Delete icin URL duzenlenir_is")
     public void studentInfoDeleteIcinURLDuzenlenir_is() {
-        spec.pathParams("first", "studentInfo", "second", "delete", "third", infoId);
+        spec.pathParams("first", "studentInfo", "second", "delete", "third", id);
     }
 
     @When("Student Info icin DELETE Request gonderilir ve Response alinir_is")
@@ -186,7 +188,7 @@ public class US_17_TeacherStudentInfoNotStep {
 
     @Given("Student Info Update icin URL duzenlenir_is")
     public void studentInfoUpdateIcinURLDuzenlenir_is() {
-        spec.pathParams("first", "studentInfo", "second", "update", "third", infoId);
+        spec.pathParams("first", "studentInfo", "second", "update", "third", id);
     }
 
     @And("Student Info Update icin gonderilecek veriler duzenlenir_is")

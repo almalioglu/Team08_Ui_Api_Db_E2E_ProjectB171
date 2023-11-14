@@ -1,9 +1,5 @@
 
-#
-#@08 @06
-#
-#
-#=======
+
 #@08 @06
 #
 #  Feature:Dean olarak Vice Dean ekleyebilmeli
@@ -147,11 +143,3 @@
 #      Examples:
 #        | Name            | Surname | Birth Place | Date Of Birth | Phone        | Ssn         | User Name       | Password | Password1 | Password2 |
 #        |Ayse Ebrar       | Oral    | Istanbul    | 10.09.1999    |  555-444-212 | 545-56-8787 | oytun           | oytun123 | OYTUN123  | Oytunerbaş  |
-#
-#
-#
-#
-#
-#
-#
-#
