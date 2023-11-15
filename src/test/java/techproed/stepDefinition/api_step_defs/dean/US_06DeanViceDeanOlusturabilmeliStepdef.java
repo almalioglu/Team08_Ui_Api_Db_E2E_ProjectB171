@@ -25,14 +25,14 @@ public class US_06DeanViceDeanOlusturabilmeliStepdef {
 
     @Given("Vice Dean save icin URL duzenlenir_aeo")
     public void viceDeanSaveIcinURLDuzenlenir_aeo() {
-        spec.pathParams("first","vicedean","second","save");
-       //https://managementonschools.com/app/vicedean/save)
+        spec.pathParams("first", "vicedean", "second", "save");
+        //https://managementonschools.com/app/vicedean/save)
     }
 
     @And("Vice Dean save icin payload duzenlenir_aeo")
     public void viceDeanSaveIcinPayloadDuzenlenir_aeo() {
-       payload = new Response6Pojo("1999-09-10","Istanbul","FEMALE","Firdevs3","Mahmude123",
-               "188-198-7878","222-33-6163", "ORAL3","Firdevs333");
+        payload = new Response6Pojo("1999-09-10", "Istanbul", "FEMALE", "Firdevs3", "Mahmude123",
+                "188-198-7878", "222-33-6163", "ORAL3", "Firdevs333");
 
     }
 
@@ -44,17 +44,18 @@ public class US_06DeanViceDeanOlusturabilmeliStepdef {
 
 
     }
+
     @And("Vice Dean save icin gelen body dogrulanir_aeo")
     public void viceDeanSaveIcinGelenBodyDogrulanir_aeo() {
         ResponseViceDeanPojo actualData = response.as(ResponseViceDeanPojo.class);
-        assertEquals(payload.getBirthDay(),actualData.getObject().getBirthDay());
-        assertEquals(payload.getBirthPlace(),actualData.getObject().getBirthPlace());
-        assertEquals(payload.getGender(),actualData.getObject().getGender());
-        assertEquals(payload.getName(),actualData.getObject().getName());
-        assertEquals(payload.getPhoneNumber(),actualData.getObject().getPhoneNumber());
-        assertEquals(payload.getSsn(),actualData.getObject().getSsn());
-        assertEquals(payload.getSurname(),actualData.getObject().getSurname());
-        assertEquals(payload.getUsername(),actualData.getObject().getUsername());
+        assertEquals(payload.getBirthDay(), actualData.getObject().getBirthDay());
+        assertEquals(payload.getBirthPlace(), actualData.getObject().getBirthPlace());
+        assertEquals(payload.getGender(), actualData.getObject().getGender());
+        assertEquals(payload.getName(), actualData.getObject().getName());
+        assertEquals(payload.getPhoneNumber(), actualData.getObject().getPhoneNumber());
+        assertEquals(payload.getSsn(), actualData.getObject().getSsn());
+        assertEquals(payload.getSurname(), actualData.getObject().getSurname());
+        assertEquals(payload.getUsername(), actualData.getObject().getUsername());
 
 
     }
@@ -67,9 +68,10 @@ public class US_06DeanViceDeanOlusturabilmeliStepdef {
 
     @And("olusturulan vice dean silinir")
     public void olusturulanViceDeanSilinir() {
-       // {{baseUrl}}/vicedean/delete/:userId
-        spec.pathParams("first","vicedean","second","delete","third",userId);
-        response=given(spec).when().delete("{first}/{second}/{third}");
+        // {{baseUrl}}/vicedean/delete/:userId
+        spec.pathParams("first", "vicedean", "second", "delete", "third", userId);
+        response = given(spec).when().delete("{first}/{second}/{third}");
     }
-}
 
+
+}

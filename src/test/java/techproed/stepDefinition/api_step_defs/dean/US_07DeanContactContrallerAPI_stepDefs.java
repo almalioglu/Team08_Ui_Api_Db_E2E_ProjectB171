@@ -7,6 +7,9 @@ import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 import techproed.pojos.dean.getContactGetAll.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import static io.restassured.RestAssured.given;
 import static junit.framework.TestCase.assertEquals;
 import static techproed.base_url.BaseUrl.spec;
@@ -19,6 +22,7 @@ public class US_07DeanContactContrallerAPI_stepDefs {
     Response response;
     GetContactMessagePojo getActualData;
     ContentPojo getExpectedData;
+    static String nowDate;
     @Given("Base URL duzenlenir")
     public void baseURLDuzenlenir() {
         spec.pathParams("first","contactMessages","second","save");
@@ -27,8 +31,10 @@ public class US_07DeanContactContrallerAPI_stepDefs {
 
     @And("Payload duzenlenir")
     public void payloadDuzenlenir() {
+        LocalDate localDate = LocalDate.now();
+        nowDate= String.valueOf(localDate);
         payload=new ResponseContactPojo("zyrell.fariz@forkshape.com","HELLO WORLD","MAHPEYKER", "JAVA");
-        objectPojo=new ObjectPojo( "MAHPEYKER","zyrell.fariz@forkshape.com", "JAVA","HELLO WORLD","2023-11-13");
+        objectPojo=new ObjectPojo( "MAHPEYKER","zyrell.fariz@forkshape.com", "JAVA","HELLO WORLD",nowDate);
         expectedData=new ResponseGetExpectedDataPojo(objectPojo,"Contact Message Created Successfully","CREATED");
     }
 
@@ -69,7 +75,8 @@ public class US_07DeanContactContrallerAPI_stepDefs {
      response = given(spec).when().get("{first}/{second}");
      response.prettyPrint();
      getActualData = response.as(GetContactMessagePojo.class);
-     getExpectedData = new ContentPojo("MAHPEYKER","zyrell.fariz@forkshape.com","JAVA","HELLO WORLD", "2023-11-13");
+     getExpectedData = new ContentPojo("MAHPEYKER","zyrell.fariz@forkshape.com","JAVA","HELLO WORLD", nowDate);
+
 
     }
 
