@@ -1,6 +1,5 @@
 @API
 Feature:
-
 Scenario: US_02 Guest User bilgilleri gorulur(Get)
       Given "admin" yetkisi ile giris yapilir
       Then admin get icin url duzenlenir
