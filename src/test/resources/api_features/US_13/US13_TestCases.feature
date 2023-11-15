@@ -10,3 +10,5 @@ Feature: Vice Dean Teacher Ekleyebilmeli
     And Gonderilecek Teacher bilgileri hazirlanir
     When Teacher eklemek icin post request gonderilir
     Then Teacher bilgileri dogrulanir
+
+
