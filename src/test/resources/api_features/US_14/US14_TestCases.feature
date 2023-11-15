@@ -17,5 +17,5 @@ Feature:Vice Dean ogretmenleri gorebilmeli ve guncelleyebilmeli
     And Guncellenecek ogretmen verileri hazirlanir
     When Kayitli ogretmen id ile guncellenir
     Then Guncellenen ogretmen bilgileri dogrulanir
-    #And Ogretmen verileri silinir (DELETE)
+    And Ogretmen verileri silinir (DELETE)
 
