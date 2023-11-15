@@ -20,6 +20,7 @@ public class StudentChooseLesson {
     ResultSet resultSet;
     MeetResponsePojo expectedDataMeet;
     List<StudentsPojo> list;
+
     @Given("Student icin database baglantisi kurulur")
     public void studentIcinDatabaseBaglantisiKurulur() throws SQLException {
         connection= DriverManager.getConnection("jdbc:postgresql://managementonschools.com:5432/school_management","select_user","43w5ijfso");
@@ -36,9 +37,11 @@ public class StudentChooseLesson {
         StudentResponsePojo studentData=new StudentResponsePojo(2000,"mehmet321","mehmet","erçik","1996-10-10","adana","145-845-6244","MALE",1170,"deneme","deneme","deneme123@gmail.com",true);
         ContentPojo studentExpected=new ContentPojo(3952,100,100,3,"Good Work!","xray",1847,11,15,100,studentData,true,"AA");
         resultSet.next();
+        resultSet.next();
         assertEquals("100",resultSet.getString("midterm_exam"));
         assertEquals("100",resultSet.getString("final_exam"));
         assertEquals(studentExpected.getNote(),resultSet.getString("letter_grade"));
+
 
     }
 
@@ -68,7 +71,7 @@ public class StudentChooseLesson {
 
     @Then("aldıgı ders bilgileri dogrulanir")
     public void aldıgıDersBilgileriDogrulanir() throws SQLException {
-        List<String> programId=new ArrayList<>(List.of("1422","1403","1747","1549","1548"));
+        List<String> programId=new ArrayList<>(List.of("1965","1422","1403","1747","1549","1548"));
         for (int i = 0; i < programId.size(); i++) {
             resultSet.next();
             assertEquals(programId.get(i),resultSet.getString("lesson_program_id"));

@@ -80,7 +80,6 @@ public class StudentChooseLessons {
         payload =new ChooseLessonsPayloadPojo();
         int randomSecim=random.nextInt(id.size()-1);
         payload.setLessonProgramId(List.of(id.get(randomSecim)));
-
         object=new ObjectPojo(2071,"08Student","Student08","08student","2008-10-01","ankara","548-986-6699","FEMALE",1241,"teamff","team08f","vveswtu@hotmail.com",true);
         expectedData=new AddChooseLessonsResponsePojo(object,"Lesson added to Student","CREATED");
 
@@ -90,7 +89,6 @@ public class StudentChooseLessons {
     @When("students choose lessons post icin request gonderilir payload alinir")
     public void studentsChooseLessonsPostIcinRequestGonderilirPayloadAlinir() {
         response=given(spec).body(payload).when().post("{first}/{second}");
-        response.prettyPrint();
         actualData=response.as(AddChooseLessonsResponsePojo.class);
 
     }
@@ -123,7 +121,6 @@ public class StudentChooseLessons {
     @And("meet list gorebilmek icin Get request gonderilir ve response alinir")
     public void meetListGorebilmekIcinGetRequestGonderilirVeResponseAlinir() {
         response=given(spec).when().get("{first}/{second}");
-        response.prettyPrint();
         actualDataMeet= response.as(MeetResponsePojo[].class);
         student= new StudentsPojo("1996-10-10","deneme","MALE",1170,"deneme",true,"451-67-4613","adana","145-845-6244","erçik","mehmet",2000,"deneme123@gmail.com","mehmet321");
         List<StudentsPojo> list=new ArrayList<>();
