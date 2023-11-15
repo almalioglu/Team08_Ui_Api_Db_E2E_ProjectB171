@@ -15,21 +15,6 @@ public class ObjectPojo implements Serializable {
 	private String phoneNumber;
 	private String gender;
 
-	public ObjectPojo() {
-	}
-
-	public ObjectPojo(int userId, String username, String name, String surname, String birthDay, String ssn, String birthPlace, String phoneNumber, String gender) {
-		this.userId = userId;
-		this.username = username;
-		this.name = name;
-		this.surname = surname;
-		this.birthDay = birthDay;
-		this.ssn = ssn;
-		this.birthPlace = birthPlace;
-		this.phoneNumber = phoneNumber;
-		this.gender = gender;
-	}
-
 	public void setUserId(int userId){
 		this.userId = userId;
 	}
