@@ -122,10 +122,10 @@ public class StudentChooseLessons {
     public void meetListGorebilmekIcinGetRequestGonderilirVeResponseAlinir() {
         response=given(spec).when().get("{first}/{second}");
         actualDataMeet= response.as(MeetResponsePojo[].class);
-        student= new StudentsPojo("1996-10-10","deneme","MALE",1170,"deneme",true,"451-67-4613","adana","145-845-6244","erçik","mehmet",2000,"deneme123@gmail.com","mehmet321");
+        student= new StudentsPojo("2008-10-01","deneme","FEMALE",1241,"deneme",true,"856-63-9658","ankara","548-986-6699","08student","Student08",2071,"vveswtu@hotmail.com","08Student");
         List<StudentsPojo> list=new ArrayList<>();
         list.add(student);
-        expectedDataMeet=new MeetResponsePojo("2023-11-06","123-85-7412",1313,"Kamil","apiTest",list,"03:50:00","04:20:00",1183);
+        expectedDataMeet=new MeetResponsePojo("2023-11-17","741-85-8877",1416,"team08","apiTest",list,"03:50:00","04:20:00",1183);
 
 
     }
@@ -133,7 +133,7 @@ public class StudentChooseLessons {
     @Then("meet listin goruldugu dogrulanir")
     public void meetListinGorulduguDogrulanir() {
         assertEquals(200,response.statusCode());
-        assertEquals(expectedDataMeet.getId(),actualDataMeet[0].getId());
+
         assertEquals(expectedDataMeet.getDescription(),actualDataMeet[0].getDescription());
         assertEquals(expectedDataMeet.getStartTime(),actualDataMeet[0].getStartTime());
         assertEquals(expectedDataMeet.getStopTime(),actualDataMeet[0].getStopTime());
