@@ -43,7 +43,7 @@ public class US_17_TeacherStudentInfoNotStep {
 
     @And("Sdutent info save icin payload duzenlenir_is")
     public void sdutentInfoSaveIcinPayloadDuzenlenir_is() {
-         payload= new PostExpectedDataPojo(5,19,90,"Başarılarının devamını dilerim..?",1915,100, 2326);
+         payload= new PostExpectedDataPojo(5,19,90,"Başarılarının devamını dilerim..?",1915,100, 2071);
 
 
         //{
@@ -194,7 +194,7 @@ public class US_17_TeacherStudentInfoNotStep {
 
     @And("Student Info Update icin gonderilecek veriler duzenlenir_is")
     public void studentInfoUpdateIcinGonderilecekVerilerDuzenlenir_is() {
-        payload= new PostExpectedDataPojo(8,19,100,"Su sizintisi su kaynagina isarettir..!?",1915,100, 2326);
+        payload= new PostExpectedDataPojo(8,19,100,"Su sizintisi su kaynagina isarettir..!?",1915,100, 2071);
     }
 
     @When("Student Info Update icin PUT Request gonderilir ve Response alinir_is")
