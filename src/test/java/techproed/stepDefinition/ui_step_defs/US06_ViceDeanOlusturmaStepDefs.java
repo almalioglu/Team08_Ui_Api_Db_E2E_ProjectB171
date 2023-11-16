@@ -153,7 +153,7 @@ public class US06_ViceDeanOlusturmaStepDefs {
 
     @And("Kullanici basarili bir sekilde Vice Dean ekledigini dogrular.")
     public void kullaniciBasariliBirSekildeViceDeanEklediginiDogrular() {
-        assertTrue(homePage.viceDeanSavedUyarisi.isDisplayed());
+        assertTrue(homePage.adminSavedVerifyME.isDisplayed());
     }
 
 
