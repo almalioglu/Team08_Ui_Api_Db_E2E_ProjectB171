@@ -84,7 +84,7 @@ public class TeacherCreateMeetingAPI_stepDef {
         //https://managementonschools.com/app/meet/
         spec.pathParams("first", "meet", "second", "getAllMeetByAdvisorTeacherAsList");
         response = given(spec).when().get("{first}/{second}");
-        JsonPath json = response.jsonPath();
+        JsonPath json = response.jsonPath(); //ıd dinamik olarak almak için response yi json a çevirdir growy language kullanarak bunun içinden spesifik bir veriyi alacağız
         List<Integer> meetIdList = json.getList("findAll{it.students[0].id == " + studentIds.get(0) + "}.id");
         meetID = meetIdList.get(0);
     }
