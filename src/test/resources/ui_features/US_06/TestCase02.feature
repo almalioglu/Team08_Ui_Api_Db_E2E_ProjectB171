@@ -1,13 +1,10 @@
 @US06 @TC02
+  Feature: Dean ile Yanlis bilgilerle dean olusmamali
 Scenario Outline: TC02 Negatif test: SSN
-     Given Kullanici "<Name>" alanina gecerli bir ad girer.
 
-    @US06 @TC02
-    Scenario:TC02 Negatif test "SSN"
       Given Kullanici anasayfaya gider.
       Then Kullanici Dean hesabi ile Sing in yapar.
       Then Kullanici "<Name>" alanina gecerli bir ad girer.
-
       Then Kullanici "<Surname>" alanina gecerli bir surname girer.
       Then Kullanici "<Birth Place>" alanina gecerli bir değer girer.
       Then Kullanici Gender seçeneginden birini seçer.
