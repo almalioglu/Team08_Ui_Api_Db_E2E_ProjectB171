@@ -33,6 +33,7 @@ public class US01_US02_RegisterPostSave_GetAll_Delete {
 
         url="https://managementonschools.com/app/guestUser/register";
 
+
     }
 
     @And("register payload düzenlenir")

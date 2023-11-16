@@ -2,14 +2,11 @@ package techproed.stepDefinition.api_step_defs.vicedean;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import techproed.pojos.vicedean.getStudent.StudentGetResponse;
 import techproed.pojos.vicedean.postStudent.StudentPost;
 import techproed.pojos.vicedean.postStudent.StudentPostResponse;
 import techproed.utilities.ReusableMethods;
-
-import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
@@ -17,7 +14,7 @@ import static org.junit.Assert.assertTrue;
 import static techproed.base_url.BaseUrl.spec;
 
 
-public class Api_StudentManagementStepDef {
+public class US_15Api_StudentManagementStepDef {
     StudentPost expectedData;
     Response response;
     public static StudentPostResponse actualData;
@@ -46,12 +43,12 @@ public class Api_StudentManagementStepDef {
 
     @Given("Gonderilecek studen bilgileri hazirlanir")
     public void gonderilecek_studen_bilgileri_hazirlanir() {
-        //email = faker.internet().emailAddress();
+        email = faker.internet().emailAddress();
         phoneNumber = ReusableMethods.randomPhone();
         ssn = ReusableMethods.randomSsn();
         username = faker.name().firstName();
         expectedData = new StudentPost(1969, "1997-08-22", "izmir",
-                "sadogkr4@gmaill.com", "ömercan", "FEMALE", "aysem", "Sude", "Asrasa97.", phoneNumber, ssn, "gokerrli", username);
+                email, "ömercan", "FEMALE", "aysem", "Sude", "Asrasa97.", phoneNumber, ssn, "gokerrli", username);
 
     }
 

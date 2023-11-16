@@ -6,10 +6,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import techproed.pojos.dean.postViceDean.ObjectPojo;
 import techproed.pojos.dean.postViceDean.Response6Pojo;
-
 import java.sql.*;
-
 import static junit.framework.TestCase.assertEquals;
+
 
 public class DeanViceDeanManagementDB {
     Connection connection;
@@ -24,9 +23,9 @@ public class DeanViceDeanManagementDB {
 
     @And("Vice Dean GetMeetById icin beklenen veriler düzenlenir_aeo")
     public void viceDeanGetMeetByIdIcinBeklenenVerilerDüzenlenir_aeo() {
+
         expectedData=new ObjectPojo("ORAL1","Ayşe Ebrar","Oral","1999-09-10","044-33-2222","İstanbul","505-886-2626","1");
     }
-
 
     @When("Vice Dean bilgisini gorebilmek icin Query bilgisi gonderilir")
     public void viceDeanBilgisiniGorebilmekIcinQueryBilgisiGonderilir() throws SQLException {
