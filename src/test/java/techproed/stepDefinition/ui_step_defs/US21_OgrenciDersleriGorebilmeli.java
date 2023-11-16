@@ -3,15 +3,11 @@ package techproed.stepDefinition.ui_step_defs;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.junit.Assert;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import techproed.pages.HomePage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.ReusableMethods;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import static org.junit.Assert.assertTrue;

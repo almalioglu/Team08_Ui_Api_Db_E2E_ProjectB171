@@ -2,6 +2,7 @@ package techproed.hooks;
 
 import io.cucumber.java.*;
 
+import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 
 import java.time.Duration;

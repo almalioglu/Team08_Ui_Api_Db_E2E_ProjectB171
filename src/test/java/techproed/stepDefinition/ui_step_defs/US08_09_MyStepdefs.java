@@ -9,16 +9,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.devtools.v85.systeminfo.model.Size;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import techproed.pages.HomePage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
-
-import java.util.List;
-import java.util.Set;
 
 public class US08_09_MyStepdefs {
     HomePage page = new HomePage();

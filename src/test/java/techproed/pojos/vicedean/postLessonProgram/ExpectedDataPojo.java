@@ -1,8 +1,10 @@
 package techproed.pojos.vicedean.postLessonProgram;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 import java.io.Serializable;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ExpectedDataPojo implements Serializable {
 
 	private String day;

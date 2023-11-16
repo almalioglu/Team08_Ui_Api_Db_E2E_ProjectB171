@@ -1,10 +1,12 @@
 package techproed.pojos.vicedean.postLessonProgram;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 import java.io.Serializable;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ObjectPojo implements Serializable {
-	private int lessonProgramId;
+	public static int lessonProgramId;
 	private String startTime;
 	private String stopTime;
 	private List<LessonNamePojo> lessonName;

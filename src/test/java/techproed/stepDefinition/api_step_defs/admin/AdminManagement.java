@@ -1,19 +1,27 @@
 package techproed.stepDefinition.api_step_defs.admin;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.openqa.selenium.json.Json;
 import techproed.pojos.admin.addAdmin.AdminPostPojo;
 import techproed.pojos.admin.addAdmin.AdminPostResponsePojo;
+import techproed.pojos.admin.addAdmin.ObjectResponsePojo;
 import techproed.pojos.admin.getAdmin.AdminGetExpectedPojo;
 import techproed.pojos.admin.getAdmin.AdminGetResponsePojo;
+import techproed.pojos.admin.getAdmin.ContentPojo;
 import techproed.utilities.ConfigReader;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
+import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -25,7 +33,15 @@ public class AdminManagement {
     Response response;
     AdminPostResponsePojo actualData;
     AdminGetExpectedPojo expected;
-    AdminGetResponsePojo getActualData;
+
+    Faker faker=new Faker();
+    static String userName;
+    static String randomSsn;
+    static String randomPhoneNumber;
+    public static int id;
+    static ContentPojo getActualData;
+    static List<Object> actualDataGet;
+    static String deleteActualData;
 
     @Given("admin save icin URL duzenlenir")
     public void adminSaveIcinURLDuzenlenir() {
@@ -35,7 +51,10 @@ public class AdminManagement {
 
     @And("admin save icin payload duzenlenir")
     public void adminSaveIcinPayloadDuzenlenir() {
-        payload = new AdminPostPojo("1996-10-02", "ADANA", true, "MALE", "API", "A123456789a", "458-972-2431", "751-65-8742", "DENEME", "APIDENEME");
+        randomPhoneNumber=faker.regexify("\\d{3}-\\d{3}-\\d{4}");
+        userName= faker.name().firstName();
+        randomSsn= faker.idNumber().ssnValid();
+        payload = new AdminPostPojo("1996-10-02", "ADANA", true, "MALE", "API", "A123456789a", randomPhoneNumber, randomSsn, "DENEME", userName);
 
         /*
         {
@@ -56,7 +75,11 @@ public class AdminManagement {
     @When("admin save icin post request gonderilir ve response alinir")
     public void adminSaveIcinPostRequestGonderilirVeResponseAlinir() {
         response = given(spec).body(payload).when().post("{first}/{second}");
+        response.prettyPrint();
+        JsonPath json=response.jsonPath();
+        id =json.getInt("object.userId");//"findAll{it.id>190}"
         actualData = response.as(AdminPostResponsePojo.class);
+
     }
 
     @Then("status kodun {int} oldugu dogrulanir")
@@ -98,6 +121,8 @@ public class AdminManagement {
             case "teacher":
                 setup(ConfigReader.getProperty("Teacher"), ConfigReader.getProperty("Password"));
                 break;
+            case"student":
+                setup(ConfigReader.getProperty("ogrenciUsername"),ConfigReader.getProperty("ogrenciPassword"));
 
         }
     }
@@ -112,32 +137,49 @@ public class AdminManagement {
     @And("admin get expected data duzenlenir")
     public void adminGetExpectedDataDuzenlenir() {
 
-        expected = new AdminGetExpectedPojo(1166, "APIDENEME", "751-65-8742", "API", "DENEME", "1996-10-02", "ADANA", "458-972-2431", "MALE", false);
-    /*
-    {
-            "id": 1166,
-            "username": "APIDENEME",
-            "ssn": "751-65-8742",
-            "name": "API",
-            "surname": "DENEME",
-            "birthDay": "1996-10-02",
-            "birthPlace": "ADANA",
-            "phoneNumber": "458-972-2431",
-            "gender": "MALE",
-            "built_in": false
-        }
-     */
+        expected = new AdminGetExpectedPojo(id, userName, randomSsn, "API", "DENEME", "1996-10-02", "ADANA", randomPhoneNumber, "MALE", false);
+
+
     }
 
     @When("admin get request gonderilir ve response alinir")
     public void adminGetRequestGonderilirVeResponseAlinir() {
         response = given(spec).when().get("{first}/{second}");
-        getActualData=response.as(AdminGetResponsePojo.class);
+        JsonPath json=response.jsonPath();
+        response.prettyPrint();
+        actualDataGet=json.getList("content.findAll{it.id=="+id+"}");
+
+
+
+
     }
 
     @And("admin get ile gelen response dogrulanir")
     public void adminGetIleGelenResponseDogrulanir() {
-        assertEquals(expected.getUsername(),getActualData.getContent().get(1).getUsername());
+        assertTrue(actualDataGet.get(0).toString().contains(expected.getUsername()));
+        assertTrue(actualDataGet.get(0).toString().contains(expected.getSsn()));
+        assertTrue(actualDataGet.get(0).toString().contains(expected.getName()));
+        assertTrue(actualDataGet.get(0).toString().contains(expected.getSurname()));
+        assertTrue(actualDataGet.get(0).toString().contains(expected.getBirthDay()));
+        assertTrue(actualDataGet.get(0).toString().contains(expected.getBirthPlace()));
+        assertTrue(actualDataGet.get(0).toString().contains(expected.getPhoneNumber()));
+        assertTrue(actualDataGet.get(0).toString().contains(expected.getGender()));
     }
 
+    @Given("admin delete icin URL duzenlenir")
+    public void adminDeleteIcinURLDuzenlenir() {
+        //https://managementonschools.com/app/admin/delete/10
+        spec.pathParams("first","admin","second","delete","third",id);
+    }
+
+    @When("admin delete request gonderilir ve response alinir")
+    public void adminDeleteRequestGonderilirVeResponseAlinir() {
+        response=given(spec).when().delete("{first}/{second}/{third}");
+        deleteActualData=response.prettyPrint();
+    }
+
+    @And("admin delete islemi yapildigi dogrulanir")
+    public void adminDeleteIslemiYapildigiDogrulanir() {
+        assertEquals("Admin deleted Successful",deleteActualData);
+    }
 }
