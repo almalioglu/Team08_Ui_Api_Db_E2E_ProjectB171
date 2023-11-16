@@ -1,6 +1,6 @@
 @E2E @Elif
-
   Feature: US_01 Aday ogrenci sisteme kayit olabilmeli (Register)
+
     Scenario Outline: TC01 Basarili Kayit Islemi (Pozitif Test)
       Given Kullanici "pageUrl" sayfasina git
       Then kullanici 3 saniye bekler
@@ -15,8 +15,6 @@
       Examples:
         | name | Surname | Birth_Place | Phone        | Gender | Date_Of_Birth | Ssn         | User_Name | Password |
         | Ayla | Derman  | Bursa       | 505-321-6549 | Female | 12-09-2000    | 789-45-6123 | Sermin    | Ab123456 |
-      And "admin" yetkisi ile giris yapilir
-      And eklenen guest user silinir
 
 
     Scenario: US_02 Guest User bilgilleri gorulur(Get)
