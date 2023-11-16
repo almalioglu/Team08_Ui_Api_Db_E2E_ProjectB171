@@ -38,7 +38,7 @@ public class AdminManagement {
     static String userName;
     static String randomSsn;
     static String randomPhoneNumber;
-    static int id;
+    public static int id;
     static ContentPojo getActualData;
     static List<Object> actualDataGet;
     static String deleteActualData;

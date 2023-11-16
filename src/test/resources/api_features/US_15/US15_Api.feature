@@ -1,4 +1,4 @@
-@SAADET
+@SAADET @01
 Feature: US15 Vice Dean ogrenci olusturabilmeli.
   Scenario: TC001 Pozitive Scenario (Post)
     Given "vicedean" yetkisi ile giris yapilir

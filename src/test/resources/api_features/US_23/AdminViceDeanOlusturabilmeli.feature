@@ -9,4 +9,4 @@ Feature:Vice Dean Management
     When Admin Vice Dean save icin post request gonderilir response alinir_aeo
     Then Admin status kodun 200 oldugu dogrulanir_aeo
     And  Admin Vice Dean save icin gelen body dogrulanir_aeo
-
+    And  Admin vice dean silinir

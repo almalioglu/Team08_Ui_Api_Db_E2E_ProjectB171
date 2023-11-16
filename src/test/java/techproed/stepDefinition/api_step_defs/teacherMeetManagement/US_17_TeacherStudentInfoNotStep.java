@@ -18,6 +18,7 @@ import static io.restassured.RestAssured.given;
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.*;
 import static techproed.base_url.BaseUrl.spec;
+import static techproed.stepDefinition.api_step_defs.admin.AdminManagement.id;
 
 public class US_17_TeacherStudentInfoNotStep {
 
@@ -29,7 +30,7 @@ public class US_17_TeacherStudentInfoNotStep {
     ObjectPojo getActualData;
 
 
-    static int id;
+  static int id;
     static int studentId;
 
 
@@ -94,7 +95,7 @@ public class US_17_TeacherStudentInfoNotStep {
             JsonPath jsonPath =  response.jsonPath();
             List<Integer> idList = jsonPath.getList("content.findAll{it.infoNote == 'Başarılarının devamını dilerim..?'}.id");
             id = idList.get(0);
-        System.out.println(id);
+
 
     }
 
