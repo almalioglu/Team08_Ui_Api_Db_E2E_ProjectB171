@@ -24,13 +24,16 @@ public class DeanViceDeanManagementDB {
     @And("Vice Dean GetMeetById icin beklenen veriler düzenlenir_aeo")
     public void viceDeanGetMeetByIdIcinBeklenenVerilerDüzenlenir_aeo() {
 
+
         expectedData=new ObjectPojo("ORAL1","Ayşe Ebrar","Oral","1999-09-10","044-33-2222","İstanbul","505-886-2626","1");
     }
+
 
     @When("Vice Dean bilgisini gorebilmek icin Query bilgisi gonderilir")
     public void viceDeanBilgisiniGorebilmekIcinQueryBilgisiGonderilir() throws SQLException {
         statement = connection.createStatement();
         resultSet=statement.executeQuery("select*from vice_dean Where id='1654'");
+
     }
     @Then("Kayitli Vice Dean bilgisi dogrulanir_aeo")
     public void kayitliViceDeanBilgisiDogrulanir_aeo() throws SQLException {

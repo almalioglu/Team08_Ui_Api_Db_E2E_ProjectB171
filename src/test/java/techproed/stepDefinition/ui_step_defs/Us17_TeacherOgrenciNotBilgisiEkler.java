@@ -33,7 +33,7 @@ public class Us17_TeacherOgrenciNotBilgisiEkler {
     @Then("Teacher olarak login yap_is")
     public void teacherOlarakLoginYap_is() {
         page.loginButton.click();
-        page.loginUserName.sendKeys(ConfigReader.getProperty("usernameTeacher"));
+        page.loginUserName.sendKeys(ConfigReader.getProperty("username_is1"));
         page.loginPassword.sendKeys(ConfigReader.getProperty("passwordTeacher"));
         page.loginEkraniLoginButton.click();
 

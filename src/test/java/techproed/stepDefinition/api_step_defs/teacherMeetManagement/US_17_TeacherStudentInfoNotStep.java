@@ -30,7 +30,7 @@ public class US_17_TeacherStudentInfoNotStep {
     ObjectPojo getActualData;
 
 
-  static int id;
+  public static int id;
     static int studentId;
 
 
@@ -93,7 +93,7 @@ public class US_17_TeacherStudentInfoNotStep {
             response = given(spec).when().get("{first}/{second}");
 
             JsonPath jsonPath =  response.jsonPath();
-            List<Integer> idList = jsonPath.getList("content.findAll{it.infoNote == 'Başarılarının devamını dilerim..?'}.id");
+            List<Integer> idList = jsonPath.getList("content.findAll{it}.id");
             id = idList.get(0);
 
 
@@ -107,12 +107,12 @@ public class US_17_TeacherStudentInfoNotStep {
 
     @And("Sdutent info icin beklenen veriler duzenlenir_is")
     public void sdutentInfoIcinBeklenenVerilerDuzenlenir_is() {
-        studentResponse = new StudentResponsePojo(2326, "Fiksberra","Berra",
-                "Fiks", "1986-01-19", "Mars", "545-341-9010",
-                "FEMALE", 1429,"Alime", "Alim", "birch.lamarion@forkshape.com", true);
+        studentResponse = new StudentResponsePojo(2071, "08Student","Student08",
+                "08student", "2008-10-01", "ankara", "548-986-6699",
+                "FEMALE", 1241,"teamff", "team08f", "vveswtu@hotmail.com", false);
         expectedData = new ObjectPojo(id, 100.0, 90.0, 5, "Başarılarının devamını dilerim..?",
                 "Chemisch ", 1915, 10, 19, 94.0,
-                studentResponse, false, "AA");
+                studentResponse, true, "AA");
         /*
         "id": 4328,
         "midtermExam": 100.0,
