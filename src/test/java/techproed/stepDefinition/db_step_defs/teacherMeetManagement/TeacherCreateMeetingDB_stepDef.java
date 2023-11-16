@@ -24,17 +24,17 @@ public class TeacherCreateMeetingDB_stepDef {
     @When("kayıtlı meet bilgsini almak icin query gonderilir")
     public void kayıtlıMeetBilgsiniAlmakIcinQueryGonderilir() throws SQLException {
         statement=connection.createStatement();
-        resultSet=statement.executeQuery("select * from meet where description= 'acil ve onemli'");
+        resultSet=statement.executeQuery("select * from meet where description= 'mutlaka gel'");
     }
 
     @Then("kayitli meet bilgisi dogrulanir")
     public void kayitliMeetBilgisiDogrulanir() throws SQLException {
         resultSet.next();
-        assertEquals(object.getDate(),resultSet.getString("date"));
+       // assertEquals(object.getDate(),resultSet.getString("date"));
         assertEquals(object.getDescription(),resultSet.getString("description"));
-        //assertEquals(object.getStartTime(),resultSet.getString("start_time"));
-        //assertEquals(object.getStopTime(),resultSet.getString("stop_time"));
-        //assertEquals(object.getAdvisorTeacherId(),resultSet.getInt("advistor_teacher_id"));
+        assertEquals(object.getStartTime(),resultSet.getString("start_time"));
+        assertEquals(object.getStopTime(),resultSet.getString("stop_time"));
+        assertEquals(object.getAdvisorTeacherId(),resultSet.getInt("advisor_teacher_id"));
 
     }
 

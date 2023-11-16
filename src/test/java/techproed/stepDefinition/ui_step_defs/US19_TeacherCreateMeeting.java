@@ -81,11 +81,7 @@ public class US19_TeacherCreateMeeting {
 
 
 
- /*@And("Date Of Meet den tarih olarak {string} sec")
- public void dateOfMeetDenTarihOlarakSec(String tarih) {
-     page.dateBox.sendKeys(tarih);
-     ReusableMethods.bekle(2);
- }*/
+
     @And("toplantı baslangıc saati  olarak {string} sec")
     public void toplantıBaslangıcSaatiOlarakSec(String start) {
         page.startTimeBox.sendKeys(start);
@@ -117,7 +113,7 @@ public class US19_TeacherCreateMeeting {
 //==================================tc04=============================
 @And("Date Of Meet den bir tarih sec")
 public void dateOfMeetDenBirTarihSec() {
-    List<String> meetDateList = List.of("11112023", "12112023", "13112023", "14112023", "15112023", "16112023", "17112023", "18112023", "19112023", "20112023", "21112023", "22112023");
+    List<String> meetDateList = List.of("11112024", "12112024", "13112024", "14112024", "15112024", "16112024", "17112024", "18112024", "19112023", "20112023", "21112023", "22112023");
     Random random = new Random();
     String meetDate = meetDateList.get(random.nextInt(meetDateList.size()));
     page.dateBox.sendKeys(meetDate);
