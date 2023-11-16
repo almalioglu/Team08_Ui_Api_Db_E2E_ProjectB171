@@ -27,7 +27,7 @@ public class US_17_18StudentInfoNote_DB {
     @When("Student Info icin query gonderili_is")
     public void studentInfoIcinQueryGonderili_is() throws SQLException {
         Statement statement=connection.createStatement();
-        resultSet= statement.executeQuery("select * from student_info where id=4703");
+        resultSet= statement.executeQuery("select * from student_info where id=4780");
     }
 
     @Then("Student Info icin gelen bilgiler dogrulanir_is")
@@ -35,10 +35,11 @@ public class US_17_18StudentInfoNote_DB {
         studentResponse = new StudentResponsePojo(2326, "Fiksberra","Berra",
                 "Fiks", "1986-01-19", "Mars", "545-341-9010",
                 "FEMALE", 1429,"Alime", "Alim", "birch.lamarion@forkshape.com", true);
-        expectedData = new ObjectPojo(4703, 70.0, 80.0, 3, "Basarilarini devamini dilerim.",
-                "Chemisch ", 1940, 10, 15, 76.0,
-                studentResponse, false, "BA");
+        expectedData = new ObjectPojo(4780, 100.0, 100.0, 5, "Ben seni yasaklarda sevdim..yaa.,!?",
+                "Communication", 1848, 8, 18, 100.0,
+                studentResponse, false, "AA");
         resultSet.next();
+
         assertEquals(expectedData.getMidtermExam(),resultSet.getDouble("midterm_exam"));
         assertEquals(expectedData.getFinalExam(),resultSet.getDouble(4));
         assertEquals(expectedData.getAbsentee(),resultSet.getInt(2));

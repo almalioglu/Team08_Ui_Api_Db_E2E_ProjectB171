@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 import static techproed.base_url.BaseUrl.spec;
 
 
-public class Api_ContactGetAllStepDef {
+public class US_16Api_ContactGetAllStepDef {
     Faker faker = new Faker();
 
     public static String emailContact;

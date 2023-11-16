@@ -29,8 +29,6 @@ public class US_23AdminViceDeanOlusturabilmeliStepDef {
     @And("Admin Vice Dean save icin payload duzenlenir_aeo")
     public void adminViceDeanSaveIcinPayloadDuzenlenir_aeo() {
       payload = new Response6Pojo("1999-09-10","Istanbul","FEMALE","Firdevs3","Mahmude1234","282-198-7778","222-99-6563","ORAL3", "Firdevs34");
-
-
     }
 
     @When("Admin Vice Dean save icin post request gonderilir response alinir_aeo")
