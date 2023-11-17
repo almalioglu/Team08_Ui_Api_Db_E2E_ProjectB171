@@ -538,6 +538,7 @@ public class HomePage {
 @FindBy(xpath = "//tbody/tr[1]/td[6]/span[1]/button[1]")public WebElement deanteam08Edit_aeo;
 @FindBy(xpath = "//*[@id='name']")public WebElement viceDeanName_aeo;
     @FindBy(xpath = "(//*[@class='invalid-feedback'])[1]")public WebElement viceDeanrequiredName_aeo;
+    @FindBy(xpath = "(//*[@class='form-control is-invalid'])[1]")public WebElement nameKutusu;
 @FindBy(xpath = "//*[@id='surname']")public WebElement viceDeanSurname_aeo;
     @FindBy(xpath = "(//*[@class='invalid-feedback'])[2]")public WebElement viceDeanRequiredSurname_aeo;
 @FindBy(xpath = "//*[@placeholder='Birth Place']")public WebElement viceDeanBirthPlace_aeo;
