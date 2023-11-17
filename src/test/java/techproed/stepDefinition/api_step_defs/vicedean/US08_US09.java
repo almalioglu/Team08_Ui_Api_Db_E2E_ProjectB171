@@ -37,14 +37,7 @@ public class US08_US09 {
 
     @And("Vice Dean lessons save icin payload duzenlenirr")
     public void viceDeanLessonsSaveIcinPayloadDuzenlenirr() {
-        payload = new LessonssPojo("True","5","Algorithm 2");
-    }
-
-    @When("Vice Dean lessons save icin Request gonderilir ve Response alinir")
-    public void viceDeanLessonsSaveRequestGonderilirVeResponseAlinir() {
-        response = given(spec).body(payload).when().post("{first}/{second}");
-        response.prettyPrint();
-        actualData = response.as(ResponseTEPojo.class);
+        payload = new LessonssPojo("True","5","algorithm 7");
     }
 
     @Then("status kodun {int} oldugu dogrulanirr")
@@ -66,7 +59,7 @@ public class US08_US09 {
         response = given(spec).when().get("{first}/{second}");
 
         JsonPath json = response.jsonPath();
-        List<Integer> lessonIdList = json.getList("findAll{it.lessonName=='Algorithm 2'}.lessonId");
+        List<Integer> lessonIdList = json.getList("findAll{it.lessonName=='algorithm 7'}.lessonId");
         lessonId = lessonIdList.get(0);
 
     }
@@ -77,7 +70,7 @@ public class US08_US09 {
     }
     @And("Lesson getAllLessonByLessonId icin beklenen veriler duzenlenir")
     public void lessonGetAllLessonByLessonIdIcinBeklenenVerilerDuzenlenir() {
-        object = new ObjectTEPojo(lessonId, "Algorithm 2", 5, true);
+        object = new ObjectTEPojo(lessonId, "algorithm 7", 5, true);
         expectedData = new ResponseTEPojo(object,"","");
     }
 
@@ -94,6 +87,14 @@ public class US08_US09 {
         assertEquals(object.getCreditScore(), actualData.getObject().getCreditScore());
         assertEquals(object.isCompulsory(), actualData.getObject().isCompulsory());
     }
+
+    @When("Vice Dean lessons save Request gonderilir ve Response alinir")
+    public void viceDeanLessonsSaveRequestGonderilirVeResponseAlinir() {
+        response = given(spec).body(payload).when().post("{first}/{second}");
+        response.prettyPrint();
+        actualData = response.as(ResponseTEPojo.class);
+    }
+
 
 }
 
