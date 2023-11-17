@@ -109,9 +109,9 @@ public class US_17_TeacherStudentInfoNotStep {
     public void sdutentInfoIcinBeklenenVerilerDuzenlenir_is() {
         studentResponse = new StudentResponsePojo(2071, "08Student","Student08",
                 "08student", "2008-10-01", "ankara", "548-986-6699",
-                "FEMALE", 1241,"teamff", "team08f", "vveswtu@hotmail.com", false);
-        expectedData = new ObjectPojo(id, 100.0, 90.0, 5, "Başarılarının devamını dilerim..?",
-                "Chemisch ", 1915, 10, 19, 94.0,
+                "FEMALE", 1241,"teamff", "team08f", "vveswtu@hotmail.com", true);
+        expectedData = new ObjectPojo(id, 100.0, 100.0, 3, "Good Work!",
+                "xray", 1847, 11, 15, 100.0,
                 studentResponse, true, "AA");
         /*
         "id": 4328,
