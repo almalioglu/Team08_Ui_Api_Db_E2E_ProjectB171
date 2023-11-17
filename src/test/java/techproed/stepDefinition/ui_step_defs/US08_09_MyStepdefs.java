@@ -87,8 +87,8 @@ public class US08_09_MyStepdefs {
 
     }
 
-    @And("Submit butonuna tıkla")
-    public void submitButonunaTıkla() {
+    @And("Submit butonuna tıklaaa")
+    public void submitButonunaTıklaaa() {
         page.SubmitButtonTE.click();
     }
 

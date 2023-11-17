@@ -1,28 +1,26 @@
-package techproed.pojos.teacher_createMeeting;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+package techproed.pojos.vicedean.getLesson;
 
 import java.io.Serializable;
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class ResponsePojo implements Serializable {
-	private ObjectPojo object;
+
+public class ResponseTEPojo implements Serializable {
+	private ObjectTEPojo object;
 	private String message;
 	private String httpStatus;
 
-	public ResponsePojo() {
+	public ResponseTEPojo() {
 	}
 
-	public ResponsePojo(ObjectPojo object, String message, String httpStatus) {
+	public ResponseTEPojo(ObjectTEPojo object, String message, String httpStatus) {
 		this.object = object;
 		this.message = message;
 		this.httpStatus = httpStatus;
 	}
 
-	public void setObject(ObjectPojo object){
+	public void setObject(ObjectTEPojo object){
 		this.object = object;
 	}
 
-	public ObjectPojo getObject(){
+	public ObjectTEPojo getObject(){
 		return object;
 	}
 
