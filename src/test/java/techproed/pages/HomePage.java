@@ -170,7 +170,7 @@ public class HomePage {
     @FindBy(xpath = "(//*[@class='form-select'])[5]") public WebElement notEditsecilenDonem_is;
     @FindBy(xpath = "(//table//td[4])[1]") public WebElement tableMidTermNote_is;
     @FindBy(xpath = "(//table//td[5])[1]") public WebElement tableFinalExamNote_is;
-
+    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/tbody/tr[1]/td[10]/span/button") public WebElement deleteStudentInfoButon_is;
 
 
 

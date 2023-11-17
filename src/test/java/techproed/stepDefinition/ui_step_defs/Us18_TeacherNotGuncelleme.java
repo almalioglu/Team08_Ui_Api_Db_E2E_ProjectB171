@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import techproed.pages.HomePage;
@@ -155,9 +156,10 @@ public class Us18_TeacherNotGuncelleme {
 
     @And("Not bilgisini silmek icin delete butonu tiklanir_")
     public void notBilgisiniSilmekIcinDeleteButonuTiklanir_() {
-        deletedStudentInfo = page.tableRowsis.get(1).getText();
-        ReusableMethods.bekle(1);
-        page.deleteStudentInfoButton_is.click();
+        ReusableMethods.click(page.deleteStudentInfoButon_is);
+        deletedStudentInfo = page.tableRowsis.get(2).getText();
+        ReusableMethods.bekle(2);
+        page.deleteStudentInfoButon_is.click();
         ReusableMethods.bekle(1);
     }
 
