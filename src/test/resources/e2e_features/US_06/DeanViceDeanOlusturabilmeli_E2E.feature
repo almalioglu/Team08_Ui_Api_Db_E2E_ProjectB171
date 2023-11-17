@@ -36,8 +36,6 @@ Feature:Dean olarak Vice Dean ekleyebilmeli
       | Ayse Ebrar     | Oral    | Istanbul    | 10.09.1999    | 555-444-2120 |545-55-8787  | AEBRAR         | Aebrar12       |
 
 
-
-
   Scenario: Vice Dean hesabi olusturabilmeli
     Given Vice Dean save icin URL duzenlenir_aeo
     And Vice Dean save icin payload duzenlenir_aeo
