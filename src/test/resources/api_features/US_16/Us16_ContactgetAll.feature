@@ -1,7 +1,7 @@
 @SAADET2
 Feature: US016 Vice Dean, kullanıcıların gönderdiği mesajları görebilmelidir.
 
-  Scenario: TC001 Pozitive Scenario (Post)
+  Scenario:  Kullanicilarin mesajlarni alma testi
     Given "vicedean" yetkisi ile giris yapilir
     And Mesaj eklemek icin post request hazirligi yapilir
     And Gonderilecek mesaj bilgileri hazirlanir

@@ -1,6 +1,6 @@
 @SAADET1
 Feature: US15 Vice Dean ogrenci olusturabilmeli.
-  Scenario: TC001 Pozitive Scenario (Post)
+  Scenario: Olusturulan ogrenci bilsisini alma testi
     Given "admin" yetkisi ile giris yapilir
     When Studen eklemek icin post request hazirligi yapilir
     And Gonderilecek studen bilgileri hazirlanir

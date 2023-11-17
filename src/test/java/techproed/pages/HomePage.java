@@ -483,7 +483,7 @@ public class HomePage {
     @FindBy (xpath = "(//*[@type='button'])[5]") public WebElement adminsubmitButtonSG;
     @FindBy ( xpath = "(//*[@class='nav-link'])[11]") public WebElement adminstudentManagementSG;
     @FindBy (xpath = "//*[@class='form-select']") public WebElement teacherseçmeButonuSG;
-
+    @FindBy (xpath = "//*[@class=\"fw-semibold btn btn-primary btn-lg\"]") public WebElement sumbitbutonue2eSG;
 
 
 
