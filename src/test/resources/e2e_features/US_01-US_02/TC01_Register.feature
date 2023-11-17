@@ -1,6 +1,6 @@
 @E2E @Elif
   Feature: US_01 Aday ogrenci sisteme kayit olabilmeli (Register)
-
+   @08
     Scenario Outline: TC01 Basarili Kayit Islemi (Pozitif Test)
       Given Kullanici "pageUrl" sayfasina git
       Then kullanici 3 saniye bekler
