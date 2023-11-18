@@ -8,7 +8,7 @@ Feature: ViceDean ogrenci olusturabilmeli
     And Menu butonuna tıkla
     And Açılan pencerede student management yazısına tıkla
 
-  @08 @saadet
+  @08 @saadet1
   Scenario: Oluşturulan Studentin Student Number'inin otomatik geldiğini doğrular
     And Choose Teacher yazısına tıkla
     And Çıkan seçeneklerden teacher seç

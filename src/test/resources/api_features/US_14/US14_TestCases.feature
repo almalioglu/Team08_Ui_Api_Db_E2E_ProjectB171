@@ -2,20 +2,14 @@
 Feature:Vice Dean ogretmenleri gorebilmeli ve guncelleyebilmeli
 
   Background:
-    Given Siteye "vicedean" yetkisi ile giris yapilir
+    Given Siteye "vicedean" ile giris yapilir
 
-  @API @US14TC01 @busraa
-  Scenario: Vice Dean öğretmen bilgilerini görebilmeli (GET) ( Name, Phone Number, SSN, User Name  )
-    And Kayitli ogretmen bilgilerinin GET request hazirligi yapilir
-    When Kayitli ogretmen id ile cagirilir
-    Then Kayitli ogretmen bilgileri dogrulanir
+  @API @US14TC0102 @busraa
+  Scenario: Vice Dean ogretmen bilgilerini görebilmeli ve güncelleyebilmeli (GET-PUT) (Choose Lessons, Name, Surname, Birth Place, e-mail, phone, is Advisor Teacher, Gender,  Date of Birth, SSN, User Name ve Password)
 
-
-  @API @US14TC02 @busraa
-  Scenario: Vice Dean öğretmen bilgilerini güncelleyebilmeli (PUT) (Choose Lessons, Name, Surname, Birth Place, e-mail, phone, is Advisor Teacher, Gender,  Date of Birth, SSN, User Name ve Password)
-    And Kayitli ogretmen bilgilerinin PUT request hazirligi yapilir
-    And Guncellenecek ogretmen verileri hazirlanir
-    When Kayitli ogretmen id ile guncellenir
-    Then Guncellenen ogretmen bilgileri dogrulanir
-    And Ogretmen verileri silinir (DELETE)
+    Given Kayitli ogretmen bilgilerini guncellemek icin URL duzenlenir
+    And Guncellenecek ogretmen verileri icin PAYLOAD hazirlanir
+    When Kayitli ogretmen bilgilerini guncellemek icin request gonderilir ve response alinir
+    Then HTTP status codeun 200 oldugu dogrulanir
+    And Kayitli ogretmen guncellemek icin gelen BODY dogrulanir
 

@@ -170,7 +170,7 @@ public class HomePage {
     @FindBy(xpath = "(//*[@class='form-select'])[5]") public WebElement notEditsecilenDonem_is;
     @FindBy(xpath = "(//table//td[4])[1]") public WebElement tableMidTermNote_is;
     @FindBy(xpath = "(//table//td[5])[1]") public WebElement tableFinalExamNote_is;
-
+    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/tbody/tr[1]/td[10]/span/button") public WebElement deleteStudentInfoButon_is;
 
 
 
@@ -483,7 +483,7 @@ public class HomePage {
     @FindBy (xpath = "(//*[@type='button'])[5]") public WebElement adminsubmitButtonSG;
     @FindBy ( xpath = "(//*[@class='nav-link'])[11]") public WebElement adminstudentManagementSG;
     @FindBy (xpath = "//*[@class='form-select']") public WebElement teacherseçmeButonuSG;
-
+    @FindBy (xpath = "//*[@class=\"fw-semibold btn btn-primary btn-lg\"]") public WebElement sumbitbutonue2eSG;
 
 
 
@@ -538,6 +538,7 @@ public class HomePage {
 @FindBy(xpath = "//tbody/tr[1]/td[6]/span[1]/button[1]")public WebElement deanteam08Edit_aeo;
 @FindBy(xpath = "//*[@id='name']")public WebElement viceDeanName_aeo;
     @FindBy(xpath = "(//*[@class='invalid-feedback'])[1]")public WebElement viceDeanrequiredName_aeo;
+    @FindBy(xpath = "(//*[@class='form-control is-invalid'])[1]")public WebElement nameKutusu;
 @FindBy(xpath = "//*[@id='surname']")public WebElement viceDeanSurname_aeo;
     @FindBy(xpath = "(//*[@class='invalid-feedback'])[2]")public WebElement viceDeanRequiredSurname_aeo;
 @FindBy(xpath = "//*[@placeholder='Birth Place']")public WebElement viceDeanBirthPlace_aeo;

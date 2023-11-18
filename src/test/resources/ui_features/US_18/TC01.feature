@@ -60,7 +60,6 @@ Feature: US18_Teacher, ogrenciye verdigi notları, gorebilmeli ve guncelleyebilm
 
   @US18 @TC_08
   Scenario: Teacher, öğrencinin "not bilgisini" silebilmeli
-    Then Ogrenci bilgilerini guncellemek icin edit butonu tiklanir_is
     And Not bilgisini silmek icin delete butonu tiklanir_
     Then Ogrencinin listeden silindigi dogrulanir_is
     And sayfa kapatilir_is

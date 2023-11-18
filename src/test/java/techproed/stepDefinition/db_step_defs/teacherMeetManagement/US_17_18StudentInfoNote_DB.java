@@ -18,6 +18,7 @@ public class US_17_18StudentInfoNote_DB {
     ResultSet resultSet;
     StudentResponsePojo studentResponse;
     ObjectPojo expectedData;
+    Statement statement;
 
     @Given("Database baglantisi kurulur_is")
     public void databaseBaglantisiKurulur_is() throws SQLException {
@@ -26,7 +27,7 @@ public class US_17_18StudentInfoNote_DB {
 
     @When("Student Info icin query gonderili_is")
     public void studentInfoIcinQueryGonderili_is() throws SQLException {
-        Statement statement=connection.createStatement();
+         statement=connection.createStatement();
         resultSet= statement.executeQuery("select * from student_info where id=4780");
     }
 
@@ -48,6 +49,7 @@ public class US_17_18StudentInfoNote_DB {
 
     @When("Database baglantisi kesilir_is")
     public void databaseBaglantisiKesilir_is() throws SQLException {
+        statement.close();
         connection.close();
     }
 }

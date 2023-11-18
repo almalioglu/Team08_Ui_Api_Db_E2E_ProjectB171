@@ -1,5 +1,5 @@
 @08 @saadet1
-Feature:Web sitesine erişebilmeli ve siteye kayıtlı Admin hesabıyla giriş yapabilmeli
+Feature:Web sitesine erişebilmeli ve siteye kayıtlı Admin hesabıyla giriş yaparak ogrenci kaydedebilmeli
 
   Background:Ortak adımlar
     Given Web sayfaasına git

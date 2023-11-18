@@ -50,7 +50,7 @@ public class US06_ViceDeanOlusturmaStepDefs {
     @Then("Kullanici {string} alanina gecerli bir ad girer.")
     public void kullanici_Name_alanina_gecerli_bir_ad_girer(String name) {
         homePage.viceDeanName_aeo.sendKeys(name);
-        ReusableMethods.visibleWait(homePage.viceDeanName_aeo, 12);
+        ReusableMethods.visibleWait(homePage. viceDeanName_aeo, 12);
     }
 
 
@@ -137,6 +137,7 @@ public class US06_ViceDeanOlusturmaStepDefs {
 
     @And("Kullanici User Name kutusunun bos olmadigini test eder.")
     public void kullaniciUserNameKutusununBosOlmadiginiTestEder() {
+        homePage.maleGenderEB.click();
         assertFalse(homePage.requiredUsername_aeo.isDisplayed());
     }
 
@@ -153,7 +154,8 @@ public class US06_ViceDeanOlusturmaStepDefs {
 
     @And("Kullanici basarili bir sekilde Vice Dean ekledigini dogrular.")
     public void kullaniciBasariliBirSekildeViceDeanEklediginiDogrular() {
-        assertTrue(homePage.adminSavedVerifyME.isDisplayed());
+        ReusableMethods.visibleWait(homePage.viceDeanSavedUyarisi,5);
+        assertTrue(homePage.viceDeanSavedUyarisi.isDisplayed());
     }
 
 

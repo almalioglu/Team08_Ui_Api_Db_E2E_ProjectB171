@@ -71,7 +71,7 @@ public class Us15_VicedeanStudentOlusturabilmeli {
     @And("Çıkan seçeneklerden teacher seç")
     public void çıkanSeçeneklerdenTeacherSeç() {
         Select select = new Select(homePage.teacherseçmeButonuSG);
-        select.selectByIndex(Integer.parseInt(faker.numerify("##")));
+        select.selectByIndex(Integer.parseInt(faker.numerify("#")));
         homePage.namePlaceHolderSG.click();
 
     }
@@ -114,7 +114,7 @@ public class Us15_VicedeanStudentOlusturabilmeli {
     @And("Date of Birth alanına tıkla  tarih seç")
     public void dateOfBirthAlanınaTıklaTarihSeç() {
         homePage.DateOfBirthSG.click();
-        homePage.DateOfBirthSG.sendKeys("08/21/1997");
+        homePage.DateOfBirthSG.sendKeys("21/08/1997");
 
     }
 
@@ -149,14 +149,14 @@ public class Us15_VicedeanStudentOlusturabilmeli {
 
     @And("Student saved successfully mesajını doğrula")
     public void studentSavedSuccessfullyMesajınıDoğrula() {
-        ReusableMethods.visibleWait(homePage.verifyMessageSG, 6);
+        ReusableMethods.visibleWait(homePage.verifyMessageSG, 10);
         assert homePage.verifyMessageSG.getText().contains("Successfully");
     }
 
     @And("Student Listte son sayfaya git")
     public void studentListteSonSayfayaGit() {
         //ReusableMethods.scrollEnd();
-        js.executeScript("window.scrollBy(0, 700);");
+        js.executeScript("window.scrollBy(0, 800);");
         //ReusableMethods.visibleWait(homePage.lastPageButtonSG,4);
         js.executeScript("arguments[0].click()", homePage.lastPageButtonSG);
         // homePage.lastPageButtonSG.click();

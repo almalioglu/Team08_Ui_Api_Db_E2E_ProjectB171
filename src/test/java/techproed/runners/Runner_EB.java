@@ -1,5 +1,4 @@
 package techproed.runners;
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -11,10 +10,13 @@ import org.junit.runner.RunWith;
         "junit:target/xml-report/cucumber.xml",
         "rerun:TestOutput/failed_scenario.txt"},
         features = "src/test/resources",
-        glue = {"techproed/stepDefinition/e2e_step_defs", "techproed/hooks"},
+        glue = {"techproed/stepDefinition", "techproed/hooks"},
         tags = "@E2E and @Elif",
         dryRun = false,
         monochrome = true
+
 )
+
+
 public class Runner_EB {
 }

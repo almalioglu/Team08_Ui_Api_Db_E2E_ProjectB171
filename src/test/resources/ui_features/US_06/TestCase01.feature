@@ -33,8 +33,7 @@ Feature:Dean olarak Vice Dean ekleyebilmeli
 
      Examples:
        | Name           | Surname | Birth Place | Date Of Birth | Phone        | Ssn         | User Name      | Password        |
-       | Ayse Ebrar     | Oral    | Istanbul    | 10.09.1999    | 555-444-2120 |545-55-8787  | AEBRAR         | Aebrar12       |
-
+       | Vera           | Yilmaz  | Istanbul    | 10.09.1999    | 555-444-2120 |545-55-8787  | VERAYILMAZ     | Avera123        |
 
 
 
@@ -66,7 +65,7 @@ Feature:Dean olarak Vice Dean ekleyebilmeli
 
       Examples:
         | Name            | Surname | Birth Place | Date Of Birth | Phone        | User Name            | Password         | Ssn         | Ssn1         | Ssn2       |
-        | Ayse Ebrar      | Oral    | Istanbul    |10.09.1999     | 555-444-2121 |   AEBRAR            | Aebrar12         | 369 87 7410 | 369-87-74101 | 369-87-741 |
+        | Vera            | Yilmaz  | Istanbul    |10.09.1999     | 555-444-2121 | VERAYILMAZ           | Avera123         | 369 87 7410 | 369-87-74101 | 369-87-741 |
 
 
     @TC03
@@ -89,7 +88,7 @@ Feature:Dean olarak Vice Dean ekleyebilmeli
 
       Examples:
         | Name            | Surname | Birth Place | Date Of Birth | Phone        | Ssn         | User Name       | Password |
-        | Ayse Ebrar      | Oral    | Istanbul    | 10.09.1999    | 555-444-2127 | 545-56-8789 | Afra123         |aAfra12   |
+        | Vera            | Yilmaz  | Istanbul    | 10.09.1999    | 555-444-2127 | 545-56-8789 | Afra123         |aAfra12   |
 
 
     @US06 @TC04
@@ -118,7 +117,7 @@ Feature:Dean olarak Vice Dean ekleyebilmeli
 
       Examples:
         | Name            | Surname | Birth Place | Date Of Birth | Phone        | Ssn         | User Name       | Password | Password1 | Password2 |
-        |Ayse Ebrar       | Oral    | Istanbul    | 10.09.1999    |  555-444-212 | 545-56-8787 | oytun           | oytun123 | OYTUN123  | Oytunerbas  |
+        | Vera            | Yilmaz  | Istanbul    | 10.09.1999    |  555-444-212 | 545-56-8787 | oytun           | oytun123 | OYTUN123  | Oytunerbas|
 
 
 

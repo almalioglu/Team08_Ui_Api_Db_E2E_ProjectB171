@@ -33,14 +33,14 @@ public class AdminGuestUser {
                     "Mersin","569-456-7845","FEMALE");
         resultSet .next();
         assertEquals(object.getUsername(),resultSet.getString("username"));
-        assertEquals(object.getUsername(),resultSet.getString("ssn"));
+        assertEquals(object.getSsn(),resultSet.getString("ssn"));
 
     }
 
     @And("baglantisi kesilir")
     public void baglantisiKesilir() throws SQLException {
-      //  statement.close();
-       // connection.close();
+        statement.close();
+       connection.close();
     }
 }
 

@@ -45,7 +45,7 @@ public class ResponsePojo implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"ResponsePojo{" + 
+			"ResponseTEPojo{" +
 			"object = '" + object + '\'' + 
 			",message = '" + message + '\'' + 
 			",httpStatus = '" + httpStatus + '\'' + 
