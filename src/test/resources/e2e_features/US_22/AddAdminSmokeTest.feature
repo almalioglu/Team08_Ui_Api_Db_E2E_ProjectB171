@@ -1,4 +1,4 @@
-@mehmet @E2E
+@mehmet @E2EAPI
 Feature: Add Admin
 
   @08
