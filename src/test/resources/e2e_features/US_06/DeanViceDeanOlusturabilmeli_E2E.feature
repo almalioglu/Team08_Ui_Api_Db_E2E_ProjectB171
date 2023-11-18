@@ -1,14 +1,9 @@
-@08 @06
+@ayseE2E
 Feature:Dean olarak Vice Dean ekleyebilmeli
-  Background:
+  @08
+  Scenario Outline: TC01 Vice Dean Hesabı Oluşturma Pozitif Testi
     Given Kullanici "pageUrl" sayfasina git
     Then Login e tikla
-    And  Kullanici dean bilgileri ile oturum açar
-
-
-  @06 @TC01
-  Scenario Outline: TC01 Vice Dean Hesabı Oluşturma Pozitif Testi
-    Given Kullanici anasayfaya gider.
     Then Kullanici Dean hesabi ile Sing in yapar.
     Then Kullanici "<Name>" alanina gecerli bir ad girer.
     And  Kullanici Name alaninin bos olmadigini test eder.
@@ -35,14 +30,15 @@ Feature:Dean olarak Vice Dean ekleyebilmeli
       | Name           | Surname | Birth Place | Date Of Birth | Phone        | Ssn         | User Name      | Password        |
       | Ayse Ebrar     | Oral    | Istanbul    | 10.09.1999    | 555-444-2120 |545-55-8787  | AEBRAR         | Aebrar12       |
 
-
   Scenario: Vice Dean hesabi olusturabilmeli
+    Given "dean" yetkisi ile giris yapilirr
     Given Vice Dean save icin URL duzenlenir_aeo
     And Vice Dean save icin payload duzenlenir_aeo
     When Vice Dean save icin post request gonderilir response alinir_aeo
     Then status kodun 200 oldugu dogrulanir_aeo
     And  Vice Dean save icin gelen body dogrulanir_aeo
     And olusturulan vice dean silinir
+
 
   Scenario:Olusturulan Vice Dean hesabinin bilgisini dogrulama testi
     Given Database baglantisi kurulur_ae

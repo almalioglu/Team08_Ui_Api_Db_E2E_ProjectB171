@@ -4,17 +4,18 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-@RunWith(Cucumber.class)//Cucumber ile junit'in entegre olmasını sağlayan scenario çalıştırıcı notasyonu
-@CucumberOptions(plugin = {"pretty",//pretty-->konsolda scenerio lar ile ilgili ayrintili bilgi verir
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin = {"pretty",
         "html:target/default-cucumber-reports.html",
-        "json:target/json-reports/cucumber.json",//devoloper lar kullanir
-        "junit:target/xml-report/cucumber.xml",//devoloper lar kullanir
-        "rerun:TestOutput/failed_scenario.txt"},//fail olan seneryoları belirttiğimiz .txt dosyasında tutar
-        features = "src/test/resources",//features package'ının yolu (content root)
-        glue = "techproed/stepDefinition",//stepDefinitions package ismi
-        tags = "@US06",//Hangi scenarioları bu tag'ı belirtirsek o scenariolar çalışır
-        dryRun = false, //true secersek scenerio'lari kontrol eder browser'i calistirmaz
-        monochrome = true//-->true kullanirsak konsoldaki ciktilari tek renk (siyah) olarak verir
+        "json:target/json-reports/cucumber1.json",
+        "junit:target/xml-report/cucumber.xml",
+        "rerun:TestOutput/failed_scenario.txt"},
+        features = "src/test/resources",
+        glue = {"techproed/stepDefinition", "techproed/hooks"},
+        tags = "@ayseE2E",
+        dryRun = false,
+        monochrome = true
+
 )
 public class Runner_Aeo {
 
