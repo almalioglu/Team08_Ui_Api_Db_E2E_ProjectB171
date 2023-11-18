@@ -17,9 +17,9 @@ import static techproed.base_url.BaseUrl.setup;
 import static techproed.base_url.BaseUrl.spec;
 
 public class API_US13_ViceDeanTeacherOlusturma {
-    TeacherVicePostPojo payload;
-    Response response;
-    ResponsePojo actualData;
+    public static TeacherVicePostPojo payload;
+    public static Response response;
+    public static ResponsePojo actualData;
     @Given("Siteye {string} yetkisi ile giris yapilir")
     public void siteye_yetkisi_ile_giris_yapilir(String user) {
         switch (user.toLowerCase()) {
