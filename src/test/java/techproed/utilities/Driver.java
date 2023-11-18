@@ -29,7 +29,7 @@ public class Driver {
                     driver=new InternetExplorerDriver();
             }
 
-        } else if ("chorome-headless".equals(browser)) {
+        } else if ("chrome-headless".equals(browser)) {
             ChromeOptions options =new ChromeOptions();
             options.addArguments("--headless");
             options.addArguments("--remote-allow-origins=*");
