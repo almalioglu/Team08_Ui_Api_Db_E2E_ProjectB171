@@ -43,7 +43,8 @@ public class US_17_TeacherStudentInfoNotStep {
 
     @And("Sdutent info save icin payload duzenlenir_is")
     public void sdutentInfoSaveIcinPayloadDuzenlenir_is() {
-         payload= new PostExpectedDataPojo(3,15,100,"Good Work!",1847,100, 2071);
+         //payload= new PostExpectedDataPojo(3,15,100,"Good Work!",1847,100, 2071);
+        payload= new PostExpectedDataPojo(5,18,100,"Ben seni yasaklarda sevdim..yaa.,!?",1848,100,2326);
 
 
         //{
@@ -94,7 +95,7 @@ public class US_17_TeacherStudentInfoNotStep {
 
             JsonPath jsonPath =  response.jsonPath();
             List<Integer> idList = jsonPath.getList("content.findAll{it}.id");
-            id = idList.get(0);
+            id = idList.get(1);
 
 
     }
