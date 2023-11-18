@@ -1,9 +1,9 @@
-package techproed.pojos.vicedean.postTeacher.vice;
+package techproed.pojos.vicedean.postTeacher.vice.put;
 
 import java.util.List;
 import java.io.Serializable;
 
-public class TeacherVicePostPojo implements Serializable {
+public class TeacherVicePutPojo implements Serializable {
 	private String birthDay;
 	private String birthPlace;
 	private String email;
@@ -17,10 +17,10 @@ public class TeacherVicePostPojo implements Serializable {
 	private String surname;
 	private String username;
 
-	public TeacherVicePostPojo() {
+	public TeacherVicePutPojo() {
 	}
 
-	public TeacherVicePostPojo(String birthDay, String birthPlace, String email, String gender, String isAdvisorTeacher, List<String> lessonsIdList, String name, String password, String phoneNumber, String ssn, String surname, String username) {
+	public TeacherVicePutPojo(String birthDay, String birthPlace, String email, String gender, String isAdvisorTeacher, List<String> lessonsIdList, String name, String password, String phoneNumber, String ssn, String surname, String username) {
 		this.birthDay = birthDay;
 		this.birthPlace = birthPlace;
 		this.email = email;
@@ -134,7 +134,7 @@ public class TeacherVicePostPojo implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"TeacherVicePostPojo{" + 
+			"TeacherVicePutPojo{" + 
 			"birthDay = '" + birthDay + '\'' + 
 			",birthPlace = '" + birthPlace + '\'' + 
 			",email = '" + email + '\'' + 

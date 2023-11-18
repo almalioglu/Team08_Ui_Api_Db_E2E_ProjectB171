@@ -1,4 +1,4 @@
-package techproed.pojos.vicedean.postTeacher.vice;
+package techproed.pojos.vicedean.postTeacher.vice.post;
 
 import java.io.Serializable;
 

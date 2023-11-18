@@ -1,6 +1,6 @@
-package techproed.pojos.vicedean.postTeacher.vice;
+package techproed.pojos.vicedean.postTeacher.vice.post;
 
-import techproed.pojos.vicedean.postTeacher.vice.ObjectPojo;
+import techproed.pojos.vicedean.postTeacher.vice.post.ObjectPojo;
 
 import java.io.Serializable;
 

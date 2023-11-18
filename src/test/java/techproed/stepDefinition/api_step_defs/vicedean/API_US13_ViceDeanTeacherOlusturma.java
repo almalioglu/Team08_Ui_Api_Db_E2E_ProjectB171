@@ -5,8 +5,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
-import techproed.pojos.vicedean.postTeacher.vice.ResponsePojo;
-import techproed.pojos.vicedean.postTeacher.vice.TeacherVicePostPojo;
+import techproed.pojos.vicedean.postTeacher.vice.post.ResponsePojo;
+import techproed.pojos.vicedean.postTeacher.vice.post.TeacherVicePostPojo;
 import techproed.utilities.ConfigReader;
 
 import java.util.Collections;

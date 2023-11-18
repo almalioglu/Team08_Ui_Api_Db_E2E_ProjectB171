@@ -4,65 +4,92 @@ package techproed.stepDefinition.api_step_defs.vicedean;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.response.Response;
+import techproed.pojos.vicedean.postTeacher.vice.put.ResponsePojo;
+import techproed.pojos.vicedean.postTeacher.vice.put.TeacherVicePutPojo;
+import techproed.utilities.ConfigReader;
+
+import java.util.Collections;
+
+import static io.restassured.RestAssured.given;
+import static junit.framework.TestCase.assertEquals;
+import static techproed.base_url.BaseUrl.setup;
+import static techproed.base_url.BaseUrl.spec;
 
 public class API_US14_ViceDeanTeacherGuncelleyebilme {
-    @Given("Kayitli ogretmenin id nosu alinir")
-    public void kayitli_ogretmenin_id_nosu_alinir() {
+    TeacherVicePutPojo payload;
+    Response response;
+    ResponsePojo actualData;
+    @Given("Siteye {string} ile giris yapilir")
+    public void siteye_ile_giris_yapilir(String user) {
+        switch (user.toLowerCase()) {
+            case "admin":
+                setup(ConfigReader.getProperty("adminUsername"), ConfigReader.getProperty("Password"));
+                break;
+            case "dean":
+                setup(ConfigReader.getProperty("Dean"), ConfigReader.getProperty("Password"));
+                break;
+            case "vicedean":
+                setup(ConfigReader.getProperty("Vicedean"), ConfigReader.getProperty("Password"));
+                break;
+            case "teacher":
+                setup(ConfigReader.getProperty("Teacher"), ConfigReader.getProperty("Password"));
+                break;
+            case "student":
+                setup(ConfigReader.getProperty("Student"), ConfigReader.getProperty("Password"));
 
-    }
-
-    @Given("Teacher userid icin URL duzenlenir")
-    public void teacher_userid_icin_url_duzenlenir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Given("Teacher userid icin beklenen veriler duzenlenir")
-    public void teacher_userid_icin_beklenen_veriler_duzenlenir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @When("Teacher userid icin request gonderilir ve response alinir")
-    public void teacher_userid_icin_request_gonderilir_ve_response_alinir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Then("HTTP status code {int} oldugu dogrulanir")
-    public void http_status_code_oldugu_dogrulanir(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Then("userid icin gelen response BODY dogrulanir")
-    public void userid_icin_gelen_response_body_dogrulanir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        }
     }
 
     @Given("Kayitli ogretmen bilgilerini guncellemek icin URL duzenlenir")
     public void kayitli_ogretmen_bilgilerini_guncellemek_icin_url_duzenlenir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+      //  https://managementonschools.com/app/teachers/update/3398
+       spec.pathParams("first","teachers","second","update","third",3398);
     }
 
     @Given("Guncellenecek ogretmen verileri icin PAYLOAD hazirlanir")
     public void guncellenecek_ogretmen_verileri_icin_payload_hazirlanir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        payload = new TeacherVicePutPojo("1995-07-09","USA","sheldoncooper@forkshape.com","FEMALE","true", Collections.singletonList("1968"),"Sheldon","Aa123456","451-895-6312","245-31-8914","Cooper","TeacherSheldon");
+
+        /*
+        {
+  "birthDay": "1995-09-09",
+  "birthPlace": "USA",
+  "email": "sheldoncooper@forkshape.com",
+  "gender": "MALE",
+  "isAdvisorTeacher": "true",
+  "lessonsIdList": [
+    "1967"
+  ],
+  "name": "Sheldon",
+  "password": "Aa123456",
+  "phoneNumber": "451-895-6312",
+  "ssn": "245-31-8914",
+  "surname": "Cooper",
+  "username": "TeacherSheldon"
+}
+
+         */
+
     }
 
     @When("Kayitli ogretmen bilgilerini guncellemek icin request gonderilir ve response alinir")
     public void kayitli_ogretmen_bilgilerini_guncellemek_icin_request_gonderilir_ve_response_alinir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        response=given(spec).body(payload).put("{first}/{second}/{third}");
+        actualData= response.as(ResponsePojo.class);
+    }
+
+    @Then("HTTP status codeun {int} oldugu dogrulanir")
+    public void http_status_codeun_oldugu_dogrulanir(int statuscode) {
+        assertEquals(statuscode,response.statusCode());
     }
 
     @Then("Kayitli ogretmen guncellemek icin gelen BODY dogrulanir")
     public void kayitli_ogretmen_guncellemek_icin_gelen_body_dogrulanir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        assertEquals(payload.getEmail(), actualData.getObject().getEmail());
+        assertEquals(payload.getName(), actualData.getObject().getName());
+        assertEquals(payload.getUsername(), actualData.getObject().getUsername());
+
     }
 
 
