@@ -29,7 +29,11 @@ public class US06_ViceDeanOlusturmaStepDefs {
 
     @Given("Kullanici anasayfaya gider.")
     public void kullaniciAnasayfayaGider() {
+<<<<<<< Updated upstream
         Driver.getDriver().get(ConfigReader.getProperty("pageUrl"));
+=======
+        Driver.getDriver().get(ConfigReader.getProperty("Url"));
+>>>>>>> Stashed changes
 
     }
 
@@ -137,10 +141,22 @@ public class US06_ViceDeanOlusturmaStepDefs {
 
     @And("Kullanici User Name kutusunun bos olmadigini test eder.")
     public void kullaniciUserNameKutusununBosOlmadiginiTestEder() {
+<<<<<<< Updated upstream
         homePage.maleGenderEB.click();
         assertFalse(homePage.requiredUsername_aeo.isDisplayed());
     }
 
+=======
+        assertFalse(homePage.requiredUsername_aeo.isDisplayed());
+    }
+
+
+    @Then("Kullanici {string} kutusuna büyük harf, kücük harf ve rakam iceren  en az {int}- karakterli bir sifreyi girer.")
+    public void kullaniciKutusunaBüyükHarfKücükHarfVeRakamIcerenEnAzKarakterliBirSifreyiGirer(String password) {
+        homePage.viceDeanPassword_aeo.sendKeys(password);
+    }
+
+>>>>>>> Stashed changes
     @And("Kullanici Password kutusunun bos olmadigini test eder.")
     public void kullaniciPasswordKutusununBosOlmadiginiTestEder() {
         assertFalse(homePage.passwordGirUyarisi.isDisplayed());
@@ -154,7 +170,11 @@ public class US06_ViceDeanOlusturmaStepDefs {
 
     @And("Kullanici basarili bir sekilde Vice Dean ekledigini dogrular.")
     public void kullaniciBasariliBirSekildeViceDeanEklediginiDogrular() {
+<<<<<<< Updated upstream
         ReusableMethods.visibleWait(homePage.viceDeanSavedUyarisi,5);
+=======
+        ReusableMethods.bekle(1);
+>>>>>>> Stashed changes
         assertTrue(homePage.viceDeanSavedUyarisi.isDisplayed());
     }
 
@@ -165,6 +185,14 @@ public class US06_ViceDeanOlusturmaStepDefs {
     }
 
 
+<<<<<<< Updated upstream
+=======
+    @Then("Kullanici {string} kutusuna - olmadan  bir SSN girer.")
+    public void kullaniciKutusunaOlmadanBirSSNGirer(String ssn) {
+        homePage.viceDeanSsnNo_aeo.sendKeys(ssn);
+    }
+
+>>>>>>> Stashed changes
     @And("Kullanici Please enter valid SSN number alert uyarisi goruldugunu dogrular.")
     public void kullaniciPleaseEnterValidSSNNumberAlertUyarisiGoruldugunuDogrular() {
         ReusableMethods.visibleWait(homePage.ssnDogruDegilUyarisi, 3);
@@ -174,7 +202,23 @@ public class US06_ViceDeanOlusturmaStepDefs {
 
     @And("Kullanici Ssn kutusunu siler.")
     public void kullaniciSsnKutusunuSiler() {
+<<<<<<< Updated upstream
         ReusableMethods.cleanByJs(homePage.viceDeanSsnNo_aeo);
+=======
+        //ReusableMethods.jsClear(homePage.viceDeanSsnNo_aeo);
+    }
+
+
+    @Then("Kullanici {string} kutusuna {int}- karakterden fazla  bir SSN girer.")
+    public void kullaniciKutusunaKarakterdenFazlaBirSSNGirer(String ssn1) {
+        homePage.viceDeanSsnNo_aeo.sendKeys(ssn1);
+    }
+
+    @Then("Kullanici {string} kutusuna {int}- karakterden az bir SSN girer.")
+    public void kullaniciKutusunaKarakterdenAzBirSSNGirer(String ssn2) {
+        homePage.viceDeanSsnNo_aeo.sendKeys(ssn2);
+
+>>>>>>> Stashed changes
     }
 
     @And("Kullanici eksik karakter girdigini dorular.")
@@ -205,7 +249,11 @@ public class US06_ViceDeanOlusturmaStepDefs {
 
     @And("Kullanici Password kutusun siler.")
     public void kullaniciPasswordKutusunSiler() {
+<<<<<<< Updated upstream
         ReusableMethods.cleanByJs(homePage.viceDeanPassword_aeo);
+=======
+        //ReusableMethods.jsClear(homePage.viceDeanPassword_aeo);
+>>>>>>> Stashed changes
     }
 
 
@@ -228,6 +276,7 @@ public class US06_ViceDeanOlusturmaStepDefs {
     public void kullaniciOneNumberYazisiniGordugunuDogrular() {
         assertTrue(homePage.passwordRakamEksikUyarisi.isDisplayed());
     }
+<<<<<<< Updated upstream
 
     @Then("Kullanici {string} kutusuna büyük harf, kücük harf ve rakam iceren  en az sekiz karakterli bir sifreyi girer.")
     public void kullaniciKutusunaBüyükHarfKücükHarfVeRakamIcerenEnAzSekizKarakterliBirSifreyiGirer(String password) {
@@ -253,6 +302,8 @@ public class US06_ViceDeanOlusturmaStepDefs {
 
 
 
+=======
+>>>>>>> Stashed changes
 }
 
 
