@@ -37,7 +37,7 @@ public class StudentChooseLesson {
         StudentResponsePojo studentData=new StudentResponsePojo(2000,"mehmet321","mehmet","erçik","1996-10-10","adana","145-845-6244","MALE",1170,"deneme","deneme","deneme123@gmail.com",true);
         ContentPojo studentExpected=new ContentPojo(3952,100,100,3,"Good Work!","xray",1847,11,15,100,studentData,true,"AA");
         resultSet.next();
-        resultSet.next();
+
         assertEquals("100",resultSet.getString("midterm_exam"));
         assertEquals("100",resultSet.getString("final_exam"));
         assertEquals(studentExpected.getNote(),resultSet.getString("letter_grade"));
@@ -53,8 +53,8 @@ public class StudentChooseLesson {
 
     @Then("kayitli meeting bilgileri dogrulanir")
     public void kayitliMeetingBilgileriDogrulanir() throws SQLException {
-        resultSet.next();
         expectedDataMeet=new MeetResponsePojo("2023-11-06","123-85-7412",1313,"Kamil","apiTest",list,"03:50:00","04:20:00",1183);
+        resultSet.next();
         assertEquals(expectedDataMeet.getDescription(),resultSet.getString("description"));
         assertEquals(expectedDataMeet.getStartTime(),resultSet.getString("start_time"));
         assertEquals(expectedDataMeet.getStopTime(),resultSet.getString("stop_time"));

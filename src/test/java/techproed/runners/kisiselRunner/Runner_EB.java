@@ -1,5 +1,4 @@
-package techproed.runners;
-
+package techproed.runners.kisiselRunner;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -10,12 +9,14 @@ import org.junit.runner.RunWith;
         "json:target/json-reports/cucumber1.json",
         "junit:target/xml-report/cucumber.xml",
         "rerun:TestOutput/failed_scenario.txt"},
-        features = "src/test/resources/ui_features",
-        glue = {"techproed/stepDefinition/ui_step_defs", "techproed/hooks"},
-        tags = "@08 and @busra",
+        features = "src/test/resources",
+        glue = {"techproed/stepDefinition", "techproed/hooks"},
+        tags = "@E2E and @Elif",
         dryRun = false,
         monochrome = true
 
 )
-public class RunnerBI {
+
+
+public class Runner_EB {
 }

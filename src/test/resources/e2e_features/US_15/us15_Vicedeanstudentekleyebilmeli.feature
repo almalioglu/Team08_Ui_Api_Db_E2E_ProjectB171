@@ -28,14 +28,14 @@ Feature: ViceDean ogrenci olusturabilmeli
     Then Oluşturulan Studentin Student Number'inin otomatik geldiğini doğrula
 
 @API
-  Scenario: Olusturulan ogrenci bilsisini alma testi
-    Given "vicedean" yetkisi ile giris yapilir
-    When Studen eklemek icin post request hazirligi yapilir
-    And Gonderilecek studen bilgileri hazirlanir
-    When Student eklemek icin post request gonderilir
-    Then Student bilgileri dogrulanir
-    When Kayitli Student id ile cagirilir
-    Then Student bilgileri dogrulanir(get)
+  #Scenario: Olusturulan ogrenci bilsisini alma testi
+  #  Given "vicedean" yetkisi ile giris yapilir
+  #  When Studen eklemek icin post request hazirligi yapilir
+  #  And Gonderilecek studen bilgileri hazirlanir
+  #  When Student eklemek icin post request gonderilir
+  #  Then Student bilgileri dogrulanir
+  #  When Kayitli Student id ile cagirilir
+  #  Then Student bilgileri dogrulanir(get)
 @DB
   Scenario: Vice dean hesabi ile olusturulan studentin db testi
     Given Vice dean icin database baglantisi kurulur

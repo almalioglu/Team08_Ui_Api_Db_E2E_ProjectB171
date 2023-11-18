@@ -1,4 +1,4 @@
-package techproed.runners;
+package techproed.runners.e2eRunner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
                            "rerun:TestOutput/failed_scenario.txt"},
         features = "src/test/resources",
         glue = {"techproed/stepDefinition", "techproed/hooks"},
-        tags = "@cihanE2E",
+        tags = "@E2E",
         dryRun = false,
         monochrome = true
 
