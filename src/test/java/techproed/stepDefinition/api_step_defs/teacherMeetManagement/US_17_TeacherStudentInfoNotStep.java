@@ -107,7 +107,7 @@ public class US_17_TeacherStudentInfoNotStep {
 
     @And("Sdutent info icin beklenen veriler duzenlenir_is")
     public void sdutentInfoIcinBeklenenVerilerDuzenlenir_is() {
-        studentResponse = new StudentResponsePojo(2071, "08Student","Student08",
+        studentResponse = new StudentResponsePojo(2326, "08Student","Student08",
                 "08student", "2008-10-01", "ankara", "548-986-6699",
                 "FEMALE", 1241,"teamff", "team08f", "vveswtu@hotmail.com", true);
         expectedData = new ObjectPojo(id, 100.0, 100.0, 3, "Good Work!",

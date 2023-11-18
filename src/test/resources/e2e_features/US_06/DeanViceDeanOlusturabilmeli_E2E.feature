@@ -1,4 +1,4 @@
-@08 @06
+ @E2E
 Feature:Dean olarak Vice Dean ekleyebilmeli
   Background:
     Given Kullanici "pageUrl" sayfasina git
@@ -6,7 +6,7 @@ Feature:Dean olarak Vice Dean ekleyebilmeli
     And  Kullanici dean bilgileri ile oturum açar
 
 
-  @06 @TC01
+  @08 @TC01
   Scenario Outline: TC01 Vice Dean Hesabı Oluşturma Pozitif Testi
     Given Kullanici anasayfaya gider.
     Then Kullanici Dean hesabi ile Sing in yapar.

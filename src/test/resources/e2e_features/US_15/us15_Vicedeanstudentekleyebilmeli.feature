@@ -1,6 +1,7 @@
-@08 @SAADETE2E
+ @SAADETE2E @E2E
 Feature: ViceDean ogrenci olusturabilmeli
 
+  @08
   Scenario: Oluşturulan Studentin Student Number'inin otomatik geldiğini doğrular
     Given Web sayfaasına git
     When login butonuna tıkla

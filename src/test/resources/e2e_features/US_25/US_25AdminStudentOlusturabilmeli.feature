@@ -1,5 +1,6 @@
-@08 @SAADETE2E2
+@SAADETE2E2 @E2E
 Feature:Web sitesine erişebilmeli ve siteye kayıtlı Admin hesabıyla giriş yaparak ogrenci kaydedebilmeli
+  @08
   Scenario:admin, öğrenci oluşturabilmelidir.
     Given Web sayfaasına git
     When login butonuna tıkla

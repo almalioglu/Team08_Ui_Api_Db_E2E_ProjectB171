@@ -1,6 +1,7 @@
-@08 @SAADETE2E3
+@SAADETE2E3 @E2E
 Feature:Vice Dean, kullanıcıların gönderdiği mesajları görebilmelidir.
 
+  @08
   Scenario:Vice Dean kullanıcıların gönderdiği mesajları görebilmelidir
     When Web sayfaasına git
     And login butonuna tıkla
