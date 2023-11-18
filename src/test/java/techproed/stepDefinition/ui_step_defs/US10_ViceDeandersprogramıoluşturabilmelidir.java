@@ -52,9 +52,11 @@ public class US10_ViceDeandersprogramıoluşturabilmelidir {
 
     @Then("Choose Education Term de donemi sec")
     public void chooseEducationTermDeDonemiSec() {
+
         page.chooseEducationddm.click();
+        ReusableMethods.bekle(2);
         page.chooseEducationddm.sendKeys(Keys.ARROW_DOWN,Keys.ENTER);
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(2);
     }
 
     @Then("Choose Day den gun sec")

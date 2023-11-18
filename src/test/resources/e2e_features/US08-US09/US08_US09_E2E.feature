@@ -1,4 +1,4 @@
-@E2EUS08_US09
+
 Feature: Vice Dean ders ekleyebilmeli
 
   @UI

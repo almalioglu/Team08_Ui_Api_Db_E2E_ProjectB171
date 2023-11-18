@@ -1,4 +1,4 @@
- @US_17_18_E2E @E2E
+@E2E
 Feature: Student Info Management E2E testi
   @08
   Scenario: TC01 Teacher,"geçerli bilgileri" girerek öğrencilere not verebilmeli_UI
