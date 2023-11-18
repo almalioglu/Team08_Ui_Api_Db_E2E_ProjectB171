@@ -5,13 +5,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
-import techproed.pojos.vicedean.postTeacher.ResponsePojo;
-import techproed.pojos.vicedean.postTeacher.TeacherVicePostPojo;
+import techproed.pojos.vicedean.postTeacher.vice.ResponsePojo;
+import techproed.pojos.vicedean.postTeacher.vice.TeacherVicePostPojo;
 import techproed.utilities.ConfigReader;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static junit.framework.TestCase.assertEquals;

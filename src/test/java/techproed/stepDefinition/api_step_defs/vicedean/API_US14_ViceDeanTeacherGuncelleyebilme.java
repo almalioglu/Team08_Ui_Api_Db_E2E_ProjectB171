@@ -8,8 +8,7 @@ import io.cucumber.java.en.When;
 public class API_US14_ViceDeanTeacherGuncelleyebilme {
     @Given("Kayitli ogretmenin id nosu alinir")
     public void kayitli_ogretmenin_id_nosu_alinir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @Given("Teacher userid icin URL duzenlenir")
