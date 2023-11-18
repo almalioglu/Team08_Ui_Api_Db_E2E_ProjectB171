@@ -1,9 +1,7 @@
 @APIayse
   Feature: Dean, Vice Dean hesabı oluşturabilmelidir.
-    Background: Yetkili girisi
-      Given "Dean" yetkisi ile giris yapilir
-
-      Scenario: Vice Dean hesabi olusturabilmeli
+    Scenario: Vice Dean hesabi olusturabilmeli
+        Given "Dean" yetkisi ile giris yapilir
         Given Vice Dean save icin URL duzenlenir_aeo
         And Vice Dean save icin payload duzenlenir_aeo
         When Vice Dean save icin post request gonderilir response alinir_aeo

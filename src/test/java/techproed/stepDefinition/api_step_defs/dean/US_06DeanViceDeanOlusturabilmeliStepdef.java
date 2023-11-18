@@ -10,11 +10,13 @@ import org.junit.Assert;
 import techproed.pojos.dean.postViceDean.ObjectPojo;
 import techproed.pojos.dean.postViceDean.Response6Pojo;
 import techproed.pojos.dean.postViceDean.ResponseViceDeanPojo;
+import techproed.utilities.ConfigReader;
 
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static junit.framework.TestCase.assertEquals;
+import static techproed.base_url.BaseUrl.setup;
 import static techproed.base_url.BaseUrl.spec;
 import static techproed.pojos.dean.postViceDean.ObjectPojo.userId;
 
@@ -25,7 +27,7 @@ public class US_06DeanViceDeanOlusturabilmeliStepdef {
 
     @Given("Vice Dean save icin URL duzenlenir_aeo")
     public void viceDeanSaveIcinURLDuzenlenir_aeo() {
-        spec.pathParams("first", "vicedean", "second", "save");
+        spec.pathParams("first","vicedean","second","save");
         //https://managementonschools.com/app/vicedean/save)
     }
 
@@ -74,4 +76,8 @@ public class US_06DeanViceDeanOlusturabilmeliStepdef {
     }
 
 
+    @Given("{string} yetkisi ile giris yapilirr")
+    public void yetkisiIleGirisYapilirr(String dean) {
+        setup(ConfigReader.getProperty("Dean"), ConfigReader.getProperty("Password"));
+    }
 }

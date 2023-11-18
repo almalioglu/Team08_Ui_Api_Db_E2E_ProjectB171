@@ -43,7 +43,7 @@ public class US_17_TeacherStudentInfoNotStep {
 
     @And("Sdutent info save icin payload duzenlenir_is")
     public void sdutentInfoSaveIcinPayloadDuzenlenir_is() {
-         payload= new PostExpectedDataPojo(5,19,90,"Başarılarının devamını dilerim..?",1915,100, 2071);
+         payload= new PostExpectedDataPojo(3,15,100,"Good Work!",1847,100, 2071);
 
 
         //{
@@ -107,12 +107,14 @@ public class US_17_TeacherStudentInfoNotStep {
 
     @And("Sdutent info icin beklenen veriler duzenlenir_is")
     public void sdutentInfoIcinBeklenenVerilerDuzenlenir_is() {
-        studentResponse = new StudentResponsePojo(2326, "08Student","Student08",
-                "08student", "2008-10-01", "ankara", "548-986-6699",
-                "FEMALE", 1241,"teamff", "team08f", "vveswtu@hotmail.com", true);
-        expectedData = new ObjectPojo(id, 100.0, 100.0, 3, "Good Work!",
-                "xray", 1847, 11, 15, 100.0,
-                studentResponse, true, "AA");
+
+        studentResponse = new StudentResponsePojo(2326, "Fiksberra","Berra",
+                "Fiks", "1986-01-19", "Mars", "545-341-9010",
+                "FEMALE", 1429,"Alime", "Alim", "birch.lamarion@forkshape.com", true);
+        expectedData = new ObjectPojo(id, 100.0, 100.0, 5, "Ben seni yasaklarda sevdim..yaa.,!?",
+                "Communication", 1848, 8, 18, 100.0,
+                studentResponse, false, "AA");
+
         /*
         "id": 4328,
         "midtermExam": 100.0,
@@ -166,7 +168,7 @@ public class US_17_TeacherStudentInfoNotStep {
 
     @Then("status kodun {int} oldugu dogrulanir_is")
     public void statusKodunOlduguDogrulanir_is(int statusCode) {
-        Assert.assertEquals(statusCode, response.statusCode());
+        assertEquals(statusCode, response.statusCode());
     }
 
 

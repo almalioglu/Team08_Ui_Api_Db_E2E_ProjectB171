@@ -1,6 +1,1 @@
-file:src/test/resources/e2e_features/US_08_09/US08_US09_E2E.feature:5:42:50
-file:src/test/resources/e2e_features/US_06/DeanViceDeanOlusturabilmeli_E2E.feature:36:47
-file:src/test/resources/e2e_features/US_21/StudentChooseLesson.feature:5:38:45:52:57:63
-file:src/test/resources/e2e_features/US_15/us15_Vicedeanstudentekleyebilmeli.feature:5
-file:src/test/resources/e2e_features/US_17-18/US_17-18_E2E.feature:12
-file:src/test/resources/e2e_features/US_25/US_25AdminStudentOlusturabilmeli.feature:4
+

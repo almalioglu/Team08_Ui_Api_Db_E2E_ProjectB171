@@ -1,4 +1,4 @@
-package techproed.runners;
+package techproed.runners.apiRunner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -11,12 +11,11 @@ import org.junit.runner.RunWith;
         "junit:target/xml-report/cucumber.xml",
         "rerun:TestOutput/failed_scenario.txt"},
         features = "src/test/resources",
-        glue = {"techproed/stepDefinition", "techproed/hooks"},
-        tags = "@ayseE2E",
+        glue = {"techproed/stepDefinition/api_step_defs", "techproed/hooks"},
+        tags = "@API and @busra",
         dryRun = false,
         monochrome = true
 
 )
-public class Runner_Aeo {
-
+public class RunnerBIAPI {
 }
