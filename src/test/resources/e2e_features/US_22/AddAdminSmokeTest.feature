@@ -1,7 +1,7 @@
-@08 @mehmet
+@mehmet @E2E
 Feature: Add Admin
 
-
+  @08
   Scenario: Admin kullanicisi tarafindan yeni bir admin hesabi olusturulur
     Given Kullanici "pageUrl" sayfasina git
     Then Login e tikla
