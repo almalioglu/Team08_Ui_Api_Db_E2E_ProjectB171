@@ -76,7 +76,7 @@
                     <forkCount>2</forkCount>
                     <reuseForks>true</reuseForks>
                     <includes>
-                        <include>**/runners/*Runner*.java</include>
+                        <include>**/runners/e2eRunner/Runner*.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
