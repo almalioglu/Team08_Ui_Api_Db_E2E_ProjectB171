@@ -560,9 +560,53 @@ public class HomePage {
 @FindBy(xpath = "(//*[@class='invalid-feedback'])[8]")    public WebElement passwordGirUyarisi;
     @FindBy(xpath = "//*[text()='At least 8 characters']")
     public WebElement password8KarakterEksikUyarisi;
+<<<<<<< Updated upstream
     @FindBy(xpath = "//*[text()='One uppercase character']")
     public WebElement passwordBuyukHarfEksikUyarisi;
 @FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
+=======
+
+    @FindBy(xpath = "//*[text()='One uppercase character']")
+    public WebElement passwordBuyukHarfEksikUyarisi;
+
+    @FindBy(xpath = "//*[text()='One lowercase character']")
+    public WebElement passwordKucukHarfEksikUyarisi;
+
+    @FindBy(xpath = "//*[text()='One number']")
+    public WebElement passwordRakamEksikUyarisi;
+
+    @FindBy(xpath = "(//*[text()='Your name should be at least 2 characters'])[1]")
+    public WebElement name2KarakterEksikUyarisi;
+
+    @FindBy(xpath = "(//*[text()='Your surname should be at least 2 characters'])[1]")
+    public WebElement surname2KarakterEksikUyarisi;
+
+    @FindBy(xpath = "(//*[text()='Your birth place should be at least 2 characters'])[1]")
+    public WebElement birthPlace2KarakterEksikUyarisi;
+
+
+    @FindBy(xpath = "(//*[text()='Your username should be at least 4 characters'])[1]")
+    public WebElement userName4KarakterEksikUyarisi;
+
+
+    @FindBy(xpath = "(//*[text()='Phone number should be exact 12 characters'])[1]")
+    public WebElement PhoneNumber12KarakterFazlaUyarisi;
+
+    @FindBy(xpath = "(//*[text()='Please enter valid phone number'])[1]")
+    public WebElement PhoneNumberDogruDegilUyarisi;
+
+
+    @FindBy(xpath = "(//div[@class='Toastify__toast-body'])[1]")
+    public WebElement ssnDogruDegilUyarisi;
+
+    @FindBy(xpath = "(//*[text()='Vice dean Saved'])[1]")
+    public WebElement viceDeanSavedUyarisi;
+
+    @FindBy(xpath = "(//*[text()='Admin Saved'])[1]")
+    public WebElement adminSavedUyarisi;
+
+    @FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
+>>>>>>> Stashed changes
 public WebElement menuButton;
 @FindBy(xpath = "(//*[@role='button'])[11]")
 public WebElement  contactGetAllButton;
@@ -610,14 +654,18 @@ public WebElement messageColumn;
     @FindBy(xpath = "(//*[text()='Vice dean Saved'])[1]")
     public WebElement viceDeanSavedUyarisi;
 
+<<<<<<< Updated upstream
     @FindBy(xpath = "(//*[text()='Admin Saved'])[1]")
     public WebElement adminSavedUyarisi;
+=======
+>>>>>>> Stashed changes
 
 
 
 
 
 
+<<<<<<< Updated upstream
 
 
 
@@ -629,6 +677,9 @@ public WebElement messageColumn;
   
        
   //Elif-630
+=======
+//Elif-630
+>>>>>>> Stashed changes
   @FindBy(xpath = "(//*[@type='button'])[3]") public WebElement registerbutonEB;
   @FindBy(xpath ="//*[text()='Guest User registered.']" ) public WebElement guestUserRegisteredEB;//"//div[@role='alert']"
  @FindBy(xpath = "//*[@id='phoneNumber']") public  WebElement phoneNumberEB;

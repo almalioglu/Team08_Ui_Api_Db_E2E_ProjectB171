@@ -1,13 +1,23 @@
 @08 @06
+<<<<<<< Updated upstream
 Feature:Dean olarak Vice Dean ekleyebilmeli
    Background:
      Given Kullanici "pageUrl" sayfasina git
+=======
+  Feature:Dean olarak Vice Dean ekleyebilmeli
+    Background:
+      Given Kullanici "pageUrl" sayfasina git
+>>>>>>> Stashed changes
       Then Login e tikla
       And  Kullanici dean bilgileri ile oturum açar
 
 
     @06 @TC01
+<<<<<<< Updated upstream
    Scenario Outline: TC01 Vice Dean Hesabı Oluşturma Pozitif Testi
+=======
+    Scenario:TC01 Vice Dean Hesabı Oluşturma Pozitif Testi
+>>>>>>> Stashed changes
       Given Kullanici anasayfaya gider.
       Then Kullanici Dean hesabi ile Sing in yapar.
       Then Kullanici "<Name>" alanina gecerli bir ad girer.
@@ -35,11 +45,17 @@ Feature:Dean olarak Vice Dean ekleyebilmeli
        | Name           | Surname | Birth Place | Date Of Birth | Phone        | Ssn         | User Name      | Password        |
        | Vera           | Yilmaz  | Istanbul    | 10.09.1999    | 555-444-2120 |545-55-8787  | VERAYILMAZ     | Avera123        |
 
+<<<<<<< Updated upstream
 
 
    @US06 @TC02
     Scenario Outline: TC02 Negatif test: SSN
      Given Kullanici anasayfaya gider.
+=======
+    @US06 @TC02
+    Scenario:TC02 Negatif test "SSN"
+      Given Kullanici anasayfaya gider.
+>>>>>>> Stashed changes
       Then Kullanici Dean hesabi ile Sing in yapar.
       Then Kullanici "<Name>" alanina gecerli bir ad girer.
       Then Kullanici "<Surname>" alanina gecerli bir surname girer.
@@ -68,8 +84,13 @@ Feature:Dean olarak Vice Dean ekleyebilmeli
         | Vera            | Yilmaz  | Istanbul    |10.09.1999     | 555-444-2121 | VERAYILMAZ           | Avera123         | 369 87 7410 | 369-87-74101 | 369-87-741 |
 
 
+<<<<<<< Updated upstream
     @TC03
     Scenario Outline: TC03 Negatif TEST:Password en az 8 karakterden oluşmalıdır.
+=======
+    @US06 @TC03
+    Scenario: TC03 Negatif TEST "Password en az 8 karakterden oluşmalıdır".
+>>>>>>> Stashed changes
       Given Kullanici anasayfaya gider.
       Then Kullanici Dean hesabi ile Sing in yapar.
       Then Kullanici "<Name>" alanina gecerli bir ad girer.
@@ -92,7 +113,11 @@ Feature:Dean olarak Vice Dean ekleyebilmeli
 
 
     @US06 @TC04
+<<<<<<< Updated upstream
     Scenario Outline:TC04 Negatif TEST; Password büyük harf, küçük harf ve bir rakam içermelidir.
+=======
+    Scenario : TC04 Negatif TEST "Password büyük harf, küçük harf ve bir rakam içermelidir".
+>>>>>>> Stashed changes
       Given Kullanici anasayfaya gider.
       Then Kullanici Dean hesabi ile Sing in yapar.
       Then Kullanici "<Name>" alanina gecerli bir ad girer.
