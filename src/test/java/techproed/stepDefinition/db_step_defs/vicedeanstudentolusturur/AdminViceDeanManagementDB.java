@@ -1,4 +1,4 @@
-package techproed.stepDefinition.db_step_defs;
+package techproed.stepDefinition.db_step_defs.vicedeanstudentolusturur;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

@@ -4,7 +4,7 @@ Feature: Vice Dean Teacher Ekleyebilmeli
   Background:
     Given Siteye "vicedean" yetkisi ile giris yapilir
 
-  @API @US13TC01 @busraa
+  @API @US13TC01 @busra
   Scenario: Vice Dean ogretmen kaydi olusturabilmeli  (POST)
     And Teacher eklemek icin URL duzenlenir
     And Teacher eklemek icin PAYLOAD duzenlenir

@@ -1,6 +1,6 @@
-@08 @US_17_18_E2E
+ @US_17_18_E2E @E2E
 Feature: Student Info Management E2E testi
-  @UI
+  @08
   Scenario: TC01 Teacher,"geçerli bilgileri" girerek öğrencilere not verebilmeli_UI
     Given Kullanici "pageUrl" sayfasina git
     Then Teacher olarak login yap_is

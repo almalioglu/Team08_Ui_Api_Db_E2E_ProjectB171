@@ -1,5 +1,6 @@
-@meryeme2e
+@meryeme2e @E2E
   Feature: Teacher meet creative
+    @08
     Scenario: siteye git teacher hesabina gir
       And siteye git
       Given login butonuna tikla
