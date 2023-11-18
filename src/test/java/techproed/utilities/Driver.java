@@ -1,7 +1,9 @@
 package techproed.utilities;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -11,8 +13,9 @@ import java.time.Duration;
 public class Driver {
     static WebDriver driver;
     public static WebDriver getDriver() {
+        String browser =ConfigReader.getProperty("browser");
         if (driver == null){
-            switch (ConfigReader.getProperty("browser")){
+            switch (browser){
                 case "chrome":
                     driver = new ChromeDriver();
                     break;
@@ -26,6 +29,13 @@ public class Driver {
                     driver=new InternetExplorerDriver();
             }
 
+        } else if ("chrome-headless".equals(browser)) {
+            ChromeOptions options =new ChromeOptions();
+            options.addArguments("--headless");
+            options.addArguments("--remote-allow-origins=*");
+            options.addArguments("--wnidow-size=1920.1080");
+            WebDriverManager.chromedriver().setup();
+            driver =new ChromeDriver(options);
         }
         return driver;
     }

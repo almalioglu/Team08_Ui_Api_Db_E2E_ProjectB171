@@ -1,9 +1,9 @@
-package techproed.runners.apiRunner;
+package techproed.runners.kisiselRunner;
+
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
-
 
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty",
@@ -12,10 +12,11 @@ import org.junit.runner.RunWith;
         "junit:target/xml-report/cucumber.xml",
         "rerun:TestOutput/failed_scenario.txt"},
         features = "src/test/resources",
-        glue = {"techproed/stepDefinition/api_step_defs", "techproed/hooks"},
-        tags = "@US_17_18_is",
+        glue = {"techproed/stepDefinition/ui_step_defs", "techproed/hooks"},
+        tags = "@08 and @mehmet",
         dryRun = false,
         monochrome = true
 )
-public class Runner_ME_API {
+
+public class RunnerME {
 }

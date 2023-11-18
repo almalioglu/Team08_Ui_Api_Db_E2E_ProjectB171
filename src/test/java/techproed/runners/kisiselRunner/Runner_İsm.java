@@ -1,4 +1,5 @@
-package techproed.runners;
+package techproed.runners.kisiselRunner;
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -11,12 +12,10 @@ import org.junit.runner.RunWith;
         "rerun:TestOutput/failed_scenario.txt"},
         features = "src/test/resources",
         glue = {"techproed/stepDefinition", "techproed/hooks"},
-        tags = "@E2E and @Elif",
+        tags = "@US_17_18_DB",
         dryRun = false,
         monochrome = true
 
 )
-
-
-public class Runner_EB {
+public class Runner_İsm {
 }

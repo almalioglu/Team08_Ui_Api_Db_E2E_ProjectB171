@@ -31,8 +31,6 @@
       And guestUser dogrulamasi yapilir
       And  baglantisi kesilir
 
-  #Scenario: Delete
-   # And "admin" yetkisi ile giris yapilir
-   # And eklenen guest user silinir
+
 
 

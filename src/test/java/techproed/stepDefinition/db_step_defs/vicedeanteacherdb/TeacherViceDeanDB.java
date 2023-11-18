@@ -13,10 +13,10 @@ import static junit.framework.TestCase.assertEquals;
 public class TeacherViceDeanDB {
     Connection connection;
     ResultSet resultSet;
-    @Given("database baglantisi kurulur bi")
-    public void databaseBaglantisiKurulurBi() throws SQLException {
-        connection = DriverManager.getConnection("jdbc:postgresql://managementonschools.com:5432/school_management","select_user","43w5ijfso");
-    }
+   // @Given("database baglantisi kurulur bi")
+   // public void databaseBaglantisiKurulurBi() throws SQLException {
+   //     connection = DriverManager.getConnection("jdbc:postgresql://managementonschools.com:5432/school_management","select_user","43w5ijfso");
+   // }
 
     @When("kayitli teacher bilgisi almak icin query gonderilir")
     public void kayitliTeacherBilgisiAlmakIcinQueryGonderilir() throws SQLException {

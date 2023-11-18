@@ -1,4 +1,4 @@
-@E2E
+
 Feature: Students Smoke Test
 
   @08
@@ -10,11 +10,11 @@ Feature: Students Smoke Test
     And Lesson Tableda Day sutununda ders gunlerinin goruldugu dogrulanır
     And Lesson Tableda Start Time sutununda baslangic saatinin goruldugu dogrulanir
     And Lesson Tableda Stop Time sutununda baslangic saatinin goruldugu dogrulanir
-    #And Choose Lesson tablosundan random bir ders seçilir
-    #And Submit butonuna tiklanir ve derslerin seçildigi dogrulanir
-    #And Derslerin Lesson Program List e eklendigi dogrulanir
+    And Choose Lesson tablosundan random bir ders seçilir
+    And Submit butonuna tiklanir ve derslerin seçildigi dogrulanir
+    And Derslerin Lesson Program List e eklendigi dogrulanir
     * kullanici 3 saniye bekler
-    #And Aynı derslerin tekrardan seçilemedigi dogrulanir
+    And Aynı derslerin tekrardan seçilemedigi dogrulanir
     And Grades and Announcemenents sayfasina gidilir
     And Student Info List tablosunda ders notlarinin goruldugu dogrulanir
     And Meet List tablosunda toplantilarin goruldugu dogrulanir

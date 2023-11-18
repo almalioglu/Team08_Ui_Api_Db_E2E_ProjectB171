@@ -1,14 +1,6 @@
-@mehmet @E2E
+@mehmet @E2EAPI
 Feature: Add Admin
 
-  @08
-  Scenario: Admin kullanicisi tarafindan yeni bir admin hesabi olusturulur
-    Given Kullanici "pageUrl" sayfasina git
-    Then Login e tikla
-    And Admin username ve Password girilip login olunur
-    Given Admin hesabinda login olduktan sonra ilgili alanlar doldurulur ve submit butonuna tıklanır
-    Then Admin hesabinin eklendigi dogrulanir
-    * sayfa kapatilir
 
   Scenario: Admin kullanicisi API ile yeni bir admin hesabi olusturur
     Given "admin" yetkisi ile giris yapilir
