@@ -31,12 +31,12 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
     }
     @And("username kutusuna kayitli username girer")
     public void username_kutusuna_kayitli_username_girer() {
-       homePage.loginUsernameButtonBI.sendKeys(ConfigReader.getProperty("ViceDeanUserNameBI"));
+       homePage.loginUsernameButtonBI.sendKeys(ConfigReader.getProperty("ViceDean08"));
         ReusableMethods.bekle(1);
     }
     @And("password kutusuna kayitli password girer ve login olur")
     public void password_kutusuna_kayitli_password_girer() {
-       homePage.loginPasswordButtonBI.sendKeys(ConfigReader.getProperty("ViceDeanPasswordBI"));
+       homePage.loginPasswordButtonBI.sendKeys(ConfigReader.getProperty("Batch171+"));
        homePage.loginSubmitButtonBI.click();
         ReusableMethods.bekle(2);
     }
@@ -65,7 +65,8 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
        // Locate click
        // Locate send keys “Java” keys.up keys.enter
         homePage.addSelectLessonDdmBI.click();
-        String lesson="Java";
+        //String lesson="Java";
+        String lesson="SeleniumBI";
         homePage.addSelectLessonDdmBI.sendKeys(lesson, Keys.TAB,Keys.TAB);
         ReusableMethods.bekle(2);
     }
@@ -74,30 +75,35 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
         actions.scrollByAmount(0,100).perform();
         ReusableMethods.bekle(2);
         homePage.addNameBoxBI.click();
-        homePage.addNameBoxBI.sendKeys(faker.name().firstName());
+        //homePage.addNameBoxBI.sendKeys(faker.name().firstName());
+        homePage.addNameBoxBI.sendKeys("Sheldon");
         ReusableMethods.bekle(1);
     }
     @And("Surname kutusuna veri girer")
     public void surname_kutusuna_veri_girer() {
         homePage.addSurnameBoxBI.click();
-        homePage.addSurnameBoxBI.sendKeys(faker.name().lastName());
+        //homePage.addSurnameBoxBI.sendKeys(faker.name().lastName());
+        homePage.addSurnameBoxBI.sendKeys("Cooper");
         ReusableMethods.bekle(1);
 
     }
     @And("Birth Place kutusuna veri girer")
     public void birth_place_kutusuna_veri_girer() {
         homePage.addBirthPlaceBoxBI.click();
-        homePage.addBirthPlaceBoxBI.sendKeys(faker.address().city());
+        //homePage.addBirthPlaceBoxBI.sendKeys(faker.address().city());
+        homePage.addBirthPlaceBoxBI.sendKeys("Texas");
         ReusableMethods.bekle(1);
     }
     @And("Email kutusuna veri girer")
     public void email_kutusuna_veri_girer() {
-        homePage.addEmailBoxBI.sendKeys(faker.internet().emailAddress());
+        //homePage.addEmailBoxBI.sendKeys(faker.internet().emailAddress());
+        homePage.addEmailBoxBI.sendKeys("sheldoncooper@forkshape.com");
         ReusableMethods.bekle(1);
     }
     @And("Phone kutusuna veri girer")
     public void phone_kutusuna_veri_girer() {
-        homePage.addPhoneBoxBI.sendKeys(faker.numerify("###-###-####"));
+        //homePage.addPhoneBoxBI.sendKeys(faker.numerify("###-###-####"));
+        homePage.addPhoneBoxBI.sendKeys("451-895-6312");
         ReusableMethods.bekle(1);
     }
     @And("Is Advisor Teacher basliginin solundaki checkbox tiklar")
@@ -107,11 +113,11 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
     }
     @And("Gender basliginin altindaki radio buttondan cinsiyet secer")
     public void gender_basliginin_altindaki_radio_buttondan_cinsiyet_secer() {
-        if (!homePage.addGenderFemaleRadioButtonBI.isSelected()) {
-            homePage.addGenderFemaleRadioButtonBI.click();
-        }else {
+     //  if (!homePage.addGenderFemaleRadioButtonBI.isSelected()) {
+     //      homePage.addGenderFemaleRadioButtonBI.click();
+     //  }else {
             homePage.addGenderMaleRadioButtonBI.click();
-        }
+      //  }
         ReusableMethods.bekle(1);
     }
     @And("Date of Birth kutusuna veri girer")
@@ -123,19 +129,22 @@ public class US13_ViceDeanTeacherOlusturabilmeli {
     @And("SSN kutusuna veri girer")
     public void ssn_kutusuna_veri_girer() {
         homePage.addSsnBoxBI.click();
-        homePage.addSsnBoxBI.sendKeys(faker.numerify("###-##-####"));
+       // homePage.addSsnBoxBI.sendKeys(faker.numerify("###-##-####"));
+        homePage.addSsnBoxBI.sendKeys("245-31-8914");
         ReusableMethods.bekle(1);
     }
     @And("User Name kutusuna veri girer")
     public void user_name_kutusuna_veri_girer() {
         homePage.addUsernameBoxBI.click();
-        homePage.addUsernameBoxBI.sendKeys(faker.name().username());
+       // homePage.addUsernameBoxBI.sendKeys(faker.name().username());
+        homePage.addUsernameBoxBI.sendKeys("TeacherSheldon");
         ReusableMethods.bekle(1);
     }
     @And("Password kutusuna password girer")
     public void password_kutusuna_password_girer() {
         homePage.addPasswordBoxBI.click();
-        homePage.addPasswordBoxBI.sendKeys(ReusableMethods.randomPassword(1,1,6));
+        //homePage.addPasswordBoxBI.sendKeys(ReusableMethods.randomPassword(1,1,6));
+        homePage.addPasswordBoxBI.sendKeys("Aa123456");
         ReusableMethods.bekle(1);
     }
     @And("Submit butonuna tiklanir")
