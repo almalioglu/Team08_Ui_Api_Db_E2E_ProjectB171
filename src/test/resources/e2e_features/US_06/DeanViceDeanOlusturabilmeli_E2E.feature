@@ -1,12 +1,30 @@
+@ayseE2E
 
- 
- 
- 
- 
- 
- 
- 
- 
+Feature:Dean olarak Vice Dean ekleyebilmeli
+  @08
+  Scenario Outline: TC01 Vice Dean Hesabı Oluşturma Pozitif Testi
+    Given Kullanici "pageUrl" sayfasina git
+    Then Login e tikla
+    Then Kullanici Dean hesabi ile Sing in yapar.
+    Then Kullanici "<Name>" alanina gecerli bir ad girer.
+    And  Kullanici Name alaninin bos olmadigini test eder.
+    Then Kullanici "<Surname>" alanina gecerli bir surname girer.
+    And Kullanici Surname  alaninin bos olmadigini test eder.
+    Then Kullanici "<Birth Place>" alanina gecerli bir değer girer.
+    And Kullanici Birth Place alaninin bos olmadigini test eder.
+    Then Kullanici "<Date Of Birth>" kutusuna geçerli bir doğum tarihi girer.
+    And Kullanici Date Of Birth kutusunun bos olamdigini test eder.
+    Then Kullanici "<Phone>" kutusuna gecerli bir telefon numarasi girer.
+    And Kullanici Phone kutusunun bos olmadigini test eder.
+    Then Kullanici "<Ssn>" kutusuna gecerli bir SSN girer.
+    And Kullanici Ssn kutusunun bos olmadigini test eder.
+    Then Kullanici "<User Name>" kutusuna gecerli bir User Name girer.
+    And Kullanici User Name kutusunun bos olmadigini test eder.
+    Then Kullanici "<Password>" kutusuna büyük harf, kücük harf ve rakam iceren  en az sekiz karakterli bir sifreyi girer.
+    And Kullanici Password kutusunun bos olmadigini test eder.
+    Then Kullanici Submit butonunu tiklar.
+    And Kullanici basarili bir sekilde Vice Dean ekledigini dogrular.
+    And Kullanici sayfayi kapatir.
 
 
     Examples:
