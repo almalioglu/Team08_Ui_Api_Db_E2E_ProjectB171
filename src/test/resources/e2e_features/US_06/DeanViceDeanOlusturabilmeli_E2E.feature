@@ -1,4 +1,5 @@
 @ayseE2E
+
 Feature:Dean olarak Vice Dean ekleyebilmeli
   @08
   Scenario Outline: TC01 Vice Dean Hesabı Oluşturma Pozitif Testi
