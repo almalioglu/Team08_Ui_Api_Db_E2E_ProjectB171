@@ -1,3 +1,1 @@
-file:src/test/resources/ui_features/US_14/US14_TestCase.feature:14:21
-file:src/test/resources/ui_features/US_13/US13_TestCases.feature:15:34:53:60:67:74:81:88:95:102:109:116:123:130:137
-file:src/test/resources/ui_features/US_24/US24_TestCases.feature:14:33:52:59:66:73:80:87:94:101:108:115:122:129:136
+
