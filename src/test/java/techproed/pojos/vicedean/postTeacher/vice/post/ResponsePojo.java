@@ -5,7 +5,7 @@ import techproed.pojos.vicedean.postTeacher.vice.post.ObjectPojo;
 import java.io.Serializable;
 
 public class ResponsePojo implements Serializable {
-	private ObjectPojo object;
+	private static ObjectPojo object;
 	private String message;
 	private String httpStatus;
 
@@ -22,7 +22,7 @@ public class ResponsePojo implements Serializable {
 		this.object = object;
 	}
 
-	public ObjectPojo getObject(){
+	public static ObjectPojo getObject(){
 		return object;
 	}
 
