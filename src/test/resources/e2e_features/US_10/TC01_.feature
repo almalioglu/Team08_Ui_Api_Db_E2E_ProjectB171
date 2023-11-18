@@ -16,7 +16,7 @@ Feature: Vice Dean ders programı oluşturabilmelidir.(Lesson Program - Add Less
     Then Created Lesson Program yazisini gor
 
   Scenario: Ders programı olusmalı
-
+    Given "vicedean" yetkisi ile giris yapilir
     When ders programi olusturmak icin POST request hazirlanir
     Then gonderilecek ders programi bilgileri hazirlanir
     Then ders programi olusturmak icin POST request gonderilir
