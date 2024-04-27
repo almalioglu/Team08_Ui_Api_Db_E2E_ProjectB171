@@ -16,6 +16,7 @@ import java.util.Random;
 public class US12_ViceDeanogretmenedersatayabilmelidir {
 
     HomePage page =new HomePage();
+
     Random random=new Random();
     Faker faker=new Faker();
     SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/yyyy");
