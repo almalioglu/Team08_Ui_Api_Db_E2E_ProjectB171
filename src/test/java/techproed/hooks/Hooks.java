@@ -16,6 +16,7 @@ public class Hooks {
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         Driver.getDriver().manage().window().maximize();
     }
+
     @After("@08")
     public void tearDown() {
         Driver.closeDriver();
