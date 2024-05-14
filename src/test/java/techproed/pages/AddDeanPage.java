@@ -10,7 +10,6 @@ public class AddDeanPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-
     @FindBy(xpath = "//*[@href='/login']")
     public WebElement loginLink;
     @FindBy(xpath = "//button[text()='Menu']")
@@ -131,6 +130,7 @@ public class AddDeanPage {
     public WebElement addDeanGender;
 
     @FindBy(xpath ="//a[text()='Logout']")
-    public WebElement logout;
+    public WebElement logout; @FindBy(xpath ="//a[text()='Logout']")
+    public WebElement logout4;
 
 }
