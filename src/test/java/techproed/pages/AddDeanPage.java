@@ -108,6 +108,7 @@ public class AddDeanPage {
     public WebElement deanListEdit;
     @FindBy(xpath = "//a[.='»Last']")
     public WebElement deanListSonSayfa;
+
     @FindBy(xpath = "//tr[last()]//button[@class='text-dark btn btn-outline-info']")
     public WebElement deanListEditButton;
     @FindBy(xpath = "//table//tr[last()]//td[1]")
