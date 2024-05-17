@@ -17,7 +17,6 @@ public class Hooks {
         Driver.getDriver().manage().window().maximize();
     }
 
-
     @After("@08")
     public void tearDown() {
         Driver.closeDriver();
